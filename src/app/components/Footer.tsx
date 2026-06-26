@@ -1,16 +1,26 @@
 import { MapPin, Phone, Mail } from "lucide-react";
-import logoImg from "./logo.png";
+
+import logoImg from "./img/logo.png";
+import logoBic from "./img/bic-1.jpg";
+import logoBomi from "./img/bomi-1.jpg";
+import logoLojel from "./img/lojel-1.jpg";
+import logoMaped from "./img/maped-1.jpg";
+import logoStabilo from "./img/stabilo-1.jpg";
+import logoStaedler from "./img/staedler-1.jpg";
+import logoUhu from "./img/uhu-1.jpg";
+import logoYamama from "./img/yamama-1.jpg";
 import { useNavigation } from "../context/AppContext";
 
 const brandLogos = [
-  { name: "BIC", bg: "#e53935", text: "white" },
-  { name: "Casio", bg: "#0d2b6b", text: "white" },
-  { name: "PILOT", bg: "#1a1a2e", text: "white" },
-  { name: "Maped", bg: "#e53935", text: "white" },
-  { name: "Oxford", bg: "#f59e0b", text: "white" },
-  { name: "Stabilo", bg: "#059669", text: "white" },
+  { name: "BIC", img: logoBic },
+  { name: "Bomi", img: logoBomi },
+  { name: "Lojel", img: logoLojel },
+  { name: "Maped", img: logoMaped },
+  { name: "Stabilo", img: logoStabilo },
+  { name: "Staedler", img: logoStaedler },
+  { name: "UHU", img: logoUhu },
+  { name: "Yamama", img: logoYamama },
 ];
-
 const quickLinks = ["Accueil", "Boutique", "Promotions", "À propos", "Panier"];
 const categories = ["Sacs à dos", "Cahiers & Classeurs", "Stylos & Crayons", "Calculatrices", "Matériel artistique", "Papeterie"];
 
@@ -26,21 +36,16 @@ export function Footer() {
   return (
     <footer>
       {/* Brand logos bar */}
-      <div className="brands-bar">
-        <div className="brands-inner">
-          <p className="brands-label">Nos marques partenaires</p>
-          <div className="brands-list">
-            {brandLogos.map((b) => (
-              <div
-                key={b.name}
-                className="brand-chip"
-                style={{ backgroundColor: b.bg, color: b.text }}
-              >
-                {b.name}
-              </div>
-            ))}
+      <div className="brands-list">
+        {brandLogos.map((brand) => (
+          <div key={brand.name} className="brand-chip">
+            <img
+              src={brand.img}
+              alt={brand.name}
+              className="brand-logo"
+            />
           </div>
-        </div>
+        ))}
       </div>
 
       {/* Main footer */}
@@ -59,18 +64,14 @@ export function Footer() {
               >
                 <img src={logoImg} alt="Librairie l'Écolier" className="footer-logo" />
               </a>
-              <div className="footer-brand-text">
-                <span className="brand-sub">Librairie</span>
-                <span className="brand-name">l'Écolier</span>
-              </div>
             </div>
             <p className="footer-tagline">
               Votre partenaire de confiance pour toutes vos fournitures scolaires et de bureau en Tunisie.
             </p>
             <div className="footer-social">
-              {["f", "ig", "tt"].map((s) => (
-                <a key={s} href="#" className="footer-social-link">{s}</a>
-              ))}
+              <a href="https://www.facebook.com/LibrairieLecolier" target="_blank" rel="noopener noreferrer" className="footer-social-link">f</a>
+              <a href="https://www.instagram.com/librairie_lecolier/" target="_blank" rel="noopener noreferrer" className="footer-social-link">ig</a>
+              <a href="https://www.tiktok.com/@librairie_lecolier" target="_blank" rel="noopener noreferrer" className="footer-social-link">tt</a>
             </div>
           </div>
 
@@ -88,8 +89,14 @@ export function Footer() {
                         navigateTo("home");
                       } else if (link === "Panier") {
                         navigateTo("cart");
-                      } else {
+                      } else if (link === "Boutique" || link === "Promotions") {
+                        navigateTo("category", "Sacs à dos");
+                      } else if (link === "À propos") {
                         navigateTo("home");
+                        setTimeout(() => {
+                          const el = document.querySelector(".stats-section") || document.querySelector(".testimonials-grid");
+                          el?.scrollIntoView({ behavior: "smooth" });
+                        }, 100);
                       }
                     }}
                     className="footer-link"

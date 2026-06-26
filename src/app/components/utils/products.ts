@@ -1,0 +1,304 @@
+import { Product } from "../../context/AppContext";
+
+export const catalogProducts: Product[] = [
+  // Bomi > Catrable Lux
+  {
+    id: 101,
+    name: "Cartable Ergonomique Lux - Bleu Profond",
+    price: "48,000 DT",
+    priceNum: 48.0,
+    rating: 4.8,
+    reviews: 34,
+    img: "https://images.unsplash.com/photo-1726726192148-af52008ff663?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400",
+    category: "Catrable Lux"
+  },
+  {
+    id: 102,
+    name: "Cartable Orthopédique Lux - Rose Princesse",
+    price: "49,500 DT",
+    priceNum: 49.5,
+    rating: 4.9,
+    reviews: 27,
+    img: "https://images.unsplash.com/photo-1535982330050-f1c2fb79ff78?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400",
+    category: "Catrable Lux"
+  },
+  {
+    id: 103,
+    name: "Sac à Dos Scolaire Lux Tech - Gris",
+    price: "38,000 DT",
+    priceNum: 38.0,
+    rating: 4.7,
+    reviews: 19,
+    img: "https://images.unsplash.com/photo-1615988938302-bd2a5a7023bc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400",
+    category: "Catrable Lux"
+  },
+  
+  // Bomi > Catrable super lux
+  {
+    id: 104,
+    name: "Cartable Super Lux - Dinosaure 3D",
+    price: "65,000 DT",
+    priceNum: 65.0,
+    rating: 4.9,
+    reviews: 42,
+    img: "https://images.unsplash.com/photo-1535982330050-f1c2fb79ff78?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400",
+    category: "Catrable super lux"
+  },
+  {
+    id: 105,
+    name: "Sac Scolaire Super Lux - Papillon Magique",
+    price: "62,500 DT",
+    priceNum: 62.5,
+    rating: 4.8,
+    reviews: 31,
+    img: "https://images.unsplash.com/photo-1726726192148-af52008ff663?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400",
+    category: "Catrable super lux"
+  },
+
+  // Bomi > Catrable high lux
+  {
+    id: 106,
+    name: "Cartable High Lux Premium - Noir & Or",
+    price: "89,000 DT",
+    priceNum: 89.0,
+    rating: 5.0,
+    reviews: 15,
+    img: "https://images.unsplash.com/photo-1615988938302-bd2a5a7023bc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400",
+    category: "Catrable high lux"
+  },
+  {
+    id: 107,
+    name: "Cartable High Lux - Unicorn Glitter",
+    price: "85,000 DT",
+    priceNum: 85.0,
+    rating: 4.9,
+    reviews: 23,
+    img: "https://images.unsplash.com/photo-1535982330050-f1c2fb79ff78?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400",
+    category: "Catrable high lux"
+  },
+
+  // Bomi > Trousse / Other Trousse
+  {
+    id: 108,
+    name: "Trousse Scolaire Double Compartiment - Bic",
+    price: "8,500 DT",
+    priceNum: 8.5,
+    rating: 4.6,
+    reviews: 54,
+    img: "https://images.unsplash.com/photo-1568205612837-017257d2310a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400",
+    category: "Trousse"
+  },
+  {
+    id: 109,
+    name: "Trousse Silicone Imperméable - Fun",
+    price: "6,000 DT",
+    priceNum: 6.0,
+    rating: 4.5,
+    reviews: 38,
+    img: "https://images.unsplash.com/photo-1615988938302-bd2a5a7023bc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400",
+    category: "Trousse"
+  },
+  {
+    id: 110,
+    name: "Trousse Grande Capacité - Oxford",
+    price: "12,000 DT",
+    priceNum: 12.0,
+    rating: 4.8,
+    reviews: 47,
+    img: "https://images.unsplash.com/photo-1722929309984-c6b3e55dd6e5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400",
+    category: "Trousse"
+  },
+
+  // Bomi > Lunch box
+  {
+    id: 111,
+    name: "Lunch Box Isotherme - Acier Inox",
+    price: "18,500 DT",
+    priceNum: 18.5,
+    rating: 4.7,
+    reviews: 29,
+    img: "https://images.unsplash.com/photo-1615988938302-bd2a5a7023bc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400",
+    category: "Lunch box"
+  },
+  {
+    id: 112,
+    name: "Lunch Box Compartimentée - Rotpunkt",
+    price: "14,000 DT",
+    priceNum: 14.0,
+    rating: 4.6,
+    reviews: 16,
+    img: "https://images.unsplash.com/photo-1574607383077-47ddc2dc51c4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400",
+    category: "Lunch box"
+  },
+  {
+    id: 113,
+    name: "Lunch Box Enfant - Happy Cat",
+    price: "9,500 DT",
+    priceNum: 9.5,
+    rating: 4.8,
+    reviews: 33,
+    img: "https://images.unsplash.com/photo-1722929309984-c6b3e55dd6e5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400",
+    category: "Lunch box"
+  },
+
+  // Bomi > Chariot
+  {
+    id: 114,
+    name: "Cartable Trolley Chariot - Spider-Man 3D",
+    price: "95,000 DT",
+    priceNum: 95.0,
+    rating: 4.9,
+    reviews: 76,
+    img: "https://images.unsplash.com/photo-1726726192148-af52008ff663?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400",
+    category: "Chariot"
+  },
+  {
+    id: 115,
+    name: "Sac à Dos Chariot Renforcé - Galactic",
+    price: "88,000 DT",
+    priceNum: 88.0,
+    rating: 4.7,
+    reviews: 49,
+    img: "https://images.unsplash.com/photo-1535982330050-f1c2fb79ff78?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400",
+    category: "Chariot"
+  },
+  {
+    id: 116,
+    name: "Chariot Scolaire Lux - Licorne Magique",
+    price: "92,000 DT",
+    priceNum: 92.0,
+    rating: 4.9,
+    reviews: 63,
+    img: "https://images.unsplash.com/photo-1615988938302-bd2a5a7023bc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400",
+    category: "Chariot"
+  },
+
+  // Generic Categories for robust navigation
+  {
+    id: 1,
+    name: "Cahier scolaire 200 pages",
+    price: "1,800 DT",
+    priceNum: 1.8,
+    rating: 4.8,
+    reviews: 124,
+    img: "https://images.unsplash.com/photo-1722929309984-c6b3e55dd6e5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwyfHxzY2hvb2wlMjBub3RlYm9va3MlMjBwZW5jaWxzJTIwZGVza3xlbnwxfHx8fDE3ODIyMTM5NTR8MA&ixlib=rb-4.1.0&q=80&w=400",
+    category: "Cahiers & Classeurs",
+    oldPrice: "2,200 DT",
+    badge: "-18%",
+    badgeColor: "#e53935"
+  },
+  {
+    id: 2,
+    name: "Plumier scolaire complet",
+    price: "12,500 DT",
+    priceNum: 12.5,
+    rating: 4.9,
+    reviews: 89,
+    img: "https://images.unsplash.com/photo-1615988938302-bd2a5a7023bc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHw0fHxzY2hvb2wlMjBzdXBwbGllcyUyMGJhY2twYWNrJTIwc3RhdGlvbmVyeXxlbnwxfHx8fDE3ODIyMTM5NTR8MA&ixlib=rb-4.1.0&q=80&w=400",
+    category: "Stylos & Crayons",
+    oldPrice: "15,000 DT",
+    badge: "-17%",
+    badgeColor: "#e53935"
+  },
+  {
+    id: 3,
+    name: "Classeur A4 polypropylène",
+    price: "4,000 DT",
+    priceNum: 4.0,
+    rating: 4.7,
+    reviews: 56,
+    img: "https://images.unsplash.com/photo-1779684998897-ce5de594a5ac?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHw0fHxzY2hvb2wlMjBub3RlYm9va3MlMjBwZW5jaWxzJTIwZGVza3xlbnwxfHx8fDE3ODIyMTM5NTR8MA&ixlib=rb-4.1.0&q=80&w=400",
+    category: "Cahiers & Classeurs",
+    badge: "Nouveau",
+    badgeColor: "#0d2b6b"
+  },
+  {
+    id: 4,
+    name: "Boîte de crayons de couleur",
+    price: "8,500 DT",
+    priceNum: 8.5,
+    rating: 4.6,
+    reviews: 203,
+    img: "https://images.unsplash.com/photo-1568205612837-017257d2310a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzY2hvb2wlMjBub3RlYm9va3MlMjBwZW5jaWxzJTIwZGVza3xlbnwxfHx8fDE3ODIyMTM5NTR8MA&ixlib=rb-4.1.0&q=80&w=400",
+    category: "Stylos & Crayons",
+    oldPrice: "10,000 DT",
+    badge: "-15%",
+    badgeColor: "#e53935"
+  },
+  {
+    id: 5,
+    name: "Sac à dos ergonomique",
+    price: "45,000 DT",
+    priceNum: 45.0,
+    rating: 4.9,
+    reviews: 178,
+    img: "https://images.unsplash.com/photo-1535982330050-f1c2fb79ff78?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwyfHxzY2hvb2wlMjBzdXBwbGllcyUyMGJhY2twYWNrJTIwc3RhdGlvbmVyeXxlbnwxfHx8fDE3ODIyMTM5NTR8MA&ixlib=rb-4.1.0&q=80&w=400",
+    category: "Sacs à dos",
+    oldPrice: "55,000 DT",
+    badge: "-18%",
+    badgeColor: "#e53935"
+  },
+  {
+    id: 6,
+    name: "Calculatrice scientifique",
+    price: "52,000 DT",
+    priceNum: 52.0,
+    rating: 4.8,
+    reviews: 95,
+    img: "https://images.unsplash.com/photo-1574607383077-47ddc2dc51c4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwyfHxjYWxjdWxhdG9yJTIwc2NpZW50aWZpYyUyMHN0dWRlbnR8ZW58MXx8fHwxNzgyMjEzOTU5fDA&ixlib=rb-4.1.0&q=80&w=400",
+    category: "Calculatrices",
+    oldPrice: "65,000 DT",
+    badge: "-20%",
+    badgeColor: "#e53935"
+  },
+  {
+    id: 7,
+    name: "Valise WAMA Rigide",
+    price: "115,000 DT",
+    priceNum: 115.0,
+    rating: 4.9,
+    reviews: 36,
+    img: "https://images.unsplash.com/photo-1726726192148-af52008ff663?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400",
+    category: "Valise WAMA"
+  },
+  {
+    id: 8,
+    name: "Sac à dos WAMA Pro",
+    price: "55,000 DT",
+    priceNum: 55.0,
+    rating: 4.8,
+    reviews: 42,
+    img: "https://images.unsplash.com/photo-1615988938302-bd2a5a7023bc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400",
+    category: "Sac A Dos Informatique"
+  },
+  {
+    id: 9,
+    name: "Sac à dos Take & Go",
+    price: "32,000 DT",
+    priceNum: 32.0,
+    rating: 4.6,
+    reviews: 29,
+    img: "https://images.unsplash.com/photo-1535982330050-f1c2fb79ff78?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400",
+    category: "Take And Go"
+  },
+  {
+    id: 10,
+    name: "Cahier de dessin Canson A3",
+    price: "9,500 DT",
+    priceNum: 9.5,
+    rating: 4.9,
+    reviews: 68,
+    img: "https://images.unsplash.com/photo-1568205612837-017257d2310a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400",
+    category: "Matériel artistique"
+  },
+  {
+    id: 11,
+    name: "Bloc Papier à dessin",
+    price: "4,500 DT",
+    priceNum: 4.5,
+    rating: 4.7,
+    reviews: 52,
+    img: "https://images.unsplash.com/photo-1779684998897-ce5de594a5ac?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400",
+    category: "Papeterie"
+  }
+];

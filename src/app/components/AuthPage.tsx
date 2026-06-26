@@ -19,6 +19,7 @@ import {
   User,
 } from "lucide-react";
 import { useNavigation } from "../context/AppContext";
+import { useAdmin } from "../context/AdminContext";
 
 type AuthMode = "login" | "signup";
 type SubMode = "form" | "forgot";
@@ -96,8 +97,12 @@ function Field({
   );
 }
 
+const ADMIN_EMAIL = 'admin@gmail.com';
+const ADMIN_PASSWORD = 'admin@123';
+
 export function AuthPage() {
   const { navigateTo, loginUser } = useNavigation();
+  const { login: adminLogin } = useAdmin();
   const [mode, setMode] = useState<AuthMode>("login");
   const [subMode, setSubMode] = useState<SubMode>("form");
   const [showPassword, setShowPassword] = useState(false);
@@ -225,6 +230,22 @@ export function AuthPage() {
       const storedUsers = JSON.parse(localStorage.getItem("ecolier_users") || "[]");
 
       if (mode === "login") {
+        // ── Admin shortcut ──────────────────────────────────────────
+        if (
+          formData.email.toLowerCase() === ADMIN_EMAIL &&
+          formData.password === ADMIN_PASSWORD
+        ) {
+          const success = adminLogin(ADMIN_EMAIL, ADMIN_PASSWORD);
+          if (success) {
+            setSuccessMsg("Bienvenue Admin ! Redirection vers le tableau de bord...");
+            setTimeout(() => navigateTo("admin"), 1200);
+          } else {
+            setErrorMsg("Erreur lors de la connexion admin.");
+          }
+          setIsLoading(false);
+          return;
+        }
+        // ── Regular user ────────────────────────────────────────────
         const user = storedUsers.find(
           (u: any) => u.email.toLowerCase() === formData.email.toLowerCase() && u.password === formData.password,
         );

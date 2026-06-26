@@ -19,7 +19,7 @@ export interface CartItem {
   quantity: number;
 }
 
-export type ViewType = "home" | "category" | "cart" | "product" | "auth";
+export type ViewType = "home" | "category" | "cart" | "product" | "auth" | "admin";
 
 export interface UserType {
   name: string;
@@ -40,11 +40,13 @@ interface NavigationContextType {
   user: UserType | null;
   loginUser: (user: UserType) => void;
   logoutUser: () => void;
+  searchQuery: string;
+  setSearchQuery: (query: string) => void;
 }
 
 interface CartContextType {
   cartItems: CartItem[];
-  addToCart: (product: Product) => void;
+  addToCart: (product: Product, quantity?: number) => void;
   removeFromCart: (productId: number) => void;
   updateQuantity: (productId: number, quantity: number) => void;
   clearCart: () => void;
@@ -61,6 +63,7 @@ export function AppProviders({ children }: { children: React.ReactNode }) {
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
   const [selectedProductId, setSelectedProductId] = useState<number | null>(null);
   const [user, setUser] = useState<UserType | null>(null);
+  const [searchQuery, setSearchQuery] = useState<string>("");
 
   // Load user from localStorage on mount
   useEffect(() => {
@@ -115,17 +118,17 @@ export function AppProviders({ children }: { children: React.ReactNode }) {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  const addToCart = (product: Product) => {
+  const addToCart = (product: Product, quantity = 1) => {
     setCartItems((prevItems) => {
       const existing = prevItems.find((item) => item.product.id === product.id);
       if (existing) {
         return prevItems.map((item) =>
           item.product.id === product.id
-            ? { ...item, quantity: item.quantity + 1 }
+            ? { ...item, quantity: item.quantity + quantity }
             : item
         );
       }
-      return [...prevItems, { product, quantity: 1 }];
+      return [...prevItems, { product, quantity }];
     });
   };
 
@@ -153,7 +156,7 @@ export function AppProviders({ children }: { children: React.ReactNode }) {
   const cartTotal = cartItems.reduce((acc, item) => acc + item.product.priceNum * item.quantity, 0);
 
   return (
-    <NavigationContext.Provider value={{ currentView, activeCategory, navigateTo, selectedProductId, navigateToProduct, user, loginUser, logoutUser }}>
+    <NavigationContext.Provider value={{ currentView, activeCategory, navigateTo, selectedProductId, navigateToProduct, user, loginUser, logoutUser, searchQuery, setSearchQuery }}>
       <CartContext.Provider
         value={{
           cartItems,

@@ -24,7 +24,11 @@ const WA_SVG = (
   </svg>
 );
 
+import { useNavigation } from "../context/AppContext";
+
 export function Hero() {
+  const { navigateTo } = useNavigation();
+
   return (
     <section className="hero-section">
       <div className="hero-layout">
@@ -41,7 +45,14 @@ export function Hero() {
             <ul>
               {categories.map((cat) => (
                 <li key={cat.label}>
-                  <a href="#" className="sidebar-link">
+                  <a
+                    href="#"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      navigateTo("category", cat.label);
+                    }}
+                    className="sidebar-link"
+                  >
                     <div className="sidebar-link-inner">
                       <span className="sidebar-icon">{cat.icon}</span>
                       <span className="sidebar-label">{cat.label}</span>
@@ -85,7 +96,10 @@ export function Hero() {
                 </p>
 
                 <div className="hero-actions">
-                  <button className="btn-primary">
+                  <button
+                    className="btn-primary"
+                    onClick={() => navigateTo("category", "Sacs à dos")}
+                  >
                     Découvrir maintenant
                     <ChevronRight size={16} />
                   </button>

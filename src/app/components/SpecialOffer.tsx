@@ -1,8 +1,10 @@
 import { ChevronRight } from "lucide-react";
 import { ResponsiveImage } from "./utils/ResponsiveImage";
-
+import { useNavigation } from "../context/AppContext";
 
 export function SpecialOffer() {
+  const { navigateTo } = useNavigation();
+
   return (
     <section className="special-offer-section">
       <div className="special-offer-card">
@@ -24,7 +26,10 @@ export function SpecialOffer() {
               de produits pour la rentrée scolaire 2026.
             </p>
             <div className="offer-actions">
-              <button className="btn-offer">
+              <button
+                className="btn-offer"
+                onClick={() => navigateTo("category", "Sacs à dos")}
+              >
                 Voir les offres <ChevronRight size={16} />
               </button>
             </div>

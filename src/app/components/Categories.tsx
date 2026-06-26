@@ -10,7 +10,11 @@ const categories = [
   { id: 6, label: "Matériel artistique",  count: "90+ articles",  color: "#db2777", img: "https://images.unsplash.com/photo-1615988938302-bd2a5a7023bc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHw0fHxzY2hvb2wlMjBzdXBwbGllcyUyMGJhY2twYWNrJTIwc3RhdGlvbmVyeXxlbnwxfHx8fDE3ODIyMTM5NTR8MA&ixlib=rb-4.1.0&q=80&w=400" },
 ];
 
+import { useNavigation } from "../context/AppContext";
+
 export function Categories() {
+  const { navigateTo } = useNavigation();
+
   return (
     <section className="page-section">
       <div className="section-header">
@@ -18,14 +22,29 @@ export function Categories() {
           <h2 className="section-title">Catégories</h2>
           <div className="section-underline" />
         </div>
-        <a href="#" className="section-link">
+        <a
+          href="#"
+          onClick={(e) => {
+            e.preventDefault();
+            navigateTo("category", "Sacs à dos");
+          }}
+          className="section-link"
+        >
           Voir toutes <ChevronRight size={14} />
         </a>
       </div>
 
       <div className="categories-grid">
         {categories.map((cat) => (
-          <a key={cat.id} href="#" className="category-card">
+          <a
+            key={cat.id}
+            href="#"
+            onClick={(e) => {
+              e.preventDefault();
+              navigateTo("category", cat.label);
+            }}
+            className="category-card"
+          >
             <div className="category-img-wrap">
               <ResponsiveImage src={cat.img} alt={cat.label} className="category-img" />
               <div className="category-color-overlay" style={{ backgroundColor: cat.color }} />

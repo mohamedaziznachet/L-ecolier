@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Search, ShoppingCart, MapPin, Phone, User, Menu, X, ChevronDown } from "lucide-react";
-import logoImg from "./logo.png";
+import logoImg from "./img/logo.png";
 import { useNavigation, useCart } from "../context/AppContext";
 
 interface NavItem {
@@ -10,14 +10,13 @@ interface NavItem {
 
 const navItems: NavItem[] = [
   { label: "Accueil" },
-  { label: "Bomi", subItems: ["Catrable Lux", "Catrable super lux", "Catrable high lux", "Panier", "Trousse", "Lunch box", "Chariot"] },
+  { label: "Bomi", subItems: ["Catrable Lux","Cartable Eco Lux" ,"Catrable super lux", "Catrable high lux", "Trousse", "Lunch box","paniers" ,"Chariots"] },
   { label: "Sac A Dos", subItems: ["Sac A Dos Informatique", "Take And Go", "Trousse"] },
   { label: "Bagagerie", subItems: ["Valise WAMA"] },
   { label: "Parascolaires" },
   { label: "Fournitures Scolaire" },
   { label: "Jeux Et Cadeaux" },
   { label: "Gourde & Thermos", subItems: ["TupperWare", "Rotpunkt", "Uzspace"] },
-  { label: "Contact" },
 ];
 
 const WA_SVG = (
@@ -28,8 +27,41 @@ const WA_SVG = (
 
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const { currentView, activeCategory, navigateTo, user, logoutUser } = useNavigation();
+  const [openMobileSubmenus, setOpenMobileSubmenus] = useState<Record<string, boolean>>({});
+  const [searchVal, setSearchVal] = useState("");
+  const { currentView, activeCategory, navigateTo, user, logoutUser, setSearchQuery } = useNavigation();
   const { cartCount } = useCart();
+
+  const handleSearchSubmit = () => {
+    if (searchVal.trim()) {
+      setSearchQuery(searchVal);
+      navigateTo("category", "");
+    }
+  };
+
+  const toggleMobileSubmenu = (label: string) => {
+    setOpenMobileSubmenus((prev) => ({ ...prev, [label]: !prev[label] }));
+  };
+
+  const handleNavItemClick = (item: NavItem) => {
+    if (item.label === "Accueil") {
+      navigateTo("home");
+    } else if (item.subItems) {
+      // Items with submenus navigate to the first subcategory
+      navigateTo("category", item.subItems[0]);
+    } else {
+      // Leaf nav items navigate to their category
+      navigateTo("category", item.label);
+    }
+  };
+
+  const isNavItemActive = (item: NavItem): boolean => {
+    if (item.label === "Accueil") return currentView === "home";
+    if (item.subItems) {
+      return currentView === "category" && item.subItems.includes(activeCategory);
+    }
+    return currentView === "category" && activeCategory === item.label;
+  };
 
   return (
     <header className="app-header">
@@ -52,19 +84,19 @@ export function Header() {
             <span className="delivery-note">Livraison rapide en Tunisie</span>
 
             <div className="social-links">
-              <a href="#" aria-label="Facebook" className="social-link">
+              <a href="https://www.facebook.com/LibrairieLecolier" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="social-link">
                 <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
                 </svg>
               </a>
-              <a href="#" aria-label="Instagram" className="social-link">
+              <a href="https://www.instagram.com/librairie_lecolier/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="social-link">
                 <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24">
                   <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
                   <path fill="#0d2b6b" d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
                   <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="#0d2b6b" strokeWidth="2" />
                 </svg>
               </a>
-              <a href="#" aria-label="TikTok" className="social-link">
+              <a href="https://www.tiktok.com/@librairie_lecolier" target="_blank" rel="noopener noreferrer" aria-label="TikTok" className="social-link">
                 <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V9.05a8.23 8.23 0 0 0 4.83 1.54V7.15a4.84 4.84 0 0 1-1.06-.46z" />
                 </svg>
@@ -104,6 +136,8 @@ export function Header() {
             href="/"
             onClick={(e) => {
               e.preventDefault();
+              setSearchVal("");
+              setSearchQuery("");
               navigateTo("home");
             }}
           >
@@ -112,8 +146,21 @@ export function Header() {
 
           {/* Search */}
           <div className="search-wrapper">
-            <input type="text" placeholder="Rechercher un produit..." className="search-input" />
-            <button className="search-btn" aria-label="Rechercher"><Search size={18} /></button>
+            <input
+              type="text"
+              placeholder="Rechercher un produit..."
+              value={searchVal}
+              onChange={(e) => setSearchVal(e.target.value)}
+              onKeyDown={(e) => e.key === "Enter" && handleSearchSubmit()}
+              className="search-input"
+            />
+            <button
+              className="search-btn"
+              onClick={handleSearchSubmit}
+              aria-label="Rechercher"
+            >
+              <Search size={18} />
+            </button>
           </div>
 
           {/* Cart */}
@@ -130,7 +177,8 @@ export function Header() {
           {/* Mobile toggle */}
           <button
             className="mobile-toggle"
-            aria-label="Menu"
+            aria-label={mobileOpen ? "Fermer le menu" : "Ouvrir le menu"}
+            aria-expanded={mobileOpen}
             onClick={() => setMobileOpen(!mobileOpen)}
           >
             {mobileOpen ? <X size={22} /> : <Menu size={22} />}
@@ -143,15 +191,7 @@ export function Header() {
         <div className="nav-inner">
           <div className="nav-items">
             {navItems.map((item) => {
-              // Calculate if this root item is active based on subitems or views
-              const isHomeActive = item.label === "Accueil" && currentView === "home";
-              const isBomiActive = item.label === "Bomi" && (
-                (currentView === "category" && ["Catrable Lux", "Catrable super lux", "Catrable high lux", "Trousse", "Lunch box", "Chariot"].includes(activeCategory)) ||
-                (currentView === "cart" && activeCategory === "")
-              );
-              const isGenericCategoryActive = currentView === "category" && item.subItems?.includes(activeCategory);
-
-              const isItemActive = isHomeActive || isBomiActive || isGenericCategoryActive;
+              const isItemActive = isNavItemActive(item);
 
               return (
                 <div key={item.label} className="nav-item">
@@ -159,9 +199,7 @@ export function Header() {
                     href="#"
                     onClick={(e) => {
                       e.preventDefault();
-                      if (item.label === "Accueil") {
-                        navigateTo("home");
-                      }
+                      handleNavItemClick(item);
                     }}
                     className={`nav-link${isItemActive ? " active" : ""}`}
                   >
@@ -172,19 +210,12 @@ export function Header() {
                     <div className="dropdown">
                       <ul>
                         {item.subItems.map((sub) => {
-                          const isSubActive = (currentView === "category" && activeCategory === sub) || (sub === "Panier" && currentView === "cart");
+                          const isSubActive = currentView === "category" && activeCategory === sub;
                           return (
                             <li key={sub}>
                               <button
-                                onClick={() => {
-                                  if (sub === "Panier") {
-                                    navigateTo("cart");
-                                  } else {
-                                    navigateTo("category", sub);
-                                  }
-                                }}
+                                onClick={() => navigateTo("category", sub)}
                                 className={`dropdown-item${isSubActive ? " active" : ""}`}
-                                style={{ width: "100%", textAlign: "left", cursor: "pointer" }}
                               >
                                 {sub}
                               </button>
@@ -199,7 +230,7 @@ export function Header() {
             })}
           </div>
 
-          <a href="https://wa.me/+21658982121" className="whatsapp-btn">
+          <a href="https://wa.me/+21658982121" className="whatsapp-btn" target="_blank" rel="noopener noreferrer">
             {WA_SVG}
             Commander sur WhatsApp
           </a>
@@ -209,50 +240,57 @@ export function Header() {
       {/* ── Mobile menu ── */}
       {mobileOpen && (
         <div className="mobile-menu" aria-label="Menu mobile">
-          {navItems.map((item) => (
-            <div key={item.label} className="mobile-item">
-              <a
-                href="#"
-                onClick={(e) => {
-                  e.preventDefault();
-                  if (item.label === "Accueil") {
-                    navigateTo("home");
-                    setMobileOpen(false);
-                  }
-                }}
-                className={`mobile-link${(item.label === "Accueil" && currentView === "home") ? " active" : ""}`}
-              >
-                {item.label}
-                {item.subItems && <ChevronDown size={16} />}
-              </a>
-              {item.subItems && (
-                <div className="mobile-submenu">
-                  {item.subItems.map((sub) => {
-                    const isSubActive = (currentView === "category" && activeCategory === sub) || (sub === "Panier" && currentView === "cart");
-                    return (
-                      <button
-                        key={sub}
-                        onClick={() => {
-                          if (sub === "Panier") {
-                            navigateTo("cart");
-                          } else {
-                            navigateTo("category", sub);
-                          }
-                          setMobileOpen(false);
-                        }}
-                        className={`mobile-subitem${isSubActive ? " active" : ""}`}
-                        style={{ width: "100%", textAlign: "left", border: "none", background: "none" }}
-                      >
-                        {sub}
-                      </button>
-                    );
-                  })}
+          {navItems.map((item) => {
+            const isItemActive = isNavItemActive(item);
+            const isSubmenuOpen = openMobileSubmenus[item.label] ?? false;
+
+            return (
+              <div key={item.label} className="mobile-item">
+                <div className="mobile-link-row">
+                  <button
+                    className={`mobile-link${isItemActive ? " active" : ""}`}
+                    onClick={() => {
+                      if (!item.subItems) {
+                        handleNavItemClick(item);
+                        setMobileOpen(false);
+                      } else {
+                        toggleMobileSubmenu(item.label);
+                      }
+                    }}
+                  >
+                    <span>{item.label}</span>
+                    {item.subItems && (
+                      <ChevronDown
+                        size={16}
+                        className={`mobile-chevron${isSubmenuOpen ? " open" : ""}`}
+                      />
+                    )}
+                  </button>
                 </div>
-              )}
-            </div>
-          ))}
+                {item.subItems && isSubmenuOpen && (
+                  <div className="mobile-submenu">
+                    {item.subItems.map((sub) => {
+                      const isSubActive = currentView === "category" && activeCategory === sub;
+                      return (
+                        <button
+                          key={sub}
+                          onClick={() => {
+                            navigateTo("category", sub);
+                            setMobileOpen(false);
+                          }}
+                          className={`mobile-subitem${isSubActive ? " active" : ""}`}
+                        >
+                          {sub}
+                        </button>
+                      );
+                    })}
+                  </div>
+                )}
+              </div>
+            );
+          })}
           <div className="mobile-whatsapp">
-            <a href="https://wa.me/+21658982121" className="whatsapp-btn">
+            <a href="https://wa.me/+21658982121" className="whatsapp-btn" target="_blank" rel="noopener noreferrer">
               {WA_SVG}
               Commander sur WhatsApp
             </a>

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { ShoppingCart, Eye, Heart, Star, ChevronRight } from "lucide-react";
 import { ResponsiveImage } from "./utils/ResponsiveImage";
-import { useCart } from "../context/AppContext";
+import { useCart, useNavigation } from "../context/AppContext";
 
 const products = [
   { id: 1, name: "Cahier scolaire 200 pages",    price: "1,800 DT",  priceNum: 1.8,  oldPrice: "2,200 DT", badge: "-18%",   badgeColor: "#e53935", rating: 4.8, reviews: 124, img: "https://images.unsplash.com/photo-1722929309984-c6b3e55dd6e5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwyfHxzY2hvb2wlMjBub3RlYm9va3MlMjBwZW5jaWxzJTIwZGVza3xlbnwxfHx8fDE3ODIyMTM5NTR8MA&ixlib=rb-4.1.0&q=80&w=400" },
@@ -15,26 +15,40 @@ const products = [
 function ProductCard({ product }: { product: typeof products[0] }) {
   const [wished, setWished]   = useState(false);
   const [added, setAdded]     = useState(false);
+  const { navigateToProduct } = useNavigation();
   const { addToCart }         = useCart();
 
-  const handleAdd = () => {
+  const handleAdd = (e: React.MouseEvent) => {
+    e.stopPropagation();
     addToCart(product);
     setAdded(true);
     setTimeout(() => setAdded(false), 1500);
   };
 
   return (
-    <div className="product-card">
+    <div className="product-card" onClick={() => navigateToProduct(product.id)} style={{ cursor: "pointer" }}>
       <div className="product-img-wrap">
         <ResponsiveImage src={product.img} alt={product.name} className="product-img" />
         <span className="product-badge" style={{ backgroundColor: product.badgeColor }}>
           {product.badge}
         </span>
         <div className="product-actions">
-          <button className="product-action-btn" onClick={() => setWished(!wished)}>
+          <button
+            className="product-action-btn"
+            onClick={(e) => {
+              e.stopPropagation();
+              setWished(!wished);
+            }}
+          >
             <Heart size={13} fill={wished ? "#e53935" : "none"} stroke={wished ? "#e53935" : "#666"} />
           </button>
-          <button className="product-action-btn">
+          <button
+            className="product-action-btn"
+            onClick={(e) => {
+              e.stopPropagation();
+              navigateToProduct(product.id);
+            }}
+          >
             <Eye size={13} stroke="#666" />
           </button>
         </div>
@@ -73,6 +87,8 @@ function ProductCard({ product }: { product: typeof products[0] }) {
 }
 
 export function BestSellers() {
+  const { navigateTo } = useNavigation();
+
   return (
     <section className="page-section">
       <div className="section-header">
@@ -80,7 +96,14 @@ export function BestSellers() {
           <h2 className="section-title">Nos produits les plus vendus</h2>
           <div className="section-underline" />
         </div>
-        <a href="#" className="section-link">
+        <a
+          href="#"
+          onClick={(e) => {
+            e.preventDefault();
+            navigateTo("category", "Sacs à dos");
+          }}
+          className="section-link"
+        >
           Voir tous les produits <ChevronRight size={14} />
         </a>
       </div>
