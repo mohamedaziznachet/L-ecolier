@@ -350,8 +350,49 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 .nav-desktop {
   background: linear-gradient(90deg, var(--c-primary-dark) 0%, var(--c-primary) 50%, #153a8a 100%);
   box-shadow: inset 0 1px 0 rgba(255,255,255,0.05);
+  z-index: 60;
+  position: relative;
+  transition: box-shadow var(--transition-slow), transform var(--transition-slow), filter var(--transition-slow);
 }
+
+/* Modern “cursor enters navbar” highlight */
+.nav-desktop::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(800px 120px at 20% 10%, rgba(251, 191, 36, 0.22), transparent 55%),
+    linear-gradient(90deg, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0) 55%, rgba(255,255,255,0.16) 100%);
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: opacity var(--transition-slow), transform var(--transition-slow);
+  z-index: 0;
+}
+
+.nav-desktop:hover,
+.nav-desktop:focus-within {
+  transform: translateY(-1px);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.08), 0 10px 30px -22px rgba(0,0,0,0.35);
+  filter: saturate(1.05);
+}
+
+.nav-desktop:hover::before,
+.nav-desktop:focus-within::before {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.nav-desktop .nav-inner,
+.nav-desktop .nav-items,
+.nav-desktop .nav-inner > * {
+  position: relative;
+  z-index: 1;
+}
+
 .nav-inner {
+
+
   max-width: var(--max-w);
   margin: 0 auto;
   display: flex;
@@ -431,6 +472,31 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   background: var(--c-blue-50);
   color: var(--c-primary);
 }
+
+.nav-link:focus-visible {
+  outline: 3px solid rgba(251, 191, 36, 0.35);
+  outline-offset: 2px;
+  border-radius: var(--radius-md);
+}
+
+.dropdown-item:focus-visible {
+  outline: 3px solid rgba(251, 191, 36, 0.35);
+  outline-offset: -2px;
+  border-radius: var(--radius-sm);
+}
+
+.mobile-link:focus-visible {
+  outline: 3px solid rgba(251, 191, 36, 0.35);
+  outline-offset: -2px;
+  border-radius: var(--radius-md);
+}
+
+.mobile-subitem:focus-visible {
+  outline: 3px solid rgba(251, 191, 36, 0.35);
+  outline-offset: -2px;
+  border-radius: var(--radius-sm);
+}
+
 
 /* WhatsApp button */
 .whatsapp-btn {
@@ -788,6 +854,8 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   grid-template-columns: 1fr;
   gap: 1rem;
 }
+
+/* Card */
 .promo-card {
   position: relative;
   border-radius: var(--radius-xl);
@@ -796,18 +864,42 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   box-shadow: var(--shadow-sm);
   display: block;
   transition: box-shadow var(--transition-slow);
+  outline: none;
 }
 .promo-card:hover { box-shadow: var(--shadow-md); }
+.promo-card:focus-visible {
+  box-shadow: var(--shadow-md), 0 0 0 4px rgba(251, 191, 36, 0.35);
+}
+
+/* Media */
 .promo-img {
-  width: 100%; height: 100%;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   transition: transform var(--transition-slow);
 }
 .promo-card:hover .promo-img { transform: scale(1.05); }
+
+/* Overlays */
 .promo-color-overlay {
   position: absolute;
   inset: 0;
+  transition: opacity var(--transition-slow);
+  opacity: 0.95;
 }
+
+/* Always-on readability overlay */
+.promo-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(13, 43, 107, 0.65), rgba(13, 43, 107, 0.15));
+  pointer-events: none;
+  z-index: 1;
+}
+.promo-card:hover .promo-color-overlay { opacity: 1; }
+
+/* Content */
 .promo-content {
   position: absolute;
   inset: 0;
@@ -815,6 +907,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   display: flex;
   align-items: center;
   justify-content: space-between;
+  z-index: 2;
 }
 .promo-text { color: var(--c-white); }
 .promo-label {
@@ -822,7 +915,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: .05em;
-  opacity: 0.8;
+  opacity: 0.86;
 }
 .promo-discount {
   font-size: 2.5rem;
@@ -830,18 +923,40 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   line-height: 1;
   margin: 0.25rem 0;
 }
-.promo-desc { font-size: 0.75rem; opacity: 0.8; }
+.promo-desc {
+  font-size: 0.75rem;
+  opacity: 0.9;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin-top: 0.25rem;
+}
 .promo-badge {
-  background: rgba(255,255,255,.2);
-  border: 1px solid rgba(255,255,255,.4);
+  background: rgba(255,255,255,.18);
+  border: 1px solid rgba(255,255,255,.38);
   border-radius: var(--radius-md);
   padding: 0.5rem;
   color: var(--c-white);
   font-size: 0.75rem;
   text-align: center;
-  backdrop-filter: blur(4px);
+  backdrop-filter: blur(6px);
 }
 .promo-badge-icon { margin: 0 auto 0.25rem; display: block; }
+
+@media (min-width: 640px) {
+  .promotions-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .promo-card,
+  .promo-img,
+  .promo-color-overlay {
+    transition: none !important;
+  }
+  .promo-card:hover .promo-img { transform: none; }
+}
+
 
 /* -----------------------------------------------------------
    8. Best Sellers / Product Card
