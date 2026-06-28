@@ -32,6 +32,13 @@ export function Header() {
   const { cartCount } = useCart();
   const headerRef = useRef<HTMLElement | null>(null);
   const hasMobileNavOpen = mobileOpen;
+
+  const [desktopDropdownOpen, setDesktopDropdownOpen] = useState(false);
+  const [desktopDropdownParent, setDesktopDropdownParent] = useState<string | null>(null);
+  const [desktopDropdownX, setDesktopDropdownX] = useState<number | null>(null);
+  const [desktopDropdownW, setDesktopDropdownW] = useState<number | null>(null);
+  const desktopDropdownCloseTimer = useRef<number | null>(null);
+
   useEffect(() => {
     if (!hasMobileNavOpen) return;
     const onKeyDown = (e: KeyboardEvent) => {
@@ -56,6 +63,28 @@ export function Header() {
     };
   }, [hasMobileNavOpen]);
 
+  useEffect(() => {
+    return () => {
+      if (desktopDropdownCloseTimer.current) {
+        window.clearTimeout(desktopDropdownCloseTimer.current);
+      }
+    };
+  }, []);
+
+  const clearDesktopDropdownCloseTimer = () => {
+    if (desktopDropdownCloseTimer.current) {
+      window.clearTimeout(desktopDropdownCloseTimer.current);
+      desktopDropdownCloseTimer.current = null;
+    }
+  };
+
+  const scheduleDesktopDropdownClose = () => {
+    clearDesktopDropdownCloseTimer();
+    desktopDropdownCloseTimer.current = window.setTimeout(() => {
+      setDesktopDropdownOpen(false);
+      setDesktopDropdownParent(null);
+    }, 220);
+  };
 
   const handleSearchSubmit = () => {
     if (searchVal.trim()) {
@@ -215,39 +244,54 @@ export function Header() {
           <div className="nav-items">
             {navItems.map((item) => {
               const isItemActive = isNavItemActive(item);
+              const hasSub = !!item.subItems?.length;
 
               return (
-                <div key={item.label} className="nav-item">
+                <div
+                  key={item.label}
+                  className="nav-item"
+                  onMouseEnter={(e) => {
+                    if (hasSub) {
+                      clearDesktopDropdownCloseTimer();
+                      const target = e.currentTarget as HTMLDivElement;
+                      const rect = target.getBoundingClientRect();
+                      setDesktopDropdownX(rect.left);
+                      setDesktopDropdownW(rect.width);
+                      setDesktopDropdownParent(item.label);
+                      setDesktopDropdownOpen(true);
+                    }
+                  }}
+                  onMouseLeave={() => {
+                    if (hasSub) {
+                      scheduleDesktopDropdownClose();
+                    }
+                  }}
+                >
                   <a
                     href="#"
                     onClick={(e) => {
                       e.preventDefault();
+                      setDesktopDropdownOpen(false);
+                      setDesktopDropdownParent(null);
                       handleNavItemClick(item);
                     }}
                     className={`nav-link${isItemActive ? " active" : ""}`}
+                    onFocus={() => {
+                      if (hasSub) {
+                        setDesktopDropdownParent(item.label);
+                        setDesktopDropdownOpen(true);
+                      }
+                    }}
+                    onBlur={() => {
+                      setDesktopDropdownOpen(false);
+                      setDesktopDropdownParent(null);
+                    }}
                   >
                     {item.label}
+                    <span className="nav-link-underline" aria-hidden="true" />
                     {item.subItems && <ChevronDown size={14} className="dropdown-icon" />}
                   </a>
-                  {item.subItems && (
-                    <div className="dropdown">
-                      <ul>
-                        {item.subItems.map((sub) => {
-                          const isSubActive = currentView === "category" && activeCategory === sub;
-                          return (
-                            <li key={sub}>
-                              <button
-                                onClick={() => navigateTo("category", sub)}
-                                className={`dropdown-item${isSubActive ? " active" : ""}`}
-                              >
-                                {sub}
-                              </button>
-                            </li>
-                          );
-                        })}
-                      </ul>
-                    </div>
-                  )}
+
                 </div>
               );
             })}
@@ -258,6 +302,39 @@ export function Header() {
             Commander sur WhatsApp
           </a>
         </div>
+
+        {desktopDropdownOpen && desktopDropdownParent && (
+          <div
+            className="nav-dropdown-panel"
+            role="menu"
+            aria-label="Sous-catégories"
+            style={{ left: desktopDropdownX ?? undefined, width: desktopDropdownW ?? undefined }}
+            onMouseEnter={clearDesktopDropdownCloseTimer}
+            onMouseLeave={scheduleDesktopDropdownClose}
+          >
+            <ul>
+              {navItems
+                .find((i) => i.label === desktopDropdownParent)
+                ?.subItems?.map((sub) => {
+                  const isSubActive = currentView === "category" && activeCategory === sub;
+                  return (
+                    <li key={sub}>
+                      <button
+                        onClick={() => {
+                          setDesktopDropdownOpen(false);
+                          setDesktopDropdownParent(null);
+                          navigateTo("category", sub);
+                        }}
+                        className={`dropdown-item${isSubActive ? " active" : ""}`}
+                      >
+                        {sub}
+                      </button>
+                    </li>
+                  );
+                })}
+            </ul>
+          </div>
+        )}
       </nav>
 
       {/* ── Mobile menu ── */}

@@ -439,39 +439,148 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 }
 .nav-item:hover .dropdown-icon { transform: rotate(180deg); }
 
-/* Dropdown */
-.dropdown {
+/* ==========================================================
+   Advanced Dropdown (hover, premium motion, no flicker)
+   ========================================================== */
+
+/* Underline (animated) */
+.nav-link-underline {
   position: absolute;
-  top: 100%;
-  left: 0;
-  background: var(--c-white);
-  min-width: 200px;
-  border: 1px solid var(--c-gray-100);
-  border-radius: 0 0 var(--radius-md) var(--radius-md);
-  box-shadow: var(--shadow-lg);
+  left: 14px;
+  right: 14px;
+  bottom: 7px;
+  height: 2px;
+  border-radius: var(--radius-full);
+  background: var(--c-primary);
   opacity: 0;
-  visibility: hidden;
-  transform: translateY(0.5rem);
-  transition: opacity var(--transition-slow), transform var(--transition-slow), visibility var(--transition-slow);
-  z-index: 100;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: opacity 200ms ease-out, transform 200ms ease-out;
+  pointer-events: none;
 }
-.nav-item:hover .dropdown {
+
+/* Make .nav-link a positioning context for underline */
+.nav-item .nav-link {
+  position: relative;
+}
+
+/* Dropdown panel (moved outside of the navbar items; appears under the navbar) */
+.nav-dropdown-panel {
+  position: absolute;
+  /* directly under the hovered element */
+  top: 100%;
+  z-index: 120;
+
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+
+  /* smooth + modern */
+  transform-origin: top;
+  box-shadow: 0 16px 40px -18px rgba(13, 43, 107, 0.35);
+
+
+
+  border-radius: 0.6rem;
+  padding: 0.25rem 0;
+
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(243, 244, 246, 0.85);
+  box-shadow: 0 12px 26px -18px rgba(13, 43, 107, 0.35);
+
   opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
+  pointer-events: auto;
+
+  /* Keep the same premium motion */
+  transform: translateY(0) scale(1);
 }
-.dropdown ul { padding: 0.5rem 0; }
+
+
+
+/* Parent item motion + underline */
+.nav-item:hover .nav-link,
+.nav-item:focus-within .nav-link {
+  color: #ffffff;
+}
+
+/* Only show underline when parent has submenu */
+.nav-item:hover .nav-link-underline,
+.nav-item:focus-within .nav-link-underline {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+/* Chevron rotation */
+.nav-item:hover .dropdown-icon {
+  transform: rotate(180deg);
+}
+
+.dropdown ul { padding: 0; }
+
+/* Submenu items */
 .dropdown-item {
   display: block;
-  padding: 0.5rem 1rem;
+  width: 100%;
+  padding: 0.55rem 1rem;
   font-size: 0.875rem;
   color: var(--c-gray-700);
-  transition: background var(--transition), color var(--transition);
+  border-radius: 10px;
+
+  opacity: 0;
+  transform: translateY(6px);
+  transition:
+    background 160ms ease-out,
+    color 160ms ease-out,
+    transform 180ms ease-out,
+    opacity 180ms ease-out;
 }
-.dropdown-item:hover {
-  background: var(--c-blue-50);
+
+/* Stagger animation when dropdown panel opens */
+.nav-dropdown-panel .dropdown-item {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 30–50ms stagger: using 40ms steps */
+.nav-dropdown-panel li:nth-child(1) .dropdown-item { transition-delay: 40ms; }
+.nav-dropdown-panel li:nth-child(2) .dropdown-item { transition-delay: 80ms; }
+.nav-dropdown-panel li:nth-child(3) .dropdown-item { transition-delay: 120ms; }
+.nav-dropdown-panel li:nth-child(4) .dropdown-item { transition-delay: 160ms; }
+.nav-dropdown-panel li:nth-child(5) .dropdown-item { transition-delay: 200ms; }
+.nav-dropdown-panel li:nth-child(6) .dropdown-item { transition-delay: 240ms; }
+.nav-dropdown-panel li:nth-child(7) .dropdown-item { transition-delay: 280ms; }
+.nav-dropdown-panel li:nth-child(8) .dropdown-item { transition-delay: 320ms; }
+
+/* Hover highlight for each submenu item */
+.nav-dropdown-panel .dropdown-item:hover {
+  background: rgba(13, 43, 107, 0.08);
   color: var(--c-primary);
+  transform: translateX(5px);
 }
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .dropdown,
+  .dropdown-item,
+  .nav-link-underline {
+    transition: none !important;
+    transform: none !important;
+  }
+  .nav-item:hover .dropdown,
+  .nav-item:focus-within .dropdown {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+  }
+  .nav-item:hover .dropdown-item,
+  .nav-item:focus-within .dropdown-item {
+    opacity: 1 !important;
+    transform: none !important;
+    transition-delay: 0ms !important;
+  }
+}
+
 
 .nav-link:focus-visible {
   outline: 3px solid rgba(251, 191, 36, 0.35);
