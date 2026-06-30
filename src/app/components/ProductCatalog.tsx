@@ -1,8 +1,9 @@
 import { useState, useMemo } from "react";
 import { Star, ShoppingCart, Heart, Eye, Sliders, ChevronDown, RefreshCw } from "lucide-react";
 import { ResponsiveImage } from "./utils/ResponsiveImage";
-import { useNavigation, useCart, Product } from "../context/AppContext";
-import { catalogProducts } from "./utils/products";
+import { useNavigation, useCart } from "../context/AppContext";
+import { Product } from "../types";
+import { getProducts } from "../services/api";
 
 const categoriesList = [
   "Catrable Lux",
@@ -100,9 +101,12 @@ export function ProductCatalog() {
   const [maxPrice, setMaxPrice] = useState<number>(120);
   const [sortBy, setSortBy] = useState<string>("default");
 
+  // Single product source shared with the admin panel (admin edits reflected).
+  const allProducts = useMemo(() => getProducts(), []);
+
   // Filter products based on selected category, search query, and max price
   const filteredProducts = useMemo(() => {
-    let result = catalogProducts;
+    let result = allProducts;
 
     // First filter by search query if present
     if (searchQuery.trim()) {
@@ -120,7 +124,7 @@ export function ProductCatalog() {
       
       // Fallback: If no direct matches, check similar
       if (result.length === 0) {
-        result = catalogProducts;
+        result = allProducts;
       }
     }
 
@@ -137,7 +141,7 @@ export function ProductCatalog() {
     }
 
     return result;
-  }, [activeCategory, searchQuery, maxPrice, sortBy]);
+  }, [allProducts, activeCategory, searchQuery, maxPrice, sortBy]);
 
   const categoryTitle = searchQuery
     ? `Résultats pour "${searchQuery}"`

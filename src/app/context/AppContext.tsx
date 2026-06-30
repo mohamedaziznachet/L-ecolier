@@ -1,18 +1,8 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
+import { Product, User } from "../types";
+import * as api from "../services/api";
 
-export interface Product {
-  id: number;
-  name: string;
-  price: string;
-  priceNum: number; // For easy subtotal calculations
-  oldPrice?: string | null;
-  badge?: string;
-  badgeColor?: string;
-  rating: number;
-  reviews: number;
-  img: string;
-  category?: string;
-}
+export type { Product, User } from "../types";
 
 export interface CartItem {
   product: Product;
@@ -21,24 +11,14 @@ export interface CartItem {
 
 export type ViewType = "home" | "category" | "cart" | "product" | "auth" | "admin";
 
-export interface UserType {
-  name: string;
-  email: string;
-  phone: string;
-  address: string;
-  city: string;
-  governorate: string;
-  statut: string;
-}
-
 interface NavigationContextType {
   currentView: ViewType;
   activeCategory: string;
   selectedProductId: number | null;
   navigateTo: (view: ViewType, category?: string) => void;
   navigateToProduct: (productId: number) => void;
-  user: UserType | null;
-  loginUser: (user: UserType) => void;
+  user: User | null;
+  loginUser: (user: User) => void;
   logoutUser: () => void;
   searchQuery: string;
   setSearchQuery: (query: string) => void;
@@ -62,47 +42,34 @@ export function AppProviders({ children }: { children: React.ReactNode }) {
   const [activeCategory, setActiveCategory] = useState<string>("");
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
   const [selectedProductId, setSelectedProductId] = useState<number | null>(null);
-  const [user, setUser] = useState<UserType | null>(null);
+  const [user, setUser] = useState<User | null>(null);
   const [searchQuery, setSearchQuery] = useState<string>("");
 
-  // Load user from localStorage on mount
+  // Load user from storage on mount
   useEffect(() => {
-    const savedUser = localStorage.getItem("ecolier_user");
-    if (savedUser) {
-      try {
-        setUser(JSON.parse(savedUser));
-      } catch (e) {
-        console.error("Error parsing user storage:", e);
-      }
-    }
+    const savedUser = api.getCurrentUser();
+    if (savedUser) setUser(savedUser);
   }, []);
 
-  const loginUser = (userData: UserType) => {
+  const loginUser = (userData: User) => {
     setUser(userData);
-    localStorage.setItem("ecolier_user", JSON.stringify(userData));
+    api.saveCurrentUser(userData);
   };
 
   const logoutUser = () => {
     setUser(null);
-    localStorage.removeItem("ecolier_user");
+    api.logout();
     setCurrentView("home");
   };
 
-  // Load cart from localStorage on mount
+  // Load cart from storage on mount
   useEffect(() => {
-    const savedCart = localStorage.getItem("ecolier_cart");
-    if (savedCart) {
-      try {
-        setCartItems(JSON.parse(savedCart));
-      } catch (e) {
-        console.error("Error parsing cart storage:", e);
-      }
-    }
+    setCartItems(api.getCart<CartItem>());
   }, []);
 
-  // Save cart to localStorage on change
+  // Save cart to storage on change
   useEffect(() => {
-    localStorage.setItem("ecolier_cart", JSON.stringify(cartItems));
+    api.saveCart(cartItems);
   }, [cartItems]);
 
   const navigateTo = (view: ViewType, category = "") => {

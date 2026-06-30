@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Trash2, Plus, Minus, ShoppingBag, ArrowLeft, Send, CheckCircle, ChevronDown, Sparkles } from "lucide-react";
 import { useCart, useNavigation } from "../context/AppContext";
+import { useAdmin } from "../context/AdminContext";
 
 const GOVERNORATES = [
   "Tunis", "Ariana", "Ben Arous", "Manouba", "Bizerte", "Nabeul", "Zaghouan",
@@ -12,6 +13,7 @@ const GOVERNORATES = [
 export function CartPage() {
   const { cartItems, removeFromCart, updateQuantity, cartTotal, clearCart } = useCart();
   const { navigateTo, user } = useNavigation();
+  const { addOrder } = useAdmin();
 
   // Form state
   const [name, setName] = useState(user?.name || "");
@@ -23,9 +25,9 @@ export function CartPage() {
   useEffect(() => {
     if (user) {
       setName(user.name);
-      setPhone(user.phone);
-      setGov(user.governorate);
-      setAddress(user.address);
+      setPhone(user.phone ?? "");
+      setGov(user.governorate ?? "");
+      setAddress(user.address ?? "");
     } else {
       setName("");
       setPhone("");
@@ -86,6 +88,14 @@ Merci de confirmer ma commande !`;
 
     // Open WhatsApp
     window.open(waUrl, "_blank");
+
+    // Persist the order so it shows up in the admin dashboard.
+    addOrder({
+      userId: user?.id ?? "guest",
+      productIds: cartItems.map((item) => item.product.id),
+      total: grandTotal,
+      date: new Date().toISOString(),
+    });
 
     // Show success view
     setIsSuccess(true);

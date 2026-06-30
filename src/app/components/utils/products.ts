@@ -1,4 +1,4 @@
-import { Product } from "../../context/AppContext";
+import { Product } from "../../types";
 
 export const catalogProducts: Product[] = [
   // Bomi > Catrable Lux

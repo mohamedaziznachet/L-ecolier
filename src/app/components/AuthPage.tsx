@@ -20,6 +20,7 @@ import {
 } from "lucide-react";
 import { useNavigation } from "../context/AppContext";
 import { useAdmin } from "../context/AdminContext";
+import * as api from "../services/api";
 
 type AuthMode = "login" | "signup";
 type SubMode = "form" | "forgot";
@@ -132,7 +133,7 @@ export function AuthPage() {
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    const savedEmail = localStorage.getItem("ecolier_remembered_email");
+    const savedEmail = api.getRememberedEmail();
     if (savedEmail) {
       setFormData((prev) => ({
         ...prev,
@@ -227,8 +228,6 @@ export function AuthPage() {
     setIsLoading(true);
 
     setTimeout(() => {
-      const storedUsers = JSON.parse(localStorage.getItem("ecolier_users") || "[]");
-
       if (mode === "login") {
         // ── Admin shortcut ──────────────────────────────────────────
         if (
@@ -246,9 +245,7 @@ export function AuthPage() {
           return;
         }
         // ── Regular user ────────────────────────────────────────────
-        const user = storedUsers.find(
-          (u: any) => u.email.toLowerCase() === formData.email.toLowerCase() && u.password === formData.password,
-        );
+        const user = api.login(formData.email, formData.password);
 
         if (!user) {
           setErrorMsg("Adresse e-mail ou mot de passe incorrect.");
@@ -256,11 +253,7 @@ export function AuthPage() {
           return;
         }
 
-        if (formData.remember) {
-          localStorage.setItem("ecolier_remembered_email", formData.email);
-        } else {
-          localStorage.removeItem("ecolier_remembered_email");
-        }
+        api.setRememberedEmail(formData.remember ? formData.email : null);
 
         loginUser(user);
         setSuccessMsg(`Ravi de vous revoir, ${user.name} ! Connexion réussie...`);
@@ -268,17 +261,13 @@ export function AuthPage() {
         return;
       }
 
-      const emailExists = storedUsers.some(
-        (u: any) => u.email.toLowerCase() === formData.email.toLowerCase(),
-      );
-
-      if (emailExists) {
+      if (api.emailExists(formData.email)) {
         setErrorMsg("Un compte existe déjà avec cette adresse e-mail.");
         setIsLoading(false);
         return;
       }
 
-      const newUser = {
+      const newUser = api.register({
         name: formData.name,
         email: formData.email,
         password: formData.password,
@@ -288,10 +277,8 @@ export function AuthPage() {
         governorate: formData.governorate,
         postalCode: formData.postalCode,
         statut: formData.statut,
-      };
+      });
 
-      storedUsers.push(newUser);
-      localStorage.setItem("ecolier_users", JSON.stringify(storedUsers));
       loginUser(newUser);
       setSuccessMsg("Votre compte client a été créé avec succès !");
       setTimeout(() => navigateTo("home"), 1200);
@@ -310,8 +297,7 @@ export function AuthPage() {
 
       setIsLoading(true);
       setTimeout(() => {
-        const storedUsers = JSON.parse(localStorage.getItem("ecolier_users") || "[]");
-        const userExists = storedUsers.some((u: any) => u.email.toLowerCase() === forgotEmail.toLowerCase());
+        const userExists = api.emailExists(forgotEmail);
 
         if (userExists) {
           setForgotStep(2);
@@ -335,11 +321,7 @@ export function AuthPage() {
 
     setIsLoading(true);
     setTimeout(() => {
-      const storedUsers = JSON.parse(localStorage.getItem("ecolier_users") || "[]").map((u: any) =>
-        u.email.toLowerCase() === forgotEmail.toLowerCase() ? { ...u, password: newPassword } : u,
-      );
-
-      localStorage.setItem("ecolier_users", JSON.stringify(storedUsers));
+      api.resetPassword(forgotEmail, newPassword);
       setSuccessMsg("Votre mot de passe a été modifié avec succès.");
       setTimeout(() => {
         setSubMode("form");

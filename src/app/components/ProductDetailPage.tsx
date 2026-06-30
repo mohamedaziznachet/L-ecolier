@@ -1,7 +1,7 @@
 import { useState, useMemo } from "react";
 import { Star, ShoppingCart, Heart, ChevronLeft, ShieldCheck, Truck, RotateCcw, AlertTriangle } from "lucide-react";
-import { useNavigation, useCart, Product } from "../context/AppContext";
-import { catalogProducts } from "./utils/products";
+import { useNavigation, useCart } from "../context/AppContext";
+import { getProducts } from "../services/api";
 import { ResponsiveImage } from "./utils/ResponsiveImage";
 
 export function ProductDetailPage() {
@@ -11,18 +11,21 @@ export function ProductDetailPage() {
   const [added, setAdded] = useState(false);
   const [wished, setWished] = useState(false);
 
+  // Single product source shared with the admin panel.
+  const allProducts = useMemo(() => getProducts(), []);
+
   // Find the selected product
   const product = useMemo(() => {
-    return catalogProducts.find((p) => p.id === selectedProductId) || null;
-  }, [selectedProductId]);
+    return allProducts.find((p) => p.id === selectedProductId) || null;
+  }, [allProducts, selectedProductId]);
 
   // Find related products in the same category
   const relatedProducts = useMemo(() => {
     if (!product) return [];
-    return catalogProducts
+    return allProducts
       .filter((p) => p.category === product.category && p.id !== product.id)
       .slice(0, 4);
-  }, [product]);
+  }, [allProducts, product]);
 
   if (!product) {
     return (

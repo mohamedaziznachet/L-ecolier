@@ -1,27 +1,8 @@
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+import { Product, User, Order } from '../types';
+import * as api from '../services/api';
 
-// Types for admin entities
-export type Product = {
-  id: string;
-  name: string;
-  description: string;
-  price: number;
-  imageUrl: string;
-};
-
-export type User = {
-  id: string;
-  name: string;
-  email: string;
-};
-
-export type Order = {
-  id: string;
-  userId: string;
-  productIds: string[];
-  total: number;
-  date: string; // ISO string
-};
+export type { Product, User, Order } from '../types';
 
 interface AdminContextProps {
   products: Product[];
@@ -32,107 +13,85 @@ interface AdminContextProps {
   logout: () => void;
   // CRUD helpers
   addProduct: (product: Omit<Product, 'id'>) => void;
-  updateProduct: (id: string, updates: Partial<Omit<Product, 'id'>>) => void;
-  deleteProduct: (id: string) => void;
+  updateProduct: (id: Product['id'], updates: Partial<Omit<Product, 'id'>>) => void;
+  deleteProduct: (id: Product['id']) => void;
   addUser: (user: Omit<User, 'id'>) => void;
-  updateUser: (id: string, updates: Partial<Omit<User, 'id'>>) => void;
-  deleteUser: (id: string) => void;
+  updateUser: (id: User['id'], updates: Partial<Omit<User, 'id'>>) => void;
+  deleteUser: (id: User['id']) => void;
   addOrder: (order: Omit<Order, 'id'>) => void;
-  updateOrder: (id: string, updates: Partial<Omit<Order, 'id'>>) => void;
-  deleteOrder: (id: string) => void;
+  updateOrder: (id: Order['id'], updates: Partial<Omit<Order, 'id'>>) => void;
+  deleteOrder: (id: Order['id']) => void;
 }
 
 const AdminContext = createContext<AdminContextProps | undefined>(undefined);
 
-const LOCAL_STORAGE_KEYS = {
-  products: 'admin_products',
-  users: 'admin_users',
-  orders: 'admin_orders',
-  isAdmin: 'admin_isAdmin',
-};
-
-// Helper to generate simple IDs
-const generateId = () => '_' + Math.random().toString(36).substr(2, 9);
+const ADMIN_EMAIL = 'admin@gmail.com';
+const ADMIN_PASSWORD = 'admin@123';
 
 export const AdminProvider = ({ children }: { children: ReactNode }) => {
   const [products, setProducts] = useState<Product[]>([]);
   const [users, setUsers] = useState<User[]>([]);
   const [orders, setOrders] = useState<Order[]>([]);
-  const [isAdmin, setIsAdmin] = useState<boolean>(false);
+  const [isAdmin, setIsAdminState] = useState<boolean>(false);
 
-  // Load from localStorage on mount
+  // Load from the shared data-access layer on mount.
   useEffect(() => {
-    const load = (key: string, setter: (data: any) => void) => {
-      const raw = localStorage.getItem(key);
-      if (raw) {
-        try {
-          setter(JSON.parse(raw));
-        } catch (_) {}
-      }
-    };
-    load(LOCAL_STORAGE_KEYS.products, setProducts);
-    load(LOCAL_STORAGE_KEYS.users, setUsers);
-    load(LOCAL_STORAGE_KEYS.orders, setOrders);
-    const adminFlag = localStorage.getItem(LOCAL_STORAGE_KEYS.isAdmin);
-    setIsAdmin(adminFlag === 'true');
+    setProducts(api.getProducts());
+    setUsers(api.getUsers());
+    setOrders(api.getOrders());
+    setIsAdminState(api.getIsAdmin());
   }, []);
 
-  // Persist changes
-  useEffect(() => {
-    localStorage.setItem(LOCAL_STORAGE_KEYS.products, JSON.stringify(products));
-  }, [products]);
-  useEffect(() => {
-    localStorage.setItem(LOCAL_STORAGE_KEYS.users, JSON.stringify(users));
-  }, [users]);
-  useEffect(() => {
-    localStorage.setItem(LOCAL_STORAGE_KEYS.orders, JSON.stringify(orders));
-  }, [orders]);
-  useEffect(() => {
-    localStorage.setItem(LOCAL_STORAGE_KEYS.isAdmin, String(isAdmin));
-  }, [isAdmin]);
-
-  // Simple hard‑coded login
+  // Simple hard-coded login
   const login = (username: string, password: string) => {
-    if (username === 'admin@gmail.com' && password === 'admin@123') {
-      setIsAdmin(true);
+    if (username === ADMIN_EMAIL && password === ADMIN_PASSWORD) {
+      setIsAdminState(true);
+      api.setIsAdmin(true);
+      // Refresh views in case other parts of the app registered users/products.
+      setUsers(api.getUsers());
+      setProducts(api.getProducts());
+      setOrders(api.getOrders());
       return true;
     }
     return false;
   };
 
-  const logout = () => setIsAdmin(false);
+  const logout = () => {
+    setIsAdminState(false);
+    api.setIsAdmin(false);
+  };
 
-  // CRUD implementations (products)
+  // Products
   const addProduct = (product: Omit<Product, 'id'>) => {
-    setProducts([...products, { ...product, id: generateId() }]);
+    setProducts(api.addProduct(product));
   };
-  const updateProduct = (id: string, updates: Partial<Omit<Product, 'id'>>) => {
-    setProducts(products.map(p => (p.id === id ? { ...p, ...updates } : p)));
+  const updateProduct = (id: Product['id'], updates: Partial<Omit<Product, 'id'>>) => {
+    setProducts(api.updateProduct(id, updates));
   };
-  const deleteProduct = (id: string) => {
-    setProducts(products.filter(p => p.id !== id));
+  const deleteProduct = (id: Product['id']) => {
+    setProducts(api.deleteProduct(id));
   };
 
   // Users
   const addUser = (user: Omit<User, 'id'>) => {
-    setUsers([...users, { ...user, id: generateId() }]);
+    setUsers(api.addUser(user));
   };
-  const updateUser = (id: string, updates: Partial<Omit<User, 'id'>>) => {
-    setUsers(users.map(u => (u.id === id ? { ...u, ...updates } : u)));
+  const updateUser = (id: User['id'], updates: Partial<Omit<User, 'id'>>) => {
+    setUsers(api.updateUser(id, updates));
   };
-  const deleteUser = (id: string) => {
-    setUsers(users.filter(u => u.id !== id));
+  const deleteUser = (id: User['id']) => {
+    setUsers(api.deleteUser(id));
   };
 
   // Orders
   const addOrder = (order: Omit<Order, 'id'>) => {
-    setOrders([...orders, { ...order, id: generateId() }]);
+    setOrders(api.createOrder(order));
   };
-  const updateOrder = (id: string, updates: Partial<Omit<Order, 'id'>>) => {
-    setOrders(orders.map(o => (o.id === id ? { ...o, ...updates } : o)));
+  const updateOrder = (id: Order['id'], updates: Partial<Omit<Order, 'id'>>) => {
+    setOrders(api.updateOrder(id, updates));
   };
-  const deleteOrder = (id: string) => {
-    setOrders(orders.filter(o => o.id !== id));
+  const deleteOrder = (id: Order['id']) => {
+    setOrders(api.deleteOrder(id));
   };
 
   return (
