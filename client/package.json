@@ -83,8 +83,9 @@
     "postcss": "^8.5.15",
     "tailwindcss": "^4.1.12",
     "typescript": "^6.0.3",
-    "vite": "6.3.5",
+    "vite": "^6.3.5",
     "vite-imagetools": "^8.0.0",
     "vite-plugin-compression": "^0.5.1"
   }
+
 }
