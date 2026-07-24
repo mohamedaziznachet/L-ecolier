@@ -4,6 +4,7 @@
     "module": "ESNext",
     "moduleResolution": "bundler",
     "rewriteRelativeImportExtensions": true,
+    "types": ["jest"],
     "lib": ["ES2020"],
     "skipLibCheck": true,
     "strict": true,
@@ -16,6 +17,5 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src/**/*"],
-  "exclude": ["src/tests/**/*", "src/**/*.test.ts", "src/**/*.spec.ts"]
+  "include": ["src/**/*"]
 }

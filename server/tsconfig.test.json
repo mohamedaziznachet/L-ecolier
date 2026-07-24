@@ -5,7 +5,6 @@
     "moduleResolution": "node",
     "ignoreDeprecations": "6.0",
     "rewriteRelativeImportExtensions": false,
-    "types": ["node", "jest"],
     "outDir": "dist-test"
   }
 }
