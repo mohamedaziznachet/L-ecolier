@@ -9,7 +9,7 @@ import fs from 'fs';
 import mongoose from 'mongoose';
 import { UserModel, OrderModel, ProductModel, BrandModel, CouponModel, ReviewModel } from '../models/index.ts';
 import { getAllProducts, insertProduct, updateProduct, deleteProduct, buildProductLookupQuery } from '../repositories/productRepository.ts';
-import { getSavedCategories, addCategory, deleteCategory } from '../repositories/categoryRepository.ts';
+import { getSavedCategories, addCategory, deleteCategory, resetCategories } from '../repositories/categoryRepository.ts';
 import { appendAuditEntry } from '../repositories/auditRepository.ts';
 import { getAllCoupons, getCouponById, insertCoupon, updateCoupon, deleteCoupon } from '../repositories/couponRepository.ts';
 
@@ -375,6 +375,16 @@ router.delete('/categories/:category', async (req: Request, res: Response) => {
   }
 });
 
+router.post('/categories/reset', async (_req: Request, res: Response) => {
+  try {
+    const categories = await resetCategories();
+    return res.json({ categories });
+  } catch (err: any) {
+    console.error(err);
+    return res.status(500).json({ error: err.message || 'Failed to reset categories' });
+  }
+});
+
 /* ------------------------------------------------------------------ */
 /*   Brands CRUD                                                       */
 /* ------------------------------------------------------------------ */
@@ -409,7 +419,10 @@ router.post('/brands', async (req: Request, res: Response) => {
 // PUT /admin/brands/:id
 router.put('/brands/:id', async (req: Request, res: Response) => {
   try {
-    const brand = await BrandModel.findByIdAndUpdate(req.params.id, req.body, { new: true, runValidators: true });
+    const updates = { ...req.body };
+    delete updates._id;
+    delete updates.__v;
+    const brand = await BrandModel.findByIdAndUpdate(req.params.id, updates, { new: true, runValidators: true });
     if (!brand) return res.status(404).json({ error: 'Brand not found' });
     return res.json({ updated: true, brand });
   } catch (err: any) {

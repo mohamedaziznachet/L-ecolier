@@ -150,6 +150,8 @@ export async function insertProduct(productData: any): Promise<string> {
  */
 export async function updateProduct(identifier: string | number, updates: any): Promise<any | null> {
   const payload = normalizeProduct({ ...updates, id: updates.id ?? identifier });
+  delete payload._id;
+  delete payload.__v;
   const query = buildProductLookupQuery(identifier);
   const updated = await ProductModel.findOneAndUpdate(
     query,

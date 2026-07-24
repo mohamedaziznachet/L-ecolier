@@ -18,10 +18,11 @@ const DEFAULT_CATEGORIES = [
   'Calculatrices',
   'Matériel artistique',
   'Papeterie',
+  'Fournitures scolaires',
 ];
 
 function normalizeCategory(value: any): string {
-  return String(value ?? '').trim();
+  return String(value ?? '').trim().replace(/Catrable/gi, 'Cartable');
 }
 
 /**
@@ -79,5 +80,15 @@ export async function addCategory(category: string): Promise<string[]> {
 export async function deleteCategory(category: string): Promise<string[]> {
   const normalized = normalizeCategory(category);
   await CategoryModel.deleteOne({ name: normalized });
+  return getSavedCategories();
+}
+
+/**
+ * Reset all categories back to default seed list.
+ */
+export async function resetCategories(): Promise<string[]> {
+  await CategoryModel.deleteMany({});
+  const docs = DEFAULT_CATEGORIES.map((name) => ({ name }));
+  await CategoryModel.insertMany(docs, { ordered: false }).catch(() => {});
   return getSavedCategories();
 }

@@ -16,14 +16,27 @@ const KEYS = {
 } as const;
 
 function getHeaders(): HeadersInit {
-  return {
+  const headers: Record<string, string> = {
     "Content-Type": "application/json",
   };
+  const token = localStorage.getItem(KEYS.token) || localStorage.getItem("ecolier_token");
+  if (token) {
+    headers["Authorization"] = `Bearer ${token}`;
+  }
+  return headers;
 }
 
 async function apiFetch(input: RequestInfo | URL, init?: RequestInit): Promise<Response> {
   const options = init || {};
   options.credentials = "include";
+  const token = localStorage.getItem(KEYS.token) || localStorage.getItem("ecolier_token");
+  if (token) {
+    const headers = new Headers(options.headers || {});
+    if (!headers.has("Authorization")) {
+      headers.set("Authorization", `Bearer ${token}`);
+    }
+    options.headers = headers;
+  }
   return window.fetch(input, options);
 }
 
@@ -452,6 +465,11 @@ export async function login(email: string, password: string, code?: string, temp
   if (res.ok && data && (data as any).user) {
     localStorage.setItem(KEYS.currentUser, JSON.stringify((data as any).user));
     localStorage.setItem(KEYS.isAdmin, String((data as any).user.statut === "admin"));
+    const token = (data as any).token || (data as any).accessToken;
+    if (token) {
+      localStorage.setItem(KEYS.token, token);
+      localStorage.setItem("ecolier_token", token);
+    }
   }
   return data ? (data as any).user : Promise.reject(new Error('Empty response from server'));
 }
@@ -516,7 +534,7 @@ export function logout(): void {
 
 // ── Orders ───────────────────────────────────────────────────────────────────
 
-export async function getOrders(page = 1, limit = 10, search = '', status = ''): Promise<Order[]> {
+export async function getOrders(page = 1, limit = 1000, search = '', status = ''): Promise<Order[]> {
   try {
     const params = new URLSearchParams({
       page: page.toString(),

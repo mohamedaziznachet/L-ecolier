@@ -32,16 +32,15 @@ export function Footer() {
   const { navigateTo } = useNavigation();
   return (
     <footer>
-      {/* Brand logos bar */}
-      <div className="brands-list">
-        {brandLogos.map((brand) => (
-          <div key={brand.name} className="brand-chip">
-            <img
-              src={brand.img}
-              alt={brand.name}
-              className="brand-logo"/>
-          </div>
-        ))}
+      {/* Brand logos bar - Infinite Marquee Ticker */}
+      <div className="brands-ticker-wrap">
+        <div className="brands-ticker-track">
+          {[...brandLogos, ...brandLogos, ...brandLogos, ...brandLogos].map((brand, idx) => (
+            <div key={`${brand.name}-${idx}`} className="brand-chip-small">
+              <img src={brand.img} alt={brand.name} className="brand-logo-small" />
+            </div>
+          ))}
+        </div>
       </div>
       {/* Main footer */}
       <div className="footer-main">

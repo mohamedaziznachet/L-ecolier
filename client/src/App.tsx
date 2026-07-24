@@ -62,7 +62,6 @@ function MainAppContent() {
           <>
             <Hero />
             <Categories />
-            <Promotions />
             <BestSellers />
             <Stats />
             <Testimonials />

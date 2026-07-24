@@ -4,7 +4,7 @@ import bcrypt from 'bcrypt';
 
 // Product Schema
 const productSchema = new Schema({
-  id: { type: Number, unique: true }, // numeric ID for legacy compatibility
+  id: { type: Schema.Types.Mixed }, // numeric or string ID for legacy compatibility
   name: { type: String, required: true, trim: true },
   price: { type: String, required: true },
   priceNum: { type: Number, required: true, min: 0 },

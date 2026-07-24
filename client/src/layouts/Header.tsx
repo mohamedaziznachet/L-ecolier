@@ -388,6 +388,21 @@ export function Header() {
         )}
       </nav>
 
+      {/* ── Mobile menu backdrop ── */}
+      {mobileOpen && (
+        <div
+          className="mobile-menu-backdrop"
+          onClick={() => setMobileOpen(false)}
+          style={{
+            position: "fixed",
+            inset: 0,
+            background: "rgba(0, 0, 0, 0.45)",
+            backdropFilter: "blur(2px)",
+            zIndex: 130,
+          }}
+        />
+      )}
+
       {/* ── Mobile menu ── */}
       {mobileOpen && (
         <div className="mobile-menu" aria-label="Menu mobile">

@@ -101,7 +101,10 @@ router.post('/login', loginLimiter, [
       res.cookie('refreshToken', tokens.refreshToken, { ...cookieOptions, maxAge: 7 * 24 * 60 * 60 * 1000, path: '/api/auth/refresh' });
       
       return res.json({
-        user: { id: 'admin-id', name: 'Administrateur', email: ADMIN_EMAIL, statut: 'admin' }
+        user: { id: 'admin-id', name: 'Administrateur', email: ADMIN_EMAIL, statut: 'admin' },
+        token: tokens.accessToken,
+        accessToken: tokens.accessToken,
+        refreshToken: tokens.refreshToken,
       });
     } else {
       adminLockoutStore.failedAttempts += 1;
@@ -135,7 +138,10 @@ router.post('/login', loginLimiter, [
       res.cookie('refreshToken', tokens.refreshToken, { ...cookieOptions, maxAge: 7 * 24 * 60 * 60 * 1000, path: '/api/auth/refresh' });
       
       return res.json({
-        user: { id: user._id.toString(), name: user.name, email: user.email, phone: user.phone || '', address: user.address || '', city: user.city || '', governorate: user.governorate || '', postalCode: user.postalCode || '', statut: user.statut || 'client' }
+        user: { id: user._id.toString(), name: user.name, email: user.email, phone: user.phone || '', address: user.address || '', city: user.city || '', governorate: user.governorate || '', postalCode: user.postalCode || '', statut: user.statut || 'client' },
+        token: tokens.accessToken,
+        accessToken: tokens.accessToken,
+        refreshToken: tokens.refreshToken,
       });
     } else {
       const updates: any = { $inc: { failedLoginAttempts: 1 } };
@@ -169,7 +175,12 @@ router.post('/refresh', async (req: Request, res: Response) => {
   res.cookie('jwt', result.newTokenPair.accessToken, { ...cookieOptions, maxAge: 15 * 60 * 1000 });
   res.cookie('refreshToken', result.newTokenPair.refreshToken, { ...cookieOptions, maxAge: 7 * 24 * 60 * 60 * 1000, path: '/api/auth/refresh' });
 
-  return res.json({ success: true });
+  return res.json({
+    success: true,
+    token: result.newTokenPair.accessToken,
+    accessToken: result.newTokenPair.accessToken,
+    refreshToken: result.newTokenPair.refreshToken,
+  });
 });
 
 // Revoke Refresh Token Route (Logout)

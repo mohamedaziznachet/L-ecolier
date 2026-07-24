@@ -22,82 +22,59 @@ function CatalogProductCard({ product }: { product: Product }) {
   };
 
   return (
-    <div className="product-card" onClick={() => navigateToProduct(product.id)} style={{ cursor: "pointer", display: "flex", flexDirection: "column", height: "100%" }}>
-      <div className="product-img-wrap">
-        <ResponsiveImage src={product.img} alt={product.name} className="product-img" />
-        {product.badge && (
-          <span className="product-badge" style={{ backgroundColor: product.badgeColor ?? "var(--c-primary)" }}>
+    <div className="ref-product-card" onClick={() => navigateToProduct(product.id)}>
+      <div className="ref-card-img-wrap">
+        <ResponsiveImage src={product.img} alt={product.name} className="ref-card-img" />
+        
+        {product.badge ? (
+          <span
+            className={
+              product.badge.includes("-") || product.badge.toLowerCase().includes("promo")
+                ? "ref-card-badge-discount"
+                : "ref-card-badge"
+            }
+            style={product.badgeColor ? { backgroundColor: product.badgeColor } : undefined}
+          >
             {product.badge}
           </span>
-        )}
-        <div className="product-actions">
-          <button
-            className="product-action-btn"
-            onClick={(e) => {
-              e.stopPropagation();
-              toggleWishlist(product);
-            }}
-            title={isWished ? "Retirer des favoris" : "Ajouter aux favoris"}
-          >
-            <Heart size={14} fill={isWished ? "var(--c-danger)" : "none"} stroke={isWished ? "var(--c-danger)" : "#666"} />
-          </button>
-          <button
-            className="product-action-btn"
-            onClick={(e) => {
-              e.stopPropagation();
-              navigateToProduct(product.id);
-            }}
-            title="Aperçu rapide"
-          >
-            <Eye size={14} stroke="#666" />
-          </button>
-        </div>
+        ) : product.discount && product.discount > 0 ? (
+          <span className="ref-card-badge-discount">-{product.discount}%</span>
+        ) : product.oldPrice ? (
+          <span className="ref-card-badge-discount">Promo</span>
+        ) : null}
+
+        <button
+          className="ref-card-wishlist-btn"
+          onClick={(e) => {
+            e.stopPropagation();
+            toggleWishlist(product);
+          }}
+          title={isWished ? "Retirer des favoris" : "Ajouter aux favoris"}
+        >
+          <Heart size={18} fill={isWished ? "#ef4444" : "none"} stroke={isWished ? "#ef4444" : "#64748b"} />
+        </button>
       </div>
 
-      <div className="product-body" style={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
-        <div>
-          {product.brand && (
-            <span style={{ fontSize: "0.72rem", color: "var(--c-text-muted)", textTransform: "uppercase", fontWeight: 600 }}>
-              {product.brand}
-            </span>
+      <div className="ref-card-info">
+        <h3 className="ref-card-title">{product.name}</h3>
+        <div className="ref-card-price-row">
+          {product.oldPrice && (
+            <span className="ref-card-old-price">{product.oldPrice}</span>
           )}
-          <p className="product-name" style={{ marginTop: "0.2rem", fontWeight: 600 }}>{product.name}</p>
-
-          <div className="product-stars" style={{ margin: "0.3rem 0" }}>
-            <div className="star-row">
-              {Array.from({ length: 5 }).map((_, i) => (
-                <Star
-                  key={i}
-                  size={11}
-                  fill={i < Math.floor(product.rating || 5) ? "var(--c-accent)" : "none"}
-                  stroke="var(--c-accent)"
-                />
-              ))}
-            </div>
-            <span className="product-reviews">({product.reviews || 0})</span>
-          </div>
+          <span className="ref-card-price">{product.price}</span>
         </div>
 
-        <div className="product-footer" style={{ marginTop: "0.75rem" }}>
-          <div style={{ display: "flex", alignItems: "baseline", gap: "0.4rem" }}>
-            <span className="product-price" style={{ fontWeight: 700, color: "var(--c-primary)" }}>
-              {product.price}
-            </span>
-            {product.oldPrice && (
-              <span style={{ fontSize: "0.78rem", textDecoration: "line-through", color: "var(--c-text-muted)" }}>
-                {product.oldPrice}
-              </span>
-            )}
-          </div>
-          <button
-            className="add-to-cart-btn"
-            onClick={handleAdd}
-            style={{ backgroundColor: added ? "var(--c-success)" : "var(--c-primary)", transition: "background-color 0.2s ease" }}
-            title="Ajouter au panier"
-          >
-            {added ? "Ajouté !" : <ShoppingCart size={15} />}
-          </button>
-        </div>
+        <button
+          className="ref-buy-btn"
+          onClick={handleAdd}
+          style={{
+            backgroundColor: added ? "var(--c-success)" : "var(--c-primary)",
+            transition: "all 0.2s ease",
+          }}
+        >
+          <ShoppingCart size={15} />
+          <span>{added ? "Ajouté !" : "Acheter"}</span>
+        </button>
       </div>
     </div>
   );
@@ -107,7 +84,7 @@ export function ProductCatalog() {
   const { activeCategory, navigateTo, searchQuery, setSearchQuery, pageNumber, navigateToPage } = useNavigation();
   const { categories } = useAdmin();
 
-  const itemsPerPage = 20;
+  const itemsPerPage = 12;
 
   const [minPrice, setMinPrice] = useState<number | "">("");
   const [maxPrice, setMaxPrice] = useState<number | "">(1000);
@@ -250,16 +227,31 @@ export function ProductCatalog() {
       </div>
 
       {/* Mobile Filter Toggle Button */}
-      <div style={{ display: "none", marginBottom: "1rem" }} className="mobile-filter-toggle-wrap">
+      <div className="mobile-filter-toggle-wrap" style={{ marginBottom: "1rem" }}>
         <button
           className="btn-primary"
           onClick={() => setMobileFilterOpen(!mobileFilterOpen)}
-          style={{ display: "flex", alignItems: "center", gap: "0.5rem", width: "100%", justifyContent: "center", padding: "0.6rem" }}
+          style={{ display: "flex", alignItems: "center", gap: "0.5rem", width: "100%", justifyContent: "center", padding: "0.65rem 1rem" }}
         >
           <Filter size={16} />
           <span>{mobileFilterOpen ? "Fermer les filtres" : "Afficher les filtres"}</span>
         </button>
       </div>
+
+      {/* Backdrop overlay for mobile filter drawer */}
+      {mobileFilterOpen && (
+        <div
+          className="mobile-filter-backdrop"
+          onClick={() => setMobileFilterOpen(false)}
+          style={{
+            position: "fixed",
+            inset: 0,
+            background: "rgba(0, 0, 0, 0.5)",
+            backdropFilter: "blur(3px)",
+            zIndex: 140,
+          }}
+        />
+      )}
 
       <div className="catalog-layout">
         {/* Sidebar Filters */}
@@ -406,21 +398,71 @@ export function ProductCatalog() {
 
         {/* Main Content Grid */}
         <div className="catalog-main">
-          <div className="catalog-toolbar">
-            <h1 className="catalog-title">
-              {categoryTitle}
-              <span className="catalog-count-label">({totalItems} articles)</span>
-            </h1>
+          {/* Reference Horizontal Top Filter Bar */}
+          <div className="top-filter-bar">
+            <div className="filter-pills-left">
+              <span className="filter-by-label">Filtrer par :</span>
 
-            <div className="toolbar-actions">
-              <div className="sort-select-wrapper">
-                <select value={sortBy} onChange={(e) => setSortBy(e.target.value)} className="sort-select">
-                  <option value="default">Trier par défaut</option>
+              {/* Categories */}
+              <div className="filter-pill-dropdown">
+                <select
+                  value={activeCategory}
+                  onChange={(e) => {
+                    setSearchQuery("");
+                    navigateTo("category", e.target.value);
+                  }}
+                  className="filter-pill-select"
+                >
+                  <option value="">Catégories</option>
+                  {categories.map((cat) => (
+                    <option key={cat} value={cat}>
+                      {cat}
+                    </option>
+                  ))}
+                </select>
+                <ChevronDown size={14} className="pill-icon" />
+              </div>
+
+              {/* Brands */}
+              {brandsList.length > 0 && (
+                <div className="filter-pill-dropdown">
+                  <select
+                    value={selectedBrand}
+                    onChange={(e) => setSelectedBrand(e.target.value)}
+                    className="filter-pill-select"
+                  >
+                    <option value="">Marque</option>
+                    {brandsList.map((b) => (
+                      <option key={b._id || b.id} value={b.name}>
+                        {b.name}
+                      </option>
+                    ))}
+                  </select>
+                  <ChevronDown size={14} className="pill-icon" />
+                </div>
+              )}
+
+              {/* Result Count */}
+              <span className="filter-results-count">{totalItems} résultats</span>
+
+              {(activeCategory || selectedBrand || searchQuery) && (
+                <button onClick={handleResetFilters} className="clear-filters-btn">
+                  Réinitialiser
+                </button>
+              )}
+            </div>
+
+            {/* Sort Dropdown */}
+            <div className="filter-sort-right">
+              <span className="sort-by-label">Trier par</span>
+              <div className="sort-pill-dropdown">
+                <select value={sortBy} onChange={(e) => setSortBy(e.target.value)} className="sort-pill-select">
+                  <option value="default">Tri par défaut</option>
                   <option value="price-asc">Prix : croissant</option>
                   <option value="price-desc">Prix : décroissant</option>
                   <option value="rating">Mieux notés</option>
                 </select>
-                <ChevronDown size={14} className="sort-select-icon" />
+                <ChevronDown size={14} className="pill-icon" />
               </div>
             </div>
           </div>

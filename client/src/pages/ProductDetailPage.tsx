@@ -104,11 +104,19 @@ export function ProductDetailPage() {
         <div className="product-detail-media">
           <div className="detail-img-wrapper">
             <ResponsiveImage src={product.img} alt={product.name} className="detail-main-img" />
-            {product.badge && (
-              <span className="product-badge detail-badge" style={{ backgroundColor: product.badgeColor ?? "var(--c-primary)" }}>
+            {product.badge ? (
+              <span className="product-badge detail-badge" style={product.badgeColor ? { backgroundColor: product.badgeColor } : undefined}>
                 {product.badge}
               </span>
-            )}
+            ) : product.discount && product.discount > 0 ? (
+              <span className="product-badge detail-badge" style={{ backgroundColor: "#ef4444" }}>
+                -{product.discount}%
+              </span>
+            ) : product.oldPrice ? (
+              <span className="product-badge detail-badge" style={{ backgroundColor: "#ef4444" }}>
+                Promo
+              </span>
+            ) : null}
           </div>
         </div>
 

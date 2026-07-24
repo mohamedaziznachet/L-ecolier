@@ -1,22 +1,16 @@
-import { useState } from "react";
-import { ShoppingCart, Eye, Heart, Star, ChevronRight } from "lucide-react";
+import { useState, useEffect } from "react";
+import { ShoppingCart, Heart, ChevronRight, RefreshCw } from "lucide-react";
 import { ResponsiveImage } from "../utils/ResponsiveImage";
-import { useCart, useNavigation } from "../context/AppContext";
+import { useCart, useNavigation, useWishlist } from "../context/AppContext";
+import { Product } from "../types";
+import { getFilteredProducts } from "../services/api";
 
-const products = [
-  { id: 1, name: "Cahier scolaire 200 pages",    price: "1,800 DT",  priceNum: 1.8,  oldPrice: "2,200 DT", badge: "-18%",   badgeColor: "#e53935", rating: 4.8, reviews: 124, img: "https://images.unsplash.com/photo-1722929309984-c6b3e55dd6e5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwyfHxzY2hvb2wlMjBub3RlYm9va3MlMjBwZW5jaWxzJTIwZGVza3xlbnwxfHx8fDE3ODIyMTM5NTR8MA&ixlib=rb-4.1.0&q=80&w=400" },
-  { id: 2, name: "Plumier scolaire complet",     price: "12,500 DT", priceNum: 12.5, oldPrice: "15,000 DT",badge: "-17%",   badgeColor: "#e53935", rating: 4.9, reviews: 89,  img: "https://images.unsplash.com/photo-1615988938302-bd2a5a7023bc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHw0fHxzY2hvb2wlMjBzdXBwbGllcyUyMGJhY2twYWNrJTIwc3RhdGlvbmVyeXxlbnwxfHx8fDE3ODIyMTM5NTR8MA&ixlib=rb-4.1.0&q=80&w=400" },
-  { id: 3, name: "Classeur A4 polypropylène",    price: "4,000 DT",  priceNum: 4.0,  oldPrice: null,        badge: "Nouveau",badgeColor: "#0d2b6b", rating: 4.7, reviews: 56,  img: "https://images.unsplash.com/photo-1779684998897-ce5de594a5ac?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHw0fHxzY2hvb2wlMjBub3RlYm9va3MlMjBwZW5jaWxzJTIwZGVza3xlbnwxfHx8fDE3ODIyMTM5NTR8MA&ixlib=rb-4.1.0&q=80&w=400" },
-  { id: 4, name: "Boîte de crayons de couleur",  price: "8,500 DT",  priceNum: 8.5,  oldPrice: "10,000 DT",badge: "-15%",   badgeColor: "#e53935", rating: 4.6, reviews: 203, img: "https://images.unsplash.com/photo-1568205612837-017257d2310a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzY2hvb2wlMjBub3RlYm9va3MlMjBwZW5jaWxzJTIwZGVza3xlbnwxfHx8fDE3ODIyMTM5NTR8MA&ixlib=rb-4.1.0&q=80&w=400" },
-  { id: 5, name: "Sac à dos ergonomique",        price: "45,000 DT", priceNum: 45.0, oldPrice: "55,000 DT",badge: "-18%",   badgeColor: "#e53935", rating: 4.9, reviews: 178, img: "https://images.unsplash.com/photo-1535982330050-f1c2fb79ff78?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwyfHxzY2hvb2wlMjBzdXBwbGllcyUyMGJhY2twYWNrJTIwc3RhdGlvbmVyeXxlbnwxfHx8fDE3ODIyMTM5NTR8MA&ixlib=rb-4.1.0&q=80&w=400" },
-  { id: 6, name: "Calculatrice scientifique",    price: "52,000 DT", priceNum: 52.0, oldPrice: "65,000 DT",badge: "-20%",   badgeColor: "#e53935", rating: 4.8, reviews: 95,  img: "https://images.unsplash.com/photo-1574607383077-47ddc2dc51c4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwyfHxjYWxjdWxhdG9yJTIwc2NpZW50aWZpYyUyMHN0dWRlbnR8ZW58MXx8fHwxNzgyMjEzOTU5fDA&ixlib=rb-4.1.0&q=80&w=400" },
-];
-
-function ProductCard({ product }: { product: typeof products[0] }) {
-  const [wished, setWished]   = useState(false);
-  const [added, setAdded]     = useState(false);
+function BestSellerCard({ product }: { product: Product }) {
+  const { toggleWishlist, isInWishlist } = useWishlist();
+  const [added, setAdded] = useState(false);
   const { navigateToProduct } = useNavigation();
-  const { addToCart }         = useCart();
+  const { addToCart } = useCart();
+  const isWished = isInWishlist(product.id);
 
   const handleAdd = (e: React.MouseEvent) => {
     e.stopPropagation();
@@ -26,58 +20,59 @@ function ProductCard({ product }: { product: typeof products[0] }) {
   };
 
   return (
-    <div className="product-card" onClick={() => navigateToProduct(product.id)} style={{ cursor: "pointer" }}>
-      <div className="product-img-wrap">
-        <ResponsiveImage src={product.img} alt={product.name} className="product-img" />
-        <span className="product-badge" style={{ backgroundColor: product.badgeColor }}>
-          {product.badge}
-        </span>
-        <div className="product-actions">
-          <button
-            className="product-action-btn"
-            onClick={(e) => {
-              e.stopPropagation();
-              setWished(!wished);
-            }}
+    <div className="ref-product-card" onClick={() => navigateToProduct(product.id)}>
+      <div className="ref-card-img-wrap">
+        <ResponsiveImage src={product.img} alt={product.name} className="ref-card-img" />
+        
+        {product.badge ? (
+          <span
+            className={
+              product.badge.includes("-") || product.badge.toLowerCase().includes("promo")
+                ? "ref-card-badge-discount"
+                : "ref-card-badge"
+            }
+            style={product.badgeColor ? { backgroundColor: product.badgeColor } : undefined}
           >
-            <Heart size={13} fill={wished ? "#e53935" : "none"} stroke={wished ? "#e53935" : "#666"} />
-          </button>
-          <button
-            className="product-action-btn"
-            onClick={(e) => {
-              e.stopPropagation();
-              navigateToProduct(product.id);
-            }}
-          >
-            <Eye size={13} stroke="#666" />
-          </button>
-        </div>
+            {product.badge}
+          </span>
+        ) : product.discount && product.discount > 0 ? (
+          <span className="ref-card-badge-discount">-{product.discount}%</span>
+        ) : product.oldPrice ? (
+          <span className="ref-card-badge-discount">Promo</span>
+        ) : null}
+
+        <button
+          className="ref-card-wishlist-btn"
+          onClick={(e) => {
+            e.stopPropagation();
+            toggleWishlist(product);
+          }}
+          title={isWished ? "Retirer des favoris" : "Ajouter aux favoris"}
+        >
+          <Heart size={18} fill={isWished ? "#ef4444" : "none"} stroke={isWished ? "#ef4444" : "#64748b"} />
+        </button>
       </div>
 
-      <div className="product-body">
-        <p className="product-name">{product.name}</p>
-
-        <div className="product-stars">
-          <div className="star-row">
-            {Array.from({ length: 5 }).map((_, i) => (
-              <Star key={i} size={10} fill={i < Math.floor(product.rating) ? "#fbbf24" : "none"} stroke="#fbbf24" />
-            ))}
-          </div>
-          <span className="product-reviews">({product.reviews})</span>
+      <div className="ref-card-info">
+        <h3 className="ref-card-title">{product.name}</h3>
+        <div className="ref-card-price-row">
+          {product.oldPrice && (
+            <span className="ref-card-old-price">{product.oldPrice}</span>
+          )}
+          <span className="ref-card-price">{product.price}</span>
         </div>
 
-        <div className="product-footer">
-          <div>
-            <span className="product-price">{product.price}</span>
-          </div>
-          <button
-            className="add-to-cart-btn"
-            onClick={handleAdd}
-            style={{ backgroundColor: added ? "#059669" : "#0d2b6b" }}
-          >
-            <ShoppingCart size={14} />
-          </button>
-        </div>
+        <button
+          className="ref-buy-btn"
+          onClick={handleAdd}
+          style={{
+            backgroundColor: added ? "var(--c-success)" : "var(--c-primary)",
+            transition: "all 0.2s ease",
+          }}
+        >
+          <ShoppingCart size={15} />
+          <span>{added ? "Ajouté !" : "Acheter"}</span>
+        </button>
       </div>
     </div>
   );
@@ -85,6 +80,27 @@ function ProductCard({ product }: { product: typeof products[0] }) {
 
 export function BestSellers() {
   const { navigateTo } = useNavigation();
+  const [bestSellers, setBestSellers] = useState<Product[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    let isCancelled = false;
+    (async () => {
+      try {
+        const res = await getFilteredProducts({ limit: 4 });
+        if (!isCancelled) {
+          setBestSellers(res.products.slice(0, 4));
+        }
+      } catch (err) {
+        console.error("Error fetching best sellers from database:", err);
+      } finally {
+        if (!isCancelled) setLoading(false);
+      }
+    })();
+    return () => {
+      isCancelled = true;
+    };
+  }, []);
 
   return (
     <section className="page-section">
@@ -105,11 +121,17 @@ export function BestSellers() {
         </a>
       </div>
 
-      <div className="products-grid">
-        {products.map((p) => (
-          <ProductCard key={p.id} product={p} />
-        ))}
-      </div>
+      {loading ? (
+        <div style={{ textAlign: "center", padding: "3rem" }}>
+          <RefreshCw size={32} className="spin-icon" style={{ animation: "spin 1s linear infinite", color: "var(--c-primary)" }} />
+        </div>
+      ) : (
+        <div className="catalog-grid">
+          {bestSellers.map((p) => (
+            <BestSellerCard key={p.id} product={p} />
+          ))}
+        </div>
+      )}
     </section>
   );
 }
