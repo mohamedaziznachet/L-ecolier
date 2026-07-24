@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: lecolier-backend
+    env: node
+    buildCommand: npm ci
+    startCommand: npm run backend
+    healthCheckPath: /api/health

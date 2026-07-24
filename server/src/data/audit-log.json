@@ -1,0 +1,1508 @@
+[
+  {
+    "action": "delete-product",
+    "entity": "product",
+    "entityId": "777",
+    "success": true,
+    "details": "{\"deletedProduct\":{\"$__\":{\"activePaths\":{\"paths\":{\"priceNum\":\"init\",\"price\":\"init\",\"name\":\"init\",\"priceBeforeDiscount\":\"init\",\"discount\":\"init\",\"oldPrice\":\"init\",\"schoolLevel\":\"init\",\"badge\":\"init\",\"badgeColor\":\"init\",\"rating\":\"init\",\"reviews\":\"init\",\"img\":\"init\",\"images\":\"init\",\"category\":\"init\",\"brand\":\"init\",\"description\":\"init\",\"stock\":\"init\",\"featured\":\"init\",\"status\":\"init\",\"_id\":\"init\",\"id\":\"init\",\"specifications\":\"init\",\"__v\":\"init\"},\"states\":{\"require\":{},\"default\":{},\"init\":{\"_id\":true,\"id\":true,\"name\":true,\"price\":true,\"priceNum\":true,\"priceBeforeDiscount\":true,\"discount\":true,\"oldPrice\":true,\"schoolLevel\":true,\"badge\":true,\"badgeColor\":true,\"rating\":true,\"reviews\":true,\"img\":true,\"images\":true,\"category\":true,\"brand\":true,\"description\":true,\"stock\":true,\"featured\":true,\"status\":true,\"specifications\":true,\"__v\":true}}},\"skipId\":true},\"$isNew\":false,\"_doc\":{\"_id\":\"6a5e2ec47dc66d0132528277\",\"id\":777,\"name\":\"Produit modifié\",\"price\":\"0 DT\",\"priceNum\":13000,\"priceBeforeDiscount\":null,\"discount\":0,\"oldPrice\":null,\"schoolLevel\":null,\"badge\":null,\"badgeColor\":null,\"rating\":5,\"reviews\":0,\"img\":\"\",\"images\":[],\"category\":\"Autre\",\"brand\":\"\",\"description\":\"\",\"stock\":0,\"featured\":false,\"status\":\"active\",\"specifications\":[],\"__v\":0},\"id\":777,\"name\":\"Produit modifié\",\"price\":\"0 DT\",\"priceNum\":13000,\"oldPrice\":null,\"schoolLevel\":null,\"badge\":null,\"badgeColor\":null,\"rating\":5,\"reviews\":0,\"img\":\"\",\"images\":[],\"category\":\"Autre\",\"description\":\"\",\"stock\":0,\"specifications\":[]}}",
+    "user": "admin@example.com",
+    "role": "admin",
+    "timestamp": "2026-07-20T14:20:52.721Z"
+  },
+  {
+    "action": "update-product",
+    "entity": "product",
+    "entityId": "777",
+    "success": true,
+    "details": "{\"name\":\"Produit modifié\",\"priceNum\":13000}",
+    "user": "admin@example.com",
+    "role": "admin",
+    "timestamp": "2026-07-20T14:20:52.709Z"
+  },
+  {
+    "action": "create-product",
+    "entity": "product",
+    "entityId": "6a5e2ec47dc66d0132528277",
+    "success": true,
+    "details": "{\"name\":\"Produit test\",\"category\":\"Test\"}",
+    "user": "admin@example.com",
+    "role": "admin",
+    "timestamp": "2026-07-20T14:20:52.690Z"
+  },
+  {
+    "action": "delete-product",
+    "entity": "product",
+    "entityId": "777",
+    "success": true,
+    "details": "{\"deletedProduct\":{\"$__\":{\"activePaths\":{\"paths\":{\"priceNum\":\"init\",\"price\":\"init\",\"name\":\"init\",\"priceBeforeDiscount\":\"init\",\"discount\":\"init\",\"oldPrice\":\"init\",\"schoolLevel\":\"init\",\"badge\":\"init\",\"badgeColor\":\"init\",\"rating\":\"init\",\"reviews\":\"init\",\"img\":\"init\",\"images\":\"init\",\"category\":\"init\",\"brand\":\"init\",\"description\":\"init\",\"stock\":\"init\",\"featured\":\"init\",\"status\":\"init\",\"_id\":\"init\",\"id\":\"init\",\"specifications\":\"init\",\"__v\":\"init\"},\"states\":{\"require\":{},\"default\":{},\"init\":{\"_id\":true,\"id\":true,\"name\":true,\"price\":true,\"priceNum\":true,\"priceBeforeDiscount\":true,\"discount\":true,\"oldPrice\":true,\"schoolLevel\":true,\"badge\":true,\"badgeColor\":true,\"rating\":true,\"reviews\":true,\"img\":true,\"images\":true,\"category\":true,\"brand\":true,\"description\":true,\"stock\":true,\"featured\":true,\"status\":true,\"specifications\":true,\"__v\":true}}},\"skipId\":true},\"$isNew\":false,\"_doc\":{\"_id\":\"6a5e2eaa5cac03ea9760adae\",\"id\":777,\"name\":\"Produit modifié\",\"price\":\"0 DT\",\"priceNum\":13000,\"priceBeforeDiscount\":null,\"discount\":0,\"oldPrice\":null,\"schoolLevel\":null,\"badge\":null,\"badgeColor\":null,\"rating\":5,\"reviews\":0,\"img\":\"\",\"images\":[],\"category\":\"Autre\",\"brand\":\"\",\"description\":\"\",\"stock\":0,\"featured\":false,\"status\":\"active\",\"specifications\":[],\"__v\":0},\"id\":777,\"name\":\"Produit modifié\",\"price\":\"0 DT\",\"priceNum\":13000,\"oldPrice\":null,\"schoolLevel\":null,\"badge\":null,\"badgeColor\":null,\"rating\":5,\"reviews\":0,\"img\":\"\",\"images\":[],\"category\":\"Autre\",\"description\":\"\",\"stock\":0,\"specifications\":[]}}",
+    "user": "admin@example.com",
+    "role": "admin",
+    "timestamp": "2026-07-20T14:20:26.415Z"
+  },
+  {
+    "action": "update-product",
+    "entity": "product",
+    "entityId": "777",
+    "success": true,
+    "details": "{\"name\":\"Produit modifié\",\"priceNum\":13000}",
+    "user": "admin@example.com",
+    "role": "admin",
+    "timestamp": "2026-07-20T14:20:26.398Z"
+  },
+  {
+    "action": "create-product",
+    "entity": "product",
+    "entityId": "6a5e2eaa5cac03ea9760adae",
+    "success": true,
+    "details": "{\"name\":\"Produit test\",\"category\":\"Test\"}",
+    "user": "admin@example.com",
+    "role": "admin",
+    "timestamp": "2026-07-20T14:20:26.378Z"
+  },
+  {
+    "action": "delete-product",
+    "entity": "product",
+    "entityId": "777",
+    "success": true,
+    "details": "{\"deletedProduct\":{\"$__\":{\"activePaths\":{\"paths\":{\"priceNum\":\"init\",\"price\":\"init\",\"name\":\"init\",\"priceBeforeDiscount\":\"init\",\"discount\":\"init\",\"oldPrice\":\"init\",\"schoolLevel\":\"init\",\"badge\":\"init\",\"badgeColor\":\"init\",\"rating\":\"init\",\"reviews\":\"init\",\"img\":\"init\",\"images\":\"init\",\"category\":\"init\",\"brand\":\"init\",\"description\":\"init\",\"stock\":\"init\",\"featured\":\"init\",\"status\":\"init\",\"_id\":\"init\",\"id\":\"init\",\"specifications\":\"init\",\"__v\":\"init\"},\"states\":{\"require\":{},\"default\":{},\"init\":{\"_id\":true,\"id\":true,\"name\":true,\"price\":true,\"priceNum\":true,\"priceBeforeDiscount\":true,\"discount\":true,\"oldPrice\":true,\"schoolLevel\":true,\"badge\":true,\"badgeColor\":true,\"rating\":true,\"reviews\":true,\"img\":true,\"images\":true,\"category\":true,\"brand\":true,\"description\":true,\"stock\":true,\"featured\":true,\"status\":true,\"specifications\":true,\"__v\":true}}},\"skipId\":true},\"$isNew\":false,\"_doc\":{\"_id\":\"6a5e2e5cc95dd342b655aeb5\",\"id\":777,\"name\":\"Produit modifié\",\"price\":\"0 DT\",\"priceNum\":13000,\"priceBeforeDiscount\":null,\"discount\":0,\"oldPrice\":null,\"schoolLevel\":null,\"badge\":null,\"badgeColor\":null,\"rating\":5,\"reviews\":0,\"img\":\"\",\"images\":[],\"category\":\"Autre\",\"brand\":\"\",\"description\":\"\",\"stock\":0,\"featured\":false,\"status\":\"active\",\"specifications\":[],\"__v\":0},\"id\":777,\"name\":\"Produit modifié\",\"price\":\"0 DT\",\"priceNum\":13000,\"oldPrice\":null,\"schoolLevel\":null,\"badge\":null,\"badgeColor\":null,\"rating\":5,\"reviews\":0,\"img\":\"\",\"images\":[],\"category\":\"Autre\",\"description\":\"\",\"stock\":0,\"specifications\":[]}}",
+    "user": "admin@example.com",
+    "role": "admin",
+    "timestamp": "2026-07-20T14:19:09.082Z"
+  },
+  {
+    "action": "update-product",
+    "entity": "product",
+    "entityId": "777",
+    "success": true,
+    "details": "{\"name\":\"Produit modifié\",\"priceNum\":13000}",
+    "user": "admin@example.com",
+    "role": "admin",
+    "timestamp": "2026-07-20T14:19:09.066Z"
+  },
+  {
+    "action": "create-product",
+    "entity": "product",
+    "entityId": "6a5e2e5cc95dd342b655aeb5",
+    "success": true,
+    "details": "{\"name\":\"Produit test\",\"category\":\"Test\"}",
+    "user": "admin@example.com",
+    "role": "admin",
+    "timestamp": "2026-07-20T14:19:09.019Z"
+  },
+  {
+    "action": "delete-product",
+    "entity": "product",
+    "entityId": "777",
+    "success": true,
+    "details": "{\"deletedProduct\":{\"$__\":{\"activePaths\":{\"paths\":{\"priceNum\":\"init\",\"price\":\"init\",\"name\":\"init\",\"priceBeforeDiscount\":\"init\",\"discount\":\"init\",\"oldPrice\":\"init\",\"schoolLevel\":\"init\",\"badge\":\"init\",\"badgeColor\":\"init\",\"rating\":\"init\",\"reviews\":\"init\",\"img\":\"init\",\"images\":\"init\",\"category\":\"init\",\"brand\":\"init\",\"description\":\"init\",\"stock\":\"init\",\"featured\":\"init\",\"status\":\"init\",\"_id\":\"init\",\"id\":\"init\",\"specifications\":\"init\",\"__v\":\"init\"},\"states\":{\"require\":{},\"default\":{},\"init\":{\"_id\":true,\"id\":true,\"name\":true,\"price\":true,\"priceNum\":true,\"priceBeforeDiscount\":true,\"discount\":true,\"oldPrice\":true,\"schoolLevel\":true,\"badge\":true,\"badgeColor\":true,\"rating\":true,\"reviews\":true,\"img\":true,\"images\":true,\"category\":true,\"brand\":true,\"description\":true,\"stock\":true,\"featured\":true,\"status\":true,\"specifications\":true,\"__v\":true}}},\"skipId\":true},\"$isNew\":false,\"_doc\":{\"_id\":\"6a5e2e5124ad2831cb6c3e62\",\"id\":777,\"name\":\"Produit modifié\",\"price\":\"0 DT\",\"priceNum\":13000,\"priceBeforeDiscount\":null,\"discount\":0,\"oldPrice\":null,\"schoolLevel\":null,\"badge\":null,\"badgeColor\":null,\"rating\":5,\"reviews\":0,\"img\":\"\",\"images\":[],\"category\":\"Autre\",\"brand\":\"\",\"description\":\"\",\"stock\":0,\"featured\":false,\"status\":\"active\",\"specifications\":[],\"__v\":0},\"id\":777,\"name\":\"Produit modifié\",\"price\":\"0 DT\",\"priceNum\":13000,\"oldPrice\":null,\"schoolLevel\":null,\"badge\":null,\"badgeColor\":null,\"rating\":5,\"reviews\":0,\"img\":\"\",\"images\":[],\"category\":\"Autre\",\"description\":\"\",\"stock\":0,\"specifications\":[]}}",
+    "user": "admin@example.com",
+    "role": "admin",
+    "timestamp": "2026-07-20T14:18:57.569Z"
+  },
+  {
+    "action": "update-product",
+    "entity": "product",
+    "entityId": "777",
+    "success": true,
+    "details": "{\"name\":\"Produit modifié\",\"priceNum\":13000}",
+    "user": "admin@example.com",
+    "role": "admin",
+    "timestamp": "2026-07-20T14:18:57.548Z"
+  },
+  {
+    "action": "create-product",
+    "entity": "product",
+    "entityId": "6a5e2e5124ad2831cb6c3e62",
+    "success": true,
+    "details": "{\"name\":\"Produit test\",\"category\":\"Test\"}",
+    "user": "admin@example.com",
+    "role": "admin",
+    "timestamp": "2026-07-20T14:18:57.520Z"
+  },
+  {
+    "action": "delete-product",
+    "entity": "product",
+    "entityId": "777",
+    "success": true,
+    "details": "{\"deletedProduct\":{\"$__\":{\"activePaths\":{\"paths\":{\"priceNum\":\"init\",\"price\":\"init\",\"name\":\"init\",\"priceBeforeDiscount\":\"init\",\"discount\":\"init\",\"oldPrice\":\"init\",\"schoolLevel\":\"init\",\"badge\":\"init\",\"badgeColor\":\"init\",\"rating\":\"init\",\"reviews\":\"init\",\"img\":\"init\",\"images\":\"init\",\"category\":\"init\",\"brand\":\"init\",\"description\":\"init\",\"stock\":\"init\",\"featured\":\"init\",\"status\":\"init\",\"_id\":\"init\",\"id\":\"init\",\"specifications\":\"init\",\"__v\":\"init\"},\"states\":{\"require\":{},\"default\":{},\"init\":{\"_id\":true,\"id\":true,\"name\":true,\"price\":true,\"priceNum\":true,\"priceBeforeDiscount\":true,\"discount\":true,\"oldPrice\":true,\"schoolLevel\":true,\"badge\":true,\"badgeColor\":true,\"rating\":true,\"reviews\":true,\"img\":true,\"images\":true,\"category\":true,\"brand\":true,\"description\":true,\"stock\":true,\"featured\":true,\"status\":true,\"specifications\":true,\"__v\":true}}},\"skipId\":true},\"$isNew\":false,\"_doc\":{\"_id\":\"6a5e2c71e2406713ee5fc9d0\",\"id\":777,\"name\":\"Produit modifié\",\"price\":\"0 DT\",\"priceNum\":13000,\"priceBeforeDiscount\":null,\"discount\":0,\"oldPrice\":null,\"schoolLevel\":null,\"badge\":null,\"badgeColor\":null,\"rating\":5,\"reviews\":0,\"img\":\"\",\"images\":[],\"category\":\"Autre\",\"brand\":\"\",\"description\":\"\",\"stock\":0,\"featured\":false,\"status\":\"active\",\"specifications\":[],\"__v\":0},\"id\":777,\"name\":\"Produit modifié\",\"price\":\"0 DT\",\"priceNum\":13000,\"oldPrice\":null,\"schoolLevel\":null,\"badge\":null,\"badgeColor\":null,\"rating\":5,\"reviews\":0,\"img\":\"\",\"images\":[],\"category\":\"Autre\",\"description\":\"\",\"stock\":0,\"specifications\":[]}}",
+    "user": "admin@example.com",
+    "role": "admin",
+    "timestamp": "2026-07-20T14:10:57.914Z"
+  },
+  {
+    "action": "update-product",
+    "entity": "product",
+    "entityId": "777",
+    "success": true,
+    "details": "{\"name\":\"Produit modifié\",\"priceNum\":13000}",
+    "user": "admin@example.com",
+    "role": "admin",
+    "timestamp": "2026-07-20T14:10:57.888Z"
+  },
+  {
+    "action": "create-product",
+    "entity": "product",
+    "entityId": "6a5e2c71e2406713ee5fc9d0",
+    "success": true,
+    "details": "{\"name\":\"Produit test\",\"category\":\"Test\"}",
+    "user": "admin@example.com",
+    "role": "admin",
+    "timestamp": "2026-07-20T14:10:57.760Z"
+  },
+  {
+    "action": "delete-product",
+    "entity": "product",
+    "entityId": "777",
+    "success": true,
+    "details": "{\"deletedProduct\":{\"$__\":{\"activePaths\":{\"paths\":{\"priceNum\":\"init\",\"price\":\"init\",\"name\":\"init\",\"priceBeforeDiscount\":\"init\",\"discount\":\"init\",\"oldPrice\":\"init\",\"schoolLevel\":\"init\",\"badge\":\"init\",\"badgeColor\":\"init\",\"rating\":\"init\",\"reviews\":\"init\",\"img\":\"init\",\"images\":\"init\",\"category\":\"init\",\"brand\":\"init\",\"description\":\"init\",\"stock\":\"init\",\"featured\":\"init\",\"status\":\"init\",\"_id\":\"init\",\"id\":\"init\",\"specifications\":\"init\",\"__v\":\"init\"},\"states\":{\"require\":{},\"default\":{},\"init\":{\"_id\":true,\"id\":true,\"name\":true,\"price\":true,\"priceNum\":true,\"priceBeforeDiscount\":true,\"discount\":true,\"oldPrice\":true,\"schoolLevel\":true,\"badge\":true,\"badgeColor\":true,\"rating\":true,\"reviews\":true,\"img\":true,\"images\":true,\"category\":true,\"brand\":true,\"description\":true,\"stock\":true,\"featured\":true,\"status\":true,\"specifications\":true,\"__v\":true}}},\"skipId\":true},\"$isNew\":false,\"_doc\":{\"_id\":\"6a5e2c62a0c4e96bff12201d\",\"id\":777,\"name\":\"Produit modifié\",\"price\":\"0 DT\",\"priceNum\":13000,\"priceBeforeDiscount\":null,\"discount\":0,\"oldPrice\":null,\"schoolLevel\":null,\"badge\":null,\"badgeColor\":null,\"rating\":5,\"reviews\":0,\"img\":\"\",\"images\":[],\"category\":\"Autre\",\"brand\":\"\",\"description\":\"\",\"stock\":0,\"featured\":false,\"status\":\"active\",\"specifications\":[],\"__v\":0},\"id\":777,\"name\":\"Produit modifié\",\"price\":\"0 DT\",\"priceNum\":13000,\"oldPrice\":null,\"schoolLevel\":null,\"badge\":null,\"badgeColor\":null,\"rating\":5,\"reviews\":0,\"img\":\"\",\"images\":[],\"category\":\"Autre\",\"description\":\"\",\"stock\":0,\"specifications\":[]}}",
+    "user": "admin@example.com",
+    "role": "admin",
+    "timestamp": "2026-07-20T14:10:42.627Z"
+  },
+  {
+    "action": "update-product",
+    "entity": "product",
+    "entityId": "777",
+    "success": true,
+    "details": "{\"name\":\"Produit modifié\",\"priceNum\":13000}",
+    "user": "admin@example.com",
+    "role": "admin",
+    "timestamp": "2026-07-20T14:10:42.614Z"
+  },
+  {
+    "action": "create-product",
+    "entity": "product",
+    "entityId": "6a5e2c62a0c4e96bff12201d",
+    "success": true,
+    "details": "{\"name\":\"Produit test\",\"category\":\"Test\"}",
+    "user": "admin@example.com",
+    "role": "admin",
+    "timestamp": "2026-07-20T14:10:42.596Z"
+  },
+  {
+    "action": "delete-product",
+    "entity": "product",
+    "entityId": "777",
+    "success": true,
+    "details": "{\"deletedProduct\":{\"$__\":{\"activePaths\":{\"paths\":{\"priceNum\":\"init\",\"price\":\"init\",\"name\":\"init\",\"priceBeforeDiscount\":\"init\",\"discount\":\"init\",\"oldPrice\":\"init\",\"schoolLevel\":\"init\",\"badge\":\"init\",\"badgeColor\":\"init\",\"rating\":\"init\",\"reviews\":\"init\",\"img\":\"init\",\"images\":\"init\",\"category\":\"init\",\"brand\":\"init\",\"description\":\"init\",\"stock\":\"init\",\"featured\":\"init\",\"status\":\"init\",\"_id\":\"init\",\"id\":\"init\",\"specifications\":\"init\",\"__v\":\"init\"},\"states\":{\"require\":{},\"default\":{},\"init\":{\"_id\":true,\"id\":true,\"name\":true,\"price\":true,\"priceNum\":true,\"priceBeforeDiscount\":true,\"discount\":true,\"oldPrice\":true,\"schoolLevel\":true,\"badge\":true,\"badgeColor\":true,\"rating\":true,\"reviews\":true,\"img\":true,\"images\":true,\"category\":true,\"brand\":true,\"description\":true,\"stock\":true,\"featured\":true,\"status\":true,\"specifications\":true,\"__v\":true}}},\"skipId\":true},\"$isNew\":false,\"_doc\":{\"_id\":\"6a5e2c2aec48a22e7791de2e\",\"id\":777,\"name\":\"Produit modifié\",\"price\":\"0 DT\",\"priceNum\":13000,\"priceBeforeDiscount\":null,\"discount\":0,\"oldPrice\":null,\"schoolLevel\":null,\"badge\":null,\"badgeColor\":null,\"rating\":5,\"reviews\":0,\"img\":\"\",\"images\":[],\"category\":\"Autre\",\"brand\":\"\",\"description\":\"\",\"stock\":0,\"featured\":false,\"status\":\"active\",\"specifications\":[],\"__v\":0},\"id\":777,\"name\":\"Produit modifié\",\"price\":\"0 DT\",\"priceNum\":13000,\"oldPrice\":null,\"schoolLevel\":null,\"badge\":null,\"badgeColor\":null,\"rating\":5,\"reviews\":0,\"img\":\"\",\"images\":[],\"category\":\"Autre\",\"description\":\"\",\"stock\":0,\"specifications\":[]}}",
+    "user": "admin@example.com",
+    "role": "admin",
+    "timestamp": "2026-07-20T14:09:46.379Z"
+  },
+  {
+    "action": "update-product",
+    "entity": "product",
+    "entityId": "777",
+    "success": true,
+    "details": "{\"name\":\"Produit modifié\",\"priceNum\":13000}",
+    "user": "admin@example.com",
+    "role": "admin",
+    "timestamp": "2026-07-20T14:09:46.365Z"
+  },
+  {
+    "action": "create-product",
+    "entity": "product",
+    "entityId": "6a5e2c2aec48a22e7791de2e",
+    "success": true,
+    "details": "{\"name\":\"Produit test\",\"category\":\"Test\"}",
+    "user": "admin@example.com",
+    "role": "admin",
+    "timestamp": "2026-07-20T14:09:46.346Z"
+  },
+  {
+    "action": "delete-product",
+    "entity": "product",
+    "entityId": "777",
+    "success": true,
+    "details": "{\"deletedProduct\":{\"$__\":{\"activePaths\":{\"paths\":{\"priceNum\":\"init\",\"price\":\"init\",\"name\":\"init\",\"priceBeforeDiscount\":\"init\",\"discount\":\"init\",\"oldPrice\":\"init\",\"schoolLevel\":\"init\",\"badge\":\"init\",\"badgeColor\":\"init\",\"rating\":\"init\",\"reviews\":\"init\",\"img\":\"init\",\"images\":\"init\",\"category\":\"init\",\"brand\":\"init\",\"description\":\"init\",\"stock\":\"init\",\"featured\":\"init\",\"status\":\"init\",\"_id\":\"init\",\"id\":\"init\",\"specifications\":\"init\",\"__v\":\"init\"},\"states\":{\"require\":{},\"default\":{},\"init\":{\"_id\":true,\"id\":true,\"name\":true,\"price\":true,\"priceNum\":true,\"priceBeforeDiscount\":true,\"discount\":true,\"oldPrice\":true,\"schoolLevel\":true,\"badge\":true,\"badgeColor\":true,\"rating\":true,\"reviews\":true,\"img\":true,\"images\":true,\"category\":true,\"brand\":true,\"description\":true,\"stock\":true,\"featured\":true,\"status\":true,\"specifications\":true,\"__v\":true}}},\"skipId\":true},\"$isNew\":false,\"_doc\":{\"_id\":\"6a5e2a47791e827fedccb021\",\"id\":777,\"name\":\"Produit modifié\",\"price\":\"0 DT\",\"priceNum\":13000,\"priceBeforeDiscount\":null,\"discount\":0,\"oldPrice\":null,\"schoolLevel\":null,\"badge\":null,\"badgeColor\":null,\"rating\":5,\"reviews\":0,\"img\":\"\",\"images\":[],\"category\":\"Autre\",\"brand\":\"\",\"description\":\"\",\"stock\":0,\"featured\":false,\"status\":\"active\",\"specifications\":[],\"__v\":0},\"id\":777,\"name\":\"Produit modifié\",\"price\":\"0 DT\",\"priceNum\":13000,\"oldPrice\":null,\"schoolLevel\":null,\"badge\":null,\"badgeColor\":null,\"rating\":5,\"reviews\":0,\"img\":\"\",\"images\":[],\"category\":\"Autre\",\"description\":\"\",\"stock\":0,\"specifications\":[]}}",
+    "user": "admin@example.com",
+    "role": "admin",
+    "timestamp": "2026-07-20T14:01:43.794Z"
+  },
+  {
+    "action": "update-product",
+    "entity": "product",
+    "entityId": "777",
+    "success": true,
+    "details": "{\"name\":\"Produit modifié\",\"priceNum\":13000}",
+    "user": "admin@example.com",
+    "role": "admin",
+    "timestamp": "2026-07-20T14:01:43.783Z"
+  },
+  {
+    "action": "create-product",
+    "entity": "product",
+    "entityId": "6a5e2a47791e827fedccb021",
+    "success": true,
+    "details": "{\"name\":\"Produit test\",\"category\":\"Test\"}",
+    "user": "admin@example.com",
+    "role": "admin",
+    "timestamp": "2026-07-20T14:01:43.763Z"
+  },
+  {
+    "action": "delete-product",
+    "entity": "product",
+    "entityId": "777",
+    "success": true,
+    "details": "{\"deletedProduct\":{\"$__\":{\"activePaths\":{\"paths\":{\"priceNum\":\"init\",\"price\":\"init\",\"name\":\"init\",\"priceBeforeDiscount\":\"init\",\"discount\":\"init\",\"oldPrice\":\"init\",\"schoolLevel\":\"init\",\"badge\":\"init\",\"badgeColor\":\"init\",\"rating\":\"init\",\"reviews\":\"init\",\"img\":\"init\",\"images\":\"init\",\"category\":\"init\",\"brand\":\"init\",\"description\":\"init\",\"stock\":\"init\",\"featured\":\"init\",\"status\":\"init\",\"_id\":\"init\",\"id\":\"init\",\"specifications\":\"init\",\"__v\":\"init\"},\"states\":{\"require\":{},\"default\":{},\"init\":{\"_id\":true,\"id\":true,\"name\":true,\"price\":true,\"priceNum\":true,\"priceBeforeDiscount\":true,\"discount\":true,\"oldPrice\":true,\"schoolLevel\":true,\"badge\":true,\"badgeColor\":true,\"rating\":true,\"reviews\":true,\"img\":true,\"images\":true,\"category\":true,\"brand\":true,\"description\":true,\"stock\":true,\"featured\":true,\"status\":true,\"specifications\":true,\"__v\":true}}},\"skipId\":true},\"$isNew\":false,\"_doc\":{\"_id\":\"6a5e2a387dd06c7cb0bdb989\",\"id\":777,\"name\":\"Produit modifié\",\"price\":\"0 DT\",\"priceNum\":13000,\"priceBeforeDiscount\":null,\"discount\":0,\"oldPrice\":null,\"schoolLevel\":null,\"badge\":null,\"badgeColor\":null,\"rating\":5,\"reviews\":0,\"img\":\"\",\"images\":[],\"category\":\"Autre\",\"brand\":\"\",\"description\":\"\",\"stock\":0,\"featured\":false,\"status\":\"active\",\"specifications\":[],\"__v\":0},\"id\":777,\"name\":\"Produit modifié\",\"price\":\"0 DT\",\"priceNum\":13000,\"oldPrice\":null,\"schoolLevel\":null,\"badge\":null,\"badgeColor\":null,\"rating\":5,\"reviews\":0,\"img\":\"\",\"images\":[],\"category\":\"Autre\",\"description\":\"\",\"stock\":0,\"specifications\":[]}}",
+    "user": "admin@example.com",
+    "role": "admin",
+    "timestamp": "2026-07-20T14:01:28.904Z"
+  },
+  {
+    "action": "update-product",
+    "entity": "product",
+    "entityId": "777",
+    "success": true,
+    "details": "{\"name\":\"Produit modifié\",\"priceNum\":13000}",
+    "user": "admin@example.com",
+    "role": "admin",
+    "timestamp": "2026-07-20T14:01:28.891Z"
+  },
+  {
+    "action": "create-product",
+    "entity": "product",
+    "entityId": "6a5e2a387dd06c7cb0bdb989",
+    "success": true,
+    "details": "{\"name\":\"Produit test\",\"category\":\"Test\"}",
+    "user": "admin@example.com",
+    "role": "admin",
+    "timestamp": "2026-07-20T14:01:28.872Z"
+  },
+  {
+    "action": "delete-product",
+    "entity": "product",
+    "entityId": "777",
+    "success": true,
+    "details": "{\"deletedProduct\":{\"$__\":{\"activePaths\":{\"paths\":{\"priceNum\":\"init\",\"price\":\"init\",\"name\":\"init\",\"priceBeforeDiscount\":\"init\",\"discount\":\"init\",\"oldPrice\":\"init\",\"schoolLevel\":\"init\",\"badge\":\"init\",\"badgeColor\":\"init\",\"rating\":\"init\",\"reviews\":\"init\",\"img\":\"init\",\"images\":\"init\",\"category\":\"init\",\"brand\":\"init\",\"description\":\"init\",\"stock\":\"init\",\"featured\":\"init\",\"status\":\"init\",\"_id\":\"init\",\"id\":\"init\",\"specifications\":\"init\",\"__v\":\"init\"},\"states\":{\"require\":{},\"default\":{},\"init\":{\"_id\":true,\"id\":true,\"name\":true,\"price\":true,\"priceNum\":true,\"priceBeforeDiscount\":true,\"discount\":true,\"oldPrice\":true,\"schoolLevel\":true,\"badge\":true,\"badgeColor\":true,\"rating\":true,\"reviews\":true,\"img\":true,\"images\":true,\"category\":true,\"brand\":true,\"description\":true,\"stock\":true,\"featured\":true,\"status\":true,\"specifications\":true,\"__v\":true}}},\"skipId\":true},\"$isNew\":false,\"_doc\":{\"_id\":\"6a5e2a13a0ffbbadce811b9c\",\"id\":777,\"name\":\"Produit modifié\",\"price\":\"0 DT\",\"priceNum\":13000,\"priceBeforeDiscount\":null,\"discount\":0,\"oldPrice\":null,\"schoolLevel\":null,\"badge\":null,\"badgeColor\":null,\"rating\":5,\"reviews\":0,\"img\":\"\",\"images\":[],\"category\":\"Autre\",\"brand\":\"\",\"description\":\"\",\"stock\":0,\"featured\":false,\"status\":\"active\",\"specifications\":[],\"__v\":0},\"id\":777,\"name\":\"Produit modifié\",\"price\":\"0 DT\",\"priceNum\":13000,\"oldPrice\":null,\"schoolLevel\":null,\"badge\":null,\"badgeColor\":null,\"rating\":5,\"reviews\":0,\"img\":\"\",\"images\":[],\"category\":\"Autre\",\"description\":\"\",\"stock\":0,\"specifications\":[]}}",
+    "user": "admin@example.com",
+    "role": "admin",
+    "timestamp": "2026-07-20T14:00:51.454Z"
+  },
+  {
+    "action": "update-product",
+    "entity": "product",
+    "entityId": "777",
+    "success": true,
+    "details": "{\"name\":\"Produit modifié\",\"priceNum\":13000}",
+    "user": "admin@example.com",
+    "role": "admin",
+    "timestamp": "2026-07-20T14:00:51.434Z"
+  },
+  {
+    "action": "create-product",
+    "entity": "product",
+    "entityId": "6a5e2a13a0ffbbadce811b9c",
+    "success": true,
+    "details": "{\"name\":\"Produit test\",\"category\":\"Test\"}",
+    "user": "admin@example.com",
+    "role": "admin",
+    "timestamp": "2026-07-20T14:00:51.372Z"
+  },
+  {
+    "action": "update-product",
+    "entity": "product",
+    "entityId": "1784552095927",
+    "success": true,
+    "details": "{\"name\":\"SB01-XL DRAGON IMPACT\",\"description\":\"qsdfghjklm\",\"price\":\"119,000 DT\",\"priceNum\":119,\"priceBeforeDiscount\":null,\"discount\":0,\"schoolLevel\":\"\",\"stock\":1,\"category\":\"Catrable Lux\",\"brand\":\"Bomi\",\"img\":\"/uploads/1784475281982-803937109.png\",\"badge\":\"-46%\",\"badgeColor\":\"#e53935\",\"rating\":5,\"reviews\":124,\"featured\":false,\"status\":\"active\"}",
+    "user": "admin@ecolier.com",
+    "role": "admin",
+    "timestamp": "2026-07-20T12:56:12.994Z"
+  },
+  {
+    "action": "create-product",
+    "entity": "product",
+    "entityId": "6a5e1a9f768dc4d5d7828946",
+    "success": true,
+    "details": "{\"name\":\"SB01-XL DRAGON IMPACT\",\"category\":\"Calculatrices\"}",
+    "user": "admin@ecolier.com",
+    "role": "admin",
+    "timestamp": "2026-07-20T12:54:55.944Z"
+  },
+  {
+    "action": "delete-product",
+    "entity": "product",
+    "entityId": "777",
+    "success": true,
+    "details": "{\"deletedProduct\":{\"$__\":{\"activePaths\":{\"paths\":{\"priceNum\":\"init\",\"price\":\"init\",\"name\":\"init\",\"priceBeforeDiscount\":\"init\",\"discount\":\"init\",\"oldPrice\":\"init\",\"badge\":\"init\",\"badgeColor\":\"init\",\"rating\":\"init\",\"reviews\":\"init\",\"img\":\"init\",\"images\":\"init\",\"category\":\"init\",\"brand\":\"init\",\"description\":\"init\",\"stock\":\"init\",\"featured\":\"init\",\"status\":\"init\",\"_id\":\"init\",\"id\":\"init\",\"specifications\":\"init\",\"__v\":\"init\"},\"states\":{\"require\":{},\"default\":{},\"init\":{\"_id\":true,\"id\":true,\"name\":true,\"price\":true,\"priceNum\":true,\"priceBeforeDiscount\":true,\"discount\":true,\"oldPrice\":true,\"badge\":true,\"badgeColor\":true,\"rating\":true,\"reviews\":true,\"img\":true,\"images\":true,\"category\":true,\"brand\":true,\"description\":true,\"stock\":true,\"featured\":true,\"status\":true,\"specifications\":true,\"__v\":true}}},\"skipId\":true},\"$isNew\":false,\"_doc\":{\"_id\":\"6a5e0f5f119d625d74ecda2d\",\"id\":777,\"name\":\"Produit modifié\",\"price\":\"0 DT\",\"priceNum\":13000,\"priceBeforeDiscount\":null,\"discount\":0,\"oldPrice\":null,\"badge\":null,\"badgeColor\":null,\"rating\":5,\"reviews\":0,\"img\":\"\",\"images\":[],\"category\":\"Autre\",\"brand\":\"\",\"description\":\"\",\"stock\":0,\"featured\":false,\"status\":\"active\",\"specifications\":[],\"__v\":0},\"id\":777,\"name\":\"Produit modifié\",\"price\":\"0 DT\",\"priceNum\":13000,\"oldPrice\":null,\"badge\":null,\"badgeColor\":null,\"rating\":5,\"reviews\":0,\"img\":\"\",\"images\":[],\"category\":\"Autre\",\"description\":\"\",\"stock\":0,\"specifications\":[]}}",
+    "user": "admin@example.com",
+    "role": "admin",
+    "timestamp": "2026-07-20T12:06:55.810Z"
+  },
+  {
+    "action": "update-product",
+    "entity": "product",
+    "entityId": "777",
+    "success": true,
+    "details": "{\"name\":\"Produit modifié\",\"priceNum\":13000}",
+    "user": "admin@example.com",
+    "role": "admin",
+    "timestamp": "2026-07-20T12:06:55.775Z"
+  },
+  {
+    "action": "create-product",
+    "entity": "product",
+    "entityId": "6a5e0f5f119d625d74ecda2d",
+    "success": true,
+    "details": "{\"name\":\"Produit test\",\"category\":\"Test\"}",
+    "user": "admin@example.com",
+    "role": "admin",
+    "timestamp": "2026-07-20T12:06:55.668Z"
+  },
+  {
+    "action": "delete-product",
+    "entity": "product",
+    "entityId": "777",
+    "success": true,
+    "details": "{\"deletedProduct\":{\"$__\":{\"activePaths\":{\"paths\":{\"priceNum\":\"init\",\"price\":\"init\",\"name\":\"init\",\"priceBeforeDiscount\":\"init\",\"discount\":\"init\",\"oldPrice\":\"init\",\"badge\":\"init\",\"badgeColor\":\"init\",\"rating\":\"init\",\"reviews\":\"init\",\"img\":\"init\",\"images\":\"init\",\"category\":\"init\",\"brand\":\"init\",\"description\":\"init\",\"stock\":\"init\",\"featured\":\"init\",\"status\":\"init\",\"_id\":\"init\",\"id\":\"init\",\"specifications\":\"init\",\"__v\":\"init\"},\"states\":{\"require\":{},\"default\":{},\"init\":{\"_id\":true,\"id\":true,\"name\":true,\"price\":true,\"priceNum\":true,\"priceBeforeDiscount\":true,\"discount\":true,\"oldPrice\":true,\"badge\":true,\"badgeColor\":true,\"rating\":true,\"reviews\":true,\"img\":true,\"images\":true,\"category\":true,\"brand\":true,\"description\":true,\"stock\":true,\"featured\":true,\"status\":true,\"specifications\":true,\"__v\":true}}},\"skipId\":true},\"$isNew\":false,\"_doc\":{\"_id\":\"6a5e0d5f317d712b07a65815\",\"id\":777,\"name\":\"Produit modifié\",\"price\":\"0 DT\",\"priceNum\":13000,\"priceBeforeDiscount\":null,\"discount\":0,\"oldPrice\":null,\"badge\":null,\"badgeColor\":null,\"rating\":5,\"reviews\":0,\"img\":\"\",\"images\":[],\"category\":\"Autre\",\"brand\":\"\",\"description\":\"\",\"stock\":0,\"featured\":false,\"status\":\"active\",\"specifications\":[],\"__v\":0},\"id\":777,\"name\":\"Produit modifié\",\"price\":\"0 DT\",\"priceNum\":13000,\"oldPrice\":null,\"badge\":null,\"badgeColor\":null,\"rating\":5,\"reviews\":0,\"img\":\"\",\"images\":[],\"category\":\"Autre\",\"description\":\"\",\"stock\":0,\"specifications\":[]}}",
+    "user": "admin@example.com",
+    "role": "admin",
+    "timestamp": "2026-07-20T11:58:24.309Z"
+  },
+  {
+    "action": "update-product",
+    "entity": "product",
+    "entityId": "777",
+    "success": true,
+    "details": "{\"name\":\"Produit modifié\",\"priceNum\":13000}",
+    "user": "admin@example.com",
+    "role": "admin",
+    "timestamp": "2026-07-20T11:58:24.212Z"
+  },
+  {
+    "action": "create-product",
+    "entity": "product",
+    "entityId": "6a5e0d5f317d712b07a65815",
+    "success": true,
+    "details": "{\"name\":\"Produit test\",\"category\":\"Test\"}",
+    "user": "admin@example.com",
+    "role": "admin",
+    "timestamp": "2026-07-20T11:58:24.101Z"
+  },
+  {
+    "action": "delete-product",
+    "entity": "product",
+    "entityId": "777",
+    "success": true,
+    "details": "{\"deletedProduct\":{\"$__\":{\"activePaths\":{\"paths\":{\"priceNum\":\"init\",\"price\":\"init\",\"name\":\"init\",\"priceBeforeDiscount\":\"init\",\"discount\":\"init\",\"oldPrice\":\"init\",\"badge\":\"init\",\"badgeColor\":\"init\",\"rating\":\"init\",\"reviews\":\"init\",\"img\":\"init\",\"images\":\"init\",\"category\":\"init\",\"brand\":\"init\",\"description\":\"init\",\"stock\":\"init\",\"featured\":\"init\",\"status\":\"init\",\"_id\":\"init\",\"id\":\"init\",\"specifications\":\"init\",\"__v\":\"init\"},\"states\":{\"require\":{},\"default\":{},\"init\":{\"_id\":true,\"id\":true,\"name\":true,\"price\":true,\"priceNum\":true,\"priceBeforeDiscount\":true,\"discount\":true,\"oldPrice\":true,\"badge\":true,\"badgeColor\":true,\"rating\":true,\"reviews\":true,\"img\":true,\"images\":true,\"category\":true,\"brand\":true,\"description\":true,\"stock\":true,\"featured\":true,\"status\":true,\"specifications\":true,\"__v\":true}}},\"skipId\":true},\"$isNew\":false,\"_doc\":{\"_id\":\"6a5d3310dc2408e150a2b0bf\",\"id\":777,\"name\":\"Produit modifié\",\"price\":\"0 DT\",\"priceNum\":13000,\"priceBeforeDiscount\":null,\"discount\":0,\"oldPrice\":null,\"badge\":null,\"badgeColor\":null,\"rating\":5,\"reviews\":0,\"img\":\"\",\"images\":[],\"category\":\"Autre\",\"brand\":\"\",\"description\":\"\",\"stock\":0,\"featured\":false,\"status\":\"active\",\"specifications\":[],\"__v\":0},\"id\":777,\"name\":\"Produit modifié\",\"price\":\"0 DT\",\"priceNum\":13000,\"oldPrice\":null,\"badge\":null,\"badgeColor\":null,\"rating\":5,\"reviews\":0,\"img\":\"\",\"images\":[],\"category\":\"Autre\",\"description\":\"\",\"stock\":0,\"specifications\":[]}}",
+    "user": "admin@example.com",
+    "role": "admin",
+    "timestamp": "2026-07-19T20:26:57.493Z"
+  },
+  {
+    "action": "update-product",
+    "entity": "product",
+    "entityId": "777",
+    "success": true,
+    "details": "{\"name\":\"Produit modifié\",\"priceNum\":13000}",
+    "user": "admin@example.com",
+    "role": "admin",
+    "timestamp": "2026-07-19T20:26:57.408Z"
+  },
+  {
+    "action": "create-product",
+    "entity": "product",
+    "entityId": "6a5d3310dc2408e150a2b0bf",
+    "success": true,
+    "details": "{\"name\":\"Produit test\",\"category\":\"Test\"}",
+    "user": "admin@example.com",
+    "role": "admin",
+    "timestamp": "2026-07-19T20:26:57.002Z"
+  },
+  {
+    "action": "create-product",
+    "entity": "product",
+    "success": false,
+    "details": "Operation `products.insertOne()` buffering timed out after 10000ms",
+    "user": "admin@example.com",
+    "role": "admin",
+    "timestamp": "2026-07-19T20:03:50.416Z"
+  },
+  {
+    "action": "delete-product",
+    "entity": "product",
+    "entityId": "777",
+    "success": true,
+    "details": "{\"deletedProduct\":{\"$__\":{\"activePaths\":{\"paths\":{\"priceNum\":\"init\",\"price\":\"init\",\"name\":\"init\",\"priceBeforeDiscount\":\"init\",\"discount\":\"init\",\"oldPrice\":\"init\",\"badge\":\"init\",\"badgeColor\":\"init\",\"rating\":\"init\",\"reviews\":\"init\",\"img\":\"init\",\"images\":\"init\",\"category\":\"init\",\"brand\":\"init\",\"description\":\"init\",\"stock\":\"init\",\"featured\":\"init\",\"status\":\"init\",\"_id\":\"init\",\"id\":\"init\",\"specifications\":\"init\",\"__v\":\"init\"},\"states\":{\"require\":{},\"default\":{},\"init\":{\"_id\":true,\"id\":true,\"name\":true,\"price\":true,\"priceNum\":true,\"priceBeforeDiscount\":true,\"discount\":true,\"oldPrice\":true,\"badge\":true,\"badgeColor\":true,\"rating\":true,\"reviews\":true,\"img\":true,\"images\":true,\"category\":true,\"brand\":true,\"description\":true,\"stock\":true,\"featured\":true,\"status\":true,\"specifications\":true,\"__v\":true}}},\"skipId\":true},\"$isNew\":false,\"_doc\":{\"_id\":\"6a5d00ee56ad3521284f9844\",\"id\":777,\"name\":\"Produit modifié\",\"price\":\"0 DT\",\"priceNum\":13000,\"priceBeforeDiscount\":null,\"discount\":0,\"oldPrice\":null,\"badge\":null,\"badgeColor\":null,\"rating\":5,\"reviews\":0,\"img\":\"\",\"images\":[],\"category\":\"Autre\",\"brand\":\"\",\"description\":\"\",\"stock\":0,\"featured\":false,\"status\":\"active\",\"specifications\":[],\"__v\":0},\"id\":777,\"name\":\"Produit modifié\",\"price\":\"0 DT\",\"priceNum\":13000,\"oldPrice\":null,\"badge\":null,\"badgeColor\":null,\"rating\":5,\"reviews\":0,\"img\":\"\",\"images\":[],\"category\":\"Autre\",\"description\":\"\",\"stock\":0,\"specifications\":[]}}",
+    "user": "admin@example.com",
+    "role": "admin",
+    "timestamp": "2026-07-19T16:53:02.600Z"
+  },
+  {
+    "action": "update-product",
+    "entity": "product",
+    "entityId": "777",
+    "success": true,
+    "details": "{\"name\":\"Produit modifié\",\"priceNum\":13000}",
+    "user": "admin@example.com",
+    "role": "admin",
+    "timestamp": "2026-07-19T16:53:02.574Z"
+  },
+  {
+    "action": "create-product",
+    "entity": "product",
+    "entityId": "6a5d00ee56ad3521284f9844",
+    "success": true,
+    "details": "{\"name\":\"Produit test\",\"category\":\"Test\"}",
+    "user": "admin@example.com",
+    "role": "admin",
+    "timestamp": "2026-07-19T16:53:02.484Z"
+  },
+  {
+    "action": "delete-product",
+    "entity": "product",
+    "entityId": "777",
+    "success": true,
+    "details": "{\"deletedProduct\":{\"$__\":{\"activePaths\":{\"paths\":{\"priceNum\":\"init\",\"price\":\"init\",\"name\":\"init\",\"priceBeforeDiscount\":\"init\",\"discount\":\"init\",\"oldPrice\":\"init\",\"badge\":\"init\",\"badgeColor\":\"init\",\"rating\":\"init\",\"reviews\":\"init\",\"img\":\"init\",\"images\":\"init\",\"category\":\"init\",\"brand\":\"init\",\"description\":\"init\",\"stock\":\"init\",\"featured\":\"init\",\"status\":\"init\",\"_id\":\"init\",\"id\":\"init\",\"specifications\":\"init\",\"__v\":\"init\"},\"states\":{\"require\":{},\"default\":{},\"init\":{\"_id\":true,\"id\":true,\"name\":true,\"price\":true,\"priceNum\":true,\"priceBeforeDiscount\":true,\"discount\":true,\"oldPrice\":true,\"badge\":true,\"badgeColor\":true,\"rating\":true,\"reviews\":true,\"img\":true,\"images\":true,\"category\":true,\"brand\":true,\"description\":true,\"stock\":true,\"featured\":true,\"status\":true,\"specifications\":true,\"__v\":true}}},\"skipId\":true},\"$isNew\":false,\"_doc\":{\"_id\":\"6a5cff767548ecf9e3ac42fb\",\"id\":777,\"name\":\"Produit modifié\",\"price\":\"0 DT\",\"priceNum\":13000,\"priceBeforeDiscount\":null,\"discount\":0,\"oldPrice\":null,\"badge\":null,\"badgeColor\":null,\"rating\":5,\"reviews\":0,\"img\":\"\",\"images\":[],\"category\":\"Autre\",\"brand\":\"\",\"description\":\"\",\"stock\":0,\"featured\":false,\"status\":\"active\",\"specifications\":[],\"__v\":0},\"id\":777,\"name\":\"Produit modifié\",\"price\":\"0 DT\",\"priceNum\":13000,\"oldPrice\":null,\"badge\":null,\"badgeColor\":null,\"rating\":5,\"reviews\":0,\"img\":\"\",\"images\":[],\"category\":\"Autre\",\"description\":\"\",\"stock\":0,\"specifications\":[]}}",
+    "user": "admin@example.com",
+    "role": "admin",
+    "timestamp": "2026-07-19T16:46:46.674Z"
+  },
+  {
+    "action": "update-product",
+    "entity": "product",
+    "entityId": "777",
+    "success": true,
+    "details": "{\"name\":\"Produit modifié\",\"priceNum\":13000}",
+    "user": "admin@example.com",
+    "role": "admin",
+    "timestamp": "2026-07-19T16:46:46.614Z"
+  },
+  {
+    "action": "create-product",
+    "entity": "product",
+    "entityId": "6a5cff767548ecf9e3ac42fb",
+    "success": true,
+    "details": "{\"name\":\"Produit test\",\"category\":\"Test\"}",
+    "user": "admin@example.com",
+    "role": "admin",
+    "timestamp": "2026-07-19T16:46:46.557Z"
+  },
+  {
+    "action": "delete-product",
+    "entity": "product",
+    "entityId": "1784475319034",
+    "success": true,
+    "details": "{\"deletedProduct\":{\"$__\":{\"activePaths\":{\"paths\":{\"priceNum\":\"init\",\"price\":\"init\",\"name\":\"init\",\"priceBeforeDiscount\":\"init\",\"discount\":\"init\",\"oldPrice\":\"init\",\"badge\":\"init\",\"badgeColor\":\"init\",\"rating\":\"init\",\"reviews\":\"init\",\"img\":\"init\",\"images\":\"init\",\"category\":\"init\",\"brand\":\"init\",\"description\":\"init\",\"stock\":\"init\",\"featured\":\"init\",\"status\":\"init\",\"_id\":\"init\",\"id\":\"init\",\"specifications\":\"init\",\"__v\":\"init\"},\"states\":{\"require\":{},\"default\":{},\"init\":{\"_id\":true,\"id\":true,\"name\":true,\"price\":true,\"priceNum\":true,\"priceBeforeDiscount\":true,\"discount\":true,\"oldPrice\":true,\"badge\":true,\"badgeColor\":true,\"rating\":true,\"reviews\":true,\"img\":true,\"images\":true,\"category\":true,\"brand\":true,\"description\":true,\"stock\":true,\"featured\":true,\"status\":true,\"specifications\":true,\"__v\":true}}},\"skipId\":true},\"$isNew\":false,\"_doc\":{\"_id\":\"6a5ceeb668bff61d826b521c\",\"id\":1784475319034,\"name\":\"SB01-XL DRAGON IMPACT\",\"price\":\"119,000 DT\",\"priceNum\":119,\"priceBeforeDiscount\":219,\"discount\":0,\"oldPrice\":null,\"badge\":\"-46%\",\"badgeColor\":\"black\",\"rating\":4.4,\"reviews\":20,\"img\":\"/uploads/1784475281982-803937109.png\",\"images\":[\"/uploads/1784475281982-803937109.png\"],\"category\":\"Catrable Lux\",\"brand\":\"Bomi\",\"description\":\"\",\"stock\":10,\"featured\":false,\"status\":\"active\",\"specifications\":[],\"__v\":0},\"id\":1784475319034,\"name\":\"SB01-XL DRAGON IMPACT\",\"price\":\"119,000 DT\",\"priceNum\":119,\"oldPrice\":null,\"badge\":\"-46%\",\"badgeColor\":\"black\",\"rating\":4.4,\"reviews\":20,\"img\":\"/uploads/1784475281982-803937109.png\",\"images\":[\"/uploads/1784475281982-803937109.png\"],\"category\":\"Catrable Lux\",\"description\":\"\",\"stock\":10,\"specifications\":[]}}",
+    "user": "admin@ecolier.com",
+    "role": "admin",
+    "timestamp": "2026-07-19T16:08:21.301Z"
+  },
+  {
+    "action": "update-product",
+    "entity": "product",
+    "entityId": "1784475319034",
+    "success": true,
+    "details": "{\"name\":\"SB01-XL DRAGON IMPACT\",\"description\":\"\",\"price\":\"119,000 DT\",\"priceNum\":119,\"priceBeforeDiscount\":219,\"discount\":0,\"stock\":10,\"category\":\"Catrable Lux\",\"brand\":\"Bomi\",\"img\":\"/uploads/1784475281982-803937109.png\",\"badge\":\"-46%\",\"badgeColor\":\"black\",\"rating\":4.4,\"reviews\":20,\"featured\":false,\"status\":\"active\"}",
+    "user": "admin@ecolier.com",
+    "role": "admin",
+    "timestamp": "2026-07-19T15:49:02.268Z"
+  },
+  {
+    "action": "delete-product",
+    "entity": "product",
+    "entityId": "777",
+    "success": true,
+    "details": "{\"deletedProduct\":{\"$__\":{\"activePaths\":{\"paths\":{\"priceNum\":\"init\",\"price\":\"init\",\"name\":\"init\",\"priceBeforeDiscount\":\"init\",\"discount\":\"init\",\"oldPrice\":\"init\",\"badge\":\"init\",\"badgeColor\":\"init\",\"rating\":\"init\",\"reviews\":\"init\",\"img\":\"init\",\"images\":\"init\",\"category\":\"init\",\"brand\":\"init\",\"description\":\"init\",\"stock\":\"init\",\"featured\":\"init\",\"status\":\"init\",\"_id\":\"init\",\"id\":\"init\",\"specifications\":\"init\",\"__v\":\"init\"},\"states\":{\"require\":{},\"default\":{},\"init\":{\"_id\":true,\"id\":true,\"name\":true,\"price\":true,\"priceNum\":true,\"priceBeforeDiscount\":true,\"discount\":true,\"oldPrice\":true,\"badge\":true,\"badgeColor\":true,\"rating\":true,\"reviews\":true,\"img\":true,\"images\":true,\"category\":true,\"brand\":true,\"description\":true,\"stock\":true,\"featured\":true,\"status\":true,\"specifications\":true,\"__v\":true}}},\"skipId\":true},\"$isNew\":false,\"_doc\":{\"_id\":\"6a5cf18cad510ebf2aa0c802\",\"id\":777,\"name\":\"Produit modifié\",\"price\":\"0 DT\",\"priceNum\":13000,\"priceBeforeDiscount\":null,\"discount\":0,\"oldPrice\":null,\"badge\":null,\"badgeColor\":null,\"rating\":5,\"reviews\":0,\"img\":\"\",\"images\":[],\"category\":\"Autre\",\"brand\":\"\",\"description\":\"\",\"stock\":0,\"featured\":false,\"status\":\"active\",\"specifications\":[],\"__v\":0},\"id\":777,\"name\":\"Produit modifié\",\"price\":\"0 DT\",\"priceNum\":13000,\"oldPrice\":null,\"badge\":null,\"badgeColor\":null,\"rating\":5,\"reviews\":0,\"img\":\"\",\"images\":[],\"category\":\"Autre\",\"description\":\"\",\"stock\":0,\"specifications\":[]}}",
+    "user": "admin@example.com",
+    "role": "admin",
+    "timestamp": "2026-07-19T15:47:25.157Z"
+  },
+  {
+    "action": "update-product",
+    "entity": "product",
+    "entityId": "777",
+    "success": true,
+    "details": "{\"name\":\"Produit modifié\",\"priceNum\":13000}",
+    "user": "admin@example.com",
+    "role": "admin",
+    "timestamp": "2026-07-19T15:47:25.063Z"
+  },
+  {
+    "action": "create-product",
+    "entity": "product",
+    "entityId": "6a5cf18cad510ebf2aa0c802",
+    "success": true,
+    "details": "{\"name\":\"Produit test\",\"category\":\"Test\"}",
+    "user": "admin@example.com",
+    "role": "admin",
+    "timestamp": "2026-07-19T15:47:24.989Z"
+  },
+  {
+    "action": "delete-product",
+    "entity": "product",
+    "entityId": "777",
+    "success": true,
+    "details": "{\"deletedProduct\":{\"$__\":{\"activePaths\":{\"paths\":{\"priceNum\":\"init\",\"price\":\"init\",\"name\":\"init\",\"priceBeforeDiscount\":\"init\",\"discount\":\"init\",\"oldPrice\":\"init\",\"badge\":\"init\",\"badgeColor\":\"init\",\"rating\":\"init\",\"reviews\":\"init\",\"img\":\"init\",\"images\":\"init\",\"category\":\"init\",\"brand\":\"init\",\"description\":\"init\",\"stock\":\"init\",\"featured\":\"init\",\"status\":\"init\",\"_id\":\"init\",\"id\":\"init\",\"specifications\":\"init\",\"__v\":\"init\"},\"states\":{\"require\":{},\"default\":{},\"init\":{\"_id\":true,\"id\":true,\"name\":true,\"price\":true,\"priceNum\":true,\"priceBeforeDiscount\":true,\"discount\":true,\"oldPrice\":true,\"badge\":true,\"badgeColor\":true,\"rating\":true,\"reviews\":true,\"img\":true,\"images\":true,\"category\":true,\"brand\":true,\"description\":true,\"stock\":true,\"featured\":true,\"status\":true,\"specifications\":true,\"__v\":true}}},\"skipId\":true},\"$isNew\":false,\"_doc\":{\"_id\":\"6a5cf17b58058eb67ee758a0\",\"id\":777,\"name\":\"Produit modifié\",\"price\":\"0 DT\",\"priceNum\":13000,\"priceBeforeDiscount\":null,\"discount\":0,\"oldPrice\":null,\"badge\":null,\"badgeColor\":null,\"rating\":5,\"reviews\":0,\"img\":\"\",\"images\":[],\"category\":\"Autre\",\"brand\":\"\",\"description\":\"\",\"stock\":0,\"featured\":false,\"status\":\"active\",\"specifications\":[],\"__v\":0},\"id\":777,\"name\":\"Produit modifié\",\"price\":\"0 DT\",\"priceNum\":13000,\"oldPrice\":null,\"badge\":null,\"badgeColor\":null,\"rating\":5,\"reviews\":0,\"img\":\"\",\"images\":[],\"category\":\"Autre\",\"description\":\"\",\"stock\":0,\"specifications\":[]}}",
+    "user": "admin@example.com",
+    "role": "admin",
+    "timestamp": "2026-07-19T15:47:08.062Z"
+  },
+  {
+    "action": "update-product",
+    "entity": "product",
+    "entityId": "777",
+    "success": true,
+    "details": "{\"name\":\"Produit modifié\",\"priceNum\":13000}",
+    "user": "admin@example.com",
+    "role": "admin",
+    "timestamp": "2026-07-19T15:47:08.024Z"
+  },
+  {
+    "action": "create-product",
+    "entity": "product",
+    "entityId": "6a5cf17b58058eb67ee758a0",
+    "success": true,
+    "details": "{\"name\":\"Produit test\",\"category\":\"Test\"}",
+    "user": "admin@example.com",
+    "role": "admin",
+    "timestamp": "2026-07-19T15:47:07.920Z"
+  },
+  {
+    "action": "delete-product",
+    "entity": "product",
+    "entityId": "777",
+    "success": true,
+    "details": "{\"deletedProduct\":{\"$__\":{\"activePaths\":{\"paths\":{\"priceNum\":\"init\",\"price\":\"init\",\"name\":\"init\",\"priceBeforeDiscount\":\"init\",\"discount\":\"init\",\"oldPrice\":\"init\",\"badge\":\"init\",\"badgeColor\":\"init\",\"rating\":\"init\",\"reviews\":\"init\",\"img\":\"init\",\"images\":\"init\",\"category\":\"init\",\"brand\":\"init\",\"description\":\"init\",\"stock\":\"init\",\"featured\":\"init\",\"status\":\"init\",\"_id\":\"init\",\"id\":\"init\",\"specifications\":\"init\",\"__v\":\"init\"},\"states\":{\"require\":{},\"default\":{},\"init\":{\"_id\":true,\"id\":true,\"name\":true,\"price\":true,\"priceNum\":true,\"priceBeforeDiscount\":true,\"discount\":true,\"oldPrice\":true,\"badge\":true,\"badgeColor\":true,\"rating\":true,\"reviews\":true,\"img\":true,\"images\":true,\"category\":true,\"brand\":true,\"description\":true,\"stock\":true,\"featured\":true,\"status\":true,\"specifications\":true,\"__v\":true}}},\"skipId\":true},\"$isNew\":false,\"_doc\":{\"_id\":\"6a5cf163918d50652a6de74b\",\"id\":777,\"name\":\"Produit modifié\",\"price\":\"0 DT\",\"priceNum\":13000,\"priceBeforeDiscount\":null,\"discount\":0,\"oldPrice\":null,\"badge\":null,\"badgeColor\":null,\"rating\":5,\"reviews\":0,\"img\":\"\",\"images\":[],\"category\":\"Autre\",\"brand\":\"\",\"description\":\"\",\"stock\":0,\"featured\":false,\"status\":\"active\",\"specifications\":[],\"__v\":0},\"id\":777,\"name\":\"Produit modifié\",\"price\":\"0 DT\",\"priceNum\":13000,\"oldPrice\":null,\"badge\":null,\"badgeColor\":null,\"rating\":5,\"reviews\":0,\"img\":\"\",\"images\":[],\"category\":\"Autre\",\"description\":\"\",\"stock\":0,\"specifications\":[]}}",
+    "user": "admin@example.com",
+    "role": "admin",
+    "timestamp": "2026-07-19T15:46:43.499Z"
+  },
+  {
+    "action": "update-product",
+    "entity": "product",
+    "entityId": "777",
+    "success": true,
+    "details": "{\"name\":\"Produit modifié\",\"priceNum\":13000}",
+    "user": "admin@example.com",
+    "role": "admin",
+    "timestamp": "2026-07-19T15:46:43.448Z"
+  },
+  {
+    "action": "create-product",
+    "entity": "product",
+    "entityId": "6a5cf163918d50652a6de74b",
+    "success": true,
+    "details": "{\"name\":\"Produit test\",\"category\":\"Test\"}",
+    "user": "admin@example.com",
+    "role": "admin",
+    "timestamp": "2026-07-19T15:46:43.311Z"
+  },
+  {
+    "action": "delete-product",
+    "entity": "product",
+    "entityId": "777",
+    "success": true,
+    "details": "{\"deletedProduct\":{\"$__\":{\"activePaths\":{\"paths\":{\"priceNum\":\"init\",\"price\":\"init\",\"name\":\"init\",\"priceBeforeDiscount\":\"init\",\"discount\":\"init\",\"oldPrice\":\"init\",\"badge\":\"init\",\"badgeColor\":\"init\",\"rating\":\"init\",\"reviews\":\"init\",\"img\":\"init\",\"images\":\"init\",\"category\":\"init\",\"brand\":\"init\",\"description\":\"init\",\"stock\":\"init\",\"featured\":\"init\",\"status\":\"init\",\"_id\":\"init\",\"id\":\"init\",\"specifications\":\"init\",\"__v\":\"init\"},\"states\":{\"require\":{},\"default\":{},\"init\":{\"_id\":true,\"id\":true,\"name\":true,\"price\":true,\"priceNum\":true,\"priceBeforeDiscount\":true,\"discount\":true,\"oldPrice\":true,\"badge\":true,\"badgeColor\":true,\"rating\":true,\"reviews\":true,\"img\":true,\"images\":true,\"category\":true,\"brand\":true,\"description\":true,\"stock\":true,\"featured\":true,\"status\":true,\"specifications\":true,\"__v\":true}}},\"skipId\":true},\"$isNew\":false,\"_doc\":{\"_id\":\"6a5cf142fbe1fca68f5485ca\",\"id\":777,\"name\":\"Produit modifié\",\"price\":\"0 DT\",\"priceNum\":13000,\"priceBeforeDiscount\":null,\"discount\":0,\"oldPrice\":null,\"badge\":null,\"badgeColor\":null,\"rating\":5,\"reviews\":0,\"img\":\"\",\"images\":[],\"category\":\"Autre\",\"brand\":\"\",\"description\":\"\",\"stock\":0,\"featured\":false,\"status\":\"active\",\"specifications\":[],\"__v\":0},\"id\":777,\"name\":\"Produit modifié\",\"price\":\"0 DT\",\"priceNum\":13000,\"oldPrice\":null,\"badge\":null,\"badgeColor\":null,\"rating\":5,\"reviews\":0,\"img\":\"\",\"images\":[],\"category\":\"Autre\",\"description\":\"\",\"stock\":0,\"specifications\":[]}}",
+    "user": "admin@example.com",
+    "role": "admin",
+    "timestamp": "2026-07-19T15:46:10.300Z"
+  },
+  {
+    "action": "update-product",
+    "entity": "product",
+    "entityId": "777",
+    "success": true,
+    "details": "{\"name\":\"Produit modifié\",\"priceNum\":13000}",
+    "user": "admin@example.com",
+    "role": "admin",
+    "timestamp": "2026-07-19T15:46:10.270Z"
+  },
+  {
+    "action": "create-product",
+    "entity": "product",
+    "entityId": "6a5cf142fbe1fca68f5485ca",
+    "success": true,
+    "details": "{\"name\":\"Produit test\",\"category\":\"Test\"}",
+    "user": "admin@example.com",
+    "role": "admin",
+    "timestamp": "2026-07-19T15:46:10.213Z"
+  },
+  {
+    "action": "delete-product",
+    "entity": "product",
+    "entityId": "777",
+    "success": true,
+    "details": "{\"deletedProduct\":{\"$__\":{\"activePaths\":{\"paths\":{\"priceNum\":\"init\",\"price\":\"init\",\"name\":\"init\",\"priceBeforeDiscount\":\"init\",\"discount\":\"init\",\"oldPrice\":\"init\",\"badge\":\"init\",\"badgeColor\":\"init\",\"rating\":\"init\",\"reviews\":\"init\",\"img\":\"init\",\"images\":\"init\",\"category\":\"init\",\"brand\":\"init\",\"description\":\"init\",\"stock\":\"init\",\"featured\":\"init\",\"status\":\"init\",\"_id\":\"init\",\"id\":\"init\",\"specifications\":\"init\",\"__v\":\"init\"},\"states\":{\"require\":{},\"default\":{},\"init\":{\"_id\":true,\"id\":true,\"name\":true,\"price\":true,\"priceNum\":true,\"priceBeforeDiscount\":true,\"discount\":true,\"oldPrice\":true,\"badge\":true,\"badgeColor\":true,\"rating\":true,\"reviews\":true,\"img\":true,\"images\":true,\"category\":true,\"brand\":true,\"description\":true,\"stock\":true,\"featured\":true,\"status\":true,\"specifications\":true,\"__v\":true}}},\"skipId\":true},\"$isNew\":false,\"_doc\":{\"_id\":\"6a5cf1257c964f7f9bb819a9\",\"id\":777,\"name\":\"Produit modifié\",\"price\":\"0 DT\",\"priceNum\":13000,\"priceBeforeDiscount\":null,\"discount\":0,\"oldPrice\":null,\"badge\":null,\"badgeColor\":null,\"rating\":5,\"reviews\":0,\"img\":\"\",\"images\":[],\"category\":\"Autre\",\"brand\":\"\",\"description\":\"\",\"stock\":0,\"featured\":false,\"status\":\"active\",\"specifications\":[],\"__v\":0},\"id\":777,\"name\":\"Produit modifié\",\"price\":\"0 DT\",\"priceNum\":13000,\"oldPrice\":null,\"badge\":null,\"badgeColor\":null,\"rating\":5,\"reviews\":0,\"img\":\"\",\"images\":[],\"category\":\"Autre\",\"description\":\"\",\"stock\":0,\"specifications\":[]}}",
+    "user": "admin@example.com",
+    "role": "admin",
+    "timestamp": "2026-07-19T15:45:41.738Z"
+  },
+  {
+    "action": "update-product",
+    "entity": "product",
+    "entityId": "777",
+    "success": true,
+    "details": "{\"name\":\"Produit modifié\",\"priceNum\":13000}",
+    "user": "admin@example.com",
+    "role": "admin",
+    "timestamp": "2026-07-19T15:45:41.693Z"
+  },
+  {
+    "action": "create-product",
+    "entity": "product",
+    "entityId": "6a5cf1257c964f7f9bb819a9",
+    "success": true,
+    "details": "{\"name\":\"Produit test\",\"category\":\"Test\"}",
+    "user": "admin@example.com",
+    "role": "admin",
+    "timestamp": "2026-07-19T15:45:41.561Z"
+  },
+  {
+    "action": "delete-product",
+    "entity": "product",
+    "entityId": "777",
+    "success": true,
+    "details": "{\"deletedProduct\":{\"$__\":{\"activePaths\":{\"paths\":{\"priceNum\":\"init\",\"price\":\"init\",\"name\":\"init\",\"priceBeforeDiscount\":\"init\",\"discount\":\"init\",\"oldPrice\":\"init\",\"badge\":\"init\",\"badgeColor\":\"init\",\"rating\":\"init\",\"reviews\":\"init\",\"img\":\"init\",\"images\":\"init\",\"category\":\"init\",\"brand\":\"init\",\"description\":\"init\",\"stock\":\"init\",\"featured\":\"init\",\"status\":\"init\",\"_id\":\"init\",\"id\":\"init\",\"specifications\":\"init\",\"__v\":\"init\"},\"states\":{\"require\":{},\"default\":{},\"init\":{\"_id\":true,\"id\":true,\"name\":true,\"price\":true,\"priceNum\":true,\"priceBeforeDiscount\":true,\"discount\":true,\"oldPrice\":true,\"badge\":true,\"badgeColor\":true,\"rating\":true,\"reviews\":true,\"img\":true,\"images\":true,\"category\":true,\"brand\":true,\"description\":true,\"stock\":true,\"featured\":true,\"status\":true,\"specifications\":true,\"__v\":true}}},\"skipId\":true},\"$isNew\":false,\"_doc\":{\"_id\":\"6a5cf11915b2af2c5cb1ad8b\",\"id\":777,\"name\":\"Produit modifié\",\"price\":\"0 DT\",\"priceNum\":13000,\"priceBeforeDiscount\":null,\"discount\":0,\"oldPrice\":null,\"badge\":null,\"badgeColor\":null,\"rating\":5,\"reviews\":0,\"img\":\"\",\"images\":[],\"category\":\"Autre\",\"brand\":\"\",\"description\":\"\",\"stock\":0,\"featured\":false,\"status\":\"active\",\"specifications\":[],\"__v\":0},\"id\":777,\"name\":\"Produit modifié\",\"price\":\"0 DT\",\"priceNum\":13000,\"oldPrice\":null,\"badge\":null,\"badgeColor\":null,\"rating\":5,\"reviews\":0,\"img\":\"\",\"images\":[],\"category\":\"Autre\",\"description\":\"\",\"stock\":0,\"specifications\":[]}}",
+    "user": "admin@example.com",
+    "role": "admin",
+    "timestamp": "2026-07-19T15:45:29.917Z"
+  },
+  {
+    "action": "update-product",
+    "entity": "product",
+    "entityId": "777",
+    "success": true,
+    "details": "{\"name\":\"Produit modifié\",\"priceNum\":13000}",
+    "user": "admin@example.com",
+    "role": "admin",
+    "timestamp": "2026-07-19T15:45:29.887Z"
+  },
+  {
+    "action": "create-product",
+    "entity": "product",
+    "entityId": "6a5cf11915b2af2c5cb1ad8b",
+    "success": true,
+    "details": "{\"name\":\"Produit test\",\"category\":\"Test\"}",
+    "user": "admin@example.com",
+    "role": "admin",
+    "timestamp": "2026-07-19T15:45:29.804Z"
+  },
+  {
+    "action": "delete-product",
+    "entity": "product",
+    "entityId": "777",
+    "success": true,
+    "details": "{\"deletedProduct\":{\"$__\":{\"activePaths\":{\"paths\":{\"priceNum\":\"init\",\"price\":\"init\",\"name\":\"init\",\"priceBeforeDiscount\":\"init\",\"discount\":\"init\",\"oldPrice\":\"init\",\"badge\":\"init\",\"badgeColor\":\"init\",\"rating\":\"init\",\"reviews\":\"init\",\"img\":\"init\",\"images\":\"init\",\"category\":\"init\",\"brand\":\"init\",\"description\":\"init\",\"stock\":\"init\",\"featured\":\"init\",\"status\":\"init\",\"_id\":\"init\",\"id\":\"init\",\"specifications\":\"init\",\"__v\":\"init\"},\"states\":{\"require\":{},\"default\":{},\"init\":{\"_id\":true,\"id\":true,\"name\":true,\"price\":true,\"priceNum\":true,\"priceBeforeDiscount\":true,\"discount\":true,\"oldPrice\":true,\"badge\":true,\"badgeColor\":true,\"rating\":true,\"reviews\":true,\"img\":true,\"images\":true,\"category\":true,\"brand\":true,\"description\":true,\"stock\":true,\"featured\":true,\"status\":true,\"specifications\":true,\"__v\":true}}},\"skipId\":true},\"$isNew\":false,\"_doc\":{\"_id\":\"6a5cf10e8c4141330ad03a5e\",\"id\":777,\"name\":\"Produit modifié\",\"price\":\"0 DT\",\"priceNum\":13000,\"priceBeforeDiscount\":null,\"discount\":0,\"oldPrice\":null,\"badge\":null,\"badgeColor\":null,\"rating\":5,\"reviews\":0,\"img\":\"\",\"images\":[],\"category\":\"Autre\",\"brand\":\"\",\"description\":\"\",\"stock\":0,\"featured\":false,\"status\":\"active\",\"specifications\":[],\"__v\":0},\"id\":777,\"name\":\"Produit modifié\",\"price\":\"0 DT\",\"priceNum\":13000,\"oldPrice\":null,\"badge\":null,\"badgeColor\":null,\"rating\":5,\"reviews\":0,\"img\":\"\",\"images\":[],\"category\":\"Autre\",\"description\":\"\",\"stock\":0,\"specifications\":[]}}",
+    "user": "admin@example.com",
+    "role": "admin",
+    "timestamp": "2026-07-19T15:45:18.376Z"
+  },
+  {
+    "action": "update-product",
+    "entity": "product",
+    "entityId": "777",
+    "success": true,
+    "details": "{\"name\":\"Produit modifié\",\"priceNum\":13000}",
+    "user": "admin@example.com",
+    "role": "admin",
+    "timestamp": "2026-07-19T15:45:18.345Z"
+  },
+  {
+    "action": "create-product",
+    "entity": "product",
+    "entityId": "6a5cf10e8c4141330ad03a5e",
+    "success": true,
+    "details": "{\"name\":\"Produit test\",\"category\":\"Test\"}",
+    "user": "admin@example.com",
+    "role": "admin",
+    "timestamp": "2026-07-19T15:45:18.269Z"
+  },
+  {
+    "action": "delete-product",
+    "entity": "product",
+    "entityId": "777",
+    "success": true,
+    "details": "{\"deletedProduct\":{\"$__\":{\"activePaths\":{\"paths\":{\"priceNum\":\"init\",\"price\":\"init\",\"name\":\"init\",\"priceBeforeDiscount\":\"init\",\"discount\":\"init\",\"oldPrice\":\"init\",\"badge\":\"init\",\"badgeColor\":\"init\",\"rating\":\"init\",\"reviews\":\"init\",\"img\":\"init\",\"images\":\"init\",\"category\":\"init\",\"brand\":\"init\",\"description\":\"init\",\"stock\":\"init\",\"featured\":\"init\",\"status\":\"init\",\"_id\":\"init\",\"id\":\"init\",\"specifications\":\"init\",\"__v\":\"init\"},\"states\":{\"require\":{},\"default\":{},\"init\":{\"_id\":true,\"id\":true,\"name\":true,\"price\":true,\"priceNum\":true,\"priceBeforeDiscount\":true,\"discount\":true,\"oldPrice\":true,\"badge\":true,\"badgeColor\":true,\"rating\":true,\"reviews\":true,\"img\":true,\"images\":true,\"category\":true,\"brand\":true,\"description\":true,\"stock\":true,\"featured\":true,\"status\":true,\"specifications\":true,\"__v\":true}}},\"skipId\":true},\"$isNew\":false,\"_doc\":{\"_id\":\"6a5cf0ef198b76743a990434\",\"id\":777,\"name\":\"Produit modifié\",\"price\":\"0 DT\",\"priceNum\":13000,\"priceBeforeDiscount\":null,\"discount\":0,\"oldPrice\":null,\"badge\":null,\"badgeColor\":null,\"rating\":5,\"reviews\":0,\"img\":\"\",\"images\":[],\"category\":\"Autre\",\"brand\":\"\",\"description\":\"\",\"stock\":0,\"featured\":false,\"status\":\"active\",\"specifications\":[],\"__v\":0},\"id\":777,\"name\":\"Produit modifié\",\"price\":\"0 DT\",\"priceNum\":13000,\"oldPrice\":null,\"badge\":null,\"badgeColor\":null,\"rating\":5,\"reviews\":0,\"img\":\"\",\"images\":[],\"category\":\"Autre\",\"description\":\"\",\"stock\":0,\"specifications\":[]}}",
+    "user": "admin@example.com",
+    "role": "admin",
+    "timestamp": "2026-07-19T15:44:48.005Z"
+  },
+  {
+    "action": "update-product",
+    "entity": "product",
+    "entityId": "777",
+    "success": true,
+    "details": "{\"name\":\"Produit modifié\",\"priceNum\":13000}",
+    "user": "admin@example.com",
+    "role": "admin",
+    "timestamp": "2026-07-19T15:44:47.971Z"
+  },
+  {
+    "action": "create-product",
+    "entity": "product",
+    "entityId": "6a5cf0ef198b76743a990434",
+    "success": true,
+    "details": "{\"name\":\"Produit test\",\"category\":\"Test\"}",
+    "user": "admin@example.com",
+    "role": "admin",
+    "timestamp": "2026-07-19T15:44:47.895Z"
+  },
+  {
+    "action": "delete-product",
+    "entity": "product",
+    "entityId": "777",
+    "success": true,
+    "details": "{\"deletedProduct\":{\"$__\":{\"activePaths\":{\"paths\":{\"priceNum\":\"init\",\"price\":\"init\",\"name\":\"init\",\"priceBeforeDiscount\":\"init\",\"discount\":\"init\",\"oldPrice\":\"init\",\"badge\":\"init\",\"badgeColor\":\"init\",\"rating\":\"init\",\"reviews\":\"init\",\"img\":\"init\",\"images\":\"init\",\"category\":\"init\",\"brand\":\"init\",\"description\":\"init\",\"stock\":\"init\",\"featured\":\"init\",\"status\":\"init\",\"_id\":\"init\",\"id\":\"init\",\"specifications\":\"init\",\"__v\":\"init\"},\"states\":{\"require\":{},\"default\":{},\"init\":{\"_id\":true,\"id\":true,\"name\":true,\"price\":true,\"priceNum\":true,\"priceBeforeDiscount\":true,\"discount\":true,\"oldPrice\":true,\"badge\":true,\"badgeColor\":true,\"rating\":true,\"reviews\":true,\"img\":true,\"images\":true,\"category\":true,\"brand\":true,\"description\":true,\"stock\":true,\"featured\":true,\"status\":true,\"specifications\":true,\"__v\":true}}},\"skipId\":true},\"$isNew\":false,\"_doc\":{\"_id\":\"6a5cf0e55e1ab33b044fb44e\",\"id\":777,\"name\":\"Produit modifié\",\"price\":\"0 DT\",\"priceNum\":13000,\"priceBeforeDiscount\":null,\"discount\":0,\"oldPrice\":null,\"badge\":null,\"badgeColor\":null,\"rating\":5,\"reviews\":0,\"img\":\"\",\"images\":[],\"category\":\"Autre\",\"brand\":\"\",\"description\":\"\",\"stock\":0,\"featured\":false,\"status\":\"active\",\"specifications\":[],\"__v\":0},\"id\":777,\"name\":\"Produit modifié\",\"price\":\"0 DT\",\"priceNum\":13000,\"oldPrice\":null,\"badge\":null,\"badgeColor\":null,\"rating\":5,\"reviews\":0,\"img\":\"\",\"images\":[],\"category\":\"Autre\",\"description\":\"\",\"stock\":0,\"specifications\":[]}}",
+    "user": "admin@example.com",
+    "role": "admin",
+    "timestamp": "2026-07-19T15:44:38.165Z"
+  },
+  {
+    "action": "update-product",
+    "entity": "product",
+    "entityId": "777",
+    "success": true,
+    "details": "{\"name\":\"Produit modifié\",\"priceNum\":13000}",
+    "user": "admin@example.com",
+    "role": "admin",
+    "timestamp": "2026-07-19T15:44:38.119Z"
+  },
+  {
+    "action": "create-product",
+    "entity": "product",
+    "entityId": "6a5cf0e55e1ab33b044fb44e",
+    "success": true,
+    "details": "{\"name\":\"Produit test\",\"category\":\"Test\"}",
+    "user": "admin@example.com",
+    "role": "admin",
+    "timestamp": "2026-07-19T15:44:38.058Z"
+  },
+  {
+    "action": "create-product",
+    "entity": "product",
+    "entityId": "6a5ceeb668bff61d826b521c",
+    "success": true,
+    "details": "{\"name\":\"SB01-XL DRAGON IMPACT\",\"category\":\"Catrable Lux\"}",
+    "user": "admin@ecolier.com",
+    "role": "admin",
+    "timestamp": "2026-07-19T15:35:18.704Z"
+  },
+  {
+    "action": "upload-image",
+    "entity": "image",
+    "success": true,
+    "details": "/uploads/1784475281982-803937109.png",
+    "user": "admin@ecolier.com",
+    "role": "admin",
+    "timestamp": "2026-07-19T15:34:41.999Z"
+  },
+  {
+    "action": "delete-product",
+    "entity": "product",
+    "entityId": "777",
+    "success": true,
+    "details": "{\"deletedProduct\":{\"$__\":{\"activePaths\":{\"paths\":{\"priceNum\":\"init\",\"price\":\"init\",\"name\":\"init\",\"priceBeforeDiscount\":\"init\",\"discount\":\"init\",\"oldPrice\":\"init\",\"badge\":\"init\",\"badgeColor\":\"init\",\"rating\":\"init\",\"reviews\":\"init\",\"img\":\"init\",\"images\":\"init\",\"category\":\"init\",\"brand\":\"init\",\"description\":\"init\",\"stock\":\"init\",\"featured\":\"init\",\"status\":\"init\",\"_id\":\"init\",\"id\":\"init\",\"specifications\":\"init\",\"__v\":\"init\"},\"states\":{\"require\":{},\"default\":{},\"init\":{\"_id\":true,\"id\":true,\"name\":true,\"price\":true,\"priceNum\":true,\"priceBeforeDiscount\":true,\"discount\":true,\"oldPrice\":true,\"badge\":true,\"badgeColor\":true,\"rating\":true,\"reviews\":true,\"img\":true,\"images\":true,\"category\":true,\"brand\":true,\"description\":true,\"stock\":true,\"featured\":true,\"status\":true,\"specifications\":true,\"__v\":true}}},\"skipId\":true},\"$isNew\":false,\"_doc\":{\"_id\":\"6a5cdfc6368a541999dddc06\",\"id\":777,\"name\":\"Produit modifié\",\"price\":\"0 DT\",\"priceNum\":13000,\"priceBeforeDiscount\":null,\"discount\":0,\"oldPrice\":null,\"badge\":null,\"badgeColor\":null,\"rating\":5,\"reviews\":0,\"img\":\"\",\"images\":[],\"category\":\"Autre\",\"brand\":\"\",\"description\":\"\",\"stock\":0,\"featured\":false,\"status\":\"active\",\"specifications\":[],\"__v\":0},\"id\":777,\"name\":\"Produit modifié\",\"price\":\"0 DT\",\"priceNum\":13000,\"oldPrice\":null,\"badge\":null,\"badgeColor\":null,\"rating\":5,\"reviews\":0,\"img\":\"\",\"images\":[],\"category\":\"Autre\",\"description\":\"\",\"stock\":0,\"specifications\":[]}}",
+    "user": "admin@example.com",
+    "role": "admin",
+    "timestamp": "2026-07-19T14:31:34.287Z"
+  },
+  {
+    "action": "update-product",
+    "entity": "product",
+    "entityId": "777",
+    "success": true,
+    "details": "{\"name\":\"Produit modifié\",\"priceNum\":13000}",
+    "user": "admin@example.com",
+    "role": "admin",
+    "timestamp": "2026-07-19T14:31:34.270Z"
+  },
+  {
+    "action": "create-product",
+    "entity": "product",
+    "entityId": "6a5cdfc6368a541999dddc06",
+    "success": true,
+    "details": "{\"name\":\"Produit test\",\"category\":\"Test\"}",
+    "user": "admin@example.com",
+    "role": "admin",
+    "timestamp": "2026-07-19T14:31:34.192Z"
+  },
+  {
+    "action": "update-product",
+    "entity": "product",
+    "entityId": "777",
+    "success": true,
+    "details": "{\"name\":\"Produit modifié\",\"priceNum\":13000}",
+    "user": "admin@example.com",
+    "role": "admin",
+    "timestamp": "2026-07-19T14:29:18.061Z"
+  },
+  {
+    "action": "create-product",
+    "entity": "product",
+    "entityId": "6a5cdf3d3aee579e32054dd3",
+    "success": true,
+    "details": "{\"name\":\"Produit test\",\"category\":\"Test\"}",
+    "user": "admin@example.com",
+    "role": "admin",
+    "timestamp": "2026-07-19T14:29:17.980Z"
+  },
+  {
+    "action": "create-product",
+    "entity": "product",
+    "entityId": "6a5cdf0338f8e03de4ee271a",
+    "success": true,
+    "details": "{\"name\":\"Produit test\",\"category\":\"Test\"}",
+    "user": "admin@example.com",
+    "role": "admin",
+    "timestamp": "2026-07-19T14:28:20.012Z"
+  },
+  {
+    "action": "update-product",
+    "entity": "product",
+    "entityId": "6",
+    "success": true,
+    "details": "{\"name\":\"Calculatrice scientifique\",\"description\":\"\",\"price\":\"52,000 DT\",\"priceNum\":52,\"priceBeforeDiscount\":null,\"discount\":0,\"stock\":0,\"category\":\"Calculatrices\",\"brand\":\"\",\"img\":\"https://ik.imagekit.io/nachet/l'ecolier/725112200_3918844728257311_5266942425863617450_n.jpg\",\"badge\":\"-20%\",\"badgeColor\":\"#e53935\",\"rating\":4.8,\"reviews\":95,\"featured\":false,\"status\":\"active\"}",
+    "user": "admin@ecolier.com",
+    "role": "admin",
+    "timestamp": "2026-07-18T20:22:59.074Z"
+  },
+  {
+    "action": "delete-product",
+    "entity": "product",
+    "entityId": "1784404287393",
+    "success": true,
+    "details": "{\"deletedProduct\":{\"$__\":{\"activePaths\":{\"paths\":{\"priceNum\":\"init\",\"price\":\"init\",\"name\":\"init\",\"priceBeforeDiscount\":\"init\",\"discount\":\"init\",\"oldPrice\":\"init\",\"badge\":\"init\",\"badgeColor\":\"init\",\"rating\":\"init\",\"reviews\":\"init\",\"img\":\"init\",\"images\":\"init\",\"category\":\"init\",\"brand\":\"init\",\"description\":\"init\",\"stock\":\"init\",\"featured\":\"init\",\"status\":\"init\",\"_id\":\"init\",\"id\":\"init\",\"specifications\":\"init\",\"__v\":\"init\"},\"states\":{\"require\":{},\"default\":{},\"init\":{\"_id\":true,\"id\":true,\"name\":true,\"price\":true,\"priceNum\":true,\"priceBeforeDiscount\":true,\"discount\":true,\"oldPrice\":true,\"badge\":true,\"badgeColor\":true,\"rating\":true,\"reviews\":true,\"img\":true,\"images\":true,\"category\":true,\"brand\":true,\"description\":true,\"stock\":true,\"featured\":true,\"status\":true,\"specifications\":true,\"__v\":true}}},\"skipId\":true},\"$isNew\":false,\"_doc\":{\"_id\":\"6a5bd93e171ede81f989fad2\",\"id\":1784404287393,\"name\":\"WAMA\",\"price\":\"200 DT\",\"priceNum\":200,\"priceBeforeDiscount\":0,\"discount\":0,\"oldPrice\":null,\"badge\":\"-18%\",\"badgeColor\":\"#e53935\",\"rating\":4.8,\"reviews\":50,\"img\":\"/uploads/1784404266150-197565453.png\",\"images\":[\"/uploads/1784404266150-197565453.png\"],\"category\":\"VALISE\",\"brand\":\"MAPED\",\"description\":\"GFHCJ?K\",\"stock\":10,\"featured\":false,\"status\":\"active\",\"specifications\":[],\"__v\":0},\"id\":1784404287393,\"name\":\"WAMA\",\"price\":\"200 DT\",\"priceNum\":200,\"oldPrice\":null,\"badge\":\"-18%\",\"badgeColor\":\"#e53935\",\"rating\":4.8,\"reviews\":50,\"img\":\"/uploads/1784404266150-197565453.png\",\"images\":[\"/uploads/1784404266150-197565453.png\"],\"category\":\"VALISE\",\"description\":\"GFHCJ?K\",\"stock\":10,\"specifications\":[]}}",
+    "user": "admin@ecolier.com",
+    "role": "admin",
+    "timestamp": "2026-07-18T20:11:22.658Z"
+  },
+  {
+    "action": "create-product",
+    "entity": "product",
+    "entityId": "6a5bd93e171ede81f989fad2",
+    "success": true,
+    "details": "{\"name\":\"WAMA\",\"category\":\"VALISE\"}",
+    "user": "admin@ecolier.com",
+    "role": "admin",
+    "timestamp": "2026-07-18T19:51:26.516Z"
+  },
+  {
+    "action": "upload-image",
+    "entity": "image",
+    "success": true,
+    "details": "/uploads/1784404266150-197565453.png",
+    "user": "admin@ecolier.com",
+    "role": "admin",
+    "timestamp": "2026-07-18T19:51:06.159Z"
+  },
+  {
+    "action": "delete-product",
+    "entity": "product",
+    "entityId": "1784128318445",
+    "success": true,
+    "details": "{\"deletedProduct\":{\"$__\":{\"activePaths\":{\"paths\":{\"priceNum\":\"init\",\"price\":\"init\",\"name\":\"init\",\"priceBeforeDiscount\":\"init\",\"discount\":\"init\",\"oldPrice\":\"init\",\"badge\":\"init\",\"badgeColor\":\"init\",\"rating\":\"init\",\"reviews\":\"init\",\"img\":\"init\",\"images\":\"init\",\"category\":\"init\",\"brand\":\"init\",\"description\":\"init\",\"stock\":\"init\",\"featured\":\"init\",\"status\":\"init\",\"_id\":\"init\",\"id\":\"init\",\"specifications\":\"init\",\"__v\":\"init\"},\"states\":{\"require\":{},\"default\":{},\"init\":{\"_id\":true,\"id\":true,\"name\":true,\"price\":true,\"priceNum\":true,\"priceBeforeDiscount\":true,\"discount\":true,\"oldPrice\":true,\"badge\":true,\"badgeColor\":true,\"rating\":true,\"reviews\":true,\"img\":true,\"images\":true,\"category\":true,\"brand\":true,\"description\":true,\"stock\":true,\"featured\":true,\"status\":true,\"specifications\":true,\"__v\":true}}},\"skipId\":true},\"$isNew\":false,\"_doc\":{\"_id\":\"6a57a33d0df01f2c35a8f262\",\"id\":1784128318445,\"name\":\"ljvj\",\"price\":\"299.000 dt\",\"priceNum\":299,\"priceBeforeDiscount\":399,\"discount\":10,\"oldPrice\":null,\"badge\":\"\",\"badgeColor\":\"\",\"rating\":5,\"reviews\":0,\"img\":\"/uploads/1784403841178-993340405.png\",\"images\":[\"/uploads/1784403841178-993340405.png\"],\"category\":\"Catrable Lux\",\"brand\":\"\",\"description\":\"ljvhljh\",\"stock\":1,\"featured\":false,\"status\":\"active\",\"specifications\":[],\"__v\":0},\"id\":1784128318445,\"name\":\"ljvj\",\"price\":\"299.000 dt\",\"priceNum\":299,\"oldPrice\":null,\"badge\":\"\",\"badgeColor\":\"\",\"rating\":5,\"reviews\":0,\"img\":\"/uploads/1784403841178-993340405.png\",\"images\":[\"/uploads/1784403841178-993340405.png\"],\"category\":\"Catrable Lux\",\"description\":\"ljvhljh\",\"stock\":1,\"specifications\":[]}}",
+    "user": "admin@ecolier.com",
+    "role": "admin",
+    "timestamp": "2026-07-18T19:46:43.400Z"
+  },
+  {
+    "action": "update-product",
+    "entity": "product",
+    "entityId": "1784128318445",
+    "success": true,
+    "details": "{\"name\":\"ljvj\",\"description\":\"ljvhljh\",\"price\":\"299.000 dt\",\"priceNum\":299,\"priceBeforeDiscount\":399,\"discount\":10,\"stock\":1,\"category\":\"Catrable Lux\",\"brand\":\"\",\"img\":\"/uploads/1784403841178-993340405.png\",\"badge\":\"\",\"badgeColor\":\"\",\"rating\":5,\"reviews\":0,\"featured\":false,\"status\":\"active\"}",
+    "user": "admin@ecolier.com",
+    "role": "admin",
+    "timestamp": "2026-07-18T19:44:02.832Z"
+  },
+  {
+    "action": "upload-image",
+    "entity": "image",
+    "success": true,
+    "details": "/uploads/1784403841178-993340405.png",
+    "user": "admin@ecolier.com",
+    "role": "admin",
+    "timestamp": "2026-07-18T19:44:01.186Z"
+  },
+  {
+    "action": "delete-product",
+    "entity": "product",
+    "entityId": "1784403564377",
+    "success": true,
+    "details": "{\"deletedProduct\":{\"$__\":{\"activePaths\":{\"paths\":{\"priceNum\":\"init\",\"price\":\"init\",\"name\":\"init\",\"priceBeforeDiscount\":\"init\",\"discount\":\"init\",\"oldPrice\":\"init\",\"badge\":\"init\",\"badgeColor\":\"init\",\"rating\":\"init\",\"reviews\":\"init\",\"img\":\"init\",\"images\":\"init\",\"category\":\"init\",\"brand\":\"init\",\"description\":\"init\",\"stock\":\"init\",\"featured\":\"init\",\"status\":\"init\",\"_id\":\"init\",\"id\":\"init\",\"specifications\":\"init\",\"__v\":\"init\"},\"states\":{\"require\":{},\"default\":{},\"init\":{\"_id\":true,\"id\":true,\"name\":true,\"price\":true,\"priceNum\":true,\"priceBeforeDiscount\":true,\"discount\":true,\"oldPrice\":true,\"badge\":true,\"badgeColor\":true,\"rating\":true,\"reviews\":true,\"img\":true,\"images\":true,\"category\":true,\"brand\":true,\"description\":true,\"stock\":true,\"featured\":true,\"status\":true,\"specifications\":true,\"__v\":true}}},\"skipId\":true},\"$isNew\":false,\"_doc\":{\"_id\":\"6a5bd66b171ede81f989facf\",\"id\":1784403564377,\"name\":\"chy\",\"price\":\"119,000 DT\",\"priceNum\":119,\"priceBeforeDiscount\":219,\"discount\":46,\"oldPrice\":null,\"badge\":\"-46%\",\"badgeColor\":\"red\",\"rating\":5,\"reviews\":10,\"img\":\"/uploads/1784403544602-322629583.png\",\"images\":[\"/uploads/1784403544602-322629583.png\"],\"category\":\"Cartable Eco Lux\",\"brand\":\"Bomi\",\"description\":\"\",\"stock\":10,\"featured\":false,\"status\":\"active\",\"specifications\":[],\"__v\":0},\"id\":1784403564377,\"name\":\"chy\",\"price\":\"119,000 DT\",\"priceNum\":119,\"oldPrice\":null,\"badge\":\"-46%\",\"badgeColor\":\"red\",\"rating\":5,\"reviews\":10,\"img\":\"/uploads/1784403544602-322629583.png\",\"images\":[\"/uploads/1784403544602-322629583.png\"],\"category\":\"Cartable Eco Lux\",\"description\":\"\",\"stock\":10,\"specifications\":[]}}",
+    "user": "admin@ecolier.com",
+    "role": "admin",
+    "timestamp": "2026-07-18T19:43:49.015Z"
+  },
+  {
+    "action": "create-product",
+    "entity": "product",
+    "entityId": "6a5bd66b171ede81f989facf",
+    "success": true,
+    "details": "{\"name\":\"chy\",\"category\":\"Cartable Eco Lux\"}",
+    "user": "admin@ecolier.com",
+    "role": "admin",
+    "timestamp": "2026-07-18T19:39:23.477Z"
+  },
+  {
+    "action": "upload-image",
+    "entity": "image",
+    "success": true,
+    "details": "/uploads/1784403544602-322629583.png",
+    "user": "admin@ecolier.com",
+    "role": "admin",
+    "timestamp": "2026-07-18T19:39:04.622Z"
+  },
+  {
+    "action": "delete-product",
+    "entity": "product",
+    "entityId": "1784403077434",
+    "success": true,
+    "details": "{\"deletedProduct\":{\"$__\":{\"activePaths\":{\"paths\":{\"priceNum\":\"init\",\"price\":\"init\",\"name\":\"init\",\"priceBeforeDiscount\":\"init\",\"discount\":\"init\",\"oldPrice\":\"init\",\"badge\":\"init\",\"badgeColor\":\"init\",\"rating\":\"init\",\"reviews\":\"init\",\"img\":\"init\",\"images\":\"init\",\"category\":\"init\",\"brand\":\"init\",\"description\":\"init\",\"stock\":\"init\",\"featured\":\"init\",\"status\":\"init\",\"_id\":\"init\",\"id\":\"init\",\"specifications\":\"init\",\"__v\":\"init\"},\"states\":{\"require\":{},\"default\":{},\"init\":{\"_id\":true,\"id\":true,\"name\":true,\"price\":true,\"priceNum\":true,\"priceBeforeDiscount\":true,\"discount\":true,\"oldPrice\":true,\"badge\":true,\"badgeColor\":true,\"rating\":true,\"reviews\":true,\"img\":true,\"images\":true,\"category\":true,\"brand\":true,\"description\":true,\"stock\":true,\"featured\":true,\"status\":true,\"specifications\":true,\"__v\":true}}},\"skipId\":true},\"$isNew\":false,\"_doc\":{\"_id\":\"6a5bd484171ede81f989face\",\"id\":1784403077434,\"name\":\"SB01-XL DRAGON IMPACT\",\"price\":\"119,000 DT\",\"priceNum\":119,\"priceBeforeDiscount\":219,\"discount\":46,\"oldPrice\":null,\"badge\":\"-46%\",\"badgeColor\":\"#e53935\",\"rating\":5,\"reviews\":34,\"img\":\"/uploads/1784403074671-524485095.png\",\"images\":[\"/uploads/1784403074671-524485095.png\"],\"category\":\"Cartable Eco Lux\",\"brand\":\"Bomi\",\"description\":\"\",\"stock\":10,\"featured\":false,\"status\":\"active\",\"specifications\":[],\"__v\":0},\"id\":1784403077434,\"name\":\"SB01-XL DRAGON IMPACT\",\"price\":\"119,000 DT\",\"priceNum\":119,\"oldPrice\":null,\"badge\":\"-46%\",\"badgeColor\":\"#e53935\",\"rating\":5,\"reviews\":34,\"img\":\"/uploads/1784403074671-524485095.png\",\"images\":[\"/uploads/1784403074671-524485095.png\"],\"category\":\"Cartable Eco Lux\",\"description\":\"\",\"stock\":10,\"specifications\":[]}}",
+    "user": "admin@ecolier.com",
+    "role": "admin",
+    "timestamp": "2026-07-18T19:35:12.963Z"
+  },
+  {
+    "action": "update-product",
+    "entity": "product",
+    "entityId": "1784403077434",
+    "success": true,
+    "details": "{\"name\":\"SB01-XL DRAGON IMPACT\",\"description\":\"\",\"price\":\"119,000 DT\",\"priceNum\":119,\"priceBeforeDiscount\":219,\"discount\":46,\"stock\":10,\"category\":\"Cartable Eco Lux\",\"brand\":\"Bomi\",\"img\":\"/uploads/1784403074671-524485095.png\",\"badge\":\"-46%\",\"badgeColor\":\"#e53935\",\"rating\":5,\"reviews\":34,\"featured\":false,\"status\":\"active\"}",
+    "user": "admin@ecolier.com",
+    "role": "admin",
+    "timestamp": "2026-07-18T19:31:32.689Z"
+  },
+  {
+    "action": "create-product",
+    "entity": "product",
+    "entityId": "6a5bd484171ede81f989face",
+    "success": true,
+    "details": "{\"name\":\"SB01-XL DRAGON IMPACT\",\"category\":\"Cartable Eco Lux\"}",
+    "user": "admin@ecolier.com",
+    "role": "admin",
+    "timestamp": "2026-07-18T19:31:16.635Z"
+  },
+  {
+    "action": "upload-image",
+    "entity": "image",
+    "success": true,
+    "details": "/uploads/1784403074671-524485095.png",
+    "user": "admin@ecolier.com",
+    "role": "admin",
+    "timestamp": "2026-07-18T19:31:14.677Z"
+  },
+  {
+    "action": "upload-image",
+    "entity": "image",
+    "success": true,
+    "details": "/uploads/1784403037999-427341135.png",
+    "user": "admin@ecolier.com",
+    "role": "admin",
+    "timestamp": "2026-07-18T19:30:38.007Z"
+  },
+  {
+    "action": "upload-image",
+    "entity": "image",
+    "success": true,
+    "details": "/uploads/1784403023315-212700936.jpg",
+    "user": "admin@ecolier.com",
+    "role": "admin",
+    "timestamp": "2026-07-18T19:30:23.327Z"
+  },
+  {
+    "action": "upload-image",
+    "entity": "image",
+    "success": true,
+    "details": "/uploads/1784403007906-96312774.jpg",
+    "user": "admin@ecolier.com",
+    "role": "admin",
+    "timestamp": "2026-07-18T19:30:07.911Z"
+  },
+  {
+    "action": "delete-product",
+    "entity": "product",
+    "entityId": "1784402959666",
+    "success": true,
+    "details": "{\"deletedProduct\":{\"$__\":{\"activePaths\":{\"paths\":{\"priceNum\":\"init\",\"price\":\"init\",\"name\":\"init\",\"priceBeforeDiscount\":\"init\",\"discount\":\"init\",\"oldPrice\":\"init\",\"badge\":\"init\",\"badgeColor\":\"init\",\"rating\":\"init\",\"reviews\":\"init\",\"img\":\"init\",\"images\":\"init\",\"category\":\"init\",\"brand\":\"init\",\"description\":\"init\",\"stock\":\"init\",\"featured\":\"init\",\"status\":\"init\",\"_id\":\"init\",\"id\":\"init\",\"specifications\":\"init\",\"__v\":\"init\"},\"states\":{\"require\":{},\"default\":{},\"init\":{\"_id\":true,\"id\":true,\"name\":true,\"price\":true,\"priceNum\":true,\"priceBeforeDiscount\":true,\"discount\":true,\"oldPrice\":true,\"badge\":true,\"badgeColor\":true,\"rating\":true,\"reviews\":true,\"img\":true,\"images\":true,\"category\":true,\"brand\":true,\"description\":true,\"stock\":true,\"featured\":true,\"status\":true,\"specifications\":true,\"__v\":true}}},\"skipId\":true},\"$isNew\":false,\"_doc\":{\"_id\":\"6a5bd40e171ede81f989facd\",\"id\":1784402959666,\"name\":\"SB01-XL DRAGON IMPACT\",\"price\":\"119,000 DT\",\"priceNum\":119,\"priceBeforeDiscount\":219,\"discount\":0,\"oldPrice\":null,\"badge\":\"-46%\",\"badgeColor\":\"#e53935\",\"rating\":0,\"reviews\":0,\"img\":\"https://www.bomi.com.tn/wp-content/uploads/2026/05/1-scaled.jpg\",\"images\":[\"https://www.bomi.com.tn/wp-content/uploads/2026/05/1-scaled.jpg\"],\"category\":\"Cartable Eco Lux\",\"brand\":\"Bomi\",\"description\":\"tdfjghjb;n,;\",\"stock\":10,\"featured\":false,\"status\":\"active\",\"specifications\":[],\"__v\":0},\"id\":1784402959666,\"name\":\"SB01-XL DRAGON IMPACT\",\"price\":\"119,000 DT\",\"priceNum\":119,\"oldPrice\":null,\"badge\":\"-46%\",\"badgeColor\":\"#e53935\",\"rating\":0,\"reviews\":0,\"img\":\"https://www.bomi.com.tn/wp-content/uploads/2026/05/1-scaled.jpg\",\"images\":[\"https://www.bomi.com.tn/wp-content/uploads/2026/05/1-scaled.jpg\"],\"category\":\"Cartable Eco Lux\",\"description\":\"tdfjghjb;n,;\",\"stock\":10,\"specifications\":[]}}",
+    "user": "admin@ecolier.com",
+    "role": "admin",
+    "timestamp": "2026-07-18T19:29:29.292Z"
+  },
+  {
+    "action": "create-product",
+    "entity": "product",
+    "entityId": "6a5bd40e171ede81f989facd",
+    "success": true,
+    "details": "{\"name\":\"SB01-XL DRAGON IMPACT\",\"category\":\"Cartable Eco Lux\"}",
+    "user": "admin@ecolier.com",
+    "role": "admin",
+    "timestamp": "2026-07-18T19:29:18.797Z"
+  },
+  {
+    "action": "create-product",
+    "entity": "product",
+    "entityId": "6a5bbaf66b2261c50f8859fd",
+    "success": true,
+    "details": "{\"name\":\"SB01-XL DRAGON IMPACT\",\"category\":\"Cartable Eco Lux\"}",
+    "user": "admin@ecolier.com",
+    "role": "admin",
+    "timestamp": "2026-07-18T17:42:14.130Z"
+  },
+  {
+    "action": "update-product",
+    "entity": "product",
+    "entityId": "101",
+    "success": true,
+    "details": "{\"name\":\"Cartable Ergonomique Lux - Bleu Profond\",\"description\":\"\",\"price\":\"119,000 DT\",\"priceNum\":119,\"priceBeforeDiscount\":2,\"discount\":0,\"stock\":10,\"category\":\"Cartable Eco Lux\",\"brand\":\"Bomi\",\"img\":\"https://www.bomi.com.tn/wp-content/uploads/2026/05/2-350x350.jpg\",\"badge\":\"-46ù\",\"badgeColor\":\"#e53935\",\"rating\":4.8,\"reviews\":34,\"featured\":false,\"status\":\"active\"}",
+    "user": "admin@ecolier.com",
+    "role": "admin",
+    "timestamp": "2026-07-18T17:33:41.546Z"
+  },
+  {
+    "action": "update-product",
+    "entity": "product",
+    "entityId": "1",
+    "success": true,
+    "details": "{\"name\":\"Cahier scolaire 200 pages\",\"description\":\"\",\"price\":\"8 DT\",\"priceNum\":7.998,\"priceBeforeDiscount\":null,\"discount\":0,\"stock\":0,\"category\":\"Cahiers & Classeurs\",\"brand\":\"\",\"img\":\"https://images.unsplash.com/photo-1722929309984-c6b3e55dd6e5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwyfHxzY2hvb2wlMjBub3RlYm9va3MlMjBwZW5jaWxzJTIwZGVza3xlbnwxfHx8fDE3ODIyMTM5NTR8MA&ixlib=rb-4.1.0&q=80&w=400\",\"badge\":\"-18%\",\"badgeColor\":\"#e53935\",\"rating\":4.8,\"reviews\":124,\"featured\":false,\"status\":\"active\"}",
+    "user": "admin@ecolier.com",
+    "role": "admin",
+    "timestamp": "2026-07-18T16:58:52.990Z"
+  },
+  {
+    "action": "create-product",
+    "entity": "product",
+    "entityId": "6a57a33d0df01f2c35a8f262",
+    "success": true,
+    "details": "{\"name\":\"ljvj\",\"category\":\"Catrable Lux\"}",
+    "user": "admin@ecolier.com",
+    "role": "admin",
+    "timestamp": "2026-07-15T15:11:57.498Z"
+  },
+  {
+    "action": "delete-product",
+    "entity": "product",
+    "entityId": "10",
+    "success": true,
+    "details": "{\"deletedProduct\":{\"$__\":{\"activePaths\":{\"paths\":{\"priceNum\":\"init\",\"price\":\"init\",\"name\":\"init\",\"priceBeforeDiscount\":\"init\",\"discount\":\"init\",\"oldPrice\":\"init\",\"badge\":\"init\",\"badgeColor\":\"init\",\"rating\":\"init\",\"reviews\":\"init\",\"img\":\"init\",\"images\":\"init\",\"category\":\"init\",\"brand\":\"init\",\"description\":\"init\",\"stock\":\"init\",\"featured\":\"init\",\"status\":\"init\",\"_id\":\"init\",\"id\":\"init\",\"specifications\":\"init\",\"__v\":\"init\"},\"states\":{\"require\":{},\"default\":{},\"init\":{\"_id\":true,\"id\":true,\"name\":true,\"price\":true,\"priceNum\":true,\"priceBeforeDiscount\":true,\"discount\":true,\"oldPrice\":true,\"badge\":true,\"badgeColor\":true,\"rating\":true,\"reviews\":true,\"img\":true,\"images\":true,\"category\":true,\"brand\":true,\"description\":true,\"stock\":true,\"featured\":true,\"status\":true,\"specifications\":true,\"__v\":true}}},\"skipId\":true},\"$isNew\":false,\"_doc\":{\"_id\":\"6a57947c0df01f2c35a8f25e\",\"id\":10,\"name\":\"Cahier de dessin Canson A3\",\"price\":\"9,500 DT\",\"priceNum\":9.5,\"priceBeforeDiscount\":null,\"discount\":100,\"oldPrice\":null,\"badge\":null,\"badgeColor\":null,\"rating\":5,\"reviews\":0,\"img\":\"https://images.unsplash.com/photo-1568205612837-017257d2310a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400\",\"images\":[\"https://images.unsplash.com/photo-1568205612837-017257d2310a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400\"],\"category\":\"Matériel artistique\",\"brand\":\"\",\"description\":\"\",\"stock\":0,\"featured\":false,\"status\":\"active\",\"specifications\":[],\"__v\":0},\"id\":10,\"name\":\"Cahier de dessin Canson A3\",\"price\":\"9,500 DT\",\"priceNum\":9.5,\"oldPrice\":null,\"badge\":null,\"badgeColor\":null,\"rating\":5,\"reviews\":0,\"img\":\"https://images.unsplash.com/photo-1568205612837-017257d2310a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400\",\"images\":[\"https://images.unsplash.com/photo-1568205612837-017257d2310a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400\"],\"category\":\"Matériel artistique\",\"description\":\"\",\"stock\":0,\"specifications\":[]}}",
+    "user": "admin@ecolier.com",
+    "role": "admin",
+    "timestamp": "2026-07-15T15:01:37.341Z"
+  },
+  {
+    "action": "update-product",
+    "entity": "product",
+    "entityId": "10",
+    "success": true,
+    "details": "{\"name\":\"Cahier de dessin Canson A3\",\"description\":\"\",\"price\":\"9,500 DT\",\"priceNum\":9.5,\"priceBeforeDiscount\":null,\"discount\":100,\"stock\":0,\"category\":\"Matériel artistique\",\"brand\":\"\",\"img\":\"https://images.unsplash.com/photo-1568205612837-017257d2310a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400\",\"featured\":false,\"status\":\"active\"}",
+    "user": "admin@ecolier.com",
+    "role": "admin",
+    "timestamp": "2026-07-15T15:01:31.646Z"
+  },
+  {
+    "action": "delete-product",
+    "entity": "product",
+    "entityId": "4",
+    "success": true,
+    "details": "{\"deletedProduct\":{\"$__\":{\"activePaths\":{\"paths\":{\"priceNum\":\"init\",\"price\":\"init\",\"name\":\"init\",\"priceBeforeDiscount\":\"init\",\"discount\":\"init\",\"oldPrice\":\"init\",\"badge\":\"init\",\"badgeColor\":\"init\",\"rating\":\"init\",\"reviews\":\"init\",\"img\":\"init\",\"images\":\"init\",\"category\":\"init\",\"brand\":\"init\",\"description\":\"init\",\"stock\":\"init\",\"featured\":\"init\",\"status\":\"init\",\"_id\":\"init\",\"id\":\"init\",\"specifications\":\"init\",\"__v\":\"init\"},\"states\":{\"require\":{},\"default\":{},\"init\":{\"_id\":true,\"id\":true,\"name\":true,\"price\":true,\"priceNum\":true,\"priceBeforeDiscount\":true,\"discount\":true,\"oldPrice\":true,\"badge\":true,\"badgeColor\":true,\"rating\":true,\"reviews\":true,\"img\":true,\"images\":true,\"category\":true,\"brand\":true,\"description\":true,\"stock\":true,\"featured\":true,\"status\":true,\"specifications\":true,\"__v\":true}}},\"skipId\":true},\"$isNew\":false,\"_doc\":{\"_id\":\"6a57947c0df01f2c35a8f258\",\"id\":4,\"name\":\"Boîte de crayons de couleur\",\"price\":\"8,500 DT\",\"priceNum\":8.5,\"priceBeforeDiscount\":null,\"discount\":0,\"oldPrice\":\"10,000 DT\",\"badge\":\"-15%\",\"badgeColor\":\"#e53935\",\"rating\":4.6,\"reviews\":203,\"img\":\"https://images.unsplash.com/photo-1568205612837-017257d2310a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzY2hvb2wlMjBub3RlYm9va3MlMjBwZW5jaWxzJTIwZGVza3xlbnwxfHx8fDE3ODIyMTM5NTR8MA&ixlib=rb-4.1.0&q=80&w=400\",\"images\":[\"https://images.unsplash.com/photo-1568205612837-017257d2310a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzY2hvb2wlMjBub3RlYm9va3MlMjBwZW5jaWxzJTIwZGVza3xlbnwxfHx8fDE3ODIyMTM5NTR8MA&ixlib=rb-4.1.0&q=80&w=400\"],\"category\":\"Stylos & Crayons\",\"brand\":\"\",\"description\":\"\",\"stock\":0,\"featured\":false,\"status\":\"active\",\"specifications\":[],\"__v\":0},\"id\":4,\"name\":\"Boîte de crayons de couleur\",\"price\":\"8,500 DT\",\"priceNum\":8.5,\"oldPrice\":\"10,000 DT\",\"badge\":\"-15%\",\"badgeColor\":\"#e53935\",\"rating\":4.6,\"reviews\":203,\"img\":\"https://images.unsplash.com/photo-1568205612837-017257d2310a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzY2hvb2wlMjBub3RlYm9va3MlMjBwZW5jaWxzJTIwZGVza3xlbnwxfHx8fDE3ODIyMTM5NTR8MA&ixlib=rb-4.1.0&q=80&w=400\",\"images\":[\"https://images.unsplash.com/photo-1568205612837-017257d2310a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzY2hvb2wlMjBub3RlYm9va3MlMjBwZW5jaWxzJTIwZGVza3xlbnwxfHx8fDE3ODIyMTM5NTR8MA&ixlib=rb-4.1.0&q=80&w=400\"],\"category\":\"Stylos & Crayons\",\"description\":\"\",\"stock\":0,\"specifications\":[]}}",
+    "user": "admin@ecolier.com",
+    "role": "admin",
+    "timestamp": "2026-07-15T14:11:31.423Z"
+  },
+  {
+    "action": "delete-product",
+    "entity": "product",
+    "entityId": "11",
+    "success": true,
+    "details": "{\"deletedProduct\":{\"$__\":{\"activePaths\":{\"paths\":{\"priceNum\":\"init\",\"price\":\"init\",\"name\":\"init\",\"priceBeforeDiscount\":\"init\",\"discount\":\"init\",\"oldPrice\":\"init\",\"badge\":\"init\",\"badgeColor\":\"init\",\"rating\":\"init\",\"reviews\":\"init\",\"img\":\"init\",\"images\":\"init\",\"category\":\"init\",\"brand\":\"init\",\"description\":\"init\",\"stock\":\"init\",\"featured\":\"init\",\"status\":\"init\",\"_id\":\"init\",\"id\":\"init\",\"specifications\":\"init\",\"__v\":\"init\"},\"states\":{\"require\":{},\"default\":{},\"init\":{\"_id\":true,\"id\":true,\"name\":true,\"price\":true,\"priceNum\":true,\"priceBeforeDiscount\":true,\"discount\":true,\"oldPrice\":true,\"badge\":true,\"badgeColor\":true,\"rating\":true,\"reviews\":true,\"img\":true,\"images\":true,\"category\":true,\"brand\":true,\"description\":true,\"stock\":true,\"featured\":true,\"status\":true,\"specifications\":true,\"__v\":true}}},\"skipId\":true},\"$isNew\":false,\"_doc\":{\"_id\":\"6a57947c0df01f2c35a8f25f\",\"id\":11,\"name\":\"Bloc Papier à dessin\",\"price\":\"4,500 DT\",\"priceNum\":4.5,\"priceBeforeDiscount\":null,\"discount\":0,\"oldPrice\":null,\"badge\":null,\"badgeColor\":null,\"rating\":4.7,\"reviews\":52,\"img\":\"https://images.unsplash.com/photo-1779684998897-ce5de594a5ac?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400\",\"images\":[\"https://images.unsplash.com/photo-1779684998897-ce5de594a5ac?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400\"],\"category\":\"Papeterie\",\"brand\":\"\",\"description\":\"\",\"stock\":0,\"featured\":false,\"status\":\"active\",\"specifications\":[],\"__v\":0},\"id\":11,\"name\":\"Bloc Papier à dessin\",\"price\":\"4,500 DT\",\"priceNum\":4.5,\"oldPrice\":null,\"badge\":null,\"badgeColor\":null,\"rating\":4.7,\"reviews\":52,\"img\":\"https://images.unsplash.com/photo-1779684998897-ce5de594a5ac?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400\",\"images\":[\"https://images.unsplash.com/photo-1779684998897-ce5de594a5ac?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400\"],\"category\":\"Papeterie\",\"description\":\"\",\"stock\":0,\"specifications\":[]}}",
+    "user": "admin@ecolier.com",
+    "role": "admin",
+    "timestamp": "2026-07-15T14:11:28.756Z"
+  },
+  {
+    "action": "delete-product",
+    "entity": "product",
+    "entityId": "7",
+    "success": true,
+    "details": "{\"deletedProduct\":{\"$__\":{\"activePaths\":{\"paths\":{\"priceNum\":\"init\",\"price\":\"init\",\"name\":\"init\",\"priceBeforeDiscount\":\"init\",\"discount\":\"init\",\"oldPrice\":\"init\",\"badge\":\"init\",\"badgeColor\":\"init\",\"rating\":\"init\",\"reviews\":\"init\",\"img\":\"init\",\"images\":\"init\",\"category\":\"init\",\"brand\":\"init\",\"description\":\"init\",\"stock\":\"init\",\"featured\":\"init\",\"status\":\"init\",\"_id\":\"init\",\"id\":\"init\",\"specifications\":\"init\",\"__v\":\"init\"},\"states\":{\"require\":{},\"default\":{},\"init\":{\"_id\":true,\"id\":true,\"name\":true,\"price\":true,\"priceNum\":true,\"priceBeforeDiscount\":true,\"discount\":true,\"oldPrice\":true,\"badge\":true,\"badgeColor\":true,\"rating\":true,\"reviews\":true,\"img\":true,\"images\":true,\"category\":true,\"brand\":true,\"description\":true,\"stock\":true,\"featured\":true,\"status\":true,\"specifications\":true,\"__v\":true}}},\"skipId\":true},\"$isNew\":false,\"_doc\":{\"_id\":\"6a53ba48d9ec78da00333d56\",\"id\":7,\"name\":\"Valise WAMA Rigide\",\"price\":\"115,000 DT\",\"priceNum\":115,\"priceBeforeDiscount\":null,\"discount\":0,\"oldPrice\":null,\"badge\":null,\"badgeColor\":null,\"rating\":4.9,\"reviews\":36,\"img\":\"https://images.unsplash.com/photo-1726726192148-af52008ff663?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400\",\"images\":[\"https://images.unsplash.com/photo-1726726192148-af52008ff663?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400\"],\"category\":\"Valise WAMA\",\"brand\":\"\",\"description\":\"\",\"stock\":0,\"featured\":false,\"status\":\"active\",\"specifications\":[],\"__v\":0},\"id\":7,\"name\":\"Valise WAMA Rigide\",\"price\":\"115,000 DT\",\"priceNum\":115,\"oldPrice\":null,\"badge\":null,\"badgeColor\":null,\"rating\":4.9,\"reviews\":36,\"img\":\"https://images.unsplash.com/photo-1726726192148-af52008ff663?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400\",\"images\":[\"https://images.unsplash.com/photo-1726726192148-af52008ff663?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400\"],\"category\":\"Valise WAMA\",\"description\":\"\",\"stock\":0,\"specifications\":[]}}",
+    "user": "admin@ecolier.com",
+    "role": "admin",
+    "timestamp": "2026-07-15T14:09:00.064Z"
+  },
+  {
+    "action": "delete-product",
+    "entity": "product",
+    "entityId": "109",
+    "success": true,
+    "details": "{\"deletedProduct\":{\"$__\":{\"activePaths\":{\"paths\":{\"priceNum\":\"init\",\"price\":\"init\",\"name\":\"init\",\"priceBeforeDiscount\":\"init\",\"discount\":\"init\",\"oldPrice\":\"init\",\"badge\":\"init\",\"badgeColor\":\"init\",\"rating\":\"init\",\"reviews\":\"init\",\"img\":\"init\",\"images\":\"init\",\"category\":\"init\",\"brand\":\"init\",\"description\":\"init\",\"stock\":\"init\",\"featured\":\"init\",\"status\":\"init\",\"_id\":\"init\",\"id\":\"init\",\"specifications\":\"init\",\"__v\":\"init\"},\"states\":{\"require\":{},\"default\":{},\"init\":{\"_id\":true,\"id\":true,\"name\":true,\"price\":true,\"priceNum\":true,\"priceBeforeDiscount\":true,\"discount\":true,\"oldPrice\":true,\"badge\":true,\"badgeColor\":true,\"rating\":true,\"reviews\":true,\"img\":true,\"images\":true,\"category\":true,\"brand\":true,\"description\":true,\"stock\":true,\"featured\":true,\"status\":true,\"specifications\":true,\"__v\":true}}},\"skipId\":true},\"$isNew\":false,\"_doc\":{\"_id\":\"6a53ba48d9ec78da00333d48\",\"id\":109,\"name\":\"Trousse Silicone Imperméable - Fun\",\"price\":\"6,000 DT\",\"priceNum\":6,\"priceBeforeDiscount\":null,\"discount\":0,\"oldPrice\":null,\"badge\":null,\"badgeColor\":null,\"rating\":4.5,\"reviews\":38,\"img\":\"https://images.unsplash.com/photo-1615988938302-bd2a5a7023bc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400\",\"images\":[\"https://images.unsplash.com/photo-1615988938302-bd2a5a7023bc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400\"],\"category\":\"Trousse\",\"brand\":\"\",\"description\":\"\",\"stock\":0,\"featured\":false,\"status\":\"active\",\"specifications\":[],\"__v\":0},\"id\":109,\"name\":\"Trousse Silicone Imperméable - Fun\",\"price\":\"6,000 DT\",\"priceNum\":6,\"oldPrice\":null,\"badge\":null,\"badgeColor\":null,\"rating\":4.5,\"reviews\":38,\"img\":\"https://images.unsplash.com/photo-1615988938302-bd2a5a7023bc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400\",\"images\":[\"https://images.unsplash.com/photo-1615988938302-bd2a5a7023bc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400\"],\"category\":\"Trousse\",\"description\":\"\",\"stock\":0,\"specifications\":[]}}",
+    "user": "admin@ecolier.com",
+    "role": "admin",
+    "timestamp": "2026-07-15T14:08:57.769Z"
+  },
+  {
+    "action": "delete-product",
+    "entity": "product",
+    "entityId": "108",
+    "success": true,
+    "details": "{\"deletedProduct\":{\"$__\":{\"activePaths\":{\"paths\":{\"priceNum\":\"init\",\"price\":\"init\",\"name\":\"init\",\"priceBeforeDiscount\":\"init\",\"discount\":\"init\",\"oldPrice\":\"init\",\"badge\":\"init\",\"badgeColor\":\"init\",\"rating\":\"init\",\"reviews\":\"init\",\"img\":\"init\",\"images\":\"init\",\"category\":\"init\",\"brand\":\"init\",\"description\":\"init\",\"stock\":\"init\",\"featured\":\"init\",\"status\":\"init\",\"_id\":\"init\",\"id\":\"init\",\"specifications\":\"init\",\"__v\":\"init\"},\"states\":{\"require\":{},\"default\":{},\"init\":{\"_id\":true,\"id\":true,\"name\":true,\"price\":true,\"priceNum\":true,\"priceBeforeDiscount\":true,\"discount\":true,\"oldPrice\":true,\"badge\":true,\"badgeColor\":true,\"rating\":true,\"reviews\":true,\"img\":true,\"images\":true,\"category\":true,\"brand\":true,\"description\":true,\"stock\":true,\"featured\":true,\"status\":true,\"specifications\":true,\"__v\":true}}},\"skipId\":true},\"$isNew\":false,\"_doc\":{\"_id\":\"6a53ba48d9ec78da00333d47\",\"id\":108,\"name\":\"Trousse Scolaire Double Compartiment - Bic\",\"price\":\"8,500 DT\",\"priceNum\":8.5,\"priceBeforeDiscount\":null,\"discount\":0,\"oldPrice\":null,\"badge\":null,\"badgeColor\":null,\"rating\":4.6,\"reviews\":54,\"img\":\"https://images.unsplash.com/photo-1568205612837-017257d2310a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400\",\"images\":[\"https://images.unsplash.com/photo-1568205612837-017257d2310a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400\"],\"category\":\"Trousse\",\"brand\":\"\",\"description\":\"\",\"stock\":0,\"featured\":false,\"status\":\"active\",\"specifications\":[],\"__v\":0},\"id\":108,\"name\":\"Trousse Scolaire Double Compartiment - Bic\",\"price\":\"8,500 DT\",\"priceNum\":8.5,\"oldPrice\":null,\"badge\":null,\"badgeColor\":null,\"rating\":4.6,\"reviews\":54,\"img\":\"https://images.unsplash.com/photo-1568205612837-017257d2310a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400\",\"images\":[\"https://images.unsplash.com/photo-1568205612837-017257d2310a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400\"],\"category\":\"Trousse\",\"description\":\"\",\"stock\":0,\"specifications\":[]}}",
+    "user": "admin@ecolier.com",
+    "role": "admin",
+    "timestamp": "2026-07-15T14:08:55.176Z"
+  },
+  {
+    "action": "delete-product",
+    "entity": "product",
+    "entityId": "110",
+    "success": true,
+    "details": "{\"deletedProduct\":{\"$__\":{\"activePaths\":{\"paths\":{\"priceNum\":\"init\",\"price\":\"init\",\"name\":\"init\",\"priceBeforeDiscount\":\"init\",\"discount\":\"init\",\"oldPrice\":\"init\",\"badge\":\"init\",\"badgeColor\":\"init\",\"rating\":\"init\",\"reviews\":\"init\",\"img\":\"init\",\"images\":\"init\",\"category\":\"init\",\"brand\":\"init\",\"description\":\"init\",\"stock\":\"init\",\"featured\":\"init\",\"status\":\"init\",\"_id\":\"init\",\"id\":\"init\",\"specifications\":\"init\",\"__v\":\"init\"},\"states\":{\"require\":{},\"default\":{},\"init\":{\"_id\":true,\"id\":true,\"name\":true,\"price\":true,\"priceNum\":true,\"priceBeforeDiscount\":true,\"discount\":true,\"oldPrice\":true,\"badge\":true,\"badgeColor\":true,\"rating\":true,\"reviews\":true,\"img\":true,\"images\":true,\"category\":true,\"brand\":true,\"description\":true,\"stock\":true,\"featured\":true,\"status\":true,\"specifications\":true,\"__v\":true}}},\"skipId\":true},\"$isNew\":false,\"_doc\":{\"_id\":\"6a53ba48d9ec78da00333d49\",\"id\":110,\"name\":\"Trousse Grande Capacité - Oxford\",\"price\":\"12,000 DT\",\"priceNum\":12,\"priceBeforeDiscount\":null,\"discount\":0,\"oldPrice\":null,\"badge\":null,\"badgeColor\":null,\"rating\":4.8,\"reviews\":47,\"img\":\"https://images.unsplash.com/photo-1722929309984-c6b3e55dd6e5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400\",\"images\":[\"https://images.unsplash.com/photo-1722929309984-c6b3e55dd6e5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400\"],\"category\":\"Trousse\",\"brand\":\"\",\"description\":\"\",\"stock\":0,\"featured\":false,\"status\":\"active\",\"specifications\":[],\"__v\":0},\"id\":110,\"name\":\"Trousse Grande Capacité - Oxford\",\"price\":\"12,000 DT\",\"priceNum\":12,\"oldPrice\":null,\"badge\":null,\"badgeColor\":null,\"rating\":4.8,\"reviews\":47,\"img\":\"https://images.unsplash.com/photo-1722929309984-c6b3e55dd6e5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400\",\"images\":[\"https://images.unsplash.com/photo-1722929309984-c6b3e55dd6e5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400\"],\"category\":\"Trousse\",\"description\":\"\",\"stock\":0,\"specifications\":[]}}",
+    "user": "admin@ecolier.com",
+    "role": "admin",
+    "timestamp": "2026-07-15T14:08:53.509Z"
+  },
+  {
+    "action": "delete-product",
+    "entity": "product",
+    "entityId": "105",
+    "success": true,
+    "details": "{\"deletedProduct\":{\"$__\":{\"activePaths\":{\"paths\":{\"priceNum\":\"init\",\"price\":\"init\",\"name\":\"init\",\"priceBeforeDiscount\":\"init\",\"discount\":\"init\",\"oldPrice\":\"init\",\"badge\":\"init\",\"badgeColor\":\"init\",\"rating\":\"init\",\"reviews\":\"init\",\"img\":\"init\",\"images\":\"init\",\"category\":\"init\",\"brand\":\"init\",\"description\":\"init\",\"stock\":\"init\",\"featured\":\"init\",\"status\":\"init\",\"_id\":\"init\",\"id\":\"init\",\"specifications\":\"init\",\"__v\":\"init\"},\"states\":{\"require\":{},\"default\":{},\"init\":{\"_id\":true,\"id\":true,\"name\":true,\"price\":true,\"priceNum\":true,\"priceBeforeDiscount\":true,\"discount\":true,\"oldPrice\":true,\"badge\":true,\"badgeColor\":true,\"rating\":true,\"reviews\":true,\"img\":true,\"images\":true,\"category\":true,\"brand\":true,\"description\":true,\"stock\":true,\"featured\":true,\"status\":true,\"specifications\":true,\"__v\":true}}},\"skipId\":true},\"$isNew\":false,\"_doc\":{\"_id\":\"6a53ba48d9ec78da00333d44\",\"id\":105,\"name\":\"Sac Scolaire Super Lux - Papillon Magique\",\"price\":\"62,500 DT\",\"priceNum\":62.5,\"priceBeforeDiscount\":null,\"discount\":0,\"oldPrice\":null,\"badge\":null,\"badgeColor\":null,\"rating\":4.8,\"reviews\":31,\"img\":\"https://images.unsplash.com/photo-1726726192148-af52008ff663?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400\",\"images\":[\"https://images.unsplash.com/photo-1726726192148-af52008ff663?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400\"],\"category\":\"Catrable super lux\",\"brand\":\"\",\"description\":\"\",\"stock\":0,\"featured\":false,\"status\":\"active\",\"specifications\":[],\"__v\":0},\"id\":105,\"name\":\"Sac Scolaire Super Lux - Papillon Magique\",\"price\":\"62,500 DT\",\"priceNum\":62.5,\"oldPrice\":null,\"badge\":null,\"badgeColor\":null,\"rating\":4.8,\"reviews\":31,\"img\":\"https://images.unsplash.com/photo-1726726192148-af52008ff663?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400\",\"images\":[\"https://images.unsplash.com/photo-1726726192148-af52008ff663?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400\"],\"category\":\"Catrable super lux\",\"description\":\"\",\"stock\":0,\"specifications\":[]}}",
+    "user": "admin@ecolier.com",
+    "role": "admin",
+    "timestamp": "2026-07-15T14:08:51.364Z"
+  },
+  {
+    "action": "delete-product",
+    "entity": "product",
+    "entityId": "8",
+    "success": true,
+    "details": "{\"deletedProduct\":{\"$__\":{\"activePaths\":{\"paths\":{\"priceNum\":\"init\",\"price\":\"init\",\"name\":\"init\",\"priceBeforeDiscount\":\"init\",\"discount\":\"init\",\"oldPrice\":\"init\",\"badge\":\"init\",\"badgeColor\":\"init\",\"rating\":\"init\",\"reviews\":\"init\",\"img\":\"init\",\"images\":\"init\",\"category\":\"init\",\"brand\":\"init\",\"description\":\"init\",\"stock\":\"init\",\"featured\":\"init\",\"status\":\"init\",\"_id\":\"init\",\"id\":\"init\",\"specifications\":\"init\",\"__v\":\"init\"},\"states\":{\"require\":{},\"default\":{},\"init\":{\"_id\":true,\"id\":true,\"name\":true,\"price\":true,\"priceNum\":true,\"priceBeforeDiscount\":true,\"discount\":true,\"oldPrice\":true,\"badge\":true,\"badgeColor\":true,\"rating\":true,\"reviews\":true,\"img\":true,\"images\":true,\"category\":true,\"brand\":true,\"description\":true,\"stock\":true,\"featured\":true,\"status\":true,\"specifications\":true,\"__v\":true}}},\"skipId\":true},\"$isNew\":false,\"_doc\":{\"_id\":\"6a53ba48d9ec78da00333d57\",\"id\":8,\"name\":\"Sac à dos WAMA Pro\",\"price\":\"55,000 DT\",\"priceNum\":55,\"priceBeforeDiscount\":null,\"discount\":0,\"oldPrice\":null,\"badge\":null,\"badgeColor\":null,\"rating\":4.8,\"reviews\":42,\"img\":\"https://images.unsplash.com/photo-1615988938302-bd2a5a7023bc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400\",\"images\":[\"https://images.unsplash.com/photo-1615988938302-bd2a5a7023bc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400\"],\"category\":\"Sac A Dos Informatique\",\"brand\":\"\",\"description\":\"\",\"stock\":0,\"featured\":false,\"status\":\"active\",\"specifications\":[],\"__v\":0},\"id\":8,\"name\":\"Sac à dos WAMA Pro\",\"price\":\"55,000 DT\",\"priceNum\":55,\"oldPrice\":null,\"badge\":null,\"badgeColor\":null,\"rating\":4.8,\"reviews\":42,\"img\":\"https://images.unsplash.com/photo-1615988938302-bd2a5a7023bc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400\",\"images\":[\"https://images.unsplash.com/photo-1615988938302-bd2a5a7023bc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400\"],\"category\":\"Sac A Dos Informatique\",\"description\":\"\",\"stock\":0,\"specifications\":[]}}",
+    "user": "admin@ecolier.com",
+    "role": "admin",
+    "timestamp": "2026-07-15T14:08:49.433Z"
+  },
+  {
+    "action": "delete-product",
+    "entity": "product",
+    "entityId": "9",
+    "success": true,
+    "details": "{\"deletedProduct\":{\"$__\":{\"activePaths\":{\"paths\":{\"priceNum\":\"init\",\"price\":\"init\",\"name\":\"init\",\"priceBeforeDiscount\":\"init\",\"discount\":\"init\",\"oldPrice\":\"init\",\"badge\":\"init\",\"badgeColor\":\"init\",\"rating\":\"init\",\"reviews\":\"init\",\"img\":\"init\",\"images\":\"init\",\"category\":\"init\",\"brand\":\"init\",\"description\":\"init\",\"stock\":\"init\",\"featured\":\"init\",\"status\":\"init\",\"_id\":\"init\",\"id\":\"init\",\"specifications\":\"init\",\"__v\":\"init\"},\"states\":{\"require\":{},\"default\":{},\"init\":{\"_id\":true,\"id\":true,\"name\":true,\"price\":true,\"priceNum\":true,\"priceBeforeDiscount\":true,\"discount\":true,\"oldPrice\":true,\"badge\":true,\"badgeColor\":true,\"rating\":true,\"reviews\":true,\"img\":true,\"images\":true,\"category\":true,\"brand\":true,\"description\":true,\"stock\":true,\"featured\":true,\"status\":true,\"specifications\":true,\"__v\":true}}},\"skipId\":true},\"$isNew\":false,\"_doc\":{\"_id\":\"6a53ba48d9ec78da00333d58\",\"id\":9,\"name\":\"Sac à dos Take & Go\",\"price\":\"32,000 DT\",\"priceNum\":32,\"priceBeforeDiscount\":null,\"discount\":0,\"oldPrice\":null,\"badge\":null,\"badgeColor\":null,\"rating\":4.6,\"reviews\":29,\"img\":\"https://images.unsplash.com/photo-1535982330050-f1c2fb79ff78?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400\",\"images\":[\"https://images.unsplash.com/photo-1535982330050-f1c2fb79ff78?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400\"],\"category\":\"Take And Go\",\"brand\":\"\",\"description\":\"\",\"stock\":0,\"featured\":false,\"status\":\"active\",\"specifications\":[],\"__v\":0},\"id\":9,\"name\":\"Sac à dos Take & Go\",\"price\":\"32,000 DT\",\"priceNum\":32,\"oldPrice\":null,\"badge\":null,\"badgeColor\":null,\"rating\":4.6,\"reviews\":29,\"img\":\"https://images.unsplash.com/photo-1535982330050-f1c2fb79ff78?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400\",\"images\":[\"https://images.unsplash.com/photo-1535982330050-f1c2fb79ff78?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400\"],\"category\":\"Take And Go\",\"description\":\"\",\"stock\":0,\"specifications\":[]}}",
+    "user": "admin@ecolier.com",
+    "role": "admin",
+    "timestamp": "2026-07-15T14:08:47.266Z"
+  },
+  {
+    "action": "delete-product",
+    "entity": "product",
+    "entityId": "103",
+    "success": true,
+    "details": "{\"deletedProduct\":{\"$__\":{\"activePaths\":{\"paths\":{\"priceNum\":\"init\",\"price\":\"init\",\"name\":\"init\",\"priceBeforeDiscount\":\"init\",\"discount\":\"init\",\"oldPrice\":\"init\",\"badge\":\"init\",\"badgeColor\":\"init\",\"rating\":\"init\",\"reviews\":\"init\",\"img\":\"init\",\"images\":\"init\",\"category\":\"init\",\"brand\":\"init\",\"description\":\"init\",\"stock\":\"init\",\"featured\":\"init\",\"status\":\"init\",\"_id\":\"init\",\"id\":\"init\",\"specifications\":\"init\",\"__v\":\"init\"},\"states\":{\"require\":{},\"default\":{},\"init\":{\"_id\":true,\"id\":true,\"name\":true,\"price\":true,\"priceNum\":true,\"priceBeforeDiscount\":true,\"discount\":true,\"oldPrice\":true,\"badge\":true,\"badgeColor\":true,\"rating\":true,\"reviews\":true,\"img\":true,\"images\":true,\"category\":true,\"brand\":true,\"description\":true,\"stock\":true,\"featured\":true,\"status\":true,\"specifications\":true,\"__v\":true}}},\"skipId\":true},\"$isNew\":false,\"_doc\":{\"_id\":\"6a53ba48d9ec78da00333d42\",\"id\":103,\"name\":\"Sac à Dos Scolaire Lux Tech - Gris\",\"price\":\"38,000 DT\",\"priceNum\":38,\"priceBeforeDiscount\":null,\"discount\":0,\"oldPrice\":null,\"badge\":null,\"badgeColor\":null,\"rating\":4.7,\"reviews\":19,\"img\":\"https://images.unsplash.com/photo-1615988938302-bd2a5a7023bc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400\",\"images\":[\"https://images.unsplash.com/photo-1615988938302-bd2a5a7023bc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400\"],\"category\":\"Catrable Lux\",\"brand\":\"\",\"description\":\"\",\"stock\":0,\"featured\":false,\"status\":\"active\",\"specifications\":[],\"__v\":0},\"id\":103,\"name\":\"Sac à Dos Scolaire Lux Tech - Gris\",\"price\":\"38,000 DT\",\"priceNum\":38,\"oldPrice\":null,\"badge\":null,\"badgeColor\":null,\"rating\":4.7,\"reviews\":19,\"img\":\"https://images.unsplash.com/photo-1615988938302-bd2a5a7023bc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400\",\"images\":[\"https://images.unsplash.com/photo-1615988938302-bd2a5a7023bc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400\"],\"category\":\"Catrable Lux\",\"description\":\"\",\"stock\":0,\"specifications\":[]}}",
+    "user": "admin@ecolier.com",
+    "role": "admin",
+    "timestamp": "2026-07-15T14:08:44.927Z"
+  },
+  {
+    "action": "delete-product",
+    "entity": "product",
+    "entityId": "5",
+    "success": true,
+    "details": "{\"deletedProduct\":{\"$__\":{\"activePaths\":{\"paths\":{\"priceNum\":\"init\",\"price\":\"init\",\"name\":\"init\",\"priceBeforeDiscount\":\"init\",\"discount\":\"init\",\"oldPrice\":\"init\",\"badge\":\"init\",\"badgeColor\":\"init\",\"rating\":\"init\",\"reviews\":\"init\",\"img\":\"init\",\"images\":\"init\",\"category\":\"init\",\"brand\":\"init\",\"description\":\"init\",\"stock\":\"init\",\"featured\":\"init\",\"status\":\"init\",\"_id\":\"init\",\"id\":\"init\",\"specifications\":\"init\",\"__v\":\"init\"},\"states\":{\"require\":{},\"default\":{},\"init\":{\"_id\":true,\"id\":true,\"name\":true,\"price\":true,\"priceNum\":true,\"priceBeforeDiscount\":true,\"discount\":true,\"oldPrice\":true,\"badge\":true,\"badgeColor\":true,\"rating\":true,\"reviews\":true,\"img\":true,\"images\":true,\"category\":true,\"brand\":true,\"description\":true,\"stock\":true,\"featured\":true,\"status\":true,\"specifications\":true,\"__v\":true}}},\"skipId\":true},\"$isNew\":false,\"_doc\":{\"_id\":\"6a53ba48d9ec78da00333d54\",\"id\":5,\"name\":\"Sac à dos ergonomique\",\"price\":\"45,000 DT\",\"priceNum\":45,\"priceBeforeDiscount\":null,\"discount\":0,\"oldPrice\":\"55,000 DT\",\"badge\":\"-18%\",\"badgeColor\":\"#e53935\",\"rating\":4.9,\"reviews\":178,\"img\":\"https://images.unsplash.com/photo-1535982330050-f1c2fb79ff78?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwyfHxzY2hvb2wlMjBzdXBwbGllcyUyMGJhY2twYWNrJTIwc3RhdGlvbmVyeXxlbnwxfHx8fDE3ODIyMTM5NTR8MA&ixlib=rb-4.1.0&q=80&w=400\",\"images\":[\"https://images.unsplash.com/photo-1535982330050-f1c2fb79ff78?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwyfHxzY2hvb2wlMjBzdXBwbGllcyUyMGJhY2twYWNrJTIwc3RhdGlvbmVyeXxlbnwxfHx8fDE3ODIyMTM5NTR8MA&ixlib=rb-4.1.0&q=80&w=400\"],\"category\":\"Sacs à dos\",\"brand\":\"\",\"description\":\"\",\"stock\":0,\"featured\":false,\"status\":\"active\",\"specifications\":[],\"__v\":0},\"id\":5,\"name\":\"Sac à dos ergonomique\",\"price\":\"45,000 DT\",\"priceNum\":45,\"oldPrice\":\"55,000 DT\",\"badge\":\"-18%\",\"badgeColor\":\"#e53935\",\"rating\":4.9,\"reviews\":178,\"img\":\"https://images.unsplash.com/photo-1535982330050-f1c2fb79ff78?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwyfHxzY2hvb2wlMjBzdXBwbGllcyUyMGJhY2twYWNrJTIwc3RhdGlvbmVyeXxlbnwxfHx8fDE3ODIyMTM5NTR8MA&ixlib=rb-4.1.0&q=80&w=400\",\"images\":[\"https://images.unsplash.com/photo-1535982330050-f1c2fb79ff78?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwyfHxzY2hvb2wlMjBzdXBwbGllcyUyMGJhY2twYWNrJTIwc3RhdGlvbmVyeXxlbnwxfHx8fDE3ODIyMTM5NTR8MA&ixlib=rb-4.1.0&q=80&w=400\"],\"category\":\"Sacs à dos\",\"description\":\"\",\"stock\":0,\"specifications\":[]}}",
+    "user": "admin@ecolier.com",
+    "role": "admin",
+    "timestamp": "2026-07-15T14:08:43.145Z"
+  },
+  {
+    "action": "delete-product",
+    "entity": "product",
+    "entityId": "115",
+    "success": true,
+    "details": "{\"deletedProduct\":{\"$__\":{\"activePaths\":{\"paths\":{\"priceNum\":\"init\",\"price\":\"init\",\"name\":\"init\",\"priceBeforeDiscount\":\"init\",\"discount\":\"init\",\"oldPrice\":\"init\",\"badge\":\"init\",\"badgeColor\":\"init\",\"rating\":\"init\",\"reviews\":\"init\",\"img\":\"init\",\"images\":\"init\",\"category\":\"init\",\"brand\":\"init\",\"description\":\"init\",\"stock\":\"init\",\"featured\":\"init\",\"status\":\"init\",\"_id\":\"init\",\"id\":\"init\",\"specifications\":\"init\",\"__v\":\"init\"},\"states\":{\"require\":{},\"default\":{},\"init\":{\"_id\":true,\"id\":true,\"name\":true,\"price\":true,\"priceNum\":true,\"priceBeforeDiscount\":true,\"discount\":true,\"oldPrice\":true,\"badge\":true,\"badgeColor\":true,\"rating\":true,\"reviews\":true,\"img\":true,\"images\":true,\"category\":true,\"brand\":true,\"description\":true,\"stock\":true,\"featured\":true,\"status\":true,\"specifications\":true,\"__v\":true}}},\"skipId\":true},\"$isNew\":false,\"_doc\":{\"_id\":\"6a53ba48d9ec78da00333d4e\",\"id\":115,\"name\":\"Sac à Dos Chariot Renforcé - Galactic\",\"price\":\"88,000 DT\",\"priceNum\":88,\"priceBeforeDiscount\":null,\"discount\":0,\"oldPrice\":null,\"badge\":null,\"badgeColor\":null,\"rating\":4.7,\"reviews\":49,\"img\":\"https://images.unsplash.com/photo-1535982330050-f1c2fb79ff78?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400\",\"images\":[\"https://images.unsplash.com/photo-1535982330050-f1c2fb79ff78?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400\"],\"category\":\"Chariot\",\"brand\":\"\",\"description\":\"\",\"stock\":0,\"featured\":false,\"status\":\"active\",\"specifications\":[],\"__v\":0},\"id\":115,\"name\":\"Sac à Dos Chariot Renforcé - Galactic\",\"price\":\"88,000 DT\",\"priceNum\":88,\"oldPrice\":null,\"badge\":null,\"badgeColor\":null,\"rating\":4.7,\"reviews\":49,\"img\":\"https://images.unsplash.com/photo-1535982330050-f1c2fb79ff78?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400\",\"images\":[\"https://images.unsplash.com/photo-1535982330050-f1c2fb79ff78?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400\"],\"category\":\"Chariot\",\"description\":\"\",\"stock\":0,\"specifications\":[]}}",
+    "user": "admin@ecolier.com",
+    "role": "admin",
+    "timestamp": "2026-07-15T14:08:41.112Z"
+  },
+  {
+    "action": "delete-product",
+    "entity": "product",
+    "entityId": "2",
+    "success": true,
+    "details": "{\"deletedProduct\":{\"$__\":{\"activePaths\":{\"paths\":{\"priceNum\":\"init\",\"price\":\"init\",\"name\":\"init\",\"priceBeforeDiscount\":\"init\",\"discount\":\"init\",\"oldPrice\":\"init\",\"badge\":\"init\",\"badgeColor\":\"init\",\"rating\":\"init\",\"reviews\":\"init\",\"img\":\"init\",\"images\":\"init\",\"category\":\"init\",\"brand\":\"init\",\"description\":\"init\",\"stock\":\"init\",\"featured\":\"init\",\"status\":\"init\",\"_id\":\"init\",\"id\":\"init\",\"specifications\":\"init\",\"__v\":\"init\"},\"states\":{\"require\":{},\"default\":{},\"init\":{\"_id\":true,\"id\":true,\"name\":true,\"price\":true,\"priceNum\":true,\"priceBeforeDiscount\":true,\"discount\":true,\"oldPrice\":true,\"badge\":true,\"badgeColor\":true,\"rating\":true,\"reviews\":true,\"img\":true,\"images\":true,\"category\":true,\"brand\":true,\"description\":true,\"stock\":true,\"featured\":true,\"status\":true,\"specifications\":true,\"__v\":true}}},\"skipId\":true},\"$isNew\":false,\"_doc\":{\"_id\":\"6a53ba48d9ec78da00333d51\",\"id\":2,\"name\":\"Plumier scolaire complet\",\"price\":\"12,500 DT\",\"priceNum\":12.5,\"priceBeforeDiscount\":null,\"discount\":0,\"oldPrice\":\"15,000 DT\",\"badge\":\"-17%\",\"badgeColor\":\"#e53935\",\"rating\":4.9,\"reviews\":89,\"img\":\"https://images.unsplash.com/photo-1615988938302-bd2a5a7023bc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHw0fHxzY2hvb2wlMjBzdXBwbGllcyUyMGJhY2twYWNrJTIwc3RhdGlvbmVyeXxlbnwxfHx8fDE3ODIyMTM5NTR8MA&ixlib=rb-4.1.0&q=80&w=400\",\"images\":[\"https://images.unsplash.com/photo-1615988938302-bd2a5a7023bc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHw0fHxzY2hvb2wlMjBzdXBwbGllcyUyMGJhY2twYWNrJTIwc3RhdGlvbmVyeXxlbnwxfHx8fDE3ODIyMTM5NTR8MA&ixlib=rb-4.1.0&q=80&w=400\"],\"category\":\"Stylos & Crayons\",\"brand\":\"\",\"description\":\"\",\"stock\":0,\"featured\":false,\"status\":\"active\",\"specifications\":[],\"__v\":0},\"id\":2,\"name\":\"Plumier scolaire complet\",\"price\":\"12,500 DT\",\"priceNum\":12.5,\"oldPrice\":\"15,000 DT\",\"badge\":\"-17%\",\"badgeColor\":\"#e53935\",\"rating\":4.9,\"reviews\":89,\"img\":\"https://images.unsplash.com/photo-1615988938302-bd2a5a7023bc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHw0fHxzY2hvb2wlMjBzdXBwbGllcyUyMGJhY2twYWNrJTIwc3RhdGlvbmVyeXxlbnwxfHx8fDE3ODIyMTM5NTR8MA&ixlib=rb-4.1.0&q=80&w=400\",\"images\":[\"https://images.unsplash.com/photo-1615988938302-bd2a5a7023bc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHw0fHxzY2hvb2wlMjBzdXBwbGllcyUyMGJhY2twYWNrJTIwc3RhdGlvbmVyeXxlbnwxfHx8fDE3ODIyMTM5NTR8MA&ixlib=rb-4.1.0&q=80&w=400\"],\"category\":\"Stylos & Crayons\",\"description\":\"\",\"stock\":0,\"specifications\":[]}}",
+    "user": "admin@ecolier.com",
+    "role": "admin",
+    "timestamp": "2026-07-15T14:08:38.995Z"
+  },
+  {
+    "action": "delete-product",
+    "entity": "product",
+    "entityId": "111",
+    "success": true,
+    "details": "{\"deletedProduct\":{\"$__\":{\"activePaths\":{\"paths\":{\"priceNum\":\"init\",\"price\":\"init\",\"name\":\"init\",\"priceBeforeDiscount\":\"init\",\"discount\":\"init\",\"oldPrice\":\"init\",\"badge\":\"init\",\"badgeColor\":\"init\",\"rating\":\"init\",\"reviews\":\"init\",\"img\":\"init\",\"images\":\"init\",\"category\":\"init\",\"brand\":\"init\",\"description\":\"init\",\"stock\":\"init\",\"featured\":\"init\",\"status\":\"init\",\"_id\":\"init\",\"id\":\"init\",\"specifications\":\"init\",\"__v\":\"init\"},\"states\":{\"require\":{},\"default\":{},\"init\":{\"_id\":true,\"id\":true,\"name\":true,\"price\":true,\"priceNum\":true,\"priceBeforeDiscount\":true,\"discount\":true,\"oldPrice\":true,\"badge\":true,\"badgeColor\":true,\"rating\":true,\"reviews\":true,\"img\":true,\"images\":true,\"category\":true,\"brand\":true,\"description\":true,\"stock\":true,\"featured\":true,\"status\":true,\"specifications\":true,\"__v\":true}}},\"skipId\":true},\"$isNew\":false,\"_doc\":{\"_id\":\"6a53ba48d9ec78da00333d4a\",\"id\":111,\"name\":\"Lunch Box Isotherme - Acier Inox\",\"price\":\"18,500 DT\",\"priceNum\":18.5,\"priceBeforeDiscount\":null,\"discount\":0,\"oldPrice\":null,\"badge\":null,\"badgeColor\":null,\"rating\":4.7,\"reviews\":29,\"img\":\"https://images.unsplash.com/photo-1615988938302-bd2a5a7023bc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400\",\"images\":[\"https://images.unsplash.com/photo-1615988938302-bd2a5a7023bc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400\"],\"category\":\"Lunch box\",\"brand\":\"\",\"description\":\"\",\"stock\":0,\"featured\":false,\"status\":\"active\",\"specifications\":[],\"__v\":0},\"id\":111,\"name\":\"Lunch Box Isotherme - Acier Inox\",\"price\":\"18,500 DT\",\"priceNum\":18.5,\"oldPrice\":null,\"badge\":null,\"badgeColor\":null,\"rating\":4.7,\"reviews\":29,\"img\":\"https://images.unsplash.com/photo-1615988938302-bd2a5a7023bc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400\",\"images\":[\"https://images.unsplash.com/photo-1615988938302-bd2a5a7023bc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400\"],\"category\":\"Lunch box\",\"description\":\"\",\"stock\":0,\"specifications\":[]}}",
+    "user": "admin@ecolier.com",
+    "role": "admin",
+    "timestamp": "2026-07-15T14:08:37.074Z"
+  },
+  {
+    "action": "delete-product",
+    "entity": "product",
+    "entityId": "113",
+    "success": true,
+    "details": "{\"deletedProduct\":{\"$__\":{\"activePaths\":{\"paths\":{\"priceNum\":\"init\",\"price\":\"init\",\"name\":\"init\",\"priceBeforeDiscount\":\"init\",\"discount\":\"init\",\"oldPrice\":\"init\",\"badge\":\"init\",\"badgeColor\":\"init\",\"rating\":\"init\",\"reviews\":\"init\",\"img\":\"init\",\"images\":\"init\",\"category\":\"init\",\"brand\":\"init\",\"description\":\"init\",\"stock\":\"init\",\"featured\":\"init\",\"status\":\"init\",\"_id\":\"init\",\"id\":\"init\",\"specifications\":\"init\",\"__v\":\"init\"},\"states\":{\"require\":{},\"default\":{},\"init\":{\"_id\":true,\"id\":true,\"name\":true,\"price\":true,\"priceNum\":true,\"priceBeforeDiscount\":true,\"discount\":true,\"oldPrice\":true,\"badge\":true,\"badgeColor\":true,\"rating\":true,\"reviews\":true,\"img\":true,\"images\":true,\"category\":true,\"brand\":true,\"description\":true,\"stock\":true,\"featured\":true,\"status\":true,\"specifications\":true,\"__v\":true}}},\"skipId\":true},\"$isNew\":false,\"_doc\":{\"_id\":\"6a53ba48d9ec78da00333d4c\",\"id\":113,\"name\":\"Lunch Box Enfant - Happy Cat\",\"price\":\"9,500 DT\",\"priceNum\":9.5,\"priceBeforeDiscount\":null,\"discount\":0,\"oldPrice\":null,\"badge\":null,\"badgeColor\":null,\"rating\":4.8,\"reviews\":33,\"img\":\"https://images.unsplash.com/photo-1722929309984-c6b3e55dd6e5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400\",\"images\":[\"https://images.unsplash.com/photo-1722929309984-c6b3e55dd6e5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400\"],\"category\":\"Lunch box\",\"brand\":\"\",\"description\":\"\",\"stock\":0,\"featured\":false,\"status\":\"active\",\"specifications\":[],\"__v\":0},\"id\":113,\"name\":\"Lunch Box Enfant - Happy Cat\",\"price\":\"9,500 DT\",\"priceNum\":9.5,\"oldPrice\":null,\"badge\":null,\"badgeColor\":null,\"rating\":4.8,\"reviews\":33,\"img\":\"https://images.unsplash.com/photo-1722929309984-c6b3e55dd6e5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400\",\"images\":[\"https://images.unsplash.com/photo-1722929309984-c6b3e55dd6e5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400\"],\"category\":\"Lunch box\",\"description\":\"\",\"stock\":0,\"specifications\":[]}}",
+    "user": "admin@ecolier.com",
+    "role": "admin",
+    "timestamp": "2026-07-15T14:08:34.893Z"
+  },
+  {
+    "action": "delete-product",
+    "entity": "product",
+    "entityId": "112",
+    "success": true,
+    "details": "{\"deletedProduct\":{\"$__\":{\"activePaths\":{\"paths\":{\"priceNum\":\"init\",\"price\":\"init\",\"name\":\"init\",\"priceBeforeDiscount\":\"init\",\"discount\":\"init\",\"oldPrice\":\"init\",\"badge\":\"init\",\"badgeColor\":\"init\",\"rating\":\"init\",\"reviews\":\"init\",\"img\":\"init\",\"images\":\"init\",\"category\":\"init\",\"brand\":\"init\",\"description\":\"init\",\"stock\":\"init\",\"featured\":\"init\",\"status\":\"init\",\"_id\":\"init\",\"id\":\"init\",\"specifications\":\"init\",\"__v\":\"init\"},\"states\":{\"require\":{},\"default\":{},\"init\":{\"_id\":true,\"id\":true,\"name\":true,\"price\":true,\"priceNum\":true,\"priceBeforeDiscount\":true,\"discount\":true,\"oldPrice\":true,\"badge\":true,\"badgeColor\":true,\"rating\":true,\"reviews\":true,\"img\":true,\"images\":true,\"category\":true,\"brand\":true,\"description\":true,\"stock\":true,\"featured\":true,\"status\":true,\"specifications\":true,\"__v\":true}}},\"skipId\":true},\"$isNew\":false,\"_doc\":{\"_id\":\"6a53ba48d9ec78da00333d4b\",\"id\":112,\"name\":\"Lunch Box Compartimentée - Rotpunkt\",\"price\":\"14,000 DT\",\"priceNum\":14,\"priceBeforeDiscount\":null,\"discount\":0,\"oldPrice\":null,\"badge\":null,\"badgeColor\":null,\"rating\":4.6,\"reviews\":16,\"img\":\"https://images.unsplash.com/photo-1574607383077-47ddc2dc51c4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400\",\"images\":[\"https://images.unsplash.com/photo-1574607383077-47ddc2dc51c4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400\"],\"category\":\"Lunch box\",\"brand\":\"\",\"description\":\"\",\"stock\":0,\"featured\":false,\"status\":\"active\",\"specifications\":[],\"__v\":0},\"id\":112,\"name\":\"Lunch Box Compartimentée - Rotpunkt\",\"price\":\"14,000 DT\",\"priceNum\":14,\"oldPrice\":null,\"badge\":null,\"badgeColor\":null,\"rating\":4.6,\"reviews\":16,\"img\":\"https://images.unsplash.com/photo-1574607383077-47ddc2dc51c4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400\",\"images\":[\"https://images.unsplash.com/photo-1574607383077-47ddc2dc51c4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400\"],\"category\":\"Lunch box\",\"description\":\"\",\"stock\":0,\"specifications\":[]}}",
+    "user": "admin@ecolier.com",
+    "role": "admin",
+    "timestamp": "2026-07-15T14:08:32.471Z"
+  },
+  {
+    "action": "delete-product",
+    "entity": "product",
+    "entityId": "3",
+    "success": true,
+    "details": "{\"deletedProduct\":{\"$__\":{\"activePaths\":{\"paths\":{\"priceNum\":\"init\",\"price\":\"init\",\"name\":\"init\",\"priceBeforeDiscount\":\"init\",\"discount\":\"init\",\"oldPrice\":\"init\",\"badge\":\"init\",\"badgeColor\":\"init\",\"rating\":\"init\",\"reviews\":\"init\",\"img\":\"init\",\"images\":\"init\",\"category\":\"init\",\"brand\":\"init\",\"description\":\"init\",\"stock\":\"init\",\"featured\":\"init\",\"status\":\"init\",\"_id\":\"init\",\"id\":\"init\",\"specifications\":\"init\",\"__v\":\"init\"},\"states\":{\"require\":{},\"default\":{},\"init\":{\"_id\":true,\"id\":true,\"name\":true,\"price\":true,\"priceNum\":true,\"priceBeforeDiscount\":true,\"discount\":true,\"oldPrice\":true,\"badge\":true,\"badgeColor\":true,\"rating\":true,\"reviews\":true,\"img\":true,\"images\":true,\"category\":true,\"brand\":true,\"description\":true,\"stock\":true,\"featured\":true,\"status\":true,\"specifications\":true,\"__v\":true}}},\"skipId\":true},\"$isNew\":false,\"_doc\":{\"_id\":\"6a53ba48d9ec78da00333d52\",\"id\":3,\"name\":\"Classeur A4 polypropylène\",\"price\":\"4,000 DT\",\"priceNum\":4,\"priceBeforeDiscount\":null,\"discount\":0,\"oldPrice\":null,\"badge\":\"Nouveau\",\"badgeColor\":\"#0d2b6b\",\"rating\":4.7,\"reviews\":56,\"img\":\"https://images.unsplash.com/photo-1779684998897-ce5de594a5ac?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHw0fHxzY2hvb2wlMjBub3RlYm9va3MlMjBwZW5jaWxzJTIwZGVza3xlbnwxfHx8fDE3ODIyMTM5NTR8MA&ixlib=rb-4.1.0&q=80&w=400\",\"images\":[\"https://images.unsplash.com/photo-1779684998897-ce5de594a5ac?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHw0fHxzY2hvb2wlMjBub3RlYm9va3MlMjBwZW5jaWxzJTIwZGVza3xlbnwxfHx8fDE3ODIyMTM5NTR8MA&ixlib=rb-4.1.0&q=80&w=400\"],\"category\":\"Cahiers & Classeurs\",\"brand\":\"\",\"description\":\"\",\"stock\":0,\"featured\":false,\"status\":\"active\",\"specifications\":[],\"__v\":0},\"id\":3,\"name\":\"Classeur A4 polypropylène\",\"price\":\"4,000 DT\",\"priceNum\":4,\"oldPrice\":null,\"badge\":\"Nouveau\",\"badgeColor\":\"#0d2b6b\",\"rating\":4.7,\"reviews\":56,\"img\":\"https://images.unsplash.com/photo-1779684998897-ce5de594a5ac?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHw0fHxzY2hvb2wlMjBub3RlYm9va3MlMjBwZW5jaWxzJTIwZGVza3xlbnwxfHx8fDE3ODIyMTM5NTR8MA&ixlib=rb-4.1.0&q=80&w=400\",\"images\":[\"https://images.unsplash.com/photo-1779684998897-ce5de594a5ac?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHw0fHxzY2hvb2wlMjBub3RlYm9va3MlMjBwZW5jaWxzJTIwZGVza3xlbnwxfHx8fDE3ODIyMTM5NTR8MA&ixlib=rb-4.1.0&q=80&w=400\"],\"category\":\"Cahiers & Classeurs\",\"description\":\"\",\"stock\":0,\"specifications\":[]}}",
+    "user": "admin@ecolier.com",
+    "role": "admin",
+    "timestamp": "2026-07-15T14:08:29.795Z"
+  },
+  {
+    "action": "delete-product",
+    "entity": "product",
+    "entityId": "116",
+    "success": true,
+    "details": "{\"deletedProduct\":{\"$__\":{\"activePaths\":{\"paths\":{\"priceNum\":\"init\",\"price\":\"init\",\"name\":\"init\",\"priceBeforeDiscount\":\"init\",\"discount\":\"init\",\"oldPrice\":\"init\",\"badge\":\"init\",\"badgeColor\":\"init\",\"rating\":\"init\",\"reviews\":\"init\",\"img\":\"init\",\"images\":\"init\",\"category\":\"init\",\"brand\":\"init\",\"description\":\"init\",\"stock\":\"init\",\"featured\":\"init\",\"status\":\"init\",\"_id\":\"init\",\"id\":\"init\",\"specifications\":\"init\",\"__v\":\"init\"},\"states\":{\"require\":{},\"default\":{},\"init\":{\"_id\":true,\"id\":true,\"name\":true,\"price\":true,\"priceNum\":true,\"priceBeforeDiscount\":true,\"discount\":true,\"oldPrice\":true,\"badge\":true,\"badgeColor\":true,\"rating\":true,\"reviews\":true,\"img\":true,\"images\":true,\"category\":true,\"brand\":true,\"description\":true,\"stock\":true,\"featured\":true,\"status\":true,\"specifications\":true,\"__v\":true}}},\"skipId\":true},\"$isNew\":false,\"_doc\":{\"_id\":\"6a53ba48d9ec78da00333d4f\",\"id\":116,\"name\":\"Chariot Scolaire Lux - Licorne Magique\",\"price\":\"92,000 DT\",\"priceNum\":92,\"priceBeforeDiscount\":null,\"discount\":0,\"oldPrice\":null,\"badge\":null,\"badgeColor\":null,\"rating\":4.9,\"reviews\":63,\"img\":\"https://images.unsplash.com/photo-1615988938302-bd2a5a7023bc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400\",\"images\":[\"https://images.unsplash.com/photo-1615988938302-bd2a5a7023bc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400\"],\"category\":\"Chariot\",\"brand\":\"\",\"description\":\"\",\"stock\":0,\"featured\":false,\"status\":\"active\",\"specifications\":[],\"__v\":0},\"id\":116,\"name\":\"Chariot Scolaire Lux - Licorne Magique\",\"price\":\"92,000 DT\",\"priceNum\":92,\"oldPrice\":null,\"badge\":null,\"badgeColor\":null,\"rating\":4.9,\"reviews\":63,\"img\":\"https://images.unsplash.com/photo-1615988938302-bd2a5a7023bc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400\",\"images\":[\"https://images.unsplash.com/photo-1615988938302-bd2a5a7023bc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400\"],\"category\":\"Chariot\",\"description\":\"\",\"stock\":0,\"specifications\":[]}}",
+    "user": "admin@ecolier.com",
+    "role": "admin",
+    "timestamp": "2026-07-15T14:08:26.352Z"
+  },
+  {
+    "action": "delete-product",
+    "entity": "product",
+    "entityId": "114",
+    "success": true,
+    "details": "{\"deletedProduct\":{\"$__\":{\"activePaths\":{\"paths\":{\"priceNum\":\"init\",\"price\":\"init\",\"name\":\"init\",\"priceBeforeDiscount\":\"init\",\"discount\":\"init\",\"oldPrice\":\"init\",\"badge\":\"init\",\"badgeColor\":\"init\",\"rating\":\"init\",\"reviews\":\"init\",\"img\":\"init\",\"images\":\"init\",\"category\":\"init\",\"brand\":\"init\",\"description\":\"init\",\"stock\":\"init\",\"featured\":\"init\",\"status\":\"init\",\"_id\":\"init\",\"id\":\"init\",\"specifications\":\"init\",\"__v\":\"init\"},\"states\":{\"require\":{},\"default\":{},\"init\":{\"_id\":true,\"id\":true,\"name\":true,\"price\":true,\"priceNum\":true,\"priceBeforeDiscount\":true,\"discount\":true,\"oldPrice\":true,\"badge\":true,\"badgeColor\":true,\"rating\":true,\"reviews\":true,\"img\":true,\"images\":true,\"category\":true,\"brand\":true,\"description\":true,\"stock\":true,\"featured\":true,\"status\":true,\"specifications\":true,\"__v\":true}}},\"skipId\":true},\"$isNew\":false,\"_doc\":{\"_id\":\"6a53ba48d9ec78da00333d4d\",\"id\":114,\"name\":\"Cartable Trolley Chariot - Spider-Man 3D\",\"price\":\"95,000 DT\",\"priceNum\":95,\"priceBeforeDiscount\":null,\"discount\":0,\"oldPrice\":null,\"badge\":null,\"badgeColor\":null,\"rating\":4.9,\"reviews\":76,\"img\":\"https://images.unsplash.com/photo-1726726192148-af52008ff663?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400\",\"images\":[\"https://images.unsplash.com/photo-1726726192148-af52008ff663?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400\"],\"category\":\"Chariot\",\"brand\":\"\",\"description\":\"\",\"stock\":0,\"featured\":false,\"status\":\"active\",\"specifications\":[],\"__v\":0},\"id\":114,\"name\":\"Cartable Trolley Chariot - Spider-Man 3D\",\"price\":\"95,000 DT\",\"priceNum\":95,\"oldPrice\":null,\"badge\":null,\"badgeColor\":null,\"rating\":4.9,\"reviews\":76,\"img\":\"https://images.unsplash.com/photo-1726726192148-af52008ff663?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400\",\"images\":[\"https://images.unsplash.com/photo-1726726192148-af52008ff663?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400\"],\"category\":\"Chariot\",\"description\":\"\",\"stock\":0,\"specifications\":[]}}",
+    "user": "admin@ecolier.com",
+    "role": "admin",
+    "timestamp": "2026-07-15T14:08:23.008Z"
+  },
+  {
+    "action": "delete-product",
+    "entity": "product",
+    "entityId": "104",
+    "success": true,
+    "details": "{\"deletedProduct\":{\"$__\":{\"activePaths\":{\"paths\":{\"priceNum\":\"init\",\"price\":\"init\",\"name\":\"init\",\"priceBeforeDiscount\":\"init\",\"discount\":\"init\",\"oldPrice\":\"init\",\"badge\":\"init\",\"badgeColor\":\"init\",\"rating\":\"init\",\"reviews\":\"init\",\"img\":\"init\",\"images\":\"init\",\"category\":\"init\",\"brand\":\"init\",\"description\":\"init\",\"stock\":\"init\",\"featured\":\"init\",\"status\":\"init\",\"_id\":\"init\",\"id\":\"init\",\"specifications\":\"init\",\"__v\":\"init\"},\"states\":{\"require\":{},\"default\":{},\"init\":{\"_id\":true,\"id\":true,\"name\":true,\"price\":true,\"priceNum\":true,\"priceBeforeDiscount\":true,\"discount\":true,\"oldPrice\":true,\"badge\":true,\"badgeColor\":true,\"rating\":true,\"reviews\":true,\"img\":true,\"images\":true,\"category\":true,\"brand\":true,\"description\":true,\"stock\":true,\"featured\":true,\"status\":true,\"specifications\":true,\"__v\":true}}},\"skipId\":true},\"$isNew\":false,\"_doc\":{\"_id\":\"6a53ba48d9ec78da00333d43\",\"id\":104,\"name\":\"Cartable Super Luxeee - Dinosaure 3D\",\"price\":\"65,000 DT\",\"priceNum\":65,\"priceBeforeDiscount\":null,\"discount\":0,\"oldPrice\":null,\"badge\":null,\"badgeColor\":null,\"rating\":5,\"reviews\":0,\"img\":\"https://images.unsplash.com/photo-1535982330050-f1c2fb79ff78?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400\",\"images\":[\"https://images.unsplash.com/photo-1535982330050-f1c2fb79ff78?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400\"],\"category\":\"Catrable super lux\",\"brand\":\"\",\"description\":\"\",\"stock\":0,\"featured\":false,\"status\":\"active\",\"specifications\":[],\"__v\":0},\"id\":104,\"name\":\"Cartable Super Luxeee - Dinosaure 3D\",\"price\":\"65,000 DT\",\"priceNum\":65,\"oldPrice\":null,\"badge\":null,\"badgeColor\":null,\"rating\":5,\"reviews\":0,\"img\":\"https://images.unsplash.com/photo-1535982330050-f1c2fb79ff78?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400\",\"images\":[\"https://images.unsplash.com/photo-1535982330050-f1c2fb79ff78?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400\"],\"category\":\"Catrable super lux\",\"description\":\"\",\"stock\":0,\"specifications\":[]}}",
+    "user": "admin@ecolier.com",
+    "role": "admin",
+    "timestamp": "2026-07-15T14:08:20.662Z"
+  },
+  {
+    "action": "delete-product",
+    "entity": "product",
+    "entityId": "106",
+    "success": true,
+    "details": "{\"deletedProduct\":{\"$__\":{\"activePaths\":{\"paths\":{\"priceNum\":\"init\",\"price\":\"init\",\"name\":\"init\",\"priceBeforeDiscount\":\"init\",\"discount\":\"init\",\"oldPrice\":\"init\",\"badge\":\"init\",\"badgeColor\":\"init\",\"rating\":\"init\",\"reviews\":\"init\",\"img\":\"init\",\"images\":\"init\",\"category\":\"init\",\"brand\":\"init\",\"description\":\"init\",\"stock\":\"init\",\"featured\":\"init\",\"status\":\"init\",\"_id\":\"init\",\"id\":\"init\",\"specifications\":\"init\",\"__v\":\"init\"},\"states\":{\"require\":{},\"default\":{},\"init\":{\"_id\":true,\"id\":true,\"name\":true,\"price\":true,\"priceNum\":true,\"priceBeforeDiscount\":true,\"discount\":true,\"oldPrice\":true,\"badge\":true,\"badgeColor\":true,\"rating\":true,\"reviews\":true,\"img\":true,\"images\":true,\"category\":true,\"brand\":true,\"description\":true,\"stock\":true,\"featured\":true,\"status\":true,\"specifications\":true,\"__v\":true}}},\"skipId\":true},\"$isNew\":false,\"_doc\":{\"_id\":\"6a53ba48d9ec78da00333d45\",\"id\":106,\"name\":\"Cartable High Lux Premium - Noir & Or\",\"price\":\"89,000 DT\",\"priceNum\":89,\"priceBeforeDiscount\":null,\"discount\":0,\"oldPrice\":null,\"badge\":null,\"badgeColor\":null,\"rating\":5,\"reviews\":0,\"img\":\"https://images.unsplash.com/photo-1615988938302-bd2a5a7023bc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400\",\"images\":[\"https://images.unsplash.com/photo-1615988938302-bd2a5a7023bc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400\"],\"category\":\"Catrable high lux\",\"brand\":\"\",\"description\":\"\",\"stock\":10,\"featured\":true,\"status\":\"active\",\"specifications\":[],\"__v\":0},\"id\":106,\"name\":\"Cartable High Lux Premium - Noir & Or\",\"price\":\"89,000 DT\",\"priceNum\":89,\"oldPrice\":null,\"badge\":null,\"badgeColor\":null,\"rating\":5,\"reviews\":0,\"img\":\"https://images.unsplash.com/photo-1615988938302-bd2a5a7023bc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400\",\"images\":[\"https://images.unsplash.com/photo-1615988938302-bd2a5a7023bc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400\"],\"category\":\"Catrable high lux\",\"description\":\"\",\"stock\":10,\"specifications\":[]}}",
+    "user": "admin@ecolier.com",
+    "role": "admin",
+    "timestamp": "2026-07-15T14:08:18.055Z"
+  },
+  {
+    "action": "update-product",
+    "entity": "product",
+    "entityId": "106",
+    "success": true,
+    "details": "{\"name\":\"Cartable High Lux Premium - Noir & Or\",\"description\":\"\",\"price\":\"89,000 DT\",\"priceNum\":89,\"priceBeforeDiscount\":null,\"discount\":0,\"stock\":10,\"category\":\"Catrable high lux\",\"brand\":\"\",\"img\":\"https://images.unsplash.com/photo-1615988938302-bd2a5a7023bc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400\",\"featured\":true,\"status\":\"active\"}",
+    "user": "admin@ecolier.com",
+    "role": "admin",
+    "timestamp": "2026-07-15T13:47:19.500Z"
+  },
+  {
+    "action": "delete-product",
+    "entity": "product",
+    "entityId": "1783886078892",
+    "success": true,
+    "details": "{\"deletedProduct\":{\"$__\":{\"activePaths\":{\"paths\":{\"priceNum\":\"init\",\"price\":\"init\",\"name\":\"init\",\"priceBeforeDiscount\":\"init\",\"discount\":\"init\",\"oldPrice\":\"init\",\"badge\":\"init\",\"badgeColor\":\"init\",\"rating\":\"init\",\"reviews\":\"init\",\"img\":\"init\",\"images\":\"init\",\"category\":\"init\",\"brand\":\"init\",\"description\":\"init\",\"stock\":\"init\",\"featured\":\"init\",\"status\":\"init\",\"_id\":\"init\",\"id\":\"init\",\"specifications\":\"init\",\"__v\":\"init\"},\"states\":{\"require\":{},\"default\":{},\"init\":{\"_id\":true,\"id\":true,\"name\":true,\"price\":true,\"priceNum\":true,\"priceBeforeDiscount\":true,\"discount\":true,\"oldPrice\":true,\"badge\":true,\"badgeColor\":true,\"rating\":true,\"reviews\":true,\"img\":true,\"images\":true,\"category\":true,\"brand\":true,\"description\":true,\"stock\":true,\"featured\":true,\"status\":true,\"specifications\":true,\"__v\":true}}},\"skipId\":true},\"$isNew\":false,\"_doc\":{\"_id\":\"6a53f0fe9114b8be2fc53f72\",\"id\":1783886078892,\"name\":\"12 pro max\",\"price\":\"1\",\"priceNum\":1,\"priceBeforeDiscount\":5,\"discount\":10,\"oldPrice\":null,\"badge\":null,\"badgeColor\":null,\"rating\":5,\"reviews\":0,\"img\":\"/uploads/1783886073580-354984541.jpeg\",\"images\":[\"/uploads/1783886073580-354984541.jpeg\"],\"category\":\"tlfon\",\"brand\":\"Nachet\",\"description\":\"zfdslihmkbj\",\"stock\":0,\"featured\":false,\"status\":\"active\",\"specifications\":[],\"__v\":0},\"id\":1783886078892,\"name\":\"12 pro max\",\"price\":\"1\",\"priceNum\":1,\"oldPrice\":null,\"badge\":null,\"badgeColor\":null,\"rating\":5,\"reviews\":0,\"img\":\"/uploads/1783886073580-354984541.jpeg\",\"images\":[\"/uploads/1783886073580-354984541.jpeg\"],\"category\":\"tlfon\",\"description\":\"zfdslihmkbj\",\"stock\":0,\"specifications\":[]}}",
+    "user": "admin@ecolier.com",
+    "role": "admin",
+    "timestamp": "2026-07-15T13:43:00.288Z"
+  },
+  {
+    "action": "create-product",
+    "entity": "product",
+    "entityId": "6a53f0fe9114b8be2fc53f72",
+    "success": true,
+    "details": "{\"name\":\"12 pro max\",\"category\":\"tlfon\"}",
+    "user": "admin@ecolier.com",
+    "role": "admin",
+    "timestamp": "2026-07-12T19:54:38.913Z"
+  },
+  {
+    "action": "upload-image",
+    "entity": "image",
+    "success": true,
+    "details": "/uploads/1783886073580-354984541.jpeg",
+    "user": "admin@ecolier.com",
+    "role": "admin",
+    "timestamp": "2026-07-12T19:54:33.603Z"
+  },
+  {
+    "action": "update-product",
+    "entity": "product",
+    "entityId": "106",
+    "success": true,
+    "details": "{\"name\":\"Cartable High Lux Premium - Noir & Or\",\"description\":\"\",\"price\":\"89,000 DT\",\"priceNum\":89,\"priceBeforeDiscount\":null,\"discount\":0,\"stock\":0,\"category\":\"Catrable high lux\",\"brand\":\"\",\"img\":\"https://images.unsplash.com/photo-1615988938302-bd2a5a7023bc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400\",\"featured\":true,\"status\":\"active\"}",
+    "user": "admin@ecolier.com",
+    "role": "admin",
+    "timestamp": "2026-07-12T19:41:36.318Z"
+  },
+  {
+    "action": "upload-image",
+    "entity": "image",
+    "success": true,
+    "details": "/uploads/1783874061188-942767366.png",
+    "user": "admin@ecolier.com",
+    "role": "admin",
+    "timestamp": "2026-07-12T16:34:21.198Z"
+  },
+  {
+    "action": "delete-product",
+    "entity": "product",
+    "entityId": "1783872805973",
+    "success": true,
+    "details": "{\"deletedProduct\":{\"$__\":{\"activePaths\":{\"paths\":{\"priceNum\":\"init\",\"price\":\"init\",\"name\":\"init\",\"priceBeforeDiscount\":\"init\",\"discount\":\"init\",\"oldPrice\":\"init\",\"badge\":\"init\",\"badgeColor\":\"init\",\"rating\":\"init\",\"reviews\":\"init\",\"img\":\"init\",\"images\":\"init\",\"category\":\"init\",\"brand\":\"init\",\"description\":\"init\",\"stock\":\"init\",\"featured\":\"init\",\"status\":\"init\",\"_id\":\"init\",\"id\":\"init\",\"specifications\":\"init\",\"__v\":\"init\"},\"states\":{\"require\":{},\"default\":{},\"init\":{\"_id\":true,\"id\":true,\"name\":true,\"price\":true,\"priceNum\":true,\"priceBeforeDiscount\":true,\"discount\":true,\"oldPrice\":true,\"badge\":true,\"badgeColor\":true,\"rating\":true,\"reviews\":true,\"img\":true,\"images\":true,\"category\":true,\"brand\":true,\"description\":true,\"stock\":true,\"featured\":true,\"status\":true,\"specifications\":true,\"__v\":true}}},\"skipId\":true},\"$isNew\":false,\"_doc\":{\"_id\":\"6a53bd25d9ec78da00333d5c\",\"id\":1783872805973,\"name\":\"islamando\",\"price\":\"5.000DT\",\"priceNum\":4.5,\"priceBeforeDiscount\":6,\"discount\":0,\"oldPrice\":null,\"badge\":null,\"badgeColor\":null,\"rating\":5,\"reviews\":0,\"img\":\"/uploads/1783872791648-38310055.png\",\"images\":[\"/uploads/1783872791648-38310055.png\"],\"category\":\"Lunch box\",\"brand\":\"\",\"description\":\"liyhjgzebsmikbef\",\"stock\":10,\"featured\":false,\"status\":\"active\",\"specifications\":[],\"__v\":0},\"id\":1783872805973,\"name\":\"islamando\",\"price\":\"5.000DT\",\"priceNum\":4.5,\"oldPrice\":null,\"badge\":null,\"badgeColor\":null,\"rating\":5,\"reviews\":0,\"img\":\"/uploads/1783872791648-38310055.png\",\"images\":[\"/uploads/1783872791648-38310055.png\"],\"category\":\"Lunch box\",\"description\":\"liyhjgzebsmikbef\",\"stock\":10,\"specifications\":[]}}",
+    "user": "admin@ecolier.com",
+    "role": "admin",
+    "timestamp": "2026-07-12T16:27:07.986Z"
+  },
+  {
+    "action": "update-product",
+    "entity": "product",
+    "entityId": "104",
+    "success": true,
+    "details": "{\"name\":\"Cartable Super Luxeee - Dinosaure 3D\",\"description\":\"\",\"price\":\"65,000 DT\",\"priceNum\":65,\"priceBeforeDiscount\":null,\"discount\":0,\"stock\":0,\"category\":\"Catrable super lux\",\"brand\":\"\",\"img\":\"https://images.unsplash.com/photo-1535982330050-f1c2fb79ff78?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400\",\"featured\":false,\"status\":\"active\"}",
+    "user": "admin@ecolier.com",
+    "role": "admin",
+    "timestamp": "2026-07-12T16:25:22.681Z"
+  },
+  {
+    "action": "delete-product",
+    "entity": "product",
+    "entityId": "102",
+    "success": true,
+    "details": "{\"deletedProduct\":{\"$__\":{\"activePaths\":{\"paths\":{\"priceNum\":\"init\",\"price\":\"init\",\"name\":\"init\",\"priceBeforeDiscount\":\"init\",\"discount\":\"init\",\"oldPrice\":\"init\",\"badge\":\"init\",\"badgeColor\":\"init\",\"rating\":\"init\",\"reviews\":\"init\",\"img\":\"init\",\"images\":\"init\",\"category\":\"init\",\"brand\":\"init\",\"description\":\"init\",\"stock\":\"init\",\"featured\":\"init\",\"status\":\"init\",\"_id\":\"init\",\"id\":\"init\",\"specifications\":\"init\",\"__v\":\"init\"},\"states\":{\"require\":{},\"default\":{},\"init\":{\"_id\":true,\"id\":true,\"name\":true,\"price\":true,\"priceNum\":true,\"priceBeforeDiscount\":true,\"discount\":true,\"oldPrice\":true,\"badge\":true,\"badgeColor\":true,\"rating\":true,\"reviews\":true,\"img\":true,\"images\":true,\"category\":true,\"brand\":true,\"description\":true,\"stock\":true,\"featured\":true,\"status\":true,\"specifications\":true,\"__v\":true}}},\"skipId\":true},\"$isNew\":false,\"_doc\":{\"_id\":\"6a53ba48d9ec78da00333d41\",\"id\":102,\"name\":\"Cartable Orthopédique Lux - Rose Princesse\",\"price\":\"49,500 DT\",\"priceNum\":49.5,\"priceBeforeDiscount\":null,\"discount\":0,\"oldPrice\":null,\"badge\":null,\"badgeColor\":null,\"rating\":4.9,\"reviews\":27,\"img\":\"https://images.unsplash.com/photo-1535982330050-f1c2fb79ff78?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400\",\"images\":[\"https://images.unsplash.com/photo-1535982330050-f1c2fb79ff78?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400\"],\"category\":\"Catrable Lux\",\"brand\":\"\",\"description\":\"\",\"stock\":0,\"featured\":false,\"status\":\"active\",\"specifications\":[],\"__v\":0},\"id\":102,\"name\":\"Cartable Orthopédique Lux - Rose Princesse\",\"price\":\"49,500 DT\",\"priceNum\":49.5,\"oldPrice\":null,\"badge\":null,\"badgeColor\":null,\"rating\":4.9,\"reviews\":27,\"img\":\"https://images.unsplash.com/photo-1535982330050-f1c2fb79ff78?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400\",\"images\":[\"https://images.unsplash.com/photo-1535982330050-f1c2fb79ff78?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400\"],\"category\":\"Catrable Lux\",\"description\":\"\",\"stock\":0,\"specifications\":[]}}",
+    "user": "admin@ecolier.com",
+    "role": "admin",
+    "timestamp": "2026-07-12T16:25:05.571Z"
+  },
+  {
+    "action": "delete-product",
+    "entity": "product",
+    "entityId": "107",
+    "success": true,
+    "details": "{\"deletedProduct\":{\"$__\":{\"activePaths\":{\"paths\":{\"priceNum\":\"init\",\"price\":\"init\",\"name\":\"init\",\"priceBeforeDiscount\":\"init\",\"discount\":\"init\",\"oldPrice\":\"init\",\"badge\":\"init\",\"badgeColor\":\"init\",\"rating\":\"init\",\"reviews\":\"init\",\"img\":\"init\",\"images\":\"init\",\"category\":\"init\",\"brand\":\"init\",\"description\":\"init\",\"stock\":\"init\",\"featured\":\"init\",\"status\":\"init\",\"_id\":\"init\",\"id\":\"init\",\"specifications\":\"init\",\"__v\":\"init\"},\"states\":{\"require\":{},\"default\":{},\"init\":{\"_id\":true,\"id\":true,\"name\":true,\"price\":true,\"priceNum\":true,\"priceBeforeDiscount\":true,\"discount\":true,\"oldPrice\":true,\"badge\":true,\"badgeColor\":true,\"rating\":true,\"reviews\":true,\"img\":true,\"images\":true,\"category\":true,\"brand\":true,\"description\":true,\"stock\":true,\"featured\":true,\"status\":true,\"specifications\":true,\"__v\":true}}},\"skipId\":true},\"$isNew\":false,\"_doc\":{\"_id\":\"6a53ba48d9ec78da00333d46\",\"id\":107,\"name\":\"Cartable High Luxe - Unicorn Glitter\",\"price\":\"85,000 DT\",\"priceNum\":85,\"priceBeforeDiscount\":null,\"discount\":0,\"oldPrice\":null,\"badge\":null,\"badgeColor\":null,\"rating\":5,\"reviews\":0,\"img\":\"https://images.unsplash.com/photo-1535982330050-f1c2fb79ff78?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400\",\"images\":[\"https://images.unsplash.com/photo-1535982330050-f1c2fb79ff78?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400\"],\"category\":\"Catrable high lux\",\"brand\":\"\",\"description\":\"\",\"stock\":0,\"featured\":false,\"status\":\"active\",\"specifications\":[],\"__v\":0},\"id\":107,\"name\":\"Cartable High Luxe - Unicorn Glitter\",\"price\":\"85,000 DT\",\"priceNum\":85,\"oldPrice\":null,\"badge\":null,\"badgeColor\":null,\"rating\":5,\"reviews\":0,\"img\":\"https://images.unsplash.com/photo-1535982330050-f1c2fb79ff78?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400\",\"images\":[\"https://images.unsplash.com/photo-1535982330050-f1c2fb79ff78?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400\"],\"category\":\"Catrable high lux\",\"description\":\"\",\"stock\":0,\"specifications\":[]}}",
+    "user": "admin@ecolier.com",
+    "role": "admin",
+    "timestamp": "2026-07-12T16:25:03.238Z"
+  },
+  {
+    "action": "update-product",
+    "entity": "product",
+    "entityId": "107",
+    "success": true,
+    "details": "{\"name\":\"Cartable High Luxe - Unicorn Glitter\",\"description\":\"\",\"price\":\"85,000 DT\",\"priceNum\":85,\"priceBeforeDiscount\":null,\"discount\":0,\"stock\":0,\"category\":\"Catrable high lux\",\"brand\":\"\",\"img\":\"https://images.unsplash.com/photo-1535982330050-f1c2fb79ff78?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400\",\"featured\":false,\"status\":\"active\"}",
+    "user": "admin@ecolier.com",
+    "role": "admin",
+    "timestamp": "2026-07-12T16:24:38.219Z"
+  },
+  {
+    "action": "delete-product",
+    "entity": "product",
+    "entityId": "101",
+    "success": true,
+    "details": "{\"deletedProduct\":{\"$__\":{\"activePaths\":{\"paths\":{\"priceNum\":\"init\",\"price\":\"init\",\"name\":\"init\",\"priceBeforeDiscount\":\"init\",\"discount\":\"init\",\"oldPrice\":\"init\",\"badge\":\"init\",\"badgeColor\":\"init\",\"rating\":\"init\",\"reviews\":\"init\",\"img\":\"init\",\"images\":\"init\",\"category\":\"init\",\"brand\":\"init\",\"description\":\"init\",\"stock\":\"init\",\"featured\":\"init\",\"status\":\"init\",\"_id\":\"init\",\"id\":\"init\",\"specifications\":\"init\",\"__v\":\"init\"},\"states\":{\"require\":{},\"default\":{},\"init\":{\"_id\":true,\"id\":true,\"name\":true,\"price\":true,\"priceNum\":true,\"priceBeforeDiscount\":true,\"discount\":true,\"oldPrice\":true,\"badge\":true,\"badgeColor\":true,\"rating\":true,\"reviews\":true,\"img\":true,\"images\":true,\"category\":true,\"brand\":true,\"description\":true,\"stock\":true,\"featured\":true,\"status\":true,\"specifications\":true,\"__v\":true}}},\"skipId\":true},\"$isNew\":false,\"_doc\":{\"_id\":\"6a53ba48d9ec78da00333d40\",\"id\":101,\"name\":\"Cartable Ergonomique Lux - Bleu Profond\",\"price\":\"48,000 DT\",\"priceNum\":48,\"priceBeforeDiscount\":null,\"discount\":0,\"oldPrice\":null,\"badge\":null,\"badgeColor\":null,\"rating\":4.8,\"reviews\":34,\"img\":\"https://images.unsplash.com/photo-1726726192148-af52008ff663?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400\",\"images\":[\"https://images.unsplash.com/photo-1726726192148-af52008ff663?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400\"],\"category\":\"Catrable Lux\",\"brand\":\"\",\"description\":\"\",\"stock\":0,\"featured\":false,\"status\":\"active\",\"specifications\":[],\"__v\":0},\"id\":101,\"name\":\"Cartable Ergonomique Lux - Bleu Profond\",\"price\":\"48,000 DT\",\"priceNum\":48,\"oldPrice\":null,\"badge\":null,\"badgeColor\":null,\"rating\":4.8,\"reviews\":34,\"img\":\"https://images.unsplash.com/photo-1726726192148-af52008ff663?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400\",\"images\":[\"https://images.unsplash.com/photo-1726726192148-af52008ff663?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400\"],\"category\":\"Catrable Lux\",\"description\":\"\",\"stock\":0,\"specifications\":[]}}",
+    "user": "admin@ecolier.com",
+    "role": "admin",
+    "timestamp": "2026-07-12T16:24:32.246Z"
+  },
+  {
+    "action": "delete-product",
+    "entity": "product",
+    "entityId": "6",
+    "success": true,
+    "details": "{\"deletedProduct\":{\"$__\":{\"activePaths\":{\"paths\":{\"priceNum\":\"init\",\"price\":\"init\",\"name\":\"init\",\"priceBeforeDiscount\":\"init\",\"discount\":\"init\",\"oldPrice\":\"init\",\"badge\":\"init\",\"badgeColor\":\"init\",\"rating\":\"init\",\"reviews\":\"init\",\"img\":\"init\",\"images\":\"init\",\"category\":\"init\",\"brand\":\"init\",\"description\":\"init\",\"stock\":\"init\",\"featured\":\"init\",\"status\":\"init\",\"_id\":\"init\",\"id\":\"init\",\"specifications\":\"init\",\"__v\":\"init\"},\"states\":{\"require\":{},\"default\":{},\"init\":{\"_id\":true,\"id\":true,\"name\":true,\"price\":true,\"priceNum\":true,\"priceBeforeDiscount\":true,\"discount\":true,\"oldPrice\":true,\"badge\":true,\"badgeColor\":true,\"rating\":true,\"reviews\":true,\"img\":true,\"images\":true,\"category\":true,\"brand\":true,\"description\":true,\"stock\":true,\"featured\":true,\"status\":true,\"specifications\":true,\"__v\":true}}},\"skipId\":true},\"$isNew\":false,\"_doc\":{\"_id\":\"6a53ba48d9ec78da00333d55\",\"id\":6,\"name\":\"Calculatrice scientifique\",\"price\":\"52,000 DT\",\"priceNum\":52,\"priceBeforeDiscount\":null,\"discount\":0,\"oldPrice\":\"65,000 DT\",\"badge\":\"-20%\",\"badgeColor\":\"#e53935\",\"rating\":4.8,\"reviews\":95,\"img\":\"https://images.unsplash.com/photo-1574607383077-47ddc2dc51c4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwyfHxjYWxjdWxhdG9yJTIwc2NpZW50aWZpYyUyMHN0dWRlbnR8ZW58MXx8fHwxNzgyMjEzOTU5fDA&ixlib=rb-4.1.0&q=80&w=400\",\"images\":[\"https://images.unsplash.com/photo-1574607383077-47ddc2dc51c4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwyfHxjYWxjdWxhdG9yJTIwc2NpZW50aWZpYyUyMHN0dWRlbnR8ZW58MXx8fHwxNzgyMjEzOTU5fDA&ixlib=rb-4.1.0&q=80&w=400\"],\"category\":\"Calculatrices\",\"brand\":\"\",\"description\":\"\",\"stock\":0,\"featured\":false,\"status\":\"active\",\"specifications\":[],\"__v\":0},\"id\":6,\"name\":\"Calculatrice scientifique\",\"price\":\"52,000 DT\",\"priceNum\":52,\"oldPrice\":\"65,000 DT\",\"badge\":\"-20%\",\"badgeColor\":\"#e53935\",\"rating\":4.8,\"reviews\":95,\"img\":\"https://images.unsplash.com/photo-1574607383077-47ddc2dc51c4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwyfHxjYWxjdWxhdG9yJTIwc2NpZW50aWZpYyUyMHN0dWRlbnR8ZW58MXx8fHwxNzgyMjEzOTU5fDA&ixlib=rb-4.1.0&q=80&w=400\",\"images\":[\"https://images.unsplash.com/photo-1574607383077-47ddc2dc51c4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwyfHxjYWxjdWxhdG9yJTIwc2NpZW50aWZpYyUyMHN0dWRlbnR8ZW58MXx8fHwxNzgyMjEzOTU5fDA&ixlib=rb-4.1.0&q=80&w=400\"],\"category\":\"Calculatrices\",\"description\":\"\",\"stock\":0,\"specifications\":[]}}",
+    "user": "admin@ecolier.com",
+    "role": "admin",
+    "timestamp": "2026-07-12T16:24:30.178Z"
+  },
+  {
+    "action": "delete-product",
+    "entity": "product",
+    "entityId": "1",
+    "success": true,
+    "details": "{\"deletedProduct\":{\"$__\":{\"activePaths\":{\"paths\":{\"priceNum\":\"init\",\"price\":\"init\",\"name\":\"init\",\"priceBeforeDiscount\":\"init\",\"discount\":\"init\",\"oldPrice\":\"init\",\"badge\":\"init\",\"badgeColor\":\"init\",\"rating\":\"init\",\"reviews\":\"init\",\"img\":\"init\",\"images\":\"init\",\"category\":\"init\",\"brand\":\"init\",\"description\":\"init\",\"stock\":\"init\",\"featured\":\"init\",\"status\":\"init\",\"_id\":\"init\",\"id\":\"init\",\"specifications\":\"init\",\"__v\":\"init\"},\"states\":{\"require\":{},\"default\":{},\"init\":{\"_id\":true,\"id\":true,\"name\":true,\"price\":true,\"priceNum\":true,\"priceBeforeDiscount\":true,\"discount\":true,\"oldPrice\":true,\"badge\":true,\"badgeColor\":true,\"rating\":true,\"reviews\":true,\"img\":true,\"images\":true,\"category\":true,\"brand\":true,\"description\":true,\"stock\":true,\"featured\":true,\"status\":true,\"specifications\":true,\"__v\":true}}},\"skipId\":true},\"$isNew\":false,\"_doc\":{\"_id\":\"6a53ba48d9ec78da00333d50\",\"id\":1,\"name\":\"Cahier scolaire 200 pages\",\"price\":\"1,800 DT\",\"priceNum\":1.8,\"priceBeforeDiscount\":null,\"discount\":0,\"oldPrice\":\"2,200 DT\",\"badge\":\"-18%\",\"badgeColor\":\"#e53935\",\"rating\":4.8,\"reviews\":124,\"img\":\"https://images.unsplash.com/photo-1722929309984-c6b3e55dd6e5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwyfHxzY2hvb2wlMjBub3RlYm9va3MlMjBwZW5jaWxzJTIwZGVza3xlbnwxfHx8fDE3ODIyMTM5NTR8MA&ixlib=rb-4.1.0&q=80&w=400\",\"images\":[\"https://images.unsplash.com/photo-1722929309984-c6b3e55dd6e5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwyfHxzY2hvb2wlMjBub3RlYm9va3MlMjBwZW5jaWxzJTIwZGVza3xlbnwxfHx8fDE3ODIyMTM5NTR8MA&ixlib=rb-4.1.0&q=80&w=400\"],\"category\":\"Cahiers & Classeurs\",\"brand\":\"\",\"description\":\"\",\"stock\":0,\"featured\":false,\"status\":\"active\",\"specifications\":[],\"__v\":0},\"id\":1,\"name\":\"Cahier scolaire 200 pages\",\"price\":\"1,800 DT\",\"priceNum\":1.8,\"oldPrice\":\"2,200 DT\",\"badge\":\"-18%\",\"badgeColor\":\"#e53935\",\"rating\":4.8,\"reviews\":124,\"img\":\"https://images.unsplash.com/photo-1722929309984-c6b3e55dd6e5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwyfHxzY2hvb2wlMjBub3RlYm9va3MlMjBwZW5jaWxzJTIwZGVza3xlbnwxfHx8fDE3ODIyMTM5NTR8MA&ixlib=rb-4.1.0&q=80&w=400\",\"images\":[\"https://images.unsplash.com/photo-1722929309984-c6b3e55dd6e5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwyfHxzY2hvb2wlMjBub3RlYm9va3MlMjBwZW5jaWxzJTIwZGVza3xlbnwxfHx8fDE3ODIyMTM5NTR8MA&ixlib=rb-4.1.0&q=80&w=400\"],\"category\":\"Cahiers & Classeurs\",\"description\":\"\",\"stock\":0,\"specifications\":[]}}",
+    "user": "admin@ecolier.com",
+    "role": "admin",
+    "timestamp": "2026-07-12T16:24:28.390Z"
+  },
+  {
+    "action": "delete-product",
+    "entity": "product",
+    "entityId": "10",
+    "success": true,
+    "details": "{\"deletedProduct\":{\"$__\":{\"activePaths\":{\"paths\":{\"priceNum\":\"init\",\"price\":\"init\",\"name\":\"init\",\"priceBeforeDiscount\":\"init\",\"discount\":\"init\",\"oldPrice\":\"init\",\"badge\":\"init\",\"badgeColor\":\"init\",\"rating\":\"init\",\"reviews\":\"init\",\"img\":\"init\",\"images\":\"init\",\"category\":\"init\",\"brand\":\"init\",\"description\":\"init\",\"stock\":\"init\",\"featured\":\"init\",\"status\":\"init\",\"_id\":\"init\",\"id\":\"init\",\"specifications\":\"init\",\"__v\":\"init\"},\"states\":{\"require\":{},\"default\":{},\"init\":{\"_id\":true,\"id\":true,\"name\":true,\"price\":true,\"priceNum\":true,\"priceBeforeDiscount\":true,\"discount\":true,\"oldPrice\":true,\"badge\":true,\"badgeColor\":true,\"rating\":true,\"reviews\":true,\"img\":true,\"images\":true,\"category\":true,\"brand\":true,\"description\":true,\"stock\":true,\"featured\":true,\"status\":true,\"specifications\":true,\"__v\":true}}},\"skipId\":true},\"$isNew\":false,\"_doc\":{\"_id\":\"6a53ba48d9ec78da00333d59\",\"id\":10,\"name\":\"Cahier de dessin Canson A3\",\"price\":\"9,500 DT\",\"priceNum\":9.5,\"priceBeforeDiscount\":null,\"discount\":0,\"oldPrice\":null,\"badge\":null,\"badgeColor\":null,\"rating\":4.9,\"reviews\":68,\"img\":\"https://images.unsplash.com/photo-1568205612837-017257d2310a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400\",\"images\":[\"https://images.unsplash.com/photo-1568205612837-017257d2310a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400\"],\"category\":\"Matériel artistique\",\"brand\":\"\",\"description\":\"\",\"stock\":0,\"featured\":false,\"status\":\"active\",\"specifications\":[],\"__v\":0},\"id\":10,\"name\":\"Cahier de dessin Canson A3\",\"price\":\"9,500 DT\",\"priceNum\":9.5,\"oldPrice\":null,\"badge\":null,\"badgeColor\":null,\"rating\":4.9,\"reviews\":68,\"img\":\"https://images.unsplash.com/photo-1568205612837-017257d2310a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400\",\"images\":[\"https://images.unsplash.com/photo-1568205612837-017257d2310a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400\"],\"category\":\"Matériel artistique\",\"description\":\"\",\"stock\":0,\"specifications\":[]}}",
+    "user": "admin@ecolier.com",
+    "role": "admin",
+    "timestamp": "2026-07-12T16:24:26.796Z"
+  },
+  {
+    "action": "delete-product",
+    "entity": "product",
+    "entityId": "4",
+    "success": true,
+    "details": "{\"deletedProduct\":{\"$__\":{\"activePaths\":{\"paths\":{\"priceNum\":\"init\",\"price\":\"init\",\"name\":\"init\",\"priceBeforeDiscount\":\"init\",\"discount\":\"init\",\"oldPrice\":\"init\",\"badge\":\"init\",\"badgeColor\":\"init\",\"rating\":\"init\",\"reviews\":\"init\",\"img\":\"init\",\"images\":\"init\",\"category\":\"init\",\"brand\":\"init\",\"description\":\"init\",\"stock\":\"init\",\"featured\":\"init\",\"status\":\"init\",\"_id\":\"init\",\"id\":\"init\",\"specifications\":\"init\",\"__v\":\"init\"},\"states\":{\"require\":{},\"default\":{},\"init\":{\"_id\":true,\"id\":true,\"name\":true,\"price\":true,\"priceNum\":true,\"priceBeforeDiscount\":true,\"discount\":true,\"oldPrice\":true,\"badge\":true,\"badgeColor\":true,\"rating\":true,\"reviews\":true,\"img\":true,\"images\":true,\"category\":true,\"brand\":true,\"description\":true,\"stock\":true,\"featured\":true,\"status\":true,\"specifications\":true,\"__v\":true}}},\"skipId\":true},\"$isNew\":false,\"_doc\":{\"_id\":\"6a53ba48d9ec78da00333d53\",\"id\":4,\"name\":\"Boîte de crayons de couleur\",\"price\":\"8,500 DT\",\"priceNum\":8.5,\"priceBeforeDiscount\":null,\"discount\":0,\"oldPrice\":\"10,000 DT\",\"badge\":\"-15%\",\"badgeColor\":\"#e53935\",\"rating\":4.6,\"reviews\":203,\"img\":\"https://images.unsplash.com/photo-1568205612837-017257d2310a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzY2hvb2wlMjBub3RlYm9va3MlMjBwZW5jaWxzJTIwZGVza3xlbnwxfHx8fDE3ODIyMTM5NTR8MA&ixlib=rb-4.1.0&q=80&w=400\",\"images\":[\"https://images.unsplash.com/photo-1568205612837-017257d2310a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzY2hvb2wlMjBub3RlYm9va3MlMjBwZW5jaWxzJTIwZGVza3xlbnwxfHx8fDE3ODIyMTM5NTR8MA&ixlib=rb-4.1.0&q=80&w=400\"],\"category\":\"Stylos & Crayons\",\"brand\":\"\",\"description\":\"\",\"stock\":0,\"featured\":false,\"status\":\"active\",\"specifications\":[],\"__v\":0},\"id\":4,\"name\":\"Boîte de crayons de couleur\",\"price\":\"8,500 DT\",\"priceNum\":8.5,\"oldPrice\":\"10,000 DT\",\"badge\":\"-15%\",\"badgeColor\":\"#e53935\",\"rating\":4.6,\"reviews\":203,\"img\":\"https://images.unsplash.com/photo-1568205612837-017257d2310a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzY2hvb2wlMjBub3RlYm9va3MlMjBwZW5jaWxzJTIwZGVza3xlbnwxfHx8fDE3ODIyMTM5NTR8MA&ixlib=rb-4.1.0&q=80&w=400\",\"images\":[\"https://images.unsplash.com/photo-1568205612837-017257d2310a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzY2hvb2wlMjBub3RlYm9va3MlMjBwZW5jaWxzJTIwZGVza3xlbnwxfHx8fDE3ODIyMTM5NTR8MA&ixlib=rb-4.1.0&q=80&w=400\"],\"category\":\"Stylos & Crayons\",\"description\":\"\",\"stock\":0,\"specifications\":[]}}",
+    "user": "admin@ecolier.com",
+    "role": "admin",
+    "timestamp": "2026-07-12T16:24:23.205Z"
+  },
+  {
+    "action": "create-product",
+    "entity": "product",
+    "entityId": "6a53bd25d9ec78da00333d5c",
+    "success": true,
+    "details": "{\"name\":\"islamando\",\"category\":\"Lunch box\"}",
+    "user": "admin@ecolier.com",
+    "role": "admin",
+    "timestamp": "2026-07-12T16:13:25.512Z"
+  },
+  {
+    "action": "upload-image",
+    "entity": "image",
+    "success": true,
+    "details": "/uploads/1783872791648-38310055.png",
+    "user": "admin@ecolier.com",
+    "role": "admin",
+    "timestamp": "2026-07-12T16:13:11.660Z"
+  },
+  {
+    "action": "upload-image",
+    "entity": "image",
+    "success": true,
+    "details": "/uploads/1783872780657-979321816.webp",
+    "user": "admin@ecolier.com",
+    "role": "admin",
+    "timestamp": "2026-07-12T16:13:00.665Z"
+  },
+  {
+    "action": "upload-image",
+    "entity": "image",
+    "success": true,
+    "details": "/uploads/1783872770729-442627680.png",
+    "user": "admin@ecolier.com",
+    "role": "admin",
+    "timestamp": "2026-07-12T16:12:50.766Z"
+  },
+  {
+    "action": "delete-product",
+    "entity": "product",
+    "entityId": "11",
+    "success": true,
+    "details": "{\"deletedProduct\":{\"$__\":{\"activePaths\":{\"paths\":{\"priceNum\":\"init\",\"price\":\"init\",\"name\":\"init\",\"priceBeforeDiscount\":\"init\",\"discount\":\"init\",\"oldPrice\":\"init\",\"badge\":\"init\",\"badgeColor\":\"init\",\"rating\":\"init\",\"reviews\":\"init\",\"img\":\"init\",\"images\":\"init\",\"category\":\"init\",\"brand\":\"init\",\"description\":\"init\",\"stock\":\"init\",\"featured\":\"init\",\"status\":\"init\",\"_id\":\"init\",\"id\":\"init\",\"specifications\":\"init\",\"__v\":\"init\"},\"states\":{\"require\":{},\"default\":{},\"init\":{\"_id\":true,\"id\":true,\"name\":true,\"price\":true,\"priceNum\":true,\"priceBeforeDiscount\":true,\"discount\":true,\"oldPrice\":true,\"badge\":true,\"badgeColor\":true,\"rating\":true,\"reviews\":true,\"img\":true,\"images\":true,\"category\":true,\"brand\":true,\"description\":true,\"stock\":true,\"featured\":true,\"status\":true,\"specifications\":true,\"__v\":true}}},\"skipId\":true},\"$isNew\":false,\"_doc\":{\"_id\":\"6a53ba48d9ec78da00333d5a\",\"id\":11,\"name\":\"Bloc Papier à dessin\",\"price\":\"4,500 DT\",\"priceNum\":4.5,\"priceBeforeDiscount\":null,\"discount\":0,\"oldPrice\":null,\"badge\":null,\"badgeColor\":null,\"rating\":4.7,\"reviews\":52,\"img\":\"https://images.unsplash.com/photo-1779684998897-ce5de594a5ac?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400\",\"images\":[\"https://images.unsplash.com/photo-1779684998897-ce5de594a5ac?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400\"],\"category\":\"Papeterie\",\"brand\":\"\",\"description\":\"\",\"stock\":0,\"featured\":false,\"status\":\"active\",\"specifications\":[],\"__v\":0},\"id\":11,\"name\":\"Bloc Papier à dessin\",\"price\":\"4,500 DT\",\"priceNum\":4.5,\"oldPrice\":null,\"badge\":null,\"badgeColor\":null,\"rating\":4.7,\"reviews\":52,\"img\":\"https://images.unsplash.com/photo-1779684998897-ce5de594a5ac?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400\",\"images\":[\"https://images.unsplash.com/photo-1779684998897-ce5de594a5ac?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400\"],\"category\":\"Papeterie\",\"description\":\"\",\"stock\":0,\"specifications\":[]}}",
+    "user": "admin@ecolier.com",
+    "role": "admin",
+    "timestamp": "2026-07-12T16:02:10.343Z"
+  }
+]
