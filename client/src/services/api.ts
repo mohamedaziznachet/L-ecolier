@@ -5,6 +5,7 @@
 // Migrated from localStorage mock to real MERN endpoints.
 
 import { Product, User, Order, Brand, Coupon, Review, AdminStats } from "../types";
+import { fetchWithCache, invalidateCache } from "./apiCache";
 
 const KEYS = {
   currentUser: "ecolier_user",
@@ -96,33 +97,35 @@ async function parseJSONSafe(res: Response) {
 // ── Products ─────────────────────────────────────────────────────────────────
 
 export async function getProducts(): Promise<Product[]> {
-  try {
-    const token = localStorage.getItem(KEYS.token);
-    const isAdmin = localStorage.getItem(KEYS.isAdmin) === "true";
-    let res: Response;
-    if (token && isAdmin) {
-      res = await fetchWithAuth(`/api/admin/products`, { headers: getHeaders() });
-    } else {
-      res = await apiFetch(`/api/products?limit=1000`, { headers: getHeaders() });
-    }
-
-    if (!res.ok) {
-      // Fallback to public endpoint if admin fetch fails or returns non-200
-      const pubRes = await apiFetch(`/api/products?limit=1000`, { headers: getHeaders() });
-      if (!pubRes.ok) {
-        console.warn(`[getProducts] HTTP ${pubRes.status}`);
-        return [];
+  return fetchWithCache("products_all", async () => {
+    try {
+      const token = localStorage.getItem(KEYS.token);
+      const isAdmin = localStorage.getItem(KEYS.isAdmin) === "true";
+      let res: Response;
+      if (token && isAdmin) {
+        res = await fetchWithAuth(`/api/admin/products`, { headers: getHeaders() });
+      } else {
+        res = await apiFetch(`/api/products?limit=1000`, { headers: getHeaders() });
       }
-      const pubData = await pubRes.json();
-      return pubData.products || [];
-    }
 
-    const data = await res.json();
-    return data.products || [];
-  } catch (e) {
-    console.error("Error fetching products:", e);
-    return [];
-  }
+      if (!res.ok) {
+        // Fallback to public endpoint if admin fetch fails or returns non-200
+        const pubRes = await apiFetch(`/api/products?limit=1000`, { headers: getHeaders() });
+        if (!pubRes.ok) {
+          console.warn(`[getProducts] HTTP ${pubRes.status}`);
+          return [];
+        }
+        const pubData = await pubRes.json();
+        return pubData.products || [];
+      }
+
+      const data = await res.json();
+      return data.products || [];
+    } catch (e) {
+      console.error("Error fetching products:", e);
+      return [];
+    }
+  }, 2 * 60 * 1000); // 2 minute cache
 }
 
 export async function getFilteredProducts(options: {
@@ -150,66 +153,73 @@ export async function getFilteredProducts(options: {
   if (options.sortBy?.trim()) cleanParams.sortBy = options.sortBy.trim();
 
   const params = new URLSearchParams(cleanParams);
+  const cacheKey = `products_filtered_${params.toString()}`;
 
-  try {
-    const res = await apiFetch(`/api/products?${params.toString()}`, {
-      method: 'GET',
-      headers: getHeaders(),
-    });
+  return fetchWithCache(cacheKey, async () => {
+    try {
+      const res = await apiFetch(`/api/products?${params.toString()}`, {
+        method: 'GET',
+        headers: getHeaders(),
+      });
 
-    if (!res.ok) {
-      const errText = await res.text().catch(() => '');
-      console.warn(`[getFilteredProducts] Failed with HTTP ${res.status}:`, errText);
+      if (!res.ok) {
+        const errText = await res.text().catch(() => '');
+        console.warn(`[getFilteredProducts] Failed with HTTP ${res.status}:`, errText);
+        return {
+          products: [],
+          pagination: { page: options.page ?? 1, limit: options.limit ?? 20, total: 0, pages: 1 },
+        };
+      }
+
+      const data = await res.json();
+      return {
+        products: Array.isArray(data.products) ? data.products : [],
+        pagination: data.pagination ?? { page: 1, limit: 20, total: 0, pages: 1 },
+      };
+    } catch (e) {
+      console.error('Error fetching filtered products:', e);
       return {
         products: [],
         pagination: { page: options.page ?? 1, limit: options.limit ?? 20, total: 0, pages: 1 },
       };
     }
-
-    const data = await res.json();
-    return {
-      products: Array.isArray(data.products) ? data.products : [],
-      pagination: data.pagination ?? { page: 1, limit: 20, total: 0, pages: 1 },
-    };
-  } catch (e) {
-    console.error('Error fetching filtered products:', e);
-    return {
-      products: [],
-      pagination: { page: options.page ?? 1, limit: options.limit ?? 20, total: 0, pages: 1 },
-    };
-  }
+  }, 2 * 60 * 1000);
 }
 
 
 export async function getProductById(id: number | string): Promise<Product | null> {
-  try {
-    const res = await fetchWithAuth(`/api/products/${encodeURIComponent(String(id))}`, {
-      headers: getHeaders(),
-    });
-    if (!res.ok) {
-      if (res.status === 404) return null;
-      throw new Error("Failed to fetch product");
+  return fetchWithCache(`product_${id}`, async () => {
+    try {
+      const res = await fetchWithAuth(`/api/products/${encodeURIComponent(String(id))}`, {
+        headers: getHeaders(),
+      });
+      if (!res.ok) {
+        if (res.status === 404) return null;
+        throw new Error("Failed to fetch product");
+      }
+      const data = await res.json();
+      return data.product || null;
+    } catch (e) {
+      console.error("Error fetching product:", e);
+      return null;
     }
-    const data = await res.json();
-    return data.product || null;
-  } catch (e) {
-    console.error("Error fetching product:", e);
-    return null;
-  }
+  }, 5 * 60 * 1000);
 }
 
 export async function getCategories(): Promise<string[]> {
-  try {
-    const res = await fetchWithAuth(`/api/categories`, {
-      headers: getHeaders(),
-    });
-    if (!res.ok) throw new Error("Failed to fetch categories");
-    const data = await res.json();
-    return Array.isArray(data.categories) ? data.categories : [];
-  } catch (e) {
-    console.error("Error fetching categories:", e);
-    return [];
-  }
+  return fetchWithCache("categories_all", async () => {
+    try {
+      const res = await fetchWithAuth(`/api/categories`, {
+        headers: getHeaders(),
+      });
+      if (!res.ok) throw new Error("Failed to fetch categories");
+      const data = await res.json();
+      return Array.isArray(data.categories) ? data.categories : [];
+    } catch (e) {
+      console.error("Error fetching categories:", e);
+      return [];
+    }
+  }, 10 * 60 * 1000);
 }
 
 export async function getAdminCategories(): Promise<string[]> {
@@ -245,6 +255,7 @@ export async function addCategory(category: string): Promise<string[]> {
       const msg = parsed && (parsed.error || parsed.__rawText) ? (parsed.error || parsed.__rawText) : 'Failed to add category';
       throw new Error(String(msg));
     }
+    invalidateCache("categories");
     const data = await parseJSONSafe(res);
     if (!data) return [];
     if (Array.isArray((data as any).categories)) return (data as any).categories;
@@ -267,6 +278,7 @@ export async function deleteCategory(category: string): Promise<string[]> {
       const msg = parsed && (parsed.error || parsed.__rawText) ? (parsed.error || parsed.__rawText) : 'Failed to delete category';
       throw new Error(String(msg));
     }
+    invalidateCache("categories");
     const data = await parseJSONSafe(res);
     if (!data) return [];
     if (Array.isArray((data as any).categories)) return (data as any).categories;
@@ -289,6 +301,7 @@ export async function addProduct(product: Omit<Product, "id">): Promise<Product[
       const err = await res.json();
       throw new Error(err.error || "Failed to add product");
     }
+    invalidateCache("product");
     return getProducts();
   } catch (e) {
     console.error("Error adding product:", e);
@@ -310,6 +323,7 @@ export async function updateProduct(
       const err = await res.json();
       throw new Error(err.error || "Failed to update product");
     }
+    invalidateCache("product");
     return getProducts();
   } catch (e) {
     console.error("Error updating product:", e);
@@ -327,6 +341,7 @@ export async function deleteProduct(id: Product["id"]): Promise<Product[]> {
       const err = await res.json();
       throw new Error(err.error || "Failed to delete product");
     }
+    invalidateCache("product");
     return getProducts();
   } catch (e) {
     console.error("Error deleting product:", e);
@@ -659,22 +674,24 @@ export function setIsAdmin(value: boolean): void {
 // ── Brands ──────────────────────────────────────────────────────────────────
 
 export async function getBrands(): Promise<Brand[]> {
-  try {
-    const res = await apiFetch('/api/brands', { headers: getHeaders() });
-    if (!res.ok) {
-      console.warn(`[getBrands] HTTP ${res.status}`);
+  return fetchWithCache('brands_all', async () => {
+    try {
+      const res = await apiFetch('/api/brands', { headers: getHeaders() });
+      if (!res.ok) {
+        console.warn(`[getBrands] HTTP ${res.status}`);
+        return [];
+      }
+      const data = await res.json();
+      return data.brands || [];
+    } catch (e) {
+      console.error('Error fetching brands:', e);
       return [];
     }
-    const data = await res.json();
-    return data.brands || [];
-  } catch (e) {
-    console.error('Error fetching brands:', e);
-    return [];
-  }
+  }, 10 * 60 * 1000);
 }
 
 export async function createBrand(data: Omit<Brand, '_id' | 'id' | 'createdAt'>): Promise<void> {
-  const res = await apiFetch('/api/admin/brands', {
+  const res = await fetchWithAuth('/api/admin/brands', {
     method: 'POST',
     headers: getHeaders(),
     body: JSON.stringify(data),
@@ -683,10 +700,11 @@ export async function createBrand(data: Omit<Brand, '_id' | 'id' | 'createdAt'>)
     const err = await res.json().catch(() => ({}));
     throw new Error(err.error || 'Failed to create brand');
   }
+  invalidateCache('brands_all');
 }
 
 export async function updateBrand(id: string, data: Partial<Brand>): Promise<void> {
-  const res = await apiFetch(`/api/admin/brands/${id}`, {
+  const res = await fetchWithAuth(`/api/admin/brands/${id}`, {
     method: 'PUT',
     headers: getHeaders(),
     body: JSON.stringify(data),
@@ -695,10 +713,11 @@ export async function updateBrand(id: string, data: Partial<Brand>): Promise<voi
     const err = await res.json().catch(() => ({}));
     throw new Error(err.error || 'Failed to update brand');
   }
+  invalidateCache('brands_all');
 }
 
 export async function deleteBrand(id: string): Promise<void> {
-  const res = await apiFetch(`/api/admin/brands/${id}`, {
+  const res = await fetchWithAuth(`/api/admin/brands/${id}`, {
     method: 'DELETE',
     headers: getHeaders(),
   });
@@ -706,13 +725,14 @@ export async function deleteBrand(id: string): Promise<void> {
     const err = await res.json().catch(() => ({}));
     throw new Error(err.error || 'Failed to delete brand');
   }
+  invalidateCache('brands_all');
 }
 
 // ── Coupons (Codes Promo) ──────────────────────────────────────────────
 
 export async function getCoupons(): Promise<Coupon[]> {
   try {
-    const res = await apiFetch('/api/admin/coupons', { headers: getHeaders() });
+    const res = await fetchWithAuth('/api/admin/coupons', { headers: getHeaders() });
     if (!res.ok) throw new Error('Failed to fetch coupons');
     const data = await res.json();
     return data.coupons || [];
@@ -723,7 +743,7 @@ export async function getCoupons(): Promise<Coupon[]> {
 }
 
 export async function createCoupon(data: Omit<Coupon, '_id' | 'id' | 'createdAt'>): Promise<void> {
-  const res = await apiFetch('/api/admin/coupons', {
+  const res = await fetchWithAuth('/api/admin/coupons', {
     method: 'POST',
     headers: getHeaders(),
     body: JSON.stringify(data),
@@ -735,7 +755,7 @@ export async function createCoupon(data: Omit<Coupon, '_id' | 'id' | 'createdAt'
 }
 
 export async function updateCoupon(id: string, data: Partial<Coupon>): Promise<void> {
-  const res = await apiFetch(`/api/admin/coupons/${id}`, {
+  const res = await fetchWithAuth(`/api/admin/coupons/${id}`, {
     method: 'PUT',
     headers: getHeaders(),
     body: JSON.stringify(data),
@@ -747,7 +767,7 @@ export async function updateCoupon(id: string, data: Partial<Coupon>): Promise<v
 }
 
 export async function deleteCoupon(id: string): Promise<void> {
-  const res = await apiFetch(`/api/admin/coupons/${id}`, {
+  const res = await fetchWithAuth(`/api/admin/coupons/${id}`, {
     method: 'DELETE',
     headers: getHeaders(),
   });
@@ -781,7 +801,7 @@ export async function validateCoupon(code: string, cartTotal: number): Promise<{
 export async function getReviews(page = 1, limit = 20, search = ''): Promise<{ reviews: Review[]; total: number; pages: number }> {
   try {
     const params = new URLSearchParams({ page: String(page), limit: String(limit), ...(search && { search }) });
-    const res = await apiFetch(`/api/admin/reviews?${params}`, { headers: getHeaders() });
+    const res = await fetchWithAuth(`/api/admin/reviews?${params}`, { headers: getHeaders() });
     if (!res.ok) throw new Error('Failed to fetch reviews');
     const data = await res.json();
     return { reviews: data.reviews || [], total: data.pagination?.total || 0, pages: data.pagination?.pages || 1 };
@@ -791,8 +811,44 @@ export async function getReviews(page = 1, limit = 20, search = ''): Promise<{ r
   }
 }
 
+export async function getProductReviews(productId: string): Promise<Review[]> {
+  try {
+    const res = await fetchWithAuth(`/api/reviews/product/${productId}`);
+    if (!res.ok) return [];
+    const data = await res.json();
+    return data.reviews || [];
+  } catch (e) {
+    console.error('Error fetching product reviews:', e);
+    return [];
+  }
+}
+
+export async function submitCustomerReview(reviewData: {
+  productId: string;
+  productName?: string;
+  customerName: string;
+  rating: number;
+  comment?: string;
+  userId?: string;
+}): Promise<{ success: boolean; message?: string; review?: Review }> {
+  try {
+    const res = await fetchWithAuth('/api/reviews', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(reviewData),
+    });
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.error || 'Failed to submit review');
+    return { success: true, message: data.message, review: data.review };
+  } catch (e: any) {
+    console.error('Error submitting review:', e);
+    throw new Error(e.message || 'Échec de l\'envoi de votre avis');
+  }
+}
+
+
 export async function deleteReview(id: string): Promise<void> {
-  const res = await apiFetch(`/api/admin/reviews/${id}`, {
+  const res = await fetchWithAuth(`/api/admin/reviews/${id}`, {
     method: 'DELETE',
     headers: getHeaders(),
   });
@@ -801,6 +857,7 @@ export async function deleteReview(id: string): Promise<void> {
     throw new Error(err.error || 'Failed to delete review');
   }
 }
+
 
 // ── Dynamic Layout Settings (MongoDB-backed) ─────────────────────────────────
 
@@ -811,16 +868,18 @@ export async function deleteReview(id: string): Promise<void> {
  *   const nav = layout["navbar"]; // whatever shape was stored
  */
 export async function getLayoutSettings(): Promise<Record<string, any>> {
-  try {
-    const res = await apiFetch("/api/settings");
-    if (!res.ok) throw new Error("Failed to fetch layout settings");
-    const data = await res.json();
-    // Backend returns { settings: { key: content, … } }
-    return data.settings || {};
-  } catch (e) {
-    console.error("Error fetching layout settings:", e);
-    return {};
-  }
+  return fetchWithCache("layout_settings", async () => {
+    try {
+      const res = await apiFetch("/api/settings");
+      if (!res.ok) throw new Error("Failed to fetch layout settings");
+      const data = await res.json();
+      // Backend returns { settings: { key: content, … } }
+      return data.settings || {};
+    } catch (e) {
+      console.error("Error fetching layout settings:", e);
+      return {};
+    }
+  }, 10 * 60 * 1000);
 }
 
 /**
@@ -830,7 +889,7 @@ export async function getLayoutSettings(): Promise<Record<string, any>> {
  *   content – any JSON (array of links, object, string, …)
  */
 export async function updateLayoutSetting(key: string, content: any): Promise<void> {
-  const res = await apiFetch(`/api/settings/${key}`, {
+  const res = await fetchWithAuth(`/api/settings/${key}`, {
     method: "PUT",
     headers: getHeaders(),
     body: JSON.stringify(content),
@@ -839,6 +898,7 @@ export async function updateLayoutSetting(key: string, content: any): Promise<vo
     const err = await res.json().catch(() => ({}));
     throw new Error(err.error || "Failed to save setting");
   }
+  invalidateCache("layout_settings");
 }
 
 // ── Settings (localStorage-based legacy) ─────────────────────────────────────
@@ -868,7 +928,7 @@ const DEFAULT_SETTINGS: SiteSettings = {
 
 export async function getSettings(): Promise<SiteSettings> {
   try {
-    const res = await apiFetch("/api/settings/site_settings", { headers: getHeaders() });
+    const res = await fetchWithAuth("/api/settings/site_settings", { headers: getHeaders() });
     if (!res.ok) throw new Error("Failed to fetch settings");
     const data = await res.json();
     if (data && data.content) {
@@ -888,7 +948,7 @@ export async function getSettings(): Promise<SiteSettings> {
 
 export async function saveSettings(settings: SiteSettings): Promise<void> {
   try {
-    const res = await apiFetch("/api/settings/site_settings", {
+    const res = await fetchWithAuth("/api/settings/site_settings", {
       method: "PUT",
       headers: getHeaders(),
       body: JSON.stringify(settings),

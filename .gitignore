@@ -10,3 +10,7 @@ pnpm-debug.log*
 .DS_Store
 .kilo/
 .qodo/
+
+# Product images — transfer to VPS separately via rsync/scp
+server/uploads/
+server/logs/

@@ -84,9 +84,15 @@ function normalizeProduct(product: any): any {
     brand: product.brand ?? '',
     description: product.description ?? '',
     stock: Number(product.stock ?? 0),
+    availability: product.availability ?? 'En stock',
     featured: Boolean(product.featured ?? false),
     status: product.status ?? 'active',
-    specifications: Array.isArray(product.specifications) ? product.specifications : [],
+    specifications: Array.isArray(product.specifications)
+      ? product.specifications.map((s: any) => ({
+          key: String(s.key || s.name || s.label || '').trim(),
+          value: String(s.value || s.val || '').trim()
+        })).filter((s: any) => s.key || s.value)
+      : [],
   };
 
   if (!normalized.images.includes(normalized.img) && normalized.img) {

@@ -18,7 +18,7 @@ export function AboutPage() {
       <div className="about-hero">
         <h1 className="about-title">À propos de Librairie l'Écolier</h1>
         <p className="about-subtitle">
-          Votre partenaire de confiance pour toutes vos fournitures scolaires et de bureau en Tunisie depuis 2026
+          Votre partenaire de confiance pour toutes vos fournitures scolaires et de bureau en Tunisie
         </p>
       </div>
 

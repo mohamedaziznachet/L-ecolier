@@ -213,7 +213,7 @@ export const CustomersPage: React.FC = () => {
                       width: 56,
                       height: 56,
                       borderRadius: '50%',
-                      background: 'var(--a-accent)',
+                      background: 'linear-gradient(135deg, #0d2b6b 0%, #1d4ed8 100%)',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
@@ -256,23 +256,23 @@ export const CustomersPage: React.FC = () => {
                   <div>
                     <h4 style={{ marginBottom: 12, color: 'var(--a-text-bright)' }}>Historique des Commandes ({userOrders.length})</h4>
                     {userOrders.length === 0 ? (
-                      <div style={{ color: 'var(--a-text-muted)', fontSize: '0.9rem', padding: 12, background: 'var(--a-sidebar)', borderRadius: 8, textAlign: 'center' }}>
+                      <div style={{ color: '#64748b', fontSize: '0.9rem', padding: 14, background: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: 10, textAlign: 'center' }}>
                         Aucune commande passée par ce client.
                       </div>
                     ) : (
                       <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
                         {userOrders.map(order => (
-                          <div key={order._id || order.id} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: 12, background: 'var(--a-sidebar)', borderRadius: 8, fontSize: '0.85rem' }}>
+                          <div key={order._id || order.id} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '10px 14px', background: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: 10, fontSize: '0.85rem' }}>
                             <div>
-                              <span style={{ fontWeight: 600, color: 'var(--a-accent)', fontFamily: 'monospace' }}>
+                              <span style={{ fontWeight: 700, color: '#0d2b6b', fontFamily: 'monospace' }}>
                                 #{(order._id || order.id).toString().slice(-8).toUpperCase()}
                               </span>
-                              <span style={{ marginLeft: 12, color: 'var(--a-text-muted)' }}>
+                              <span style={{ marginLeft: 12, color: '#64748b', fontWeight: 500 }}>
                                 {new Date(order.date).toLocaleDateString('fr-FR')}
                               </span>
                             </div>
                             <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-                              <span style={{ fontWeight: 600, color: 'var(--a-success)' }}>{order.total.toFixed(2)} DT</span>
+                              <span style={{ fontWeight: 800, color: '#0d2b6b' }}>{order.total.toFixed(2)} DT</span>
                               <StatusBadge type="order" value={order.status} />
                             </div>
                           </div>

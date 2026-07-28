@@ -22,6 +22,7 @@ const productSchema = new Schema({
   brand: { type: String, default: '', trim: true },
   description: { type: String, default: '', trim: true },
   stock: { type: Number, default: 0, min: 0 },
+  availability: { type: String, enum: ['En stock', 'En arrivage', 'Sur commande', 'Epuisé'], default: 'En stock', trim: true },
   featured: { type: Boolean, default: false },
   status: { type: String, enum: ['active', 'inactive'], default: 'active' },
   specifications: [{ key: String, value: String }]

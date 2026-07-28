@@ -2,7 +2,7 @@ import express from 'express';
 import type { Request, Response } from 'express';
 import mongoose from 'mongoose';
 import { body, validationResult } from 'express-validator';
-import { ProductModel, OrderModel, PageSettingsModel, BrandModel } from '../models/index.ts';
+import { ProductModel, OrderModel, PageSettingsModel, BrandModel, ReviewModel } from '../models/index.ts';
 import { getCategories, buildProductLookupQuery } from '../repositories/productRepository.ts';
 import { validateCoupon } from '../repositories/couponRepository.ts';
 import { authenticateAdmin, authenticate } from '../middleware/auth.ts';
@@ -101,10 +101,11 @@ router.get('/products', async (req: Request, res: Response) => {
 
     const filter = conditions.length === 1 ? conditions[0] : { $and: conditions };
 
-    const sort: Record<string, 1 | -1> = { id: 1 };
+    const sort: Record<string, 1 | -1> = {};
     if (sortBy === 'price-asc') sort.priceNum = 1;
     else if (sortBy === 'price-desc') sort.priceNum = -1;
     else if (sortBy === 'rating') sort.rating = -1;
+    else sort.name = 1;
 
     const total = await ProductModel.countDocuments(filter);
     const products = await ProductModel.find(filter)
@@ -508,4 +509,82 @@ router.put('/orders/:id/cancel', authenticate, async (req: Request, res: Respons
   }
 });
 
+/* ------------------------------------------------------------------ */
+/*   Customer Reviews (Avis Clients)                                  */
+/* ------------------------------------------------------------------ */
+
+// GET /api/reviews/product/:productId - Get approved customer reviews for a product
+router.get('/reviews/product/:productId', async (req: Request, res: Response) => {
+  try {
+    const { productId } = req.params;
+    const reviews = await ReviewModel.find({ 
+      $or: [
+        { productId: productId },
+        { productId: String(productId) }
+      ]
+    }).sort({ createdAt: -1 }).lean();
+
+    return res.json({ reviews });
+  } catch (err) {
+    console.error('Error fetching product reviews:', err);
+    return res.status(500).json({ error: 'Failed to fetch reviews' });
+  }
+});
+
+// POST /api/reviews - Submit a new customer review for a product
+router.post('/reviews', [
+  body('productId').notEmpty().withMessage('Product ID is required'),
+  body('customerName').trim().notEmpty().withMessage('Name is required'),
+  body('rating').isInt({ min: 1, max: 5 }).withMessage('Rating must be between 1 and 5'),
+], async (req: Request, res: Response) => {
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    return res.status(400).json({ error: errors.array()[0].msg });
+  }
+
+  try {
+    const { productId, productName, customerName, rating, comment, userId } = req.body;
+
+    const newReview = new ReviewModel({
+      productId,
+      productName: productName || '',
+      userId: userId || 'guest',
+      customerName: customerName.trim(),
+      rating: Number(rating),
+      comment: comment ? comment.trim() : '',
+    });
+
+    await newReview.save();
+
+    // Recalculate average rating & review count for the product
+    try {
+      const allProductReviews = await ReviewModel.find({
+        $or: [{ productId: productId }, { productId: String(productId) }]
+      }).lean();
+
+      if (allProductReviews.length > 0) {
+        const totalRating = allProductReviews.reduce((sum, r) => sum + (r.rating || 5), 0);
+        const avgRating = Number((totalRating / allProductReviews.length).toFixed(1));
+
+        await ProductModel.findOneAndUpdate(
+          buildProductLookupQuery(productId),
+          { rating: avgRating, reviews: allProductReviews.length }
+        ).exec();
+      }
+    } catch (updateErr) {
+      console.error('Error updating product rating/reviews summary:', updateErr);
+    }
+
+    return res.status(201).json({ 
+      success: true, 
+      message: 'Votre avis a été publié avec succès ! Merci pour votre retour.',
+      review: newReview 
+    });
+  } catch (err) {
+    console.error('Error submitting customer review:', err);
+    return res.status(500).json({ error: 'Échec de l\'envoi de votre avis.' });
+  }
+});
+
 export default router;
+

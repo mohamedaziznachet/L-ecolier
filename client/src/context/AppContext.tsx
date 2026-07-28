@@ -205,6 +205,16 @@ export function AppProviders({ children }: { children: React.ReactNode }) {
     const parsePath = (path: string) => {
       try {
         const pathname = path || '/';
+        // /product/:id or /product
+        const prodMatch = pathname.match(/^\/product\/([^\/]+)/);
+        if (prodMatch) {
+          const pId = decodeURIComponent(prodMatch[1]);
+          setCurrentView('product');
+          setSelectedProductId(pId);
+          localStorage.setItem('ecolier_last_product_id', String(pId));
+          return;
+        }
+
         // /category/:cat[/page/:num]
         const catMatch = pathname.match(/^\/category\/([^\/]+)(?:\/page\/(\d+))?/);
         if (catMatch) {
@@ -233,7 +243,18 @@ export function AppProviders({ children }: { children: React.ReactNode }) {
 
         // other simple routes
         const part = pathname.replace(/^\//, '').split('/')[0];
-        if (part === 'product') setCurrentView('product');
+        if (part === 'catalog' || part === 'shop') {
+          setCurrentView('category');
+          setActiveCategory('');
+          return;
+        }
+        else if (part === 'product') {
+          setCurrentView('product');
+          const savedId = localStorage.getItem('ecolier_last_product_id');
+          if (savedId && !selectedProductId) {
+            setSelectedProductId(savedId);
+          }
+        }
         else if (part === 'cart') setCurrentView('cart');
         else if (part === 'auth') setCurrentView('auth');
         else if (part === 'wishlist') setCurrentView('wishlist');
@@ -272,18 +293,26 @@ export function AppProviders({ children }: { children: React.ReactNode }) {
     api.saveCart(cartItems);
   }, [cartItems]);
 
-  const navigateTo = (view: ViewType, category = "", page = 1) => {
+  const navigateTo = (view: ViewType | 'catalog' | 'shop', category = "", page = 1) => {
     // Navigate via React Router; state will sync in useEffect
     try {
-      if (view === 'category') {
-        const base = category ? `/category/${encodeURIComponent(category)}` : '/shop';
+      if (view === 'category' || (view as string) === 'catalog' || (view as string) === 'shop') {
+        setCurrentView('category');
+        const base = category ? `/category/${encodeURIComponent(category)}` : '/catalog';
         const url = page && page > 1 ? `${base}/page/${page}` : base;
         navigate(url);
       } else if (view === 'home') {
+        setCurrentView('home');
         navigate('/');
       } else if (view === 'product') {
-        navigate('/product');
+        const savedId = selectedProductId || localStorage.getItem('ecolier_last_product_id');
+        if (savedId) {
+          navigate(`/product/${savedId}`);
+        } else {
+          navigate('/catalog');
+        }
       } else {
+        setCurrentView(view as ViewType);
         navigate(`/${view}`);
       }
     } catch (e) {
@@ -292,15 +321,19 @@ export function AppProviders({ children }: { children: React.ReactNode }) {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+
   const navigateToPage = (page: number) => {
     navigateTo("category", activeCategory, page);
   };
 
   const navigateToProduct = (productId: number | string) => {
-    setSelectedProductId(productId);
-    navigate(`/product/${productId}`);
+    const idStr = String(productId);
+    setSelectedProductId(idStr);
+    localStorage.setItem('ecolier_last_product_id', idStr);
+    navigate(`/product/${idStr}`);
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
+
 
   const addToCart = (product: Product, quantity = 1) => {
     setCartItems((prevItems) => {

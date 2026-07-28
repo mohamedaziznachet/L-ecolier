@@ -144,7 +144,7 @@ export function ContactPage() {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                placeholder="Ex: Foule Ben fouled"
+                placeholder="Ex: Mohamed Ali"
               />
             </div>
 
@@ -157,7 +157,7 @@ export function ContactPage() {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                placeholder="Ex: foulenbenfoulen@example.com"
+                placeholder="Ex: mohamed.ali@example.com"
               />
             </div>
 

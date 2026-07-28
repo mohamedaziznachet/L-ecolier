@@ -10,11 +10,12 @@ export const Promotions: React.FC = () => {
       </h2>
       <div
         style={{
-          background: "linear-gradient(135deg, var(--a-accent), var(--a-accent2))",
+          background: "linear-gradient(135deg, #071845 0%, #0d2b6b 100%)",
           borderRadius: "var(--a-radius)",
-          padding: "1rem",
-          color: "#fff",
+          padding: "1.25rem 1rem",
+          color: "#ffffff",
           textAlign: "center",
+          boxShadow: "0 6px 18px rgba(7, 24, 69, 0.15)"
         }}
       >
         <p style={{ margin: 0, fontSize: "1.1rem" }}>

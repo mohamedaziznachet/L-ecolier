@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Trash2, Plus, Minus, ShoppingBag, ArrowLeft, Send, CheckCircle, ChevronDown, Sparkles } from "lucide-react";
+import { Trash2, Plus, Minus, ShoppingBag, ArrowLeft, Send, CheckCircle, ChevronDown, User } from "lucide-react";
 import { useCart, useNavigation } from "../context/AppContext";
 import { useCheckout } from "../hooks/useCheckout";
 import { useToast } from "../features/admin/components/Toast";
@@ -205,9 +205,9 @@ export function CartPage() {
             </div>
 
             {!user && (
-              <div className="flex items-center justify-between gap-2 p-3 mb-4 rounded-xl border border-blue-100 bg-blue-50 text-xs text-blue-900 animate-pulse">
+              <div className="flex items-center justify-between gap-2 p-3 mb-4 rounded-xl border border-blue-100 bg-blue-50 text-xs text-blue-900">
                 <div className="flex items-center gap-1.5 font-medium">
-                  <Sparkles size={14} className="text-amber-500" />
+                  <User size={14} className="text-blue-600" />
                   <span>Déjà client ? Connectez-vous pour remplir automatiquement.</span>
                 </div>
                 <button
@@ -218,6 +218,7 @@ export function CartPage() {
                 </button>
               </div>
             )}
+
 
             <form onSubmit={handleCheckout} className="checkout-form">
               {formError && <p className="form-error">{formError}</p>}

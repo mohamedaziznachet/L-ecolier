@@ -27,6 +27,7 @@ export interface Product {
   description?: string;
   imageUrl?: string;
   stock?: number;
+  availability?: 'En stock' | 'En arrivage' | 'Sur commande' | 'Epuisé' | string;
   featured?: boolean;
   status?: 'active' | 'inactive';
   specifications?: { key: string; value: string }[];
@@ -129,4 +130,5 @@ export interface AdminStats {
   recentOrders: Partial<Order>[];
   ordersByStatus: { _id: string; count: number; totalRevenue?: number }[];
   recentSales: { _id: string; revenue: number; orders: number }[];
+  topProducts?: { _id: string; name?: string; salesCount: number; img?: string; price?: number }[];
 }

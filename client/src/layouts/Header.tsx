@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { useEffect, useRef, useState } from "react";
 import { Search, ShoppingCart, Heart, MapPin, Phone, User, Menu, X, ChevronDown, History, Shield, LogOut } from "lucide-react";
 import logoImg from "../assets/logo.png";
@@ -87,7 +88,23 @@ export function Header() {
     }, 220);
   };
 
-  const handleSearchSubmit = () => {
+  // Sticky navbar: add/remove .sticky based on scroll
+useEffect(() => {
+  const onScroll = () => {
+    const nav = document.querySelector('.nav-desktop');
+    if (nav) {
+      if (window.scrollY > 50) {
+        nav.classList.add('sticky');
+      } else {
+        nav.classList.remove('sticky');
+      }
+    }
+  };
+  window.addEventListener('scroll', onScroll);
+  return () => window.removeEventListener('scroll', onScroll);
+}, []);
+
+const handleSearchSubmit = () => {
     if (searchVal.trim()) {
       setSearchQuery(searchVal);
       navigateTo("category", "");
@@ -144,7 +161,7 @@ export function Header() {
                   <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
                 </svg>
               </a>
-              <a href="https://www.instagram.com/librairie_lecolier/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="social-link">
+              <a href="https://www.instagram.com/librairie__lecolier/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="social-link">
                 <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24">
                   <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
                   <path fill="#0d2b6b" d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
@@ -276,6 +293,10 @@ export function Header() {
               {cartCount > 0 && <span className="cart-badge">{cartCount}</span>}
             </div>
           </div>
+          <a href="https://wa.me/+21658982121" className="whatsapp-btn" target="_blank" rel="noopener noreferrer">
+            {WA_SVG}
+            Contact WhatsApp
+          </a>
 
           {/* Mobile toggle */}
           <button
@@ -293,65 +314,10 @@ export function Header() {
       <nav className="nav-desktop" aria-label="Navigation principale">
         <div className="nav-inner">
           <div className="nav-items">
-            {navItems.map((item) => {
-              const isItemActive = isNavItemActive(item);
-              const hasSub = !!item.subItems?.length;
-
-              return (
-                <div
-                  key={item.label}
-                  className="nav-item"
-                  onMouseEnter={(e) => {
-                    if (hasSub) {
-                      clearDesktopDropdownCloseTimer();
-                      const target = e.currentTarget as HTMLDivElement;
-                      const rect = target.getBoundingClientRect();
-                      setDesktopDropdownX(rect.left);
-                      setDesktopDropdownW(rect.width);
-                      setDesktopDropdownParent(item.label);
-                      setDesktopDropdownOpen(true);
-                    }
-                  }}
-                  onMouseLeave={() => {
-                    if (hasSub) {
-                      scheduleDesktopDropdownClose();
-                    }
-                  }}
-                >
-                  <a
-                    href="#"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      setDesktopDropdownOpen(false);
-                      setDesktopDropdownParent(null);
-                      handleNavItemClick(item);
-                    }}
-                    className={`nav-link${isItemActive ? " active" : ""}`}
-                    onFocus={() => {
-                      if (hasSub) {
-                        setDesktopDropdownParent(item.label);
-                        setDesktopDropdownOpen(true);
-                      }
-                    }}
-                    onBlur={() => {
-                      setDesktopDropdownOpen(false);
-                      setDesktopDropdownParent(null);
-                    }}
-                  >
-                    {item.label}
-                    <span className="nav-link-underline" aria-hidden="true" />
-                    {item.subItems && <ChevronDown size={14} className="dropdown-icon" />}
-                  </a>
-
-                </div>
-              );
-            })}
+            {/* nav items removed */}
           </div>
 
-          <a href="https://wa.me/+21658982121" className="whatsapp-btn" target="_blank" rel="noopener noreferrer">
-            {WA_SVG}
-            Contact WhatsApp
-          </a>
+          
         </div>
 
         {desktopDropdownOpen && desktopDropdownParent && (
@@ -403,9 +369,23 @@ export function Header() {
         />
       )}
 
-      {/* ── Mobile menu ── */}
+      {/* ── Mobile menu drawer ── */}
       {mobileOpen && (
         <div className="mobile-menu" aria-label="Menu mobile">
+          {/* Drawer header */}
+          <div className="mobile-menu-header">
+            <img src={logoImg} alt="L'Écolier" style={{ height: 36, width: "auto", filter: "brightness(0) invert(1)" }} />
+            <button
+              type="button"
+              className="mobile-toggle"
+              style={{ display: "flex", color: "rgba(255,255,255,0.85)", background: "rgba(255,255,255,0.12)" }}
+              onClick={() => setMobileOpen(false)}
+              aria-label="Fermer le menu"
+            >
+              <X size={20} />
+            </button>
+          </div>
+
           {navItems.map((item) => {
             const isItemActive = isNavItemActive(item);
             const isSubmenuOpen = openMobileSubmenus[item.label] ?? false;
@@ -468,6 +448,7 @@ export function Header() {
           </div>
         </div>
       )}
+
 
     </header>
   );

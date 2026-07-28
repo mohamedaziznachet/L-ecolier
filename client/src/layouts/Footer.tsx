@@ -63,7 +63,7 @@ export function Footer() {
             </p>
             <div className="footer-social">
               <a href="https://www.facebook.com/LibrairieLecolier" target="_blank" rel="noopener noreferrer" className="footer-social-link">f</a>
-              <a href="https://www.instagram.com/librairie_lecolier/" target="_blank" rel="noopener noreferrer" className="footer-social-link">ig</a>
+              <a href="https://www.instagram.com/librairie__lecolier/" target="_blank" rel="noopener noreferrer" className="footer-social-link">ig</a>
               <a href="https://www.tiktok.com/@librairie_lecolier" target="_blank" rel="noopener noreferrer" className="footer-social-link">tt</a>
             </div>
           </div>
@@ -147,11 +147,15 @@ export function Footer() {
 
       {/* Copyright */}
       <div className="footer-copyright">
-        <p> © 2026 Med Aziz Nachet – Tous droits réservés | Tunisie </p>
-        <div className="footer-legal-links">
-          <a href="#" onClick={(e) => { e.preventDefault(); navigateTo("terms"); }} className="footer-legal-link">Conditions Générales</a>
-          <span className="footer-legal-separator">|</span>
-          <a href="#" onClick={(e) => { e.preventDefault(); navigateTo("privacy"); }} className="footer-legal-link">Politique de Confidentialité</a>
+        <div className="footer-copyright-inner">
+          <p className="footer-copy-text">
+            © 2026 <span className="footer-author">Med Aziz Nachet</span> – Tous droits réservés <span className="footer-country">| Tunisie</span>
+          </p>
+          <div className="footer-legal-links">
+            <a href="#" onClick={(e) => { e.preventDefault(); navigateTo("terms"); }} className="footer-legal-link">Conditions Générales</a>
+            <span className="footer-legal-separator">|</span>
+            <a href="#" onClick={(e) => { e.preventDefault(); navigateTo("privacy"); }} className="footer-legal-link">Politique de Confidentialité</a>
+          </div>
         </div>
       </div>
     </footer>

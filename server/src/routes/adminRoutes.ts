@@ -120,6 +120,7 @@ router.get('/stats', async (_req: Request, res: Response) => {
       recentOrders,
       ordersByStatus,
       recentSales,
+      topProducts,
     ] = await Promise.all([
       ProductModel.countDocuments({}),
       UserModel.countDocuments({}),
@@ -127,7 +128,7 @@ router.get('/stats', async (_req: Request, res: Response) => {
       getSavedCategories().then(c => c.length),
       BrandModel.countDocuments({}),
       OrderModel.aggregate([
-        { $match: { status: { $in: ['delivered', 'shipped', 'confirmed', 'processing'] } } },
+        { $match: { status: 'delivered' } },
         { $group: { _id: null, total: { $sum: '$total' } } }
       ]),
       ProductModel.find({ stock: { $gt: 0, $lte: 5 } }).select('name stock img category').lean().limit(10),
@@ -141,11 +142,11 @@ router.get('/stats', async (_req: Request, res: Response) => {
           }
         }
       ]),
-      // Last 7 days sales by date (only validated/confirmed/delivered orders)
+      // Last 7 days sales by date (only finalized delivered orders)
       OrderModel.aggregate([
         {
           $match: {
-            status: { $in: ['delivered', 'shipped', 'confirmed', 'processing'] },
+            status: 'delivered',
             date: { $gte: new Date(Date.now() - 7 * 24 * 60 * 60 * 1000) }
           }
         },
@@ -158,22 +159,34 @@ router.get('/stats', async (_req: Request, res: Response) => {
         },
         { $sort: { _id: 1 } }
       ]),
+      // Top 5 best selling products by quantity
+      OrderModel.aggregate([
+        { $unwind: '$items' },
+        {
+          $group: {
+            _id: '$items.name',
+            name: { $first: '$items.name' },
+            salesCount: { $sum: { $ifNull: ['$items.quantity', 1] } },
+            img: { $first: { $ifNull: ['$items.image', '$items.img'] } },
+            price: { $first: { $ifNull: ['$items.unitPrice', '$items.price'] } }
+          }
+        },
+        { $sort: { salesCount: -1 } },
+        { $limit: 5 }
+      ]),
     ]);
 
-    const confirmedRevenue = revenueAgg[0]?.total || 0;
+    const deliveredRevenue = revenueAgg[0]?.total || 0;
 
     // Calculate revenue breakdown by status category
-    let deliveredRevenue = 0;
     let pendingRevenue = 0;
     let cancelledRevenue = 0;
 
     for (const item of ordersByStatus) {
-      if (item._id === 'delivered') {
-        deliveredRevenue += item.totalRevenue || 0;
-      } else if (item._id === 'pending') {
-        pendingRevenue += item.totalRevenue || 0;
-      } else if (item._id === 'cancelled' || item._id === 'expired') {
+      if (item._id === 'cancelled' || item._id === 'expired') {
         cancelledRevenue += item.totalRevenue || 0;
+      } else if (item._id !== 'delivered') {
+        pendingRevenue += item.totalRevenue || 0;
       }
     }
 
@@ -183,8 +196,8 @@ router.get('/stats', async (_req: Request, res: Response) => {
       totalOrders,
       totalCategories,
       totalBrands,
-      totalRevenue: confirmedRevenue,
-      confirmedRevenue,
+      totalRevenue: deliveredRevenue,
+      confirmedRevenue: deliveredRevenue,
       deliveredRevenue,
       pendingRevenue,
       cancelledRevenue,
@@ -192,6 +205,7 @@ router.get('/stats', async (_req: Request, res: Response) => {
       recentOrders,
       ordersByStatus,
       recentSales,
+      topProducts,
     });
   } catch (err) {
     console.error(err);
@@ -207,7 +221,7 @@ router.get('/stats', async (_req: Request, res: Response) => {
 router.get('/products', async (req: Request, res: Response) => {
   try {
     const page = parseInt(req.query.page as string) || 1;
-    const limit = parseInt(req.query.limit as string) || 10;
+    const limit = req.query.limit !== undefined ? parseInt(req.query.limit as string) : 0; // 0 = no limit
     const search = (req.query.search as string) || '';
     const category = (req.query.category as string) || '';
     const brand = (req.query.brand as string) || '';
@@ -228,15 +242,20 @@ router.get('/products', async (req: Request, res: Response) => {
     const safeSortField = validSortFields.includes(sortField) ? sortField : 'name';
 
     const total = await ProductModel.countDocuments(filter);
-    const products = await ProductModel.find(filter)
+    
+    const query = ProductModel.find(filter)
       .sort({ [safeSortField]: sortOrder })
-      .skip((page - 1) * limit)
-      .limit(limit)
       .lean();
+      
+    if (limit > 0) {
+      query.skip((page - 1) * limit).limit(limit);
+    }
+    
+    const products = await query;
 
     return res.json({
       products,
-      pagination: { page, limit, total, pages: Math.ceil(total / limit) }
+      pagination: { page, limit, total, pages: limit > 0 ? Math.ceil(total / limit) : 1 }
     });
   } catch (err) {
     console.error(err);
@@ -618,6 +637,8 @@ router.put('/users/:id', async (req: Request, res: Response) => {
   try {
     const { isBlocked, ...otherUpdates } = req.body;
     const updates: any = { ...otherUpdates };
+    delete updates._id;
+    delete updates.__v;
     if (isBlocked !== undefined) updates.isBlocked = isBlocked;
 
     const user = await UserModel.findByIdAndUpdate((req.params.id as string), updates, { new: true, select: '-password' });

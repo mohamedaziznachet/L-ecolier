@@ -11,6 +11,7 @@ import { useToast } from '../components/Toast';
 import { ConfirmDialog } from '../components/ConfirmDialog';
 import { Pagination } from '../components/Pagination';
 import { StatusBadge } from '../components/StatusBadge';
+import { AvailabilityBadge } from '../../../components/common/AvailabilityBadge';
 
 const productSchema = z.object({
   name: z.string().min(2, 'Le nom doit contenir au moins 2 caractères'),
@@ -22,6 +23,7 @@ const productSchema = z.object({
   discount: z.coerce.number().min(0).max(100).default(0),
   schoolLevel: z.string().default(''),
   stock: z.coerce.number().min(0, 'Le stock doit être positif'),
+  availability: z.enum(['En stock', 'En arrivage', 'Sur commande', 'Epuisé']).default('En stock'),
   category: z.string().min(1, 'Veuillez sélectionner une catégorie'),
   brand: z.string().default(''),
   img: z.string().min(1, 'L\'image est requise'),
@@ -71,6 +73,7 @@ export const ProductsPage: React.FC = () => {
       discount: 0,
       schoolLevel: '',
       stock: 0,
+      availability: 'En stock' as const,
       category: '',
       brand: '',
       img: '',
@@ -125,7 +128,7 @@ export const ProductsPage: React.FC = () => {
     setSpecifications([]);
     setNewGalleryInput('');
     reset({
-      name: '', description: '', price: '', priceNum: 0, oldPrice: '', priceBeforeDiscount: null, discount: 0, schoolLevel: '', stock: 0, category: '', brand: '', img: '', badge: '', badgeColor: '', rating: 5, reviews: 0, featured: false, status: 'active'
+      name: '', description: '', price: '', priceNum: 0, oldPrice: '', priceBeforeDiscount: null, discount: 0, schoolLevel: '', stock: 0, availability: 'En stock', category: '', brand: '', img: '', badge: '', badgeColor: '', rating: 5, reviews: 0, featured: false, status: 'active'
     });
     setModalOpen(true);
   };
@@ -133,7 +136,14 @@ export const ProductsPage: React.FC = () => {
   const openEdit = (product: any) => {
     setEditId(product.id);
     setAdditionalImages(Array.isArray(product.images) ? product.images.filter((img: string) => img !== product.img) : []);
-    setSpecifications(Array.isArray(product.specifications) ? product.specifications : []);
+    setSpecifications(
+      Array.isArray(product.specifications)
+        ? product.specifications.map((s: any) => ({
+            key: s.key || s.name || s.label || '',
+            value: s.value || s.val || ''
+          }))
+        : []
+    );
     setNewGalleryInput('');
     reset({
       name: product.name,
@@ -145,6 +155,7 @@ export const ProductsPage: React.FC = () => {
       discount: product.discount || 0,
       schoolLevel: product.schoolLevel || '',
       stock: product.stock,
+      availability: product.availability || 'En stock',
       category: product.category,
       brand: product.brand || '',
       img: product.img,
@@ -332,6 +343,7 @@ export const ProductsPage: React.FC = () => {
                 <th onClick={() => handleSort('stock')} style={{ cursor: 'pointer' }}>
                   Stock <ArrowUpDown size={12} style={{ marginLeft: 4 }} />
                 </th>
+                <th>Disponibilité</th>
                 <th>Catégorie</th>
                 <th>Marque</th>
                 <th>Statut</th>
@@ -355,6 +367,9 @@ export const ProductsPage: React.FC = () => {
                       {p.stock ?? 0}
                     </span>
                   </td>
+                  <td>
+                    <AvailabilityBadge availability={p.availability} size="sm" />
+                  </td>
                   <td><span className="a-badge a-badge-blue">{p.category || '—'}</span></td>
                   <td>{p.brand || '—'}</td>
                   <td>
@@ -374,7 +389,7 @@ export const ProductsPage: React.FC = () => {
               ))}
               {filteredAndSorted.length === 0 && (
                 <tr>
-                  <td colSpan={8}>
+                  <td colSpan={9}>
                     <div className="a-empty">
                       <div className="a-empty-icon">🔍</div>
                       <div className="a-empty-text">Aucun produit trouvé</div>
@@ -499,10 +514,22 @@ export const ProductsPage: React.FC = () => {
                       </div>
                     </div>
 
-                    <div className="a-field">
-                      <label>Quantité en stock *</label>
-                      <input type="number" className="a-input" placeholder="10" {...register('stock')} />
-                      {errors.stock && <span className="a-error">{errors.stock.message}</span>}
+                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
+                      <div className="a-field">
+                        <label>Quantité en stock *</label>
+                        <input type="number" className="a-input" placeholder="10" {...register('stock')} />
+                        {errors.stock && <span className="a-error">{errors.stock.message}</span>}
+                      </div>
+                      <div className="a-field">
+                        <label>Disponibilité sur le site *</label>
+                        <select className="a-input" {...register('availability')}>
+                          <option value="En stock">En stock</option>
+                          <option value="En arrivage">En arrivage</option>
+                          <option value="Sur commande">Sur commande</option>
+                          <option value="Epuisé">Epuisé</option>
+                        </select>
+                        {errors.availability && <span className="a-error">{errors.availability.message}</span>}
+                      </div>
                     </div>
                   </div>
                 </div>

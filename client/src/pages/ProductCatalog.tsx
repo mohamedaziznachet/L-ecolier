@@ -413,7 +413,7 @@ export function ProductCatalog() {
                   }}
                   className="filter-pill-select"
                 >
-                  <option value="">Catégories</option>
+                  <option value="">Tous les produits</option>
                   {categories.map((cat) => (
                     <option key={cat} value={cat}>
                       {cat}
@@ -457,7 +457,7 @@ export function ProductCatalog() {
               <span className="sort-by-label">Trier par</span>
               <div className="sort-pill-dropdown">
                 <select value={sortBy} onChange={(e) => setSortBy(e.target.value)} className="sort-pill-select">
-                  <option value="default">Tri par défaut</option>
+                  <option value="default">Alphabétique (par défaut)</option>
                   <option value="price-asc">Prix : croissant</option>
                   <option value="price-desc">Prix : décroissant</option>
                   <option value="rating">Mieux notés</option>
