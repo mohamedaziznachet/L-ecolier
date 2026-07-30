@@ -407,11 +407,12 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 
 /* Desktop nav */
 .nav-desktop {
-  background: linear-gradient(90deg, var(--c-primary-dark) 0%, var(--c-primary) 50%, #153a8a 100%);
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.05);
+  background: linear-gradient(135deg, #071739 0%, #0d2b6b 45%, #153a8a 100%);
+  border-top: 1px solid rgba(251, 191, 36, 0.25);
+  box-shadow: 0 4px 20px rgba(13, 43, 107, 0.2);
   z-index: 60;
   position: relative;
-  transition: box-shadow var(--transition-slow), transform var(--transition-slow), filter var(--transition-slow);
+  transition: all var(--transition-slow);
 }
 
 /* Hide desktop nav on small screens */
@@ -438,26 +439,19 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   }
 }
 
-/* Modern “cursor enters navbar” highlight */
+/* Modern cursor enters navbar ambient highlight */
 .nav-desktop::before {
   content: "";
   position: absolute;
   inset: 0;
   pointer-events: none;
   background:
-    radial-gradient(800px 120px at 20% 10%, rgba(251, 191, 36, 0.22), transparent 55%),
-    linear-gradient(90deg, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0) 55%, rgba(255,255,255,0.16) 100%);
+    radial-gradient(900px 140px at 30% 0%, rgba(251, 191, 36, 0.18), transparent 60%),
+    linear-gradient(90deg, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0) 50%, rgba(255,255,255,0.12) 100%);
   opacity: 0;
-  transform: translateY(-4px);
+  transform: translateY(-2px);
   transition: opacity var(--transition-slow), transform var(--transition-slow);
   z-index: 0;
-}
-
-.nav-desktop:hover,
-.nav-desktop:focus-within {
-  transform: translateY(-1px);
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.08), 0 10px 30px -22px rgba(0,0,0,0.35);
-  filter: saturate(1.05);
 }
 
 .nav-desktop:hover::before,
@@ -474,8 +468,6 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 }
 
 .nav-inner {
-
-
   max-width: var(--max-w);
   margin: 0 auto;
   display: flex;
@@ -485,6 +477,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   gap: 0.75rem;
   min-width: 0;
 }
+
 .nav-items {
   display: flex;
   align-items: center;
@@ -495,151 +488,126 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 .nav-items::-webkit-scrollbar {
   display: none;
 }
+
 .nav-item {
   position: relative;
 }
+
 .nav-link {
   display: flex;
   align-items: center;
-  gap: 0.3rem;
-  padding: 0.85rem clamp(0.68rem, 1vw, 1.1rem);
-  font-size: clamp(0.78rem, 1vw, 0.875rem);
+  gap: 0.35rem;
+  padding: 0.85rem clamp(0.7rem, 1.1vw, 1.25rem);
+  font-size: clamp(0.8rem, 1.05vw, 0.9rem);
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(255, 255, 255, 0.92);
   transition: all var(--transition);
   white-space: nowrap;
+  letter-spacing: 0.01em;
 }
+
 .nav-link:hover { 
-  color: var(--c-yellow-400); 
-  background: rgba(255, 255, 255, 0.05);
+  color: #fde047; 
+  background: rgba(255, 255, 255, 0.08);
 }
+
 .nav-link.active {
-  color: var(--c-yellow-400);
-  border-bottom: 2px solid var(--c-yellow-400);
+  color: #fde047;
+  font-weight: 700;
 }
+
 .dropdown-icon {
   transition: transform var(--transition-slow);
+  opacity: 0.85;
 }
-.nav-item:hover .dropdown-icon { transform: rotate(180deg); }
 
-/* ==========================================================
-   Advanced Dropdown (hover, premium motion, no flicker)
-   ========================================================== */
+.nav-item:hover .dropdown-icon { 
+  transform: rotate(180deg);
+  opacity: 1;
+  color: #fde047;
+}
 
-/* Underline (animated) */
+/* Underline (animated golden accent) */
 .nav-link-underline {
   position: absolute;
-  left: 14px;
-  right: 14px;
-  bottom: 7px;
-  height: 2px;
+  left: 12px;
+  right: 12px;
+  bottom: 4px;
+  height: 3px;
   border-radius: var(--radius-full);
-  background: var(--c-primary);
+  background: linear-gradient(90deg, #fbbf24, #f59e0b);
   opacity: 0;
   transform: scaleX(0);
   transform-origin: center;
-  transition: opacity 200ms ease-out, transform 200ms ease-out;
+  transition: opacity 220ms ease-out, transform 220ms ease-out;
   pointer-events: none;
+  box-shadow: 0 2px 8px rgba(251, 191, 36, 0.5);
 }
-
-/* Make .nav-link a positioning context for underline */
-.nav-item .nav-link {
-  position: relative;
-}
-
-/* Dropdown panel (moved outside of the navbar items; appears under the navbar) */
-.nav-dropdown-panel {
-  position: absolute;
-  /* directly under the hovered element */
-  top: 100%;
-  z-index: 120;
-
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-
-  /* smooth + modern */
-  transform-origin: top;
-  box-shadow: 0 16px 40px -18px rgba(13, 43, 107, 0.35);
-
-
-
-  border-radius: 0.6rem;
-  padding: 0.25rem 0;
-
-  background: rgba(255, 255, 255, 0.72);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(243, 244, 246, 0.85);
-  box-shadow: 0 12px 26px -18px rgba(13, 43, 107, 0.35);
-
-  opacity: 1;
-  pointer-events: auto;
-
-  /* Keep the same premium motion */
-  transform: translateY(0) scale(1);
-}
-
-
 
 /* Parent item motion + underline */
-.nav-item:hover .nav-link,
-.nav-item:focus-within .nav-link {
-  color: #ffffff;
-}
-
-/* Only show underline when parent has submenu */
 .nav-item:hover .nav-link-underline,
-.nav-item:focus-within .nav-link-underline {
+.nav-item:focus-within .nav-link-underline,
+.nav-link.active .nav-link-underline {
   opacity: 1;
   transform: scaleX(1);
 }
 
-/* Chevron rotation */
-.nav-item:hover .dropdown-icon {
-  transform: rotate(180deg);
+/* Dropdown panel */
+.nav-dropdown-panel {
+  position: absolute;
+  top: 100%;
+  z-index: 120;
+  min-width: 14rem;
+  border-radius: 0.85rem;
+  padding: 0.5rem;
+  background: rgba(255, 255, 255, 0.97);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  box-shadow: 0 20px 45px -15px rgba(13, 43, 107, 0.28), 0 0 0 1px rgba(0, 0, 0, 0.03);
+  transform-origin: top;
+  animation: dropdownFadeIn 180ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.dropdown ul { padding: 0; }
+@keyframes dropdownFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.dropdown ul { padding: 0; margin: 0; }
 
 /* Submenu items */
 .dropdown-item {
-  display: block;
+  display: flex;
+  align-items: center;
   width: 100%;
-  padding: 0.55rem 1rem;
+  padding: 0.6rem 1rem;
   font-size: 0.875rem;
-  color: var(--c-gray-700);
-  border-radius: 10px;
-
-  opacity: 0;
-  transform: translateY(6px);
-  transition:
-    background 160ms ease-out,
-    color 160ms ease-out,
-    transform 180ms ease-out,
-    opacity 180ms ease-out;
+  font-weight: 500;
+  color: #1e293b;
+  border-radius: 0.5rem;
+  transition: all 160ms ease-out;
+  text-align: left;
 }
 
-/* Stagger animation when dropdown panel opens */
-.nav-dropdown-panel .dropdown-item {
-  opacity: 1;
-  transform: translateY(0);
+.dropdown-item.active {
+  background: #eff6ff;
+  color: #0d2b6b;
+  font-weight: 700;
 }
-
-/* 30–50ms stagger: using 40ms steps */
-.nav-dropdown-panel li:nth-child(1) .dropdown-item { transition-delay: 40ms; }
-.nav-dropdown-panel li:nth-child(2) .dropdown-item { transition-delay: 80ms; }
-.nav-dropdown-panel li:nth-child(3) .dropdown-item { transition-delay: 120ms; }
-.nav-dropdown-panel li:nth-child(4) .dropdown-item { transition-delay: 160ms; }
-.nav-dropdown-panel li:nth-child(5) .dropdown-item { transition-delay: 200ms; }
-.nav-dropdown-panel li:nth-child(6) .dropdown-item { transition-delay: 240ms; }
-.nav-dropdown-panel li:nth-child(7) .dropdown-item { transition-delay: 280ms; }
-.nav-dropdown-panel li:nth-child(8) .dropdown-item { transition-delay: 320ms; }
 
 /* Hover highlight for each submenu item */
 .nav-dropdown-panel .dropdown-item:hover {
-  background: rgba(13, 43, 107, 0.08);
-  color: var(--c-primary);
-  transform: translateX(5px);
+  background: #f0f4ff;
+  color: #0d2b6b;
+  font-weight: 600;
+  transform: translateX(4px);
 }
 
 /* Reduced motion */
@@ -695,17 +663,23 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: var(--c-success);
-  color: var(--c-white);
-  font-size: 0.875rem;
-  padding: 0.375rem 1rem;
-  margin: 0.375rem 0;
-  border-radius: var(--radius-md);
-  transition: background var(--transition);
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+  color: #ffffff;
+  font-size: 0.825rem;
+  font-weight: 700;
+  padding: 0.45rem 1rem;
+  border-radius: var(--radius-full);
+  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.35);
+  transition: all var(--transition);
   white-space: nowrap;
   flex-shrink: 0;
 }
-.whatsapp-btn:hover { background: var(--c-success-dark); }
+.whatsapp-btn:hover {
+  background: linear-gradient(135deg, #22bf5b 0%, #0e7065 100%);
+  box-shadow: 0 6px 18px rgba(37, 211, 102, 0.5);
+  transform: translateY(-1px);
+  color: #ffffff;
+}
 
 /* Mobile menu – fixed slide-in drawer from the left */
 .mobile-menu {
@@ -3951,94 +3925,16 @@ img, video, canvas, svg {
 
 
 /* -----------------------------------------------------------
-   5. Mobile Responsive Adjustments
+   5. Mobile Responsive & Responsive Tweaks
    ----------------------------------------------------------- */
-/* -----------------------------------------------------------
-   6. Navigation Bar (Desktop) – Premium Styling
-   ----------------------------------------------------------- */
-.nav-desktop {
-  display: flex;
-  gap: 1.5rem;
-  align-items: center;
-  font-family: var(--f-head);
-  background: rgba(255,255,255,0.8);
-  backdrop-filter: blur(8px);
-  border-bottom: 1px solid rgba(0,0,0,0.05);
-  transition: background var(--transition), box-shadow var(--transition);
-}
-
-/* Sticky class applied on scroll */
-.nav-desktop.sticky {
-  position: sticky;
-  top: 0;
-  z-index: 70;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  background: rgba(255,255,255,0.95);
-}
-
-.nav-desktop .nav-item {
-  position: relative;
-}
-
-.nav-desktop .nav-link {
-  color: var(--c-gray-800);
-  font-weight: 600;
-  font-size: 0.95rem;
-  padding: 0.4rem 0;
-  transition: color var(--transition), transform var(--transition), background var(--transition);
-}
-
-.nav-desktop .nav-link:hover {
-  color: var(--c-primary);
-  transform: translateY(-2px);
-  background: rgba(255,255,255,0.1);
-}
-
-.nav-desktop .nav-link.active {
-  color: var(--c-primary-dark);
-}
-
-
-/* Underline effect */
-.nav-desktop .nav-link-underline {
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: var(--c-primary);
-  border-radius: var(--radius-sm);
-  transition: width var(--transition);
-}
-
-.nav-desktop .nav-link:hover + .nav-link-underline,
-.nav-desktop .nav-link.active + .nav-link-underline {
-  width: 100%;
-}
-
-/* Dropdown icon rotation */
-.nav-desktop .dropdown-icon {
-  transition: transform var(--transition);
-}
-
-.nav-desktop .nav-item:hover .dropdown-icon {
-  transform: rotate(180deg);
-}
-
-/* Footer/* Mobile adjustments already handled elsewhere */
-
 /* Tablet & larger desktop responsive nav tweaks */
 @media (max-width: 1400px) {
   .nav-items {
-    gap: 0.6rem;
+    gap: 0.4rem;
   }
   .nav-link {
-    padding: 0.6rem 1rem;
-    font-size: clamp(0.75rem, 1vw, 0.85rem);
-  }
-  .whatsapp-btn {
-    margin-left: auto;
-    white-space: nowrap;
+    padding: 0.75rem 0.85rem;
+    font-size: clamp(0.78rem, 1vw, 0.85rem);
   }
 }
 
