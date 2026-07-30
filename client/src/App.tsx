@@ -6,7 +6,8 @@ import { Header } from "./layouts/Header";
 import { Footer } from "./layouts/Footer";
 import { AppProviders, useNavigation } from "./context/AppContext";
 import { LayoutProvider } from "./context/LayoutContext";
-import { AdminProvider } from "./context/AdminContext";
+import { AdminProvider, useAdmin } from "./context/AdminContext";
+import { Shield } from "lucide-react";
 
 // Presentational components for the home view
 import { Hero } from "./components/Hero";
@@ -37,10 +38,39 @@ const PageLoader = () => (
 );
 
 function MainAppContent() {
-  const { currentView } = useNavigation();
+  const { currentView, navigateTo } = useNavigation();
+  const { isAdmin, loading: adminLoading } = useAdmin();
 
   // Admin access will render AdminLayout when currentView is "admin"
   if (currentView === "admin") {
+    if (adminLoading) {
+      return (
+        <div className="app-container">
+          <main>
+            <PageLoader />
+          </main>
+        </div>
+      );
+    }
+    
+    if (!isAdmin) {
+      return (
+        <div className="app-container">
+          <main className="flex flex-col items-center justify-center min-h-[400px] text-center p-6">
+            <Shield size={48} className="text-red-500 mb-4 mx-auto" />
+            <h2 className="text-2xl font-bold text-gray-800 mb-2">Accès Refusé</h2>
+            <p className="text-gray-600 mb-6">Vous devez être administrateur pour accéder à cette page.</p>
+            <button 
+              className="bg-primary text-white px-6 py-2 rounded font-medium hover:bg-primary/90 transition-colors" 
+              onClick={() => navigateTo('home')}
+            >
+              Retour à l'accueil
+            </button>
+          </main>
+        </div>
+      );
+    }
+
     return (
       <div className="app-container">
         <main>

@@ -223,20 +223,21 @@ router.post('/register', registerLimiter, [
   if (!errors.isEmpty()) return res.status(400).json({ errors: errors.array() });
 
   try {
-    const { name, email, password, phone, address, city, governorate, postalCode, statut } = req.body;
+    const { name, email, password, phone, address, city, governorate, postalCode } = req.body;
     const existing = await UserModel.findOne({ email: email.toLowerCase() });
     if (existing) return res.status(400).json({ error: 'Un compte existe déjà avec cette adresse e-mail.' });
 
-    const newUser = new UserModel({ name, email: email.toLowerCase(), password, phone: phone || '', address: address || '', city: city || '', governorate: governorate || '', postalCode: postalCode || '', statut: statut || 'client' });
+    // Force statut to 'client' for all registrations to prevent privilege escalation
+    const newUser = new UserModel({ name, email: email.toLowerCase(), password, phone: phone || '', address: address || '', city: city || '', governorate: governorate || '', postalCode: postalCode || '', statut: 'client' });
     const saved = await newUser.save();
-    const tokens = await generateTokenPair({ userId: saved._id.toString(), email: saved.email, role: saved.statut || 'client' });
+    const tokens = await generateTokenPair({ userId: saved._id.toString(), email: saved.email, role: 'client' });
     
     const cookieOptions = { httpOnly: true, secure: process.env.NODE_ENV === 'production', sameSite: 'strict' as const };
     res.cookie('jwt', tokens.accessToken, { ...cookieOptions, maxAge: 15 * 60 * 1000 });
     res.cookie('refreshToken', tokens.refreshToken, { ...cookieOptions, maxAge: 7 * 24 * 60 * 60 * 1000, path: '/api/auth/refresh' });
 
     return res.status(201).json({
-      user: { id: saved._id.toString(), name: saved.name, email: saved.email, phone: saved.phone || '', address: saved.address || '', city: saved.city || '', governorate: saved.governorate || '', postalCode: saved.postalCode || '', statut: saved.statut || 'client' }
+      user: { id: saved._id.toString(), name: saved.name, email: saved.email, phone: saved.phone || '', address: saved.address || '', city: saved.city || '', governorate: saved.governorate || '', postalCode: saved.postalCode || '', statut: 'client' }
     });
   } catch (err) {
     console.error(err);

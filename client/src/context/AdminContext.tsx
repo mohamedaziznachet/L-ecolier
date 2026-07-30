@@ -73,16 +73,28 @@ export const AdminProvider = ({ children }: { children: ReactNode }) => {
       setIsAdminState(currentAdminFlag);
       
       if (currentAdminFlag) {
-        const [u, o, c, s] = await Promise.all([
-          api.getUsers(1, 100),
-          api.getOrders(),
-          api.getAdminCategories(),
-          api.getAdminStats(),
-        ]);
-        setUsers(u);
-        setOrders(o);
-        setCategories(c);
-        setStats(s);
+        try {
+          const [u, o, c, s] = await Promise.all([
+            api.getUsers(1, 100),
+            api.getOrders(),
+            api.getAdminCategories(),
+            api.getAdminStats(),
+          ]);
+          setUsers(u);
+          setOrders(o);
+          setCategories(c);
+          setStats(s);
+        } catch (err: any) {
+          console.error("Failed to load admin data (Unauthorized?):", err);
+          // Token is likely invalid or not an admin token. Downgrade to public.
+          setIsAdminState(false);
+          api.setIsAdmin(false);
+          const publicCats = await api.getCategories();
+          setUsers([]);
+          setOrders([]);
+          setCategories(publicCats);
+          setStats(null);
+        }
       } else {
         // Load public categories for storefront visitors
         const publicCats = await api.getCategories();
