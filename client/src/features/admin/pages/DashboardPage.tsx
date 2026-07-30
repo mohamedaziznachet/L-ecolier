@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import { useAdmin } from '../../../context/AdminContext';
-import { Package, Users, ShoppingCart, TrendingUp, AlertTriangle, Clock, Award, CheckCircle2 } from 'lucide-react';
+import { Package, Users, ShoppingCart, TrendingUp, AlertTriangle, Clock, Award } from 'lucide-react';
 import { ResponsiveContainer, AreaChart, Area, BarChart, Bar, Cell, XAxis, YAxis, Tooltip, CartesianGrid } from 'recharts';
 import { SkeletonLoader } from '../components/SkeletonLoader';
 
@@ -332,7 +332,7 @@ export const DashboardPage: React.FC = () => {
                   <div>
                     <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
                       <span style={{ fontSize: '0.82rem', fontWeight: 800, color: '#0d2b6b', fontFamily: 'monospace' }}>
-                        #{(ord.id || ord._id || '').toString().slice(-8).toUpperCase()}
+                        #{(ord.id || (ord as any)._id || '').toString().slice(-8).toUpperCase()}
                       </span>
                       <span style={{ fontSize: '0.78rem', color: '#475569', fontWeight: 600 }}>{ord.customerName || 'Client'}</span>
                     </div>

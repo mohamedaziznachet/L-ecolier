@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Star, ShoppingCart, Heart, Eye, Sliders, ChevronDown, RefreshCw, X, Filter } from "lucide-react";
+import { ShoppingCart, Heart, Sliders, ChevronDown, RefreshCw, X, Filter } from "lucide-react";
 import { ResponsiveImage } from "../utils/ResponsiveImage";
 import { useNavigation, useCart, useWishlist } from "../context/AppContext";
 import { Product, Brand } from "../types";

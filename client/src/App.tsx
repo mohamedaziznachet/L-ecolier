@@ -11,7 +11,6 @@ import { AdminProvider } from "./context/AdminContext";
 // Presentational components for the home view
 import { Hero } from "./components/Hero";
 import { Categories } from "./components/Categories";
-import { Promotions } from "./components/Promotions";
 import { BestSellers } from "./components/BestSellers";
 import { Stats } from "./components/Stats";
 import { Testimonials } from "./components/Testimonials";

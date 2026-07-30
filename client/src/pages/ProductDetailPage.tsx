@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Star, ShoppingCart, Heart, ChevronLeft, ShieldCheck, Truck, RotateCcw, MessageSquare, CheckCircle, PackageCheck, Zap, PhoneCall } from "lucide-react";
+import { Star, ShoppingCart, Heart, ChevronLeft, ShieldCheck, Truck, MessageSquare, CheckCircle, PhoneCall } from "lucide-react";
 import { useNavigation, useCart, useWishlist } from "../context/AppContext";
 import { getProductById, getProducts, getProductReviews, submitCustomerReview } from "../services/api";
 import { ResponsiveImage } from "../utils/ResponsiveImage";
@@ -126,9 +126,8 @@ export function ProductDetailPage() {
 
   if (loading) {
     return (
-      <div className="page-section" style={{ minHeight: "65vh", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: "1rem" }}>
-        <div style={{ width: 40, height: 40, border: "4px solid #e2e8f0", borderTopColor: "#0d2b6b", borderRadius: "50%", animation: "spin 0.8s linear infinite" }} />
-        <p style={{ color: "#64748b", fontWeight: 600, fontSize: "0.95rem" }}>Chargement des détails du produit...</p>
+      <div className="page-section flex items-center justify-center min-h-[60vh]">
+        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-primary"></div>
       </div>
     );
   }
@@ -138,7 +137,7 @@ export function ProductDetailPage() {
       <div className="page-section" style={{ minHeight: "60vh", textAlign: "center", padding: "4rem 1rem" }}>
         <h2 style={{ color: "#0f172a", fontWeight: 800 }}>Article introuvable</h2>
         <p style={{ color: "#64748b" }}>Ce produit n'est plus disponible ou a été déplacé.</p>
-        <button onClick={() => navigateTo("catalog")} className="btn-primary" style={{ marginTop: "1rem", padding: "0.75rem 1.75rem", borderRadius: "9999px", fontWeight: 700 }}>
+        <button onClick={() => navigateTo("category", "")} className="btn-primary" style={{ marginTop: "1rem", padding: "0.75rem 1.75rem", borderRadius: "9999px", fontWeight: 700 }}>
           Retour au catalogue
         </button>
       </div>
@@ -155,14 +154,14 @@ export function ProductDetailPage() {
       {/* Sleek Breadcrumb Bar */}
       <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "1.5rem", flexWrap: "wrap", gap: "0.75rem" }}>
         <button 
-          onClick={() => navigateTo("catalog")} 
+          onClick={() => navigateTo("category", "")} 
           style={{ display: "inline-flex", alignItems: "center", gap: "0.4rem", color: "#0d2b6b", fontWeight: 700, fontSize: "0.9rem", border: "none", background: "none", cursor: "pointer" }}
         >
           <ChevronLeft size={18} /> Retour au catalogue
         </button>
 
         <div style={{ fontSize: "0.82rem", color: "#64748b", fontWeight: 500 }}>
-          <span style={{ cursor: "pointer" }} onClick={() => navigateTo("home")}>Accueil</span> / <span style={{ cursor: "pointer" }} onClick={() => navigateTo("catalog")}>Catalogue</span> / <span style={{ fontWeight: 700, color: "#0f172a" }}>{product.category || "Fournitures"}</span>
+          <span style={{ cursor: "pointer" }} onClick={() => navigateTo("home")}>Accueil</span> / <span style={{ cursor: "pointer" }} onClick={() => navigateTo("category", "")}>Catalogue</span> / <span style={{ fontWeight: 700, color: "#0f172a" }}>{product.category || "Fournitures"}</span>
         </div>
       </div>
 

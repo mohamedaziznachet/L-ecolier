@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useAdmin } from '../../../context/AdminContext';
-import { Search, Eye, Trash2, X, Printer, User, Phone, Mail, MapPin, CreditCard, Calendar, Package, FileText } from 'lucide-react';
+import { Search, Eye, Trash2, X } from 'lucide-react';
 import { useToast } from '../components/Toast';
 import { ConfirmDialog } from '../components/ConfirmDialog';
 import { Pagination } from '../components/Pagination';

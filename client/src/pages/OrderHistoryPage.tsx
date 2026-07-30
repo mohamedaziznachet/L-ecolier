@@ -2,7 +2,7 @@ import { useState, useEffect, useMemo } from "react";
 import { useNavigation } from "../context/AppContext";
 import { getOrdersForUser } from "../services/api";
 import { Order } from "../types";
-import { ArrowLeft, Clock, ShoppingBag, MapPin, Phone, CreditCard, Mail, Package, CheckCircle2, Truck, Search, AlertCircle } from "lucide-react";
+import { ArrowLeft, Clock, ShoppingBag, MapPin, Phone, CreditCard, Mail, Package, Search, AlertCircle } from "lucide-react";
 
 export function OrderHistoryPage() {
   const { navigateTo, user } = useNavigation();
@@ -44,10 +44,11 @@ export function OrderHistoryPage() {
 
       if (!matchesSearch) return false;
 
+      const statusStr = (ord.status || '').toLowerCase();
       if (statusFilter === "all") return true;
-      if (statusFilter === "in_progress") return ["pending", "processing", "shipped", "confirmed"].includes(ord.status?.toLowerCase());
-      if (statusFilter === "delivered") return ord.status?.toLowerCase() === "delivered";
-      if (statusFilter === "cancelled") return ["cancelled", "expired"].includes(ord.status?.toLowerCase());
+      if (statusFilter === "in_progress") return ["pending", "processing", "shipped", "confirmed"].includes(statusStr);
+      if (statusFilter === "delivered") return statusStr === "delivered";
+      if (statusFilter === "cancelled") return ["cancelled", "expired"].includes(statusStr);
       return true;
     });
   }, [orders, statusFilter, searchQuery]);
@@ -179,7 +180,7 @@ export function OrderHistoryPage() {
           <ShoppingBag size={44} style={{ color: "#94a3b8", marginBottom: "0.75rem" }} />
           <h3 style={{ color: "#0f172a", fontWeight: 800, margin: "0 0 0.35rem 0" }}>Aucune commande</h3>
           <p style={{ color: "#64748b", fontSize: "0.88rem", marginBottom: "1.25rem" }}>Vous n'avez pas encore passé de commande sur notre boutique.</p>
-          <button onClick={() => navigateTo("catalog")} className="btn-primary" style={{ padding: "0.65rem 1.5rem", borderRadius: "9999px", fontWeight: 700, fontSize: "0.88rem" }}>
+          <button onClick={() => navigateTo("category", "")} className="btn-primary" style={{ padding: "0.65rem 1.5rem", borderRadius: "9999px", fontWeight: 700, fontSize: "0.88rem" }}>
             Parcourir le catalogue
           </button>
         </div>
