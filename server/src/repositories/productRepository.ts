@@ -102,14 +102,54 @@ function normalizeProduct(product: any): any {
   return normalized;
 }
 
+import fs from 'fs';
+import path from 'path';
+
+/**
+ * Seed initial products from products.json if MongoDB collection is empty.
+ */
+export async function seedInitialProductsIfEmpty(): Promise<void> {
+  try {
+    const count = await ProductModel.countDocuments();
+    if (count > 0) return;
+
+    const candidates = [
+      path.join(process.cwd(), 'src', 'data', 'products.json'),
+      path.join(process.cwd(), 'server', 'src', 'data', 'products.json'),
+      path.join(process.cwd(), 'dist', 'data', 'products.json'),
+    ];
+
+    const targetPath = candidates.find((p) => fs.existsSync(p));
+    if (targetPath) {
+      const raw = fs.readFileSync(targetPath, 'utf-8');
+      const items = JSON.parse(raw);
+      if (Array.isArray(items) && items.length > 0) {
+        const normalized = items.map((item) => normalizeProduct(item));
+        await ProductModel.insertMany(normalized, { ordered: false });
+        if (process.env.NODE_ENV !== 'test') {
+          console.log(`🌱 Automatically seeded ${items.length} initial products into MongoDB.`);
+        }
+      }
+    }
+  } catch (err: any) {
+    if (process.env.NODE_ENV !== 'test') {
+      console.error('Failed to seed initial products:', err.message);
+    }
+  }
+}
+
 // ── Public API ────────────────────────────────────────────────────────────────
 
 /**
  * Get all products, sorted by numeric id ascending.
- * Throws if MongoDB is unavailable.
+ * Automatically seeds initial products if MongoDB is empty.
  */
 export async function getAllProducts(): Promise<any[]> {
-  const products = await ProductModel.find().sort({ id: 1 }).lean();
+  let products = await ProductModel.find().sort({ id: 1 }).lean();
+  if (products.length === 0) {
+    await seedInitialProductsIfEmpty();
+    products = await ProductModel.find().sort({ id: 1 }).lean();
+  }
   return products.map((product) => normalizeProduct(product));
 }
 

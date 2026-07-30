@@ -3,7 +3,7 @@ import type { Request, Response } from 'express';
 import mongoose from 'mongoose';
 import { body, validationResult } from 'express-validator';
 import { ProductModel, OrderModel, PageSettingsModel, BrandModel, ReviewModel } from '../models/index.ts';
-import { getCategories, buildProductLookupQuery } from '../repositories/productRepository.ts';
+import { getCategories, buildProductLookupQuery, seedInitialProductsIfEmpty } from '../repositories/productRepository.ts';
 import { validateCoupon } from '../repositories/couponRepository.ts';
 import { authenticateAdmin, authenticate } from '../middleware/auth.ts';
 
@@ -26,6 +26,10 @@ function makeFlexibleRegex(text: string): RegExp {
 // Get filtered products (public storefront)
 router.get('/products', async (req: Request, res: Response) => {
   try {
+    const totalDocs = await ProductModel.countDocuments();
+    if (totalDocs === 0) {
+      await seedInitialProductsIfEmpty();
+    }
     const page = Math.max(1, parseInt(String(req.query.page ?? '1'), 10) || 1);
     const limit = Math.max(1, parseInt(String(req.query.limit ?? '20'), 10) || 20);
     const search = String(req.query.search ?? '').trim();
