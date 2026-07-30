@@ -4,7 +4,7 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
-const PRIMARY_URI = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/lecolier';
+const PRIMARY_URI = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/lecolierer0';
 const RETRY_INTERVAL_MS = 5000;
 let isListenersRegistered = false;
 
