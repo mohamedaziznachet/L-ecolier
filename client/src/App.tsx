@@ -56,17 +56,26 @@ function MainAppContent() {
     if (!isAdmin) {
       return (
         <div className="app-container">
-          <main className="flex flex-col items-center justify-center min-h-[400px] text-center p-6">
-            <Shield size={48} className="text-red-500 mb-4 mx-auto" />
-            <h2 className="text-2xl font-bold text-gray-800 mb-2">Accès Refusé</h2>
-            <p className="text-gray-600 mb-6">Vous devez être administrateur pour accéder à cette page.</p>
+          <Header />
+          <main className="flex flex-col items-center justify-center min-h-[70vh] text-center px-4 py-16">
+            <div className="relative mb-6">
+              <h1 className="text-[150px] leading-none font-extrabold text-gray-100 tracking-widest drop-shadow-sm select-none">404</h1>
+              <div className="absolute inset-0 flex items-center justify-center">
+                <span className="bg-primary text-white px-3 py-1 text-sm font-semibold rounded shadow-md transform -rotate-12 uppercase tracking-wide">Introuvable</span>
+              </div>
+            </div>
+            <h2 className="text-3xl font-bold text-gray-800 mb-4">Oups ! Cette page n'existe pas.</h2>
+            <p className="text-gray-500 max-w-md mx-auto mb-10 text-lg">
+              Le lien que vous avez suivi est peut-être rompu, ou la page a été déplacée ou supprimée.
+            </p>
             <button 
-              className="bg-primary text-white px-6 py-2 rounded font-medium hover:bg-primary/90 transition-colors" 
+              className="px-8 py-3 bg-primary text-white rounded-full font-medium shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300" 
               onClick={() => navigateTo('home')}
             >
-              Retour à l'accueil
+              Retourner à l'accueil
             </button>
           </main>
+          <Footer />
         </div>
       );
     }
