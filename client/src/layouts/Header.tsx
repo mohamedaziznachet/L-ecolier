@@ -293,10 +293,6 @@ const handleSearchSubmit = () => {
               {cartCount > 0 && <span className="cart-badge">{cartCount}</span>}
             </div>
           </div>
-          <a href="https://wa.me/+21658982121" className="whatsapp-btn" target="_blank" rel="noopener noreferrer">
-            {WA_SVG}
-            Contact WhatsApp
-          </a>
 
           {/* Mobile toggle */}
           <button
@@ -314,10 +310,64 @@ const handleSearchSubmit = () => {
       <nav className="nav-desktop" aria-label="Navigation principale">
         <div className="nav-inner">
           <div className="nav-items">
-            {/* nav items removed */}
+            {navItems.map((item) => {
+              const isItemActive = isNavItemActive(item);
+              const hasSub = !!item.subItems?.length;
+
+              return (
+                <div
+                  key={item.label}
+                  className="nav-item"
+                  onMouseEnter={(e) => {
+                    if (hasSub) {
+                      clearDesktopDropdownCloseTimer();
+                      const target = e.currentTarget as HTMLDivElement;
+                      const rect = target.getBoundingClientRect();
+                      setDesktopDropdownX(rect.left);
+                      setDesktopDropdownW(rect.width);
+                      setDesktopDropdownParent(item.label);
+                      setDesktopDropdownOpen(true);
+                    }
+                  }}
+                  onMouseLeave={() => {
+                    if (hasSub) {
+                      scheduleDesktopDropdownClose();
+                    }
+                  }}
+                >
+                  <a
+                    href="#"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setDesktopDropdownOpen(false);
+                      setDesktopDropdownParent(null);
+                      handleNavItemClick(item);
+                    }}
+                    className={`nav-link${isItemActive ? " active" : ""}`}
+                    onFocus={() => {
+                      if (hasSub) {
+                        setDesktopDropdownParent(item.label);
+                        setDesktopDropdownOpen(true);
+                      }
+                    }}
+                    onBlur={() => {
+                      setDesktopDropdownOpen(false);
+                      setDesktopDropdownParent(null);
+                    }}
+                  >
+                    {item.label}
+                    <span className="nav-link-underline" aria-hidden="true" />
+                    {item.subItems && <ChevronDown size={14} className="dropdown-icon" />}
+                  </a>
+                </div>
+              );
+            })}
           </div>
 
-          
+          <a href="https://wa.me/+21658982121" className="whatsapp-btn" target="_blank" rel="noopener noreferrer">
+            {WA_SVG}
+            Contact WhatsApp
+          </a>
         </div>
 
         {desktopDropdownOpen && desktopDropdownParent && (
