@@ -26,7 +26,7 @@ import adminRoutes from './routes/adminRoutes.ts';
 import { authenticateAdmin } from './middleware/auth.ts';
 import { is2FAEnabled, createPending2FAToken, enable2FA, disable2FA } from './middleware/admin2fa.ts';
 import { generateTokenPair, verifyAndRotateRefreshToken, revokeRefreshToken } from './middleware/jwtTokens.ts';
-import { connectDB } from './config/db.ts';
+import { connectDB, closeDBConnection } from './config/db.ts';
 import { UserModel, OrderModel, PageSettingsModel, ProductModel } from './models/index.ts';
 import { sendOrderConfirmation, sendOrderStatusUpdate, sendWelcomeEmail, sendPasswordResetEmail } from './services/emailService.ts';
 import compression from 'compression';
@@ -252,12 +252,23 @@ function startServer() {
 
   hashAdminPassword()
     .then(() => {
-      app.listen(process.env.PORT || 5000, () => {
+      const server = app.listen(process.env.PORT || 5000, () => {
         console.log(`🚀 Server running on port ${process.env.PORT || 5000}`);
         if ((app as any)._router) {
           console.log('MIDDLEWARES:', (app as any)._router.stack.map((r: any) => r.name || (r.handle && r.handle.name) || 'anonymous'));
         }
       });
+
+      const handleShutdown = async (signal: string) => {
+        console.log(`\nReceived ${signal}. Gracefully shutting down...`);
+        server.close(async () => {
+          await closeDBConnection();
+          process.exit(0);
+        });
+      };
+
+      process.on('SIGINT', () => handleShutdown('SIGINT'));
+      process.on('SIGTERM', () => handleShutdown('SIGTERM'));
     })
     .catch((err) => {
       console.error('Failed to hash admin password:', err);
