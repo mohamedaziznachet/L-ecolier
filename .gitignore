@@ -12,5 +12,5 @@ pnpm-debug.log*
 .qodo/
 
 # Product images — transfer to VPS separately via rsync/scp
-server/uploads/
-server/logs/
+backend/uploads/
+backend/logs/

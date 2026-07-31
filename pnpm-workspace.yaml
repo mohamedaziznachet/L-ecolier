@@ -1,6 +1,6 @@
 packages:
-  - 'client'
-  - 'server'
+  - 'frontend'
+  - 'backend'
 supportedArchitectures:
   os:
     - linux

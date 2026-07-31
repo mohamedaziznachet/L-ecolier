@@ -43,8 +43,8 @@ pipeline {
           def backendImage = "${DOCKER_IMAGE_BASE}-backend:${env.GIT_COMMIT}"
           def frontendImage = "${DOCKER_IMAGE_BASE}-frontend:${env.GIT_COMMIT}"
 
-          sh "docker build -f Dockerfile.backend -t ${backendImage} ./server"
-          sh "docker build -f Dockerfile.frontend -t ${frontendImage} ./client"
+          sh "docker build -f Dockerfile.backend -t ${backendImage} ./backend"
+          sh "docker build -f Dockerfile.frontend -t ${frontendImage} ./frontend"
 
           docker.withRegistry('https://index.docker.io/v1/', DOCKERHUB_CREDS) {
             sh "docker push ${backendImage}"

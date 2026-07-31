@@ -4,13 +4,13 @@
 
 - [ ] Add repository helper(s) for filtered catalog queries with normalization.
 
-- [x] Update client service `client/src/services/api.ts` to call the new endpoint.
+- [x] Update client service `frontend/src/services/api.ts` to call the new endpoint.
 
 
-- [x] Refactor `client/src/pages/ProductCatalog.tsx` so filters (category/search/maxPrice/sort) and pagination are applied via DB (no client-side filtering).
+- [x] Refactor `frontend/src/pages/ProductCatalog.tsx` so filters (category/search/maxPrice/sort) and pagination are applied via DB (no client-side filtering).
 
 
 - [x] Update count label to use `pagination.total` from API.
 
-- [ ] Run TypeScript build/tests (server + client) and fix any TS issues.
+- [ ] Run TypeScript build/tests (backend + frontend) and fix any TS issues.
 

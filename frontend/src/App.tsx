@@ -7,7 +7,6 @@ import { Footer } from "./layouts/Footer";
 import { AppProviders, useNavigation } from "./context/AppContext";
 import { LayoutProvider } from "./context/LayoutContext";
 import { AdminProvider, useAdmin } from "./context/AdminContext";
-import { Shield } from "lucide-react";
 
 // Presentational components for the home view
 import { Hero } from "./components/Hero";
