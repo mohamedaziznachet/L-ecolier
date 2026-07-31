@@ -37,8 +37,13 @@ const PageLoader = () => (
 );
 
 function MainAppContent() {
-  const { currentView, navigateTo } = useNavigation();
+  const { currentView, activeCategory, selectedProductId, pageNumber, navigateTo } = useNavigation();
   const { isAdmin, loading: adminLoading } = useAdmin();
+
+  // Automatically scroll to the top of the page when navigating between views
+  React.useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+  }, [currentView, activeCategory, selectedProductId, pageNumber]);
 
   // Admin access will render AdminLayout when currentView is "admin"
   if (currentView === "admin") {

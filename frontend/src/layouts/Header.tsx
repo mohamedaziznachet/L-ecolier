@@ -207,6 +207,17 @@ const handleSearchSubmit = () => {
               </>
             )}
           </div>
+
+          {/* Mobile menu toggle (placed higher up in Top Bar) */}
+          <button
+            className="mobile-toggle"
+            aria-label={mobileOpen ? "Fermer le menu" : "Ouvrir le menu"}
+            aria-expanded={mobileOpen}
+            onClick={() => setMobileOpen(!mobileOpen)}
+          >
+            {mobileOpen ? <X size={18} /> : <Menu size={18} />}
+            <span className="mobile-menu-btn-text">Menu</span>
+          </button>
         </div>
       </div>
 
@@ -293,16 +304,6 @@ const handleSearchSubmit = () => {
               {cartCount > 0 && <span className="cart-badge">{cartCount}</span>}
             </div>
           </div>
-
-          {/* Mobile toggle */}
-          <button
-            className="mobile-toggle"
-            aria-label={mobileOpen ? "Fermer le menu" : "Ouvrir le menu"}
-            aria-expanded={mobileOpen}
-            onClick={() => setMobileOpen(!mobileOpen)}
-          >
-            {mobileOpen ? <X size={22} /> : <Menu size={22} />}
-          </button>
         </div>
       </div>
 

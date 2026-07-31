@@ -1677,16 +1677,43 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 
 @media (max-width: 1023px) {
   .nav-desktop { display: none; }
-  .mobile-toggle { display: block; }
   .hero-sidebar { display: none; }
 
-  .top-bar-inner {
+  .mobile-toggle {
+    display: inline-flex;
     align-items: center;
+    gap: 0.35rem;
+    padding: 0.3rem 0.65rem;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 6px;
+    color: #ffffff;
+    font-size: 0.75rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-left: auto;
   }
 
-  /* ── Phone header: row 1 = logo | actions | burger; row 2 = search ── */
+  .mobile-toggle:hover {
+    background: rgba(255, 255, 255, 0.25);
+  }
+
+  .mobile-menu-btn-text {
+    display: inline-block;
+  }
+
+  .top-bar-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+  }
+
+  /* ── Phone main header: Logo | Search bar (takes its place) | Actions ── */
   .main-header-inner {
-    flex-wrap: wrap;
+    display: flex;
+    flex-wrap: nowrap;
     align-items: center;
     gap: 0.5rem;
   }
@@ -1697,26 +1724,30 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
     flex-shrink: 0;
   }
 
-  /* Action group (wishlist, cart, admin…) – pushed to right of logo */
-  .header-actions-group {
-    order: 2;
-    margin-left: auto;
-    gap: 0.4rem;
+  .main-header-inner .logo {
+    max-height: 38px;
+    width: auto;
   }
 
-  /* Hamburger – far right */
-  .mobile-toggle {
-    order: 3;
-    flex-shrink: 0;
-  }
-
-  /* Search – full-width second row */
+  /* Search – takes its place in row 1 in main header */
   .search-wrapper {
-    order: 4;
-    flex: 1 0 100%;
-    max-width: none;
+    order: 2;
+    flex: 1 1 auto;
     min-width: 0;
     margin-top: 0;
+    max-width: none;
+  }
+
+  .search-input {
+    padding: 0.45rem 0.75rem;
+    font-size: 0.85rem;
+  }
+
+  /* Action group (wishlist, cart, admin…) – far right */
+  .header-actions-group {
+    order: 3;
+    flex-shrink: 0;
+    gap: 0.4rem;
   }
 
   /* Hide text labels on action buttons to save space */
