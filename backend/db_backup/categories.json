@@ -1,0 +1,107 @@
+[
+  {
+    "_id": "6a63cc2e1730b07634448a50",
+    "name": "Cartable Lux",
+    "__v": 0,
+    "createdAt": "2026-07-24T20:33:50.960Z",
+    "updatedAt": "2026-07-24T20:33:50.960Z"
+  },
+  {
+    "_id": "6a63cc2e1730b07634448a51",
+    "name": "Cartable Eco Lux",
+    "__v": 0,
+    "createdAt": "2026-07-24T20:33:50.962Z",
+    "updatedAt": "2026-07-24T20:33:50.962Z"
+  },
+  {
+    "_id": "6a63cc2e1730b07634448a52",
+    "name": "Cartable super lux",
+    "__v": 0,
+    "createdAt": "2026-07-24T20:33:50.962Z",
+    "updatedAt": "2026-07-24T20:33:50.962Z"
+  },
+  {
+    "_id": "6a63cc2e1730b07634448a53",
+    "name": "Cartable high lux",
+    "__v": 0,
+    "createdAt": "2026-07-24T20:33:50.962Z",
+    "updatedAt": "2026-07-24T20:33:50.962Z"
+  },
+  {
+    "_id": "6a63cc2e1730b07634448a54",
+    "name": "Trousse",
+    "__v": 0,
+    "createdAt": "2026-07-24T20:33:50.962Z",
+    "updatedAt": "2026-07-24T20:33:50.962Z"
+  },
+  {
+    "_id": "6a63cc2e1730b07634448a55",
+    "name": "Lunch box",
+    "__v": 0,
+    "createdAt": "2026-07-24T20:33:50.962Z",
+    "updatedAt": "2026-07-24T20:33:50.962Z"
+  },
+  {
+    "_id": "6a63cc2e1730b07634448a56",
+    "name": "Chariots",
+    "__v": 0,
+    "createdAt": "2026-07-24T20:33:50.962Z",
+    "updatedAt": "2026-07-24T20:33:50.962Z"
+  },
+  {
+    "_id": "6a63cc2e1730b07634448a59",
+    "name": "Stylos & Crayons",
+    "__v": 0,
+    "createdAt": "2026-07-24T20:33:50.962Z",
+    "updatedAt": "2026-07-24T20:33:50.962Z"
+  },
+  {
+    "_id": "6a63cc2e1730b07634448a5b",
+    "name": "Matériel artistique",
+    "__v": 0,
+    "createdAt": "2026-07-24T20:33:50.962Z",
+    "updatedAt": "2026-07-24T20:33:50.962Z"
+  },
+  {
+    "_id": "6a63cc2e1730b07634448a5c",
+    "name": "Papeterie",
+    "__v": 0,
+    "createdAt": "2026-07-24T20:33:50.962Z",
+    "updatedAt": "2026-07-24T20:33:50.962Z"
+  },
+  {
+    "_id": "6a63cc2e1730b07634448a5d",
+    "name": "Fournitures scolaires",
+    "__v": 0,
+    "createdAt": "2026-07-24T20:33:50.962Z",
+    "updatedAt": "2026-07-24T20:33:50.962Z"
+  },
+  {
+    "_id": "6a64d1f499c3b88e090cb79f",
+    "name": "Jeux Et Cadeaux",
+    "createdAt": "2026-07-25T15:10:44.437Z",
+    "updatedAt": "2026-07-25T15:10:44.437Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a64d24b99c3b88e090cb7a0",
+    "name": "Gourde & Thermos",
+    "createdAt": "2026-07-25T15:12:11.123Z",
+    "updatedAt": "2026-07-25T15:12:11.123Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a64ecaf99c3b88e090cb80a",
+    "name": "Jardin d'enfant",
+    "createdAt": "2026-07-25T17:04:47.626Z",
+    "updatedAt": "2026-07-25T17:04:47.626Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a650818947177d912bd96a6",
+    "name": "paniers",
+    "createdAt": "2026-07-25T19:01:44.748Z",
+    "updatedAt": "2026-07-25T19:01:44.748Z",
+    "__v": 0
+  }
+]

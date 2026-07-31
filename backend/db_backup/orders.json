@@ -1,0 +1,314 @@
+[
+  {
+    "_id": "6a65214d1f3c8e764a2ed67e",
+    "userId": "6a53e804c5c1cb0fd6ed676f",
+    "customerName": "aziz",
+    "customerEmail": "aziz@ecolier.com",
+    "customerPhone": "55555555",
+    "customerAddress": "mizbsqmkjbnq",
+    "customerGovernorate": "Sidi Bouzid",
+    "productIds": [
+      "6a64c2fba318fa5d6c8b4b29",
+      "6a638328713aec5deeec2355",
+      "6a650d9e1f3c8e764a2ed625"
+    ],
+    "total": 317,
+    "date": "2026-07-25T20:49:17.207Z",
+    "items": [
+      {
+        "productId": "6a64c2fba318fa5d6c8b4b29",
+        "name": "SB02-RACING",
+        "quantity": 1,
+        "price": 159,
+        "unitPrice": 159,
+        "subtotal": 159,
+        "img": "/uploads/image-1784988367349-480306658.jpg",
+        "image": "/uploads/image-1784988367349-480306658.jpg",
+        "_id": "6a65214d1f3c8e764a2ed67f"
+      },
+      {
+        "productId": "6a638328713aec5deeec2355",
+        "name": "SB01-XL-FLOWER",
+        "quantity": 1,
+        "price": 109,
+        "unitPrice": 109,
+        "subtotal": 109,
+        "img": "/uploads/image-1784906514614-873295546.jpg",
+        "image": "/uploads/image-1784906514614-873295546.jpg",
+        "_id": "6a65214d1f3c8e764a2ed680"
+      },
+      {
+        "productId": "6a650d9e1f3c8e764a2ed625",
+        "name": "CL01-SKATE",
+        "quantity": 1,
+        "price": 49,
+        "unitPrice": 49,
+        "subtotal": 49,
+        "img": "/uploads/image-1785007497962-392375763.png",
+        "image": "/uploads/image-1785007497962-392375763.png",
+        "_id": "6a65214d1f3c8e764a2ed681"
+      }
+    ],
+    "status": "processing",
+    "stockReserved": true,
+    "paymentMethod": "cod",
+    "paymentStatus": "pending",
+    "deliveryNotes": "",
+    "shippingAddress": {
+      "address": "mizbsqmkjbnq",
+      "city": "",
+      "governororate": "Sidi Bouzid",
+      "postalCode": ""
+    },
+    "shippingFee": 0,
+    "couponCode": "",
+    "discountAmount": 0,
+    "__v": 0
+  },
+  {
+    "_id": "6a6521591f3c8e764a2ed682",
+    "userId": "6a53e804c5c1cb0fd6ed676f",
+    "customerName": "aziz",
+    "customerEmail": "aziz@ecolier.com",
+    "customerPhone": "55555555",
+    "customerAddress": "mizbsqmkjbnq",
+    "customerGovernorate": "Sidi Bouzid",
+    "productIds": [
+      "6a638228713aec5deeec2347"
+    ],
+    "total": 126,
+    "date": "2026-07-25T20:49:29.718Z",
+    "items": [
+      {
+        "productId": "6a638228713aec5deeec2347",
+        "name": "SB01-XL-BIKER",
+        "quantity": 1,
+        "price": 119,
+        "unitPrice": 119,
+        "subtotal": 119,
+        "img": "/uploads/image-1784906238198-887553567.jpg",
+        "image": "/uploads/image-1784906238198-887553567.jpg",
+        "_id": "6a6521591f3c8e764a2ed683"
+      }
+    ],
+    "status": "cancelled",
+    "stockReserved": false,
+    "paymentMethod": "cod",
+    "paymentStatus": "pending",
+    "deliveryNotes": "",
+    "shippingAddress": {
+      "address": "mizbsqmkjbnq",
+      "city": "",
+      "governororate": "Sidi Bouzid",
+      "postalCode": ""
+    },
+    "shippingFee": 7,
+    "couponCode": "",
+    "discountAmount": 0,
+    "__v": 0
+  },
+  {
+    "_id": "6a6521601f3c8e764a2ed684",
+    "userId": "6a53e804c5c1cb0fd6ed676f",
+    "customerName": "aziz",
+    "customerEmail": "aziz@ecolier.com",
+    "customerPhone": "55555555",
+    "customerAddress": "mizbsqmkjbnq",
+    "customerGovernorate": "Sidi Bouzid",
+    "productIds": [
+      "6a64c6f7a318fa5d6c8b4b3c"
+    ],
+    "total": 166,
+    "date": "2026-07-25T20:49:36.895Z",
+    "items": [
+      {
+        "productId": "6a64c6f7a318fa5d6c8b4b3c",
+        "name": "SB02-PRETTYGIRL",
+        "quantity": 1,
+        "price": 159,
+        "unitPrice": 159,
+        "subtotal": 159,
+        "img": "/uploads/image-1784989380179-318200125.jpg",
+        "image": "/uploads/image-1784989380179-318200125.jpg",
+        "_id": "6a6521601f3c8e764a2ed685"
+      }
+    ],
+    "status": "shipped",
+    "stockReserved": true,
+    "paymentMethod": "cod",
+    "paymentStatus": "pending",
+    "deliveryNotes": "",
+    "shippingAddress": {
+      "address": "mizbsqmkjbnq",
+      "city": "",
+      "governororate": "Sidi Bouzid",
+      "postalCode": ""
+    },
+    "shippingFee": 7,
+    "couponCode": "",
+    "discountAmount": 0,
+    "__v": 0
+  },
+  {
+    "_id": "6a65216b1f3c8e764a2ed686",
+    "userId": "6a53e804c5c1cb0fd6ed676f",
+    "customerName": "aziz",
+    "customerEmail": "aziz@ecolier.com",
+    "customerPhone": "55555555",
+    "customerAddress": "mizbsqmkjbnq",
+    "customerGovernorate": "Sidi Bouzid",
+    "productIds": [
+      "6a638265713aec5deeec234a"
+    ],
+    "total": 238,
+    "date": "2026-07-25T20:49:47.692Z",
+    "items": [
+      {
+        "productId": "6a638265713aec5deeec234a",
+        "name": "SB01-XL-CHERRY",
+        "quantity": 2,
+        "price": 119,
+        "unitPrice": 119,
+        "subtotal": 238,
+        "img": "/uploads/image-1784906323829-714905930.jpg",
+        "image": "/uploads/image-1784906323829-714905930.jpg",
+        "_id": "6a65216b1f3c8e764a2ed687"
+      }
+    ],
+    "status": "delivered",
+    "stockReserved": true,
+    "paymentMethod": "cod",
+    "paymentStatus": "paid",
+    "deliveryNotes": "",
+    "shippingAddress": {
+      "address": "mizbsqmkjbnq",
+      "city": "",
+      "governororate": "Sidi Bouzid",
+      "postalCode": ""
+    },
+    "shippingFee": 0,
+    "couponCode": "",
+    "discountAmount": 0,
+    "__v": 0
+  },
+  {
+    "_id": "6a6521761f3c8e764a2ed688",
+    "userId": "6a53e804c5c1cb0fd6ed676f",
+    "customerName": "aziz",
+    "customerEmail": "aziz@ecolier.com",
+    "customerPhone": "55555555",
+    "customerAddress": "mizbsqmkjbnq",
+    "customerGovernorate": "Sidi Bouzid",
+    "productIds": [
+      "6a6514601f3c8e764a2ed645"
+    ],
+    "total": 125,
+    "date": "2026-07-25T20:49:58.390Z",
+    "items": [
+      {
+        "productId": "6a6514601f3c8e764a2ed645",
+        "name": "CL02-DINO",
+        "quantity": 2,
+        "price": 59,
+        "unitPrice": 59,
+        "subtotal": 118,
+        "img": "/uploads/image-1785009198240-150683206.png",
+        "image": "/uploads/image-1785009198240-150683206.png",
+        "_id": "6a6521761f3c8e764a2ed689"
+      }
+    ],
+    "status": "expired",
+    "stockReserved": false,
+    "paymentMethod": "cod",
+    "paymentStatus": "pending",
+    "deliveryNotes": "",
+    "shippingAddress": {
+      "address": "mizbsqmkjbnq",
+      "city": "",
+      "governororate": "Sidi Bouzid",
+      "postalCode": ""
+    },
+    "shippingFee": 7,
+    "couponCode": "",
+    "discountAmount": 0,
+    "__v": 0
+  },
+  {
+    "_id": "6a6521b61f3c8e764a2ed68c",
+    "userId": "6a53c0c0e649c30982e0daf3",
+    "customerName": "islamando",
+    "customerEmail": "isla@gmail.com",
+    "customerPhone": "84731212",
+    "customerAddress": "Dar fadhal sokra ariana",
+    "customerGovernorate": "Ariana",
+    "productIds": [
+      "6a650d671f3c8e764a2ed620",
+      "6a63c763713aec5deeec238b",
+      "6a64ccf7d8d292f6aad388d5",
+      "6a64ef1399c3b88e090cb81a"
+    ],
+    "total": 536,
+    "date": "2026-07-25T20:51:02.869Z",
+    "items": [
+      {
+        "productId": "6a650d671f3c8e764a2ed620",
+        "name": "CL01-SWAN",
+        "quantity": 1,
+        "price": 49,
+        "unitPrice": 49,
+        "subtotal": 49,
+        "img": "/uploads/image-1785007405351-590014737.png",
+        "image": "/uploads/image-1785007405351-590014737.png",
+        "_id": "6a6521b61f3c8e764a2ed68d"
+      },
+      {
+        "productId": "6a63c763713aec5deeec238b",
+        "name": "SB02-XL-CHERRY",
+        "quantity": 1,
+        "price": 149,
+        "unitPrice": 149,
+        "subtotal": 149,
+        "img": "/uploads/image-1784923947344-430579402.jpg",
+        "image": "/uploads/image-1784923947344-430579402.jpg",
+        "_id": "6a6521b61f3c8e764a2ed68e"
+      },
+      {
+        "productId": "6a64ccf7d8d292f6aad388d5",
+        "name": "SB03-DINO",
+        "quantity": 1,
+        "price": 199,
+        "unitPrice": 199,
+        "subtotal": 199,
+        "img": "/uploads/image-1784990934424-331563008.jpg",
+        "image": "/uploads/image-1784990934424-331563008.jpg",
+        "_id": "6a6521b61f3c8e764a2ed68f"
+      },
+      {
+        "productId": "6a64ef1399c3b88e090cb81a",
+        "name": "TLJ02-PLANE",
+        "quantity": 1,
+        "price": 139,
+        "unitPrice": 139,
+        "subtotal": 139,
+        "img": "/uploads/image-1784999639866-117420451.png",
+        "image": "/uploads/image-1784999639866-117420451.png",
+        "_id": "6a6521b61f3c8e764a2ed690"
+      }
+    ],
+    "status": "pending",
+    "stockReserved": true,
+    "paymentMethod": "cod",
+    "paymentStatus": "pending",
+    "deliveryNotes": "",
+    "shippingAddress": {
+      "address": "Dar fadhal sokra ariana",
+      "city": "",
+      "governororate": "Ariana",
+      "postalCode": ""
+    },
+    "shippingFee": 0,
+    "couponCode": "",
+    "discountAmount": 0,
+    "__v": 0
+  }
+]
