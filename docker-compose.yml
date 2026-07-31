@@ -18,7 +18,7 @@ services:
       dockerfile: ../Dockerfile.backend
     env_file: ./backend/.env
     ports:
-      - "5000:5000"
+      - "4000:4000"
     restart: unless-stopped
     depends_on:
       mongo:
@@ -26,7 +26,7 @@ services:
     volumes:
       - uploads_data:/app/uploads
     healthcheck:
-      test: ["CMD-SHELL", "curl -f http://localhost:5000/api/hello || exit 1"]
+      test: ["CMD-SHELL", "curl -f http://localhost:4000/api/hello || exit 1"]
       interval: 30s
       timeout: 10s
       retries: 3

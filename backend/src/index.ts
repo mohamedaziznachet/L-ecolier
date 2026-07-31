@@ -49,7 +49,7 @@ function deepSanitize(obj: any): void {
   }
 }
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 4000;
 
 // Security middleware
 app.use(helmet({
@@ -252,8 +252,8 @@ function startServer() {
 
   hashAdminPassword()
     .then(() => {
-      const server = app.listen(process.env.PORT || 5000, () => {
-        console.log(`🚀 Server running on port ${process.env.PORT || 5000}`);
+      const server = app.listen(process.env.PORT || 4000, () => {
+        console.log(`🚀 Server running on port ${process.env.PORT || 4000}`);
         if ((app as any)._router) {
           console.log('MIDDLEWARES:', (app as any)._router.stack.map((r: any) => r.name || (r.handle && r.handle.name) || 'anonymous'));
         }

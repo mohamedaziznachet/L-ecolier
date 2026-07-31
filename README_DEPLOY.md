@@ -1,4 +1,4 @@
-Quick Docker + docker-compose deployment
+uick Docker + docker-compose deployment
 
 This project includes Dockerfiles and a `docker-compose.yml` to run the frontend (nginx) and backend (Node) as containers.
 
