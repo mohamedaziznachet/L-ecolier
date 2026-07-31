@@ -18,6 +18,9 @@ const Seo: React.FC<SeoProps> = ({ title, description, ogImage, lang = 'fr', str
     <Helmet>
       <html lang={lang} />
       <title>{title}</title>
+      <link rel="icon" type="image/png" href="/logo.png" />
+      <link rel="shortcut icon" href="/logo.png" />
+      <link rel="apple-touch-icon" href="/logo.png" />
       {description && <meta name="description" content={description} />}
       {/* Open Graph */}
       <meta property="og:title" content={title} />
