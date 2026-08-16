@@ -12,6 +12,7 @@ import { ConfirmDialog } from '../components/ConfirmDialog';
 import { Pagination } from '../components/Pagination';
 import { StatusBadge } from '../components/StatusBadge';
 import { AvailabilityBadge } from '../../../components/common/AvailabilityBadge';
+import * as api from '../../../services/api';
 
 const productSchema = z.object({
   name: z.string().min(2, 'Le nom doit contenir au moins 2 caractères'),
@@ -25,6 +26,7 @@ const productSchema = z.object({
   stock: z.coerce.number().min(0, 'Le stock doit être positif'),
   availability: z.enum(['En stock', 'En arrivage', 'Sur commande', 'Epuisé']).default('En stock'),
   category: z.string().min(1, 'Veuillez sélectionner une catégorie'),
+  subcategory: z.string().default(''),
   brand: z.string().default(''),
   img: z.string().min(1, 'L\'image est requise'),
   badge: z.string().default(''),
@@ -58,6 +60,7 @@ export const ProductsPage: React.FC = () => {
   const [additionalImages, setAdditionalImages] = useState<string[]>([]);
   const [specifications, setSpecifications] = useState<{ key: string; value: string }[]>([]);
   const [newGalleryInput, setNewGalleryInput] = useState('');
+  const [fullCategoriesMap, setFullCategoriesMap] = useState<Record<string, string[]>>({});
   
   const { showToast, ToastComponent } = useToast();
 
@@ -75,6 +78,7 @@ export const ProductsPage: React.FC = () => {
       stock: 0,
       availability: 'En stock' as const,
       category: '',
+      subcategory: '',
       brand: '',
       img: '',
       badge: '',
@@ -87,10 +91,39 @@ export const ProductsPage: React.FC = () => {
   });
 
   const watchImg = watch('img');
+  const watchedCategory = watch('category');
 
   useEffect(() => {
     dispatch(fetchBrands());
   }, [dispatch]);
+
+  useEffect(() => {
+    const loadCats = async () => {
+      try {
+        const docs = await api.getFullAdminCategories();
+        const map: Record<string, string[]> = {};
+        docs.forEach((d: any) => {
+          if (d.name) {
+            const names = (d.subcategories || []).map((s: any) => typeof s === 'string' ? s : s.name);
+            map[d.name] = Array.from(new Set(names));
+          }
+        });
+        setFullCategoriesMap(map);
+      } catch (err) {
+        console.error('Failed to fetch full categories:', err);
+      }
+    };
+    loadCats();
+  }, [categories]);
+
+  useEffect(() => {
+    const currentSub = watch('subcategory');
+    if (currentSub && watchedCategory && fullCategoriesMap[watchedCategory]) {
+      if (!fullCategoriesMap[watchedCategory].includes(currentSub)) {
+        setValue('subcategory', '');
+      }
+    }
+  }, [watchedCategory, fullCategoriesMap]);
 
   const handleSort = (field: string) => {
     if (sortField === field) {
@@ -128,7 +161,7 @@ export const ProductsPage: React.FC = () => {
     setSpecifications([]);
     setNewGalleryInput('');
     reset({
-      name: '', description: '', price: '', priceNum: 0, oldPrice: '', priceBeforeDiscount: null, discount: 0, schoolLevel: '', stock: 0, availability: 'En stock', category: '', brand: '', img: '', badge: '', badgeColor: '', rating: 5, reviews: 0, featured: false, status: 'active'
+      name: '', description: '', price: '', priceNum: 0, oldPrice: '', priceBeforeDiscount: null, discount: 0, schoolLevel: '', stock: 0, availability: 'En stock', category: '', subcategory: '', brand: '', img: '', badge: '', badgeColor: '', rating: 5, reviews: 0, featured: false, status: 'active'
     });
     setModalOpen(true);
   };
@@ -157,6 +190,7 @@ export const ProductsPage: React.FC = () => {
       stock: product.stock,
       availability: product.availability || 'En stock',
       category: product.category,
+      subcategory: product.subcategory || '',
       brand: product.brand || '',
       img: product.img,
       badge: product.badge || '',
@@ -370,7 +404,16 @@ export const ProductsPage: React.FC = () => {
                   <td>
                     <AvailabilityBadge availability={p.availability} size="sm" />
                   </td>
-                  <td><span className="a-badge a-badge-blue">{p.category || '—'}</span></td>
+                  <td>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
+                      <span className="a-badge a-badge-blue">{p.category || '—'}</span>
+                      {p.subcategory ? (
+                        <span style={{ fontSize: '0.75rem', color: 'var(--a-text-muted)', marginLeft: 4 }}>
+                          ↳ {p.subcategory}
+                        </span>
+                      ) : null}
+                    </div>
+                  </td>
                   <td>{p.brand || '—'}</td>
                   <td>
                     <StatusBadge type="product" value={p.status || 'active'} />
@@ -462,6 +505,18 @@ export const ProductsPage: React.FC = () => {
                         </select>
                       </div>
                     </div>
+
+                    {watchedCategory && (fullCategoriesMap[watchedCategory]?.length || 0) > 0 && (
+                      <div className="a-field">
+                        <label>Sous-catégorie</label>
+                        <select className="a-input" {...register('subcategory')}>
+                          <option value="">Sélectionnez une sous-catégorie (optionnel)</option>
+                          {fullCategoriesMap[watchedCategory].map(sub => (
+                            <option key={sub} value={sub}>{sub}</option>
+                          ))}
+                        </select>
+                      </div>
+                    )}
 
                     <div className="a-field">
                       <label>Statut du Produit</label>

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { ShoppingCart, Heart, ChevronRight, RefreshCw } from "lucide-react";
+import { ShoppingCart, Heart, ChevronRight, RefreshCw, Star, Check, Sparkles } from "lucide-react";
 import { ResponsiveImage } from "../utils/ResponsiveImage";
 import { useCart, useNavigation, useWishlist } from "../context/AppContext";
 import { Product } from "../types";
@@ -14,13 +14,16 @@ function BestSellerCard({ product }: { product: Product }) {
 
   const handleAdd = (e: React.MouseEvent) => {
     e.stopPropagation();
-    addToCart(product);
+    addToCart(product, 1);
     setAdded(true);
-    setTimeout(() => setAdded(false), 1500);
+    setTimeout(() => setAdded(false), 1800);
   };
 
+  const hasDiscount = product.discount && product.discount > 0;
+  const ratingValue = Number(product.rating || 5);
+
   return (
-    <div className="ref-product-card" onClick={() => navigateToProduct(product.id)}>
+    <div className="ref-product-card group" onClick={() => navigateToProduct(product.id || (product as any)._id)}>
       <div className="ref-card-img-wrap">
         <ResponsiveImage src={product.img} alt={product.name} className="ref-card-img" />
         
@@ -35,11 +38,15 @@ function BestSellerCard({ product }: { product: Product }) {
           >
             {product.badge}
           </span>
-        ) : product.discount && product.discount > 0 ? (
+        ) : hasDiscount ? (
           <span className="ref-card-badge-discount">-{product.discount}%</span>
         ) : product.oldPrice ? (
           <span className="ref-card-badge-discount">Promo</span>
-        ) : null}
+        ) : (
+          <span className="ref-card-badge-best">
+            <Sparkles size={11} className="inline mr-1" /> Top Vente
+          </span>
+        )}
 
         <button
           className="ref-card-wishlist-btn"
@@ -48,13 +55,30 @@ function BestSellerCard({ product }: { product: Product }) {
             toggleWishlist(product);
           }}
           title={isWished ? "Retirer des favoris" : "Ajouter aux favoris"}
+          aria-label={isWished ? "Retirer des favoris" : "Ajouter aux favoris"}
         >
-          <Heart size={18} fill={isWished ? "#ef4444" : "none"} stroke={isWished ? "#ef4444" : "#64748b"} />
+          <Heart size={17} fill={isWished ? "#ef4444" : "none"} stroke={isWished ? "#ef4444" : "#64748b"} />
         </button>
       </div>
 
       <div className="ref-card-info">
+        {product.category && (
+          <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400">
+            {product.category}
+          </span>
+        )}
         <h3 className="ref-card-title">{product.name}</h3>
+
+        {/* Rating stars snippet */}
+        <div className="flex items-center gap-1 my-0.5">
+          <div className="flex text-amber-400">
+            {Array.from({ length: 5 }).map((_, i) => (
+              <Star key={i} size={12} fill={i < Math.floor(ratingValue) ? "currentColor" : "none"} stroke="currentColor" />
+            ))}
+          </div>
+          <span className="text-[11px] text-slate-400 font-medium">({product.reviews || 12})</span>
+        </div>
+
         <div className="ref-card-price-row">
           {product.oldPrice && (
             <span className="ref-card-old-price">{product.oldPrice}</span>
@@ -63,15 +87,21 @@ function BestSellerCard({ product }: { product: Product }) {
         </div>
 
         <button
-          className="ref-buy-btn"
+          className={`ref-buy-btn${added ? " added" : ""}`}
           onClick={handleAdd}
-          style={{
-            backgroundColor: added ? "var(--c-success)" : "var(--c-primary)",
-            transition: "all 0.2s ease",
-          }}
+          disabled={added}
         >
-          <ShoppingCart size={15} />
-          <span>{added ? "Ajouté !" : "Acheter"}</span>
+          {added ? (
+            <>
+              <Check size={16} className="animate-bounce" />
+              <span>Ajouté au panier !</span>
+            </>
+          ) : (
+            <>
+              <ShoppingCart size={15} />
+              <span>Ajouter au panier</span>
+            </>
+          )}
         </button>
       </div>
     </div>
@@ -106,7 +136,9 @@ export function BestSellers() {
     <section className="page-section">
       <div className="section-header">
         <div>
-          <h2 className="section-title">Nos produits les plus vendus</h2>
+          <div className="flex items-center gap-2">
+            <h2 className="section-title">Nos Produits Les Plus Vendus</h2>
+          </div>
           <div className="section-underline" />
         </div>
         <a
@@ -115,15 +147,18 @@ export function BestSellers() {
             e.preventDefault();
             navigateTo("category", "");
           }}
-          className="section-link"
+          className="section-link group"
         >
-          Voir tous les produits <ChevronRight size={14} />
+          <span>Voir tous les articles</span>
+          <ChevronRight size={16} className="transition-transform group-hover:translate-x-1" />
         </a>
       </div>
 
       {loading ? (
-        <div style={{ textAlign: "center", padding: "3rem" }}>
-          <RefreshCw size={32} className="spin-icon" style={{ animation: "spin 1s linear infinite", color: "var(--c-primary)" }} />
+        <div className="catalog-grid">
+          {Array.from({ length: 4 }).map((_, i) => (
+            <div key={i} className="ref-card-skeleton animate-pulse" />
+          ))}
         </div>
       ) : (
         <div className="catalog-grid">
@@ -135,3 +170,4 @@ export function BestSellers() {
     </section>
   );
 }
+

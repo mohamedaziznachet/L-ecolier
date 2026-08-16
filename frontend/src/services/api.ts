@@ -7,6 +7,8 @@
 import { Product, User, Order, Brand, Coupon, Review, AdminStats } from "../types";
 import { fetchWithCache, invalidateCache } from "./apiCache";
 
+export const API_URL = "";
+
 const KEYS = {
   currentUser: "ecolier_user",
   cart: "ecolier_cart",
@@ -116,11 +118,13 @@ export async function getProducts(): Promise<Product[]> {
           return [];
         }
         const pubData = await pubRes.json();
-        return pubData.products || [];
+        const rawPub = pubData.products || [];
+        return rawPub.map((p: any) => ({ ...p, id: p.id ?? p._id, _id: p._id ?? p.id }));
       }
 
       const data = await res.json();
-      return data.products || [];
+      const rawProds = data.products || [];
+      return rawProds.map((p: any) => ({ ...p, id: p.id ?? p._id, _id: p._id ?? p.id }));
     } catch (e) {
       console.error("Error fetching products:", e);
       return [];
@@ -133,12 +137,13 @@ export async function getFilteredProducts(options: {
   limit?: number;
   search?: string;
   category?: string;
+  subcategory?: string;
   minPrice?: number;
   maxPrice?: number;
   brand?: string;
   schoolLevel?: string;
   sortBy?: string;
-}): Promise<{ products: Product[]; pagination: { page: number; limit: number; total: number; pages: number } }> {
+}): Promise<{ products: Product[]; pagination: { page: number; limit: number; total: number; pages: number }; maxCategoryPrice?: number }> {
   const cleanParams: Record<string, string> = {
     page: String(options.page ?? 1),
     limit: String(options.limit ?? 20),
@@ -146,6 +151,7 @@ export async function getFilteredProducts(options: {
 
   if (options.search?.trim()) cleanParams.search = options.search.trim();
   if (options.category?.trim()) cleanParams.category = options.category.trim();
+  if (options.subcategory?.trim()) cleanParams.subcategory = options.subcategory.trim();
   if (options.minPrice !== undefined && !Number.isNaN(options.minPrice)) cleanParams.minPrice = String(options.minPrice);
   if (options.maxPrice !== undefined && !Number.isNaN(options.maxPrice)) cleanParams.maxPrice = String(options.maxPrice);
   if (options.brand?.trim()) cleanParams.brand = options.brand.trim();
@@ -168,19 +174,24 @@ export async function getFilteredProducts(options: {
         return {
           products: [],
           pagination: { page: options.page ?? 1, limit: options.limit ?? 20, total: 0, pages: 1 },
+          maxCategoryPrice: 1000,
         };
       }
 
       const data = await res.json();
+      const raw = Array.isArray(data.products) ? data.products : [];
+      const products = raw.map((p: any) => ({ ...p, id: p.id ?? p._id, _id: p._id ?? p.id }));
       return {
-        products: Array.isArray(data.products) ? data.products : [],
+        products,
         pagination: data.pagination ?? { page: 1, limit: 20, total: 0, pages: 1 },
+        maxCategoryPrice: typeof data.maxCategoryPrice === 'number' ? data.maxCategoryPrice : 1000,
       };
     } catch (e) {
       console.error('Error fetching filtered products:', e);
       return {
         products: [],
         pagination: { page: options.page ?? 1, limit: options.limit ?? 20, total: 0, pages: 1 },
+        maxCategoryPrice: 1000,
       };
     }
   }, 2 * 60 * 1000);
@@ -198,7 +209,9 @@ export async function getProductById(id: number | string): Promise<Product | nul
         throw new Error("Failed to fetch product");
       }
       const data = await res.json();
-      return data.product || null;
+      if (!data.product) return null;
+      const p = data.product;
+      return { ...p, id: p.id ?? p._id, _id: p._id ?? p.id };
     } catch (e) {
       console.error("Error fetching product:", e);
       return null;
@@ -286,6 +299,51 @@ export async function deleteCategory(category: string): Promise<string[]> {
     return [];
   } catch (e) {
     console.error("Error deleting category:", e);
+    throw e;
+  }
+}
+
+export async function getFullAdminCategories(): Promise<any[]> {
+  try {
+    const res = await fetchWithAuth(`/api/admin/categories/full`, {
+      headers: getHeaders(),
+    });
+    if (!res.ok) return [];
+    const data = await res.json();
+    return data.categories || [];
+  } catch (e) {
+    console.error("Error fetching full admin categories:", e);
+    return [];
+  }
+}
+
+export async function addSubCategoryApi(category: string, subcategory: string): Promise<any[]> {
+  try {
+    const res = await fetchWithAuth(`/api/admin/categories/subcategories`, {
+      method: "POST",
+      headers: getHeaders(),
+      body: JSON.stringify({ category, subcategory }),
+    });
+    if (!res.ok) throw new Error("Failed to add subcategory");
+    const data = await res.json();
+    return data.categories || [];
+  } catch (e) {
+    console.error("Error adding subcategory:", e);
+    throw e;
+  }
+}
+
+export async function deleteSubCategoryApi(category: string, subcategory: string): Promise<any[]> {
+  try {
+    const res = await fetchWithAuth(`/api/admin/categories/${encodeURIComponent(category)}/subcategories/${encodeURIComponent(subcategory)}`, {
+      method: "DELETE",
+      headers: getHeaders(),
+    });
+    if (!res.ok) throw new Error("Failed to delete subcategory");
+    const data = await res.json();
+    return data.categories || [];
+  } catch (e) {
+    console.error("Error deleting subcategory:", e);
     throw e;
   }
 }
@@ -777,12 +835,12 @@ export async function deleteCoupon(id: string): Promise<void> {
   }
 }
 
-export async function validateCoupon(code: string, cartTotal: number): Promise<{ valid: boolean; discountAmount?: number; error?: string }> {
+export async function validateCoupon(code: string, cartTotal: number, items?: any[]): Promise<{ valid: boolean; discountAmount?: number; error?: string }> {
   try {
     const res = await apiFetch('/api/coupons/validate', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ code, cartTotal }),
+      body: JSON.stringify({ code, cartTotal, items }),
     });
     if (!res.ok) {
       const err = await res.json().catch(() => ({}));
@@ -922,7 +980,7 @@ const DEFAULT_SETTINGS: SiteSettings = {
   siteAddress: 'Tunisie',
   currency: 'DT',
   taxRate: '19',
-  shippingFee: '7',
+  shippingFee: '8',
   maintenanceMode: false
 };
 
@@ -1103,4 +1161,26 @@ export async function getBatchWishlistApi(productIds: (string | number)[]): Prom
     console.error('Error fetching batch wishlist:', e);
     return [];
   }
+}
+
+export async function uploadImage(file: File): Promise<string> {
+  const token = localStorage.getItem(KEYS.token) || localStorage.getItem('ecolier_token');
+  const formData = new FormData();
+  formData.append('image', file);
+
+  const response = await fetch('/api/admin/upload-image', {
+    method: 'POST',
+    headers: {
+      Authorization: `Bearer ${token}`
+    },
+    body: formData
+  });
+
+  if (!response.ok) {
+    const errorText = await response.text().catch(() => '');
+    throw new Error(errorText || 'Erreur lors du téléchargement de l\'image');
+  }
+
+  const data = await response.json();
+  return data.url || data.imageUrl || '';
 }

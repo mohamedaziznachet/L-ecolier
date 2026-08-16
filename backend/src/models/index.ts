@@ -19,6 +19,7 @@ const productSchema = new Schema({
   img: { type: String, default: '' },
   images: [String],
   category: { type: String, default: 'Autre', trim: true },
+  subcategory: { type: String, default: '', trim: true },
   brand: { type: String, default: '', trim: true },
   description: { type: String, default: '', trim: true },
   stock: { type: Number, default: 0, min: 0 },
@@ -154,7 +155,12 @@ userSchema.index({ createdAt: -1 });
 
 // Category Schema
 const categorySchema = new Schema({
-  name: { type: String, required: true, trim: true, unique: true }
+  name: { type: String, required: true, trim: true, unique: true },
+  image: { type: String, default: '' },
+  subcategories: [{
+    name: { type: String, required: true, trim: true },
+    image: { type: String, default: '' }
+  }]
 }, { timestamps: true });
 
 // Order Schema
@@ -202,7 +208,7 @@ const orderSchema = new Schema({
     governororate: String,
     postalCode: String
   },
-  shippingFee: { type: Number, default: 7 },
+  shippingFee: { type: Number, default: 8 },
   couponCode: { type: String, default: '' },
   discountAmount: { type: Number, default: 0 }
 });
@@ -238,6 +244,7 @@ const couponSchema = new Schema({
   isActive: { type: Boolean, default: true },
   maxUses: { type: Number, default: 0 }, // 0 = unlimited
   usageCount: { type: Number, default: 0 },
+  applicableCategories: [{ type: String, trim: true }],
 }, { timestamps: true });
 
 // Coupon pre-find middleware is handled by the repository methods to avoid filtering admin views

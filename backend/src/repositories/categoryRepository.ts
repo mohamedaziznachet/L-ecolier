@@ -92,3 +92,44 @@ export async function resetCategories(): Promise<string[]> {
   await CategoryModel.insertMany(docs, { ordered: false }).catch(() => {});
   return getSavedCategories();
 }
+
+/**
+ * Get all category documents with subcategories.
+ */
+export async function getCategoriesWithSubcategories(): Promise<any[]> {
+  await seedDefaultsIfEmpty();
+  return CategoryModel.find().sort({ name: 1 }).lean();
+}
+
+/**
+ * Add a subcategory to a category.
+ */
+export async function addSubCategory(categoryName: string, subName: string): Promise<any[]> {
+  const normCat = normalizeCategory(categoryName);
+  const normSub = String(subName ?? '').trim();
+  if (!normCat || !normSub) throw new Error('Catégorie ou sous-catégorie invalide');
+
+  await CategoryModel.updateOne(
+    { name: normCat },
+    { $addToSet: { subcategories: { name: normSub, image: '' } } },
+    { upsert: true }
+  );
+
+  return getCategoriesWithSubcategories();
+}
+
+/**
+ * Delete a subcategory from a category.
+ */
+export async function deleteSubCategory(categoryName: string, subName: string): Promise<any[]> {
+  const normCat = normalizeCategory(categoryName);
+  const normSub = String(subName ?? '').trim();
+  if (!normCat || !normSub) throw new Error('Catégorie ou sous-catégorie invalide');
+
+  await CategoryModel.updateOne(
+    { name: normCat },
+    { $pull: { subcategories: { name: normSub } } }
+  );
+
+  return getCategoriesWithSubcategories();
+}
