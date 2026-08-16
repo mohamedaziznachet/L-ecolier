@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
-import { ShoppingCart, Heart, Sliders, ChevronDown, RefreshCw, X, Filter } from "lucide-react";
+import { ShoppingCart, Heart, Sliders, ChevronDown, RefreshCw, X, Filter, ChevronLeft, ChevronRight, Star, Check, Sparkles, Tag, ArrowUpDown } from "lucide-react";
 import { ResponsiveImage } from "../utils/ResponsiveImage";
 import { useNavigation, useCart, useWishlist } from "../context/AppContext";
 import { Product, Brand } from "../types";
-import { getFilteredProducts, getBrands } from "../services/api";
+import { getFilteredProducts, getBrands, getFullAdminCategories } from "../services/api";
 import { useAdmin } from "../context/AdminContext";
 import Seo from "../components/common/Seo";
 
@@ -16,13 +16,16 @@ function CatalogProductCard({ product }: { product: Product }) {
 
   const handleAdd = (e: React.MouseEvent) => {
     e.stopPropagation();
-    addToCart(product);
+    addToCart(product, 1);
     setAdded(true);
-    setTimeout(() => setAdded(false), 1500);
+    setTimeout(() => setAdded(false), 1800);
   };
 
+  const hasDiscount = product.discount && product.discount > 0;
+  const ratingValue = Number(product.rating || 5);
+
   return (
-    <div className="ref-product-card" onClick={() => navigateToProduct(product.id)}>
+    <div className="ref-product-card group" onClick={() => navigateToProduct(product.id)}>
       <div className="ref-card-img-wrap">
         <ResponsiveImage src={product.img} alt={product.name} className="ref-card-img" />
         
@@ -37,7 +40,7 @@ function CatalogProductCard({ product }: { product: Product }) {
           >
             {product.badge}
           </span>
-        ) : product.discount && product.discount > 0 ? (
+        ) : hasDiscount ? (
           <span className="ref-card-badge-discount">-{product.discount}%</span>
         ) : product.oldPrice ? (
           <span className="ref-card-badge-discount">Promo</span>
@@ -50,13 +53,30 @@ function CatalogProductCard({ product }: { product: Product }) {
             toggleWishlist(product);
           }}
           title={isWished ? "Retirer des favoris" : "Ajouter aux favoris"}
+          aria-label={isWished ? "Retirer des favoris" : "Ajouter aux favoris"}
         >
-          <Heart size={18} fill={isWished ? "#ef4444" : "none"} stroke={isWished ? "#ef4444" : "#64748b"} />
+          <Heart size={17} fill={isWished ? "#ef4444" : "none"} stroke={isWished ? "#ef4444" : "#64748b"} />
         </button>
       </div>
 
       <div className="ref-card-info">
+        {product.category && (
+          <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400">
+            {product.category}
+          </span>
+        )}
         <h3 className="ref-card-title">{product.name}</h3>
+
+        {/* Rating stars */}
+        <div className="flex items-center gap-1 my-0.5">
+          <div className="flex text-amber-400">
+            {Array.from({ length: 5 }).map((_, i) => (
+              <Star key={i} size={12} fill={i < Math.floor(ratingValue) ? "currentColor" : "none"} stroke="currentColor" />
+            ))}
+          </div>
+          <span className="text-[11px] text-slate-400 font-medium">({product.reviews || 8})</span>
+        </div>
+
         <div className="ref-card-price-row">
           {product.oldPrice && (
             <span className="ref-card-old-price">{product.oldPrice}</span>
@@ -65,15 +85,21 @@ function CatalogProductCard({ product }: { product: Product }) {
         </div>
 
         <button
-          className="ref-buy-btn"
+          className={`ref-buy-btn${added ? " added" : ""}`}
           onClick={handleAdd}
-          style={{
-            backgroundColor: added ? "var(--c-success)" : "var(--c-primary)",
-            transition: "all 0.2s ease",
-          }}
+          disabled={added}
         >
-          <ShoppingCart size={15} />
-          <span>{added ? "Ajouté !" : "Acheter"}</span>
+          {added ? (
+            <>
+              <Check size={16} className="animate-bounce" />
+              <span>Ajouté au panier !</span>
+            </>
+          ) : (
+            <>
+              <ShoppingCart size={15} />
+              <span>Ajouter au panier</span>
+            </>
+          )}
         </button>
       </div>
     </div>
@@ -81,7 +107,7 @@ function CatalogProductCard({ product }: { product: Product }) {
 }
 
 export function ProductCatalog() {
-  const { activeCategory, navigateTo, searchQuery, setSearchQuery, pageNumber, navigateToPage } = useNavigation();
+  const { activeCategory, activeSubCategory, navigateTo, navigateToSubCategory, searchQuery, setSearchQuery, pageNumber, navigateToPage } = useNavigation();
   const { categories } = useAdmin();
 
   const itemsPerPage = 12;
@@ -98,6 +124,7 @@ export function ProductCatalog() {
   const [selectedSchoolLevel, setSelectedSchoolLevel] = useState<string>("");
   const [selectedBrand, setSelectedBrand] = useState<string>("");
   const [brandsList, setBrandsList] = useState<Brand[]>([]);
+  const [fullCategoriesMap, setFullCategoriesMap] = useState<Record<string, string[]>>({});
 
   const [products, setProducts] = useState<Product[]>([]);
   const [totalItems, setTotalItems] = useState(0);
@@ -109,11 +136,12 @@ export function ProductCatalog() {
 
   const categoryTitle = searchQuery
     ? `Résultats pour "${searchQuery}"`
+    : activeCategory && activeSubCategory
+    ? `${activeCategory} > ${activeSubCategory}`
     : activeCategory
     ? activeCategory
     : "Tous nos articles";
 
-  // Load available brands
   useEffect(() => {
     (async () => {
       try {
@@ -125,19 +153,35 @@ export function ProductCatalog() {
     })();
   }, []);
 
-  // Debounce price input changes to avoid spamming backend requests
+  useEffect(() => {
+    (async () => {
+      try {
+        const docs = await getFullAdminCategories();
+        const map: Record<string, string[]> = {};
+        docs.forEach((d: any) => {
+          if (d.name) {
+            const names = (d.subcategories || []).map((s: any) => typeof s === 'string' ? s : s.name);
+            map[d.name] = Array.from(new Set(names));
+          }
+        });
+        setFullCategoriesMap(map);
+      } catch (err) {
+        console.error("Error loading categories map:", err);
+      }
+    })();
+  }, [categories]);
+
   useEffect(() => {
     const handler = setTimeout(() => {
       setDebouncedMinPrice(minPrice);
       setDebouncedMaxPrice(maxPrice);
-    }, 400);
+    }, 350);
 
     return () => {
       clearTimeout(handler);
     };
   }, [minPrice, maxPrice]);
 
-  // Fetch filtered products
   useEffect(() => {
     let cancelled = false;
 
@@ -149,6 +193,7 @@ export function ProductCatalog() {
           limit: itemsPerPage,
           search: searchQuery,
           category: activeCategory,
+          subcategory: activeSubCategory || undefined,
           minPrice: userTouchedPrice && typeof debouncedMinPrice === "number" ? debouncedMinPrice : undefined,
           maxPrice: userTouchedPrice && typeof debouncedMaxPrice === "number" ? debouncedMaxPrice : undefined,
           brand: selectedBrand,
@@ -183,7 +228,7 @@ export function ProductCatalog() {
     return () => {
       cancelled = true;
     };
-  }, [activeCategory, searchQuery, debouncedMinPrice, debouncedMaxPrice, userTouchedPrice, selectedBrand, selectedSchoolLevel, sortBy, currentPage]);
+  }, [activeCategory, activeSubCategory, searchQuery, debouncedMinPrice, debouncedMaxPrice, userTouchedPrice, selectedBrand, selectedSchoolLevel, sortBy, currentPage]);
 
   const gotoPage = (p: number) => {
     if (p < 1 || p > totalPages) return;
@@ -194,13 +239,28 @@ export function ProductCatalog() {
   const handleResetFilters = () => {
     setUserTouchedPrice(false);
     setMinPrice("");
-    setMaxPrice(absoluteMax);
+    setMaxPrice(1000);
     setSortBy("default");
     setSelectedSchoolLevel("");
     setSelectedBrand("");
     setSearchQuery("");
     navigateTo("category", "");
   };
+
+  const handlePricePreset = (min: number | "", max: number) => {
+    setUserTouchedPrice(true);
+    setMinPrice(min);
+    setMaxPrice(max);
+  };
+
+  const hasActiveFilters = Boolean(
+    activeCategory ||
+    activeSubCategory ||
+    selectedBrand ||
+    selectedSchoolLevel ||
+    userTouchedPrice ||
+    searchQuery
+  );
 
   return (
     <div className="page-section catalog-container">
@@ -209,7 +269,7 @@ export function ProductCatalog() {
         description={`Découvrez nos fournitures scolaires, sac à dos, trousses et papeterie dans la catégorie ${categoryTitle}.`}
       />
 
-      {/* Breadcrumb */}
+      {/* Breadcrumb Navigation */}
       <div className="breadcrumb">
         <span
           className="breadcrumb-link"
@@ -227,14 +287,13 @@ export function ProductCatalog() {
       </div>
 
       {/* Mobile Filter Toggle Button */}
-      <div className="mobile-filter-toggle-wrap" style={{ marginBottom: "1rem" }}>
+      <div className="mobile-filter-toggle-wrap">
         <button
-          className="btn-primary"
+          className="btn-primary mobile-filter-btn"
           onClick={() => setMobileFilterOpen(!mobileFilterOpen)}
-          style={{ display: "flex", alignItems: "center", gap: "0.5rem", width: "100%", justifyContent: "center", padding: "0.65rem 1rem" }}
         >
-          <Filter size={16} />
-          <span>{mobileFilterOpen ? "Fermer les filtres" : "Afficher les filtres"}</span>
+          <Filter size={17} />
+          <span>{mobileFilterOpen ? "Fermer les filtres" : `Filtrer les produits (${totalItems})`}</span>
         </button>
       </div>
 
@@ -243,13 +302,6 @@ export function ProductCatalog() {
         <div
           className="mobile-filter-backdrop"
           onClick={() => setMobileFilterOpen(false)}
-          style={{
-            position: "fixed",
-            inset: 0,
-            background: "rgba(0, 0, 0, 0.5)",
-            backdropFilter: "blur(3px)",
-            zIndex: 140,
-          }}
         />
       )}
 
@@ -257,224 +309,300 @@ export function ProductCatalog() {
         {/* Sidebar Filters */}
         <aside className={`catalog-sidebar${mobileFilterOpen ? " mobile-open" : ""}`}>
           <div className="filter-card">
-            <div className="filter-header" style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-              <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
-                <Sliders size={16} />
-                <span>Filtres</span>
+            <div className="filter-header">
+              <div className="flex items-center gap-2 font-bold text-primary">
+                <Sliders size={18} />
+                <span>Filtrer par critères</span>
               </div>
+              {hasActiveFilters && (
+                <button onClick={handleResetFilters} className="text-xs font-semibold text-rose-600 hover:underline">
+                  Réinitialiser
+                </button>
+              )}
               {mobileFilterOpen && (
                 <button
                   onClick={() => setMobileFilterOpen(false)}
-                  style={{ background: "none", border: "none", cursor: "pointer", color: "var(--c-text-muted)" }}
+                  className="mobile-filter-close"
+                  aria-label="Fermer"
                 >
                   <X size={18} />
                 </button>
               )}
             </div>
 
-            {/* Category list */}
+            {/* Price Presets */}
             <div className="filter-group">
-              <h4 className="filter-group-title">Catégories</h4>
-              <ul className="filter-category-list">
-                <li>
-                  <button
-                    onClick={() => {
-                      setSearchQuery("");
-                      navigateTo("category", "");
-                    }}
-                    className={`filter-category-btn${!activeCategory && !searchQuery ? " active" : ""}`}
-                  >
-                    Tous les produits
-                  </button>
-                </li>
-                {categories.map((cat) => (
-                  <li key={cat}>
-                    <button
-                      onClick={() => {
-                        setSearchQuery("");
-                        navigateTo("category", cat);
-                        setMobileFilterOpen(false);
-                      }}
-                      className={`filter-category-btn${activeCategory === cat && !searchQuery ? " active" : ""}`}
-                    >
-                      {cat}
-                    </button>
-                  </li>
-                ))}
-              </ul>
-            </div>
+              <h4 className="filter-group-title">Tranche de Prix (DT)</h4>
+              <div className="price-presets-grid">
+                <button
+                  type="button"
+                  className={`price-preset-chip${userTouchedPrice && minPrice === "" && maxPrice === 20 ? " active" : ""}`}
+                  onClick={() => handlePricePreset("", 20)}
+                >
+                  &lt; 20 DT
+                </button>
+                <button
+                  type="button"
+                  className={`price-preset-chip${userTouchedPrice && minPrice === 20 && maxPrice === 50 ? " active" : ""}`}
+                  onClick={() => handlePricePreset(20, 50)}
+                >
+                  20 - 50 DT
+                </button>
+                <button
+                  type="button"
+                  className={`price-preset-chip${userTouchedPrice && minPrice === 50 && maxPrice === 100 ? " active" : ""}`}
+                  onClick={() => handlePricePreset(50, 100)}
+                >
+                  50 - 100 DT
+                </button>
+                <button
+                  type="button"
+                  className={`price-preset-chip${userTouchedPrice && minPrice === 100 ? " active" : ""}`}
+                  onClick={() => handlePricePreset(100, 1000)}
+                >
+                  &gt; 100 DT
+                </button>
+              </div>
 
-            {/* Price Filter */}
-            <div className="filter-group">
-              <h4 className="filter-group-title">Filtre par Prix (DT)</h4>
-              <div className="price-slider-wrap" style={{ display: "flex", flexDirection: "column", gap: "0.6rem" }}>
-                <input
-                  type="range"
-                  min="0"
-                  max={absoluteMax || 500}
-                  value={typeof maxPrice === "number" ? maxPrice : absoluteMax}
-                  onChange={(e) => {
-                    setUserTouchedPrice(true);
-                    setMaxPrice(Number(e.target.value));
-                  }}
-                  className="price-slider"
-                />
-                <div style={{ display: "flex", gap: "0.4rem", alignItems: "center" }}>
+              <div className="filter-price-inputs">
+                <div className="price-input-field">
+                  <span className="price-input-prefix">Min</span>
                   <input
                     type="number"
-                    placeholder="Min"
-                    min="0"
+                    placeholder="0"
                     value={minPrice}
                     onChange={(e) => {
                       setUserTouchedPrice(true);
                       setMinPrice(e.target.value === "" ? "" : Number(e.target.value));
                     }}
-                    style={{
-                      width: "50%",
-                      padding: "0.35rem 0.5rem",
-                      fontSize: "0.8rem",
-                      borderRadius: "var(--radius-md)",
-                      border: "1px solid var(--c-gray-200)",
-                    }}
+                    className="price-num-input"
                   />
-                  <span style={{ fontSize: "0.8rem", color: "var(--c-text-muted)" }}>-</span>
+                  <span className="price-input-unit">DT</span>
+                </div>
+                <span className="price-sep">–</span>
+                <div className="price-input-field">
+                  <span className="price-input-prefix">Max</span>
                   <input
                     type="number"
-                    placeholder="Max"
-                    min="0"
+                    placeholder={String(absoluteMax)}
                     value={maxPrice}
                     onChange={(e) => {
                       setUserTouchedPrice(true);
                       setMaxPrice(e.target.value === "" ? "" : Number(e.target.value));
                     }}
-                    style={{
-                      width: "50%",
-                      padding: "0.35rem 0.5rem",
-                      fontSize: "0.8rem",
-                      borderRadius: "var(--radius-md)",
-                      border: "1px solid var(--c-gray-200)",
-                    }}
+                    className="price-num-input"
                   />
-                </div>
-                <div className="price-slider-labels">
-                  <span>0 DT</span>
-                  <span className="price-current">{typeof maxPrice === "number" ? maxPrice : absoluteMax} DT</span>
-                  <span>{absoluteMax} DT</span>
+                  <span className="price-input-unit">DT</span>
                 </div>
               </div>
+            </div>
+
+            {/* Category list */}
+            <div className="filter-group">
+              <h4 className="filter-group-title">Catégories</h4>
+              <ul className="filter-list">
+                <li key="all">
+                  <button
+                    onClick={() => {
+                      navigateTo("category", "");
+                      if (mobileFilterOpen) setMobileFilterOpen(false);
+                    }}
+                    className={`filter-item-btn${!activeCategory ? " active" : ""}`}
+                  >
+                    <span>Tous les articles</span>
+                  </button>
+                </li>
+                {Object.keys(fullCategoriesMap).length > 0 ? (
+                  Object.keys(fullCategoriesMap).map((catName) => {
+                    const isCatActive = activeCategory === catName;
+                    const subList = fullCategoriesMap[catName] || [];
+
+                    return (
+                      <li key={catName}>
+                        <button
+                          onClick={() => {
+                            navigateTo("category", catName);
+                            if (mobileFilterOpen) setMobileFilterOpen(false);
+                          }}
+                          className={`filter-item-btn${isCatActive ? " active" : ""}`}
+                        >
+                          <span>{catName}</span>
+                        </button>
+
+                        {/* Subcategories list */}
+                        {isCatActive && subList.length > 0 && (
+                          <ul className="filter-sublist">
+                            {subList.map((sub) => {
+                              const isSubActive = activeSubCategory === sub;
+                              return (
+                                <li key={sub}>
+                                  <button
+                                    onClick={() => {
+                                      navigateToSubCategory(catName, sub);
+                                      if (mobileFilterOpen) setMobileFilterOpen(false);
+                                    }}
+                                    className={`filter-subitem-btn${isSubActive ? " active" : ""}`}
+                                  >
+                                    <span className="sub-bullet">•</span>
+                                    <span>{sub}</span>
+                                  </button>
+                                </li>
+                              );
+                            })}
+                          </ul>
+                        )}
+                      </li>
+                    );
+                  })
+                ) : (
+                  categories.map((c) => (
+                    <li key={c}>
+                      <button
+                        onClick={() => {
+                          navigateTo("category", c);
+                          if (mobileFilterOpen) setMobileFilterOpen(false);
+                        }}
+                        className={`filter-item-btn${activeCategory === c ? " active" : ""}`}
+                      >
+                        <span>{c}</span>
+                      </button>
+                    </li>
+                  ))
+                )}
+              </ul>
             </div>
 
             {/* Brand Filter */}
             {brandsList.length > 0 && (
               <div className="filter-group">
-                <h4 className="filter-group-title">Marque</h4>
-                <select
-                  className="sort-select"
-                  value={selectedBrand}
-                  onChange={(e) => setSelectedBrand(e.target.value)}
-                  style={{ width: "100%", padding: "0.4rem 0.6rem", fontSize: "0.85rem" }}
-                >
-                  <option value="">Toutes les marques</option>
+                <h4 className="filter-group-title">Marques</h4>
+                <div className="filter-brands-scroll">
                   {brandsList.map((b) => (
-                    <option key={b._id || b.id} value={b.name}>
-                      {b.name}
-                    </option>
+                    <label key={b._id || b.id || b.name} className="filter-checkbox-row">
+                      <input
+                        type="radio"
+                        name="brandFilter"
+                        checked={selectedBrand === b.name}
+                        onChange={() => {
+                          setSelectedBrand(selectedBrand === b.name ? "" : b.name);
+                          if (mobileFilterOpen) setMobileFilterOpen(false);
+                        }}
+                        className="filter-radio"
+                      />
+                      <span className="filter-label-text">{b.name}</span>
+                    </label>
                   ))}
-                </select>
+                  {selectedBrand && (
+                    <button
+                      onClick={() => setSelectedBrand("")}
+                      className="text-xs text-primary font-semibold mt-2 hover:underline"
+                    >
+                      Effacer le filtre marque
+                    </button>
+                  )}
+                </div>
               </div>
             )}
 
-
-
-            <button
-              onClick={handleResetFilters}
-              className="btn-primary"
-              style={{ width: "100%", marginTop: "1rem", fontSize: "0.85rem", padding: "0.5rem" }}
-            >
-              Réinitialiser filtres
-            </button>
+            {/* School Level Filter */}
+            <div className="filter-group">
+              <h4 className="filter-group-title">Niveau Scolaire</h4>
+              <select
+                value={selectedSchoolLevel}
+                onChange={(e) => setSelectedSchoolLevel(e.target.value)}
+                className="filter-select-input"
+              >
+                <option value="">Tous les niveaux</option>
+                <option value="Maternelle">Maternelle</option>
+                <option value="Primaire">Primaire</option>
+                <option value="Collège">Collège</option>
+                <option value="Lycée">Lycée</option>
+                <option value="Universitaire">Universitaire</option>
+                <option value="Professionnel">Professionnel</option>
+              </select>
+            </div>
           </div>
         </aside>
 
-        {/* Main Content Grid */}
+        {/* Main Products Content */}
         <div className="catalog-main">
-          {/* Reference Horizontal Top Filter Bar */}
-          <div className="top-filter-bar">
-            <div className="filter-pills-left">
-              <span className="filter-by-label">Filtrer par :</span>
-
-              {/* Categories */}
-              <div className="filter-pill-dropdown">
-                <select
-                  value={activeCategory}
-                  onChange={(e) => {
-                    setSearchQuery("");
-                    navigateTo("category", e.target.value);
-                  }}
-                  className="filter-pill-select"
-                >
-                  <option value="">Tous les produits</option>
-                  {categories.map((cat) => (
-                    <option key={cat} value={cat}>
-                      {cat}
-                    </option>
-                  ))}
-                </select>
-                <ChevronDown size={14} className="pill-icon" />
-              </div>
-
-              {/* Brands */}
-              {brandsList.length > 0 && (
-                <div className="filter-pill-dropdown">
-                  <select
-                    value={selectedBrand}
-                    onChange={(e) => setSelectedBrand(e.target.value)}
-                    className="filter-pill-select"
-                  >
-                    <option value="">Marque</option>
-                    {brandsList.map((b) => (
-                      <option key={b._id || b.id} value={b.name}>
-                        {b.name}
-                      </option>
-                    ))}
-                  </select>
-                  <ChevronDown size={14} className="pill-icon" />
-                </div>
-              )}
-
-              {/* Result Count */}
-              <span className="filter-results-count">{totalItems} résultats</span>
-
-              {(activeCategory || selectedBrand || searchQuery) && (
-                <button onClick={handleResetFilters} className="clear-filters-btn">
-                  Réinitialiser
-                </button>
-              )}
+          {/* Top Control Bar with Search feedback and Sort */}
+          <div className="catalog-toolbar">
+            <div className="catalog-toolbar-left">
+              <h1 className="catalog-heading-title">{categoryTitle}</h1>
+              <span className="catalog-count-pill">{totalItems} articles disponibles</span>
             </div>
 
-            {/* Sort Dropdown */}
-            <div className="filter-sort-right">
-              <span className="sort-by-label">Trier par</span>
-              <div className="sort-pill-dropdown">
-                <select value={sortBy} onChange={(e) => setSortBy(e.target.value)} className="sort-pill-select">
-                  <option value="default">Alphabétique (par défaut)</option>
+            <div className="catalog-toolbar-right">
+              <span className="sort-label">Trier par :</span>
+              <div className="sort-dropdown-wrap">
+                <select
+                  value={sortBy}
+                  onChange={(e) => setSortBy(e.target.value)}
+                  className="sort-dropdown-select"
+                >
+                  <option value="default">Recommandés / Défaut</option>
                   <option value="price-asc">Prix : croissant</option>
                   <option value="price-desc">Prix : décroissant</option>
-                  <option value="rating">Mieux notés</option>
+                  <option value="rating">Meilleurs avis ⭐</option>
                 </select>
-                <ChevronDown size={14} className="pill-icon" />
+                <ChevronDown size={14} className="sort-dropdown-icon" />
               </div>
             </div>
           </div>
 
+          {/* Active Filter Pills Bar */}
+          {hasActiveFilters && (
+            <div className="active-filters-bar">
+              <span className="active-filter-label">Filtres actifs :</span>
+              {activeCategory && (
+                <span className="filter-chip">
+                  Catégorie : {activeCategory}
+                  <button onClick={() => navigateTo("category", "")}><X size={12} /></button>
+                </span>
+              )}
+              {activeSubCategory && (
+                <span className="filter-chip">
+                  Rayon : {activeSubCategory}
+                  <button onClick={() => navigateTo("category", activeCategory)}><X size={12} /></button>
+                </span>
+              )}
+              {selectedBrand && (
+                <span className="filter-chip">
+                  Marque : {selectedBrand}
+                  <button onClick={() => setSelectedBrand("")}><X size={12} /></button>
+                </span>
+              )}
+              {selectedSchoolLevel && (
+                <span className="filter-chip">
+                  Niveau : {selectedSchoolLevel}
+                  <button onClick={() => setSelectedSchoolLevel("")}><X size={12} /></button>
+                </span>
+              )}
+              {userTouchedPrice && (
+                <span className="filter-chip">
+                  Prix : {minPrice || 0} - {maxPrice} DT
+                  <button onClick={() => { setUserTouchedPrice(false); setMinPrice(""); setMaxPrice(absoluteMax); }}><X size={12} /></button>
+                </span>
+              )}
+              {searchQuery && (
+                <span className="filter-chip">
+                  Recherche : "{searchQuery}"
+                  <button onClick={() => setSearchQuery("")}><X size={12} /></button>
+                </span>
+              )}
+              <button onClick={handleResetFilters} className="clear-all-filters-btn">
+                Tout effacer
+              </button>
+            </div>
+          )}
+
+          {/* Products Grid */}
           {loading ? (
-            <div className="catalog-loading" style={{ textAlign: "center", padding: "4rem" }}>
-              <RefreshCw
-                size={40}
-                className="spin-icon"
-                style={{ animation: "spin 1s linear infinite", color: "var(--c-primary)" }}
-              />
-              <p style={{ marginTop: "1rem", color: "var(--c-text-muted)" }}>Chargement des produits...</p>
+            <div className="catalog-grid">
+              {Array.from({ length: itemsPerPage }).map((_, i) => (
+                <div key={i} className="ref-card-skeleton animate-pulse" />
+              ))}
             </div>
           ) : products.length > 0 ? (
             <>
@@ -484,93 +612,74 @@ export function ProductCatalog() {
                 ))}
               </div>
 
-              {/* Pagination */}
+              {/* Pagination Controls */}
               {totalPages > 1 && (
-                <div className="catalog-pagination" style={{ display: "flex", justifyContent: "center", marginTop: "2rem", gap: ".5rem" }}>
-                  <button className="pagination-btn" onClick={() => gotoPage(currentPage - 1)} disabled={currentPage === 1}>
-                    Préc.
-                  </button>
-                  {(() => {
-                    const siblingCount = 1;
-                    const totalPageNumbers = siblingCount * 2 + 5;
-                    if (totalPages <= totalPageNumbers) {
-                      return Array.from({ length: totalPages }).map((_, i) => {
+                <div className="catalog-pagination-wrap">
+                  <div className="catalog-pagination">
+                    <button
+                      className="pagination-btn pagination-prev"
+                      onClick={() => gotoPage(currentPage - 1)}
+                      disabled={currentPage === 1}
+                      title="Page précédente"
+                    >
+                      <ChevronLeft size={16} />
+                      <span className="pagination-text">Précédent</span>
+                    </button>
+
+                    <div className="pagination-numbers">
+                      {Array.from({ length: totalPages }).map((_, i) => {
                         const p = i + 1;
-                        return (
-                          <button
-                            key={p}
-                            className={`pagination-btn${p === currentPage ? " active" : ""}`}
-                            onClick={() => gotoPage(p)}
-                            aria-current={p === currentPage ? "page" : undefined}
-                          >
-                            {p}
-                          </button>
-                        );
-                      });
-                    }
-                    const leftSiblingIndex = Math.max(currentPage - siblingCount, 1);
-                    const rightSiblingIndex = Math.min(currentPage + siblingCount, totalPages);
-                    const shouldShowLeftDots = leftSiblingIndex > 2;
-                    const shouldShowRightDots = rightSiblingIndex < totalPages - 2;
+                        // Window around current page
+                        if (
+                          p === 1 ||
+                          p === totalPages ||
+                          (p >= currentPage - 2 && p <= currentPage + 2)
+                        ) {
+                          return (
+                            <button
+                              key={p}
+                              className={`pagination-btn${p === currentPage ? " active" : ""}`}
+                              onClick={() => gotoPage(p)}
+                              aria-current={p === currentPage ? "page" : undefined}
+                            >
+                              {p}
+                            </button>
+                          );
+                        }
+                        if (p === currentPage - 3 || p === currentPage + 3) {
+                          return <span key={p} className="pagination-dots">...</span>;
+                        }
+                        return null;
+                      })}
+                    </div>
 
-                    if (!shouldShowLeftDots && shouldShowRightDots) {
-                      const leftItemCount = 3 + 2 * siblingCount;
-                      const leftRange = Array.from({ length: leftItemCount }, (_, i) => i + 1);
-                      return (
-                        <>
-                          {leftRange.map(p => (
-                            <button key={p} className={`pagination-btn${p === currentPage ? " active" : ""}`} onClick={() => gotoPage(p)}>{p}</button>
-                          ))}
-                          <span style={{ padding: '6px 10px', fontSize: '0.85rem' }}>...</span>
-                          <button className="pagination-btn" onClick={() => gotoPage(totalPages)}>{totalPages}</button>
-                        </>
-                      );
-                    }
-
-                    if (shouldShowLeftDots && !shouldShowRightDots) {
-                      const rightItemCount = 3 + 2 * siblingCount;
-                      const rightRange = Array.from({ length: rightItemCount }, (_, i) => totalPages - rightItemCount + 1 + i);
-                      return (
-                        <>
-                          <button className="pagination-btn" onClick={() => gotoPage(1)}>1</button>
-                          <span style={{ padding: '6px 10px', fontSize: '0.85rem' }}>...</span>
-                          {rightRange.map(p => (
-                            <button key={p} className={`pagination-btn${p === currentPage ? " active" : ""}`} onClick={() => gotoPage(p)}>{p}</button>
-                          ))}
-                        </>
-                      );
-                    }
-
-                    const middleRange = Array.from({ length: rightSiblingIndex - leftSiblingIndex + 1 }, (_, i) => leftSiblingIndex + i);
-                    return (
-                      <>
-                        <button className="pagination-btn" onClick={() => gotoPage(1)}>1</button>
-                        <span style={{ padding: '6px 10px', fontSize: '0.85rem' }}>...</span>
-                        {middleRange.map(p => (
-                          <button key={p} className={`pagination-btn${p === currentPage ? " active" : ""}`} onClick={() => gotoPage(p)}>{p}</button>
-                        ))}
-                        <span style={{ padding: '6px 10px', fontSize: '0.85rem' }}>...</span>
-                        <button className="pagination-btn" onClick={() => gotoPage(totalPages)}>{totalPages}</button>
-                      </>
-                    );
-                  })()}
-                  <button className="pagination-btn" onClick={() => gotoPage(currentPage + 1)} disabled={currentPage === totalPages}>
-                    Suiv.
-                  </button>
+                    <button
+                      className="pagination-btn pagination-next"
+                      onClick={() => gotoPage(currentPage + 1)}
+                      disabled={currentPage === totalPages}
+                      title="Page suivante"
+                    >
+                      <span className="pagination-text">Suivant</span>
+                      <ChevronRight size={16} />
+                    </button>
+                  </div>
                 </div>
               )}
             </>
           ) : (
-            <div className="catalog-empty">
-              <RefreshCw size={40} className="empty-icon" />
-              <h3>Aucun produit trouvé</h3>
-              <p>Essayez de réinitialiser vos filtres pour voir tous les articles disponibles.</p>
+            <div className="catalog-empty-card">
+              <div className="catalog-empty-icon-wrap">
+                <RefreshCw size={36} className="text-primary animate-spin" style={{ animationDuration: "12s" }} />
+              </div>
+              <h3 className="catalog-empty-title">Aucun article ne correspond à votre recherche</h3>
+              <p className="catalog-empty-desc">
+                Essayez de modifier vos filtres ou de chercher avec des termes plus généraux.
+              </p>
               <button
                 onClick={handleResetFilters}
-                className="btn-primary"
-                style={{ marginTop: "1rem" }}
+                className="btn-primary catalog-empty-reset-btn"
               >
-                Réinitialiser les filtres
+                Réinitialiser tous les filtres
               </button>
             </div>
           )}

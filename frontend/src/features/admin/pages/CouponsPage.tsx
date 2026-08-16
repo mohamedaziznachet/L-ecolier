@@ -2,7 +2,7 @@ import React, { useState, useEffect, useMemo } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchCoupons, createCoupon, editCoupon, removeCoupon } from '../../../store/couponsSlice';
 import { RootState, AppDispatch } from '../../../store';
-import { Search, Plus, Edit2, Trash2, X, Tag } from 'lucide-react';
+import { Search, Plus, Edit2, Trash2, X, Tag, Layers } from 'lucide-react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
@@ -10,6 +10,7 @@ import { useToast } from '../components/Toast';
 import { ConfirmDialog } from '../components/ConfirmDialog';
 import { Pagination } from '../components/Pagination';
 import { SkeletonLoader } from '../components/SkeletonLoader';
+import { getCategories } from '../../../services/api';
 
 const couponSchema = z.object({
   code: z.string().min(3, 'Le code doit contenir au moins 3 caractères').toUpperCase(),
@@ -27,6 +28,8 @@ export const CouponsPage: React.FC = () => {
   const [search, setSearch] = useState('');
   const [modalOpen, setModalOpen] = useState(false);
   const [editId, setEditId] = useState<string | null>(null);
+  const [allCategories, setAllCategories] = useState<string[]>([]);
+  const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
   
   const [deleteConfirmOpen, setDeleteConfirmOpen] = useState(false);
   const [couponToDelete, setCouponToDelete] = useState<string | null>(null);
@@ -47,6 +50,7 @@ export const CouponsPage: React.FC = () => {
 
   useEffect(() => {
     dispatch(fetchCoupons());
+    getCategories().then(setAllCategories);
   }, [dispatch]);
 
   const filtered = useMemo(() => {
@@ -62,6 +66,7 @@ export const CouponsPage: React.FC = () => {
 
   const openAdd = () => {
     setEditId(null);
+    setSelectedCategories([]);
     reset({
       code: '',
       discountType: 'percentage',
@@ -75,6 +80,7 @@ export const CouponsPage: React.FC = () => {
 
   const openEdit = (coupon: any) => {
     setEditId(coupon._id || coupon.id);
+    setSelectedCategories(coupon.applicableCategories || []);
     reset({
       code: coupon.code,
       discountType: coupon.discountType,
@@ -86,13 +92,23 @@ export const CouponsPage: React.FC = () => {
     setModalOpen(true);
   };
 
+  const toggleCategory = (cat: string) => {
+    setSelectedCategories(prev =>
+      prev.includes(cat) ? prev.filter(c => c !== cat) : [...prev, cat]
+    );
+  };
+
   const onSubmit = async (values: any) => {
     try {
+      const payload = {
+        ...values,
+        applicableCategories: selectedCategories,
+      };
       if (editId) {
-        await dispatch(editCoupon({ id: editId, data: values })).unwrap();
+        await dispatch(editCoupon({ id: editId, data: payload })).unwrap();
         showToast('Code promo mis à jour avec succès', 'success');
       } else {
-        await dispatch(createCoupon(values)).unwrap();
+        await dispatch(createCoupon(payload)).unwrap();
         showToast('Code promo créé avec succès', 'success');
       }
       setModalOpen(false);
@@ -159,6 +175,7 @@ export const CouponsPage: React.FC = () => {
                   <th>Type de Remise</th>
                   <th>Valeur</th>
                   <th>Achat Min.</th>
+                  <th>Catégories d'application</th>
                   <th>Date d'expiration</th>
                   <th>Statut</th>
                   <th>Actions</th>
@@ -167,6 +184,7 @@ export const CouponsPage: React.FC = () => {
               <tbody>
                 {paginatedItems.map(c => {
                   const expired = isExpired(c.expiresAt);
+                  const cats = c.applicableCategories || [];
                   return (
                     <tr key={c._id || c.id}>
                       <td style={{ fontWeight: 600, color: 'var(--a-text-bright)' }}>
@@ -182,6 +200,21 @@ export const CouponsPage: React.FC = () => {
                         {c.discountValue} {c.discountType === 'percentage' ? '%' : 'DT'}
                       </td>
                       <td>{c.minOrderAmount ? `${c.minOrderAmount} DT` : 'Aucun'}</td>
+                      <td>
+                        {cats.length === 0 ? (
+                          <span className="a-badge" style={{ background: 'rgba(59, 130, 246, 0.1)', color: '#3b82f6' }}>
+                            Toutes les catégories
+                          </span>
+                        ) : (
+                          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 4, maxWidth: 200 }}>
+                            {cats.map((cat, idx) => (
+                              <span key={idx} className="a-badge" style={{ background: 'rgba(16, 185, 129, 0.1)', color: '#10b981', fontSize: '0.72rem' }}>
+                                {cat}
+                              </span>
+                            ))}
+                          </div>
+                        )}
+                      </td>
                       <td>
                         <span style={{ color: expired ? '#ef4444' : 'inherit' }}>
                           {new Date(c.expiresAt).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' })}
@@ -208,7 +241,7 @@ export const CouponsPage: React.FC = () => {
                 })}
                 {filtered.length === 0 && (
                   <tr>
-                    <td colSpan={7}>
+                    <td colSpan={8}>
                       <div className="a-empty">
                         <div className="a-empty-icon">🏷️</div>
                         <div className="a-empty-text">Aucun code promo trouvé</div>
@@ -231,7 +264,7 @@ export const CouponsPage: React.FC = () => {
       {/* Modal Dialog */}
       {modalOpen && (
         <div className="a-modal-overlay" onClick={() => setModalOpen(false)}>
-          <div className="a-modal" onClick={e => e.stopPropagation()} style={{ maxWidth: '480px' }}>
+          <div className="a-modal" onClick={e => e.stopPropagation()} style={{ maxWidth: '520px' }}>
             <div className="a-modal-header">
               <span className="a-modal-title">{editId ? '✏️ Modifier le Code Promo' : '✨ Nouveau Code Promo'}</span>
               <button className="a-modal-close" onClick={() => setModalOpen(false)}><X size={18} /></button>
@@ -270,6 +303,30 @@ export const CouponsPage: React.FC = () => {
                     <label>Date d'expiration</label>
                     <input type="date" className="a-input" {...register('expiresAt')} />
                     {errors.expiresAt && <span className="a-error">{errors.expiresAt.message}</span>}
+                  </div>
+                </div>
+
+                <div className="a-field">
+                  <label style={{ display: 'flex', alignItems: 'center', gap: 6, fontWeight: 600 }}>
+                    <Layers size={15} style={{ color: 'var(--a-accent)' }} /> Catégories éligibles
+                  </label>
+                  <div style={{ fontSize: '0.8rem', color: '#888', marginBottom: 6 }}>
+                    Sélectionnez les catégories auxquelles s'applique la réduction (si aucune n'est sélectionnée, le coupon s'applique à <strong>toutes les catégories</strong>).
+                  </div>
+                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, maxHeight: 150, overflowY: 'auto', padding: 8, background: 'rgba(255, 255, 255, 0.05)', borderRadius: 6, border: '1px solid rgba(255, 255, 255, 0.1)' }}>
+                    {allCategories.map(cat => {
+                      const isChecked = selectedCategories.includes(cat);
+                      return (
+                        <label key={cat} style={{ display: 'flex', alignItems: 'center', gap: 6, cursor: 'pointer', padding: '4px 8px', borderRadius: 4, background: isChecked ? 'rgba(59, 130, 246, 0.2)' : 'transparent', fontSize: '0.85rem' }}>
+                          <input
+                            type="checkbox"
+                            checked={isChecked}
+                            onChange={() => toggleCategory(cat)}
+                          />
+                          <span>{cat}</span>
+                        </label>
+                      );
+                    })}
                   </div>
                 </div>
 

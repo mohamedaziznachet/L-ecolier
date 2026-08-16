@@ -391,7 +391,7 @@ router.put('/profile', authenticate, [
     if (governorate !== undefined) updates.governorate = governorate;
     if (postalCode !== undefined) updates.postalCode = postalCode;
 
-    const updatedUser = await UserModel.findByIdAndUpdate(requester.userId, { $set: updates }, { new: true }).lean();
+    const updatedUser = await UserModel.findByIdAndUpdate(requester.userId, { $set: updates }, { returnDocument: 'after' }).lean();
     if (!updatedUser) return res.status(404).json({ error: 'Utilisateur introuvable.' });
 
     return res.json({

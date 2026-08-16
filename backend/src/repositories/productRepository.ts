@@ -202,7 +202,7 @@ export async function updateProduct(identifier: string | number, updates: any): 
   const updated = await ProductModel.findOneAndUpdate(
     query,
     { $set: payload },
-    { new: true, runValidators: true }
+    { returnDocument: 'after', runValidators: true }
   );
   return updated ? normalizeProduct(updated) : null;
 }
