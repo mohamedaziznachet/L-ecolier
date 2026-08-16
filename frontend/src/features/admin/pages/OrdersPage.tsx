@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useAdmin } from '../../../context/AdminContext';
-import { Search, Eye, Trash2, X, Printer } from 'lucide-react';
+import { Search, Eye, Trash2, X } from 'lucide-react';
 import { useToast } from '../components/Toast';
 import { ConfirmDialog } from '../components/ConfirmDialog';
 import { Pagination } from '../components/Pagination';
@@ -51,13 +51,6 @@ export const OrdersPage: React.FC = () => {
   const openOrderDetails = (order: any) => {
     setSelectedOrder(order);
     setDetailsModalOpen(true);
-  };
-
-  const handlePrintOrder = (order: any) => {
-    setSelectedOrder(order);
-    setTimeout(() => {
-      window.print();
-    }, 150);
   };
 
   const triggerDelete = (id: string) => {
@@ -231,14 +224,11 @@ export const OrdersPage: React.FC = () => {
                     </select>
                   </td>
                   <td>
-                    <div style={{ display: 'flex', gap: 6 }}>
-                      <button className="a-btn a-btn-ghost a-btn-sm" title="Voir les détails" onClick={() => openOrderDetails(o)}>
+                    <div style={{ display: 'flex', gap: 8 }}>
+                      <button className="a-btn a-btn-ghost a-btn-sm" onClick={() => openOrderDetails(o)}>
                         <Eye size={13} />
                       </button>
-                      <button className="a-btn a-btn-ghost a-btn-sm" title="Imprimer Bon de Livraison" onClick={() => handlePrintOrder(o)}>
-                        <Printer size={13} />
-                      </button>
-                      <button className="a-btn a-btn-danger a-btn-sm" title="Supprimer la commande" onClick={() => triggerDelete(o.id)}>
+                      <button className="a-btn a-btn-danger a-btn-sm" onClick={() => triggerDelete(o.id)}>
                         <Trash2 size={13} />
                       </button>
                     </div>
@@ -390,14 +380,7 @@ export const OrdersPage: React.FC = () => {
                   </select>
                 </div>
 
-                <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-                  <button 
-                    className="a-btn" 
-                    onClick={() => handlePrintOrder(selectedOrder)}
-                    style={{ background: '#0d2b6b', color: '#fff', display: 'flex', alignItems: 'center', gap: 6, fontWeight: 700, padding: '6px 14px' }}
-                  >
-                    <Printer size={15} /> Imprimer Bon de Livraison
-                  </button>
+                <div>
                   <button className="a-btn a-btn-ghost" onClick={() => setDetailsModalOpen(false)}>Fermer</button>
                 </div>
               </div>
@@ -419,126 +402,6 @@ export const OrdersPage: React.FC = () => {
       />
 
       {ToastComponent}
-
-      {/* PRINTABLE RECEIPT (Hidden on screen, rendered only during window.print()) */}
-      {selectedOrder && (
-        <div className="printable-receipt">
-          <div className="receipt-header">
-            <div className="receipt-brand">
-              <h1>LIBRAIRIE L'ÉCOLIER</h1>
-              <p>Bomi Store • Papeterie & Fournitures Scolaires</p>
-              <p>Tél: +216 58 982 121 | contact@lecolier.tn | L'Aouina, Tunis</p>
-            </div>
-            <div className="receipt-title-box">
-              <h2>BON DE LIVRAISON</h2>
-              <div className="receipt-order-id">N° #{(selectedOrder.id || 'N/A').toString().slice(-8).toUpperCase()}</div>
-              <div className="receipt-date">
-                {new Date(selectedOrder.date).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric', hour: '2-digit', minute: '2-digit' })}
-              </div>
-            </div>
-          </div>
-
-          <div className="receipt-info-grid">
-            <div className="receipt-info-box">
-              <h3>INFORMATIONS CLIENT</h3>
-              <p><strong>Nom & Prénom:</strong> {selectedOrder.customerName || 'Client'}</p>
-              <p><strong>Téléphone:</strong> {selectedOrder.customerPhone || 'N/A'}</p>
-              <p><strong>Email / ID:</strong> {selectedOrder.customerEmail || selectedOrder.userId || 'N/A'}</p>
-            </div>
-            <div className="receipt-info-box">
-              <h3>ADRESSE DE LIVRAISON</h3>
-              <p><strong>Adresse:</strong> {selectedOrder.customerAddress || 'N/A'}</p>
-              <p><strong>Gouvernorat:</strong> {selectedOrder.customerGovernorate || ''}</p>
-              <p><strong>Paiement:</strong> {selectedOrder.paymentMethod || 'Espèces à la livraison (COD)'}</p>
-            </div>
-          </div>
-
-          {selectedOrder.deliveryNotes && (
-            <div className="receipt-notes">
-              <strong>Instructions de livraison:</strong> {selectedOrder.deliveryNotes}
-            </div>
-          )}
-
-          <table className="receipt-table">
-            <thead>
-              <tr>
-                <th style={{ textAlign: 'left' }}>Article</th>
-                <th className="text-center">Quantité</th>
-                <th className="text-right">Prix Unitaire</th>
-                <th className="text-right">Total HT</th>
-              </tr>
-            </thead>
-            <tbody>
-              {getOrderProducts(selectedOrder.productIds, selectedOrder.items).map((item: any, idx: number) => {
-                const price = item?.unitPrice || item?.price || 0;
-                const qty = item?.quantity || 1;
-                const itemTotal = price * qty;
-                return (
-                  <tr key={idx}>
-                    <td>
-                      <strong>{item?.name || 'Produit'}</strong>
-                      {item?.selectedOptions && Object.keys(item.selectedOptions).length > 0 && (
-                        <div style={{ fontSize: '10px', color: '#64748b', marginTop: '2px' }}>
-                          {Object.entries(item.selectedOptions).map(([k, v]) => `${k}: ${v}`).join(', ')}
-                        </div>
-                      )}
-                    </td>
-                    <td className="text-center">{qty}</td>
-                    <td className="text-right">{Number(price).toFixed(3)} DT</td>
-                    <td className="text-right">{Number(itemTotal).toFixed(3)} DT</td>
-                  </tr>
-                );
-              })}
-            </tbody>
-          </table>
-
-          <div className="receipt-summary">
-            <div className="receipt-summary-line">
-              <span>Sous-total articles:</span>
-              <span>
-                {Number(
-                  (selectedOrder.total || 0) -
-                  (selectedOrder.shippingFee ?? (selectedOrder.total >= 200 ? 0 : 8)) +
-                  (selectedOrder.discountAmount || 0)
-                ).toFixed(3)} DT
-              </span>
-            </div>
-            <div className="receipt-summary-line">
-              <span>Frais de livraison:</span>
-              <span>
-                {(selectedOrder.shippingFee ?? (selectedOrder.total >= 200 ? 0 : 8)) === 0
-                  ? 'GRATUIT'
-                  : `${Number(selectedOrder.shippingFee ?? 8).toFixed(3)} DT`}
-              </span>
-            </div>
-            {selectedOrder.discountAmount > 0 && (
-              <div className="receipt-summary-line" style={{ color: '#059669', fontWeight: 700 }}>
-                <span>Remise Code Promo:</span>
-                <span>-{Number(selectedOrder.discountAmount).toFixed(3)} DT</span>
-              </div>
-            )}
-            <div className="receipt-summary-total">
-              <span>TOTAL NET À PAYER:</span>
-              <span>{Number(selectedOrder.total || 0).toFixed(3)} DT</span>
-            </div>
-          </div>
-
-          <div className="receipt-footer">
-            <div className="signature-box">
-              <p>Cachet & Signature Librairie L'Écolier</p>
-              <div className="sig-space"></div>
-            </div>
-            <div className="signature-box">
-              <p>Signature Client (Réception)</p>
-              <div className="sig-space"></div>
-            </div>
-          </div>
-
-          <div className="receipt-bottom-note">
-            Merci pour votre confiance ! Librairie L'Écolier • Service Client: +216 58 982 121
-          </div>
-        </div>
-      )}
     </>
   );
 };

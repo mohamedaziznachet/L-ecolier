@@ -2,7 +2,7 @@ import React, { useState, useEffect, useMemo } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchBrands, createBrand, editBrand, removeBrand } from '../../../store/brandsSlice';
 import { RootState, AppDispatch } from '../../../store';
-import { Search, Plus, Edit2, Trash2, X, Image as ImageIcon, Upload } from 'lucide-react';
+import { Search, Plus, Edit2, Trash2, X, Image as ImageIcon } from 'lucide-react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
@@ -259,10 +259,9 @@ export const BrandsPage: React.FC = () => {
                   <label>Logo de la marque</label>
                   <div style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
                     <input className="a-input" placeholder="URL du logo" {...register('logo')} style={{ flex: 1 }} />
-                    <label className="a-btn a-btn-primary" style={{ cursor: 'pointer', padding: '8px 14px', whiteSpace: 'nowrap', display: 'inline-flex', alignItems: 'center', gap: 6 }}>
-                      <Upload size={14} />
+                    <label className="a-btn a-btn-ghost" style={{ cursor: 'pointer', padding: '8px 12px' }}>
                       <input type="file" accept="image/*" onChange={handleImageUpload} style={{ display: 'none' }} />
-                      {uploading ? '⏳ Chargement...' : '📤 Téléverser Logo'}
+                      {uploading ? '⏳' : '📤'}
                     </label>
                   </div>
                   {watchLogo && (

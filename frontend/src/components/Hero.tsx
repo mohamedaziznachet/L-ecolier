@@ -1,31 +1,30 @@
-import { ChevronRight, Sparkles, ShieldCheck, Truck, CreditCard, Award, ArrowRight } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 const videoBg = "/vd.mp4";
 import { useNavigation } from "../context/AppContext";
 import { useLayout } from "../context/LayoutContext";
 
 const DEFAULT_CATEGORIES = [
   { label: "Sacs à dos", icon: "🎒" },
-  { label: "Bomi", icon: "✨" },
-  { label: "Fournitures scolaire", icon: "📚" },
-  { label: "Stylos & Crayons", icon: "✏️" },
+  { label: "Fournitures scolaires", icon: "📚" },
+  { label: "Fournitures de bureau", icon: "🖊️" },
+  { label: "Stylos et crayons", icon: "✏️" },
   { label: "Calculatrices", icon: "🔢" },
   { label: "Papeterie", icon: "📄" },
-  { label: "Gourde & Thermos", icon: "🍶" },
-  { label: "Jeux Et Cadeaux", icon: "🎁" },
+  { label: "Accessoires", icon: "📐" },
 ];
 
 const DEFAULT_FEATURES = [
-  { icon: <Truck size={24} className="text-amber-400" />, title: "Livraison Rapide", desc: "Gratuite dès 200 DT" },
-  { icon: <CreditCard size={24} className="text-emerald-400" />, title: "Paiement à la Livraison", desc: "Paiement en espèces sécurisé" },
-  { icon: <Award size={24} className="text-blue-400" />, title: "Qualité Certifiée", desc: "100% Marques authentiques" },
-  { icon: <ShieldCheck size={24} className="text-indigo-400" />, title: "Service Client 7j/7", desc: "Accompagnement personnalisé" },
+  { icon: "🚚", title: "Livraison GRATUITE", desc: "Dès 200 DT d'achats" },
+  { icon: "💳", title: "Paiement à la livraison", desc: "Paiement sécurisé" },
+  { icon: "⭐", title: "Produits de qualité", desc: "Marques certifiées" },
+  { icon: "🏷️", title: "Meilleurs prix", desc: "Prix garantis" },
 ];
 
 const DEFAULT_HERO = {
-  badge: "Rentrée Scolaire 2026",
+  badge: "Rentrée 2026",
   titleMain: "LA RENTRÉE",
   titleAccent: "SCOLAIRE 2026",
-  description: "Préparez la rentrée avec les meilleures marques.\nCartables, fournitures et matériel de bureau aux meilleurs prix.",
+  description: "Tout ce qu'il faut pour\nréussir votre année !",
   ctaCategory: "Sacs à dos",
 };
 
@@ -50,22 +49,20 @@ export function Hero() {
   const description = hero.description ?? DEFAULT_HERO.description;
   const ctaCategory = hero.ctaCategory ?? DEFAULT_HERO.ctaCategory;
 
-  const heroBgImage = layout["hero_bg_image"] || hero.bgImage || "";
-
   return (
     <section className="hero-section">
       <div className="hero-layout">
 
-        {/* Categories Sidebar – desktop only */}
+        {/* Sidebar – desktop only */}
         <aside className="hero-sidebar">
           <div className="sidebar-card">
             <div className="sidebar-header">
-              <div className="flex items-center gap-2">
-                <Sparkles size={16} className="text-amber-300" />
-                <span className="sidebar-title">Rayons & Produits</span>
-              </div>
+              <svg width="16" height="16" fill="white" viewBox="0 0 24 24">
+                <path d="M3 12h18M3 6h18M3 18h18" />
+              </svg>
+              <span className="sidebar-title">Catégories</span>
             </div>
-            <ul className="sidebar-list">
+            <ul>
               {cats.map((cat: { label: string; icon?: string }) => (
                 <li key={cat.label}>
                   <a
@@ -77,7 +74,7 @@ export function Hero() {
                     className="sidebar-link"
                   >
                     <div className="sidebar-link-inner">
-                      <span className="sidebar-icon">{cat.icon || "📦"}</span>
+                      <span className="sidebar-icon">{cat.icon}</span>
                       <span className="sidebar-label">{cat.label}</span>
                     </div>
                     <ChevronRight size={14} className="sidebar-chevron" />
@@ -88,14 +85,14 @@ export function Hero() {
           </div>
         </aside>
 
-        {/* Main Banner Area */}
+        {/* Main banner + feature strip */}
         <div className="hero-main">
-          {/* Free Delivery Home Announcement Bar */}
+          {/* Free Delivery Home Bar */}
           <div className="free-delivery-home-bar">
-            <div className="flex items-center gap-2.5 flex-wrap">
+            <div className="flex items-center gap-2 flex-wrap">
               <span className="badge-offer">OFFRE SPÉCIALE</span>
               <span className="offer-text">
-                🚚 <strong>Livraison GRATUITE</strong> sur toutes vos commandes de <strong>200 DT</strong> et plus !
+                🚚 <strong>Livraison GRATUITE</strong> sur toutes les commandes de <strong>200 DT</strong> ou plus !
               </span>
             </div>
             <button
@@ -103,33 +100,21 @@ export function Hero() {
               className="offer-btn"
               onClick={() => navigateTo("category", ctaCategory)}
             >
-              <span>Découvrir l'offre</span>
-              <ArrowRight size={14} />
+              Profiter de l'offre &rarr;
             </button>
           </div>
 
-          {/* Hero Banner Visual Showcase */}
-          <div
-            className="hero-banner"
-            style={
-              heroBgImage
-                ? { backgroundImage: `url(${heroBgImage})`, backgroundSize: "cover", backgroundPosition: "center" }
-                : undefined
-            }
-          >
+          <div className="hero-banner">
             <div className="hero-deco-circle-1" />
             <div className="hero-deco-circle-2" />
 
             <div className="hero-content">
-              {!heroBgImage && (
-                <video src={videoBg} autoPlay loop muted playsInline className="hero-video" />
-              )}
+              <video src={videoBg} autoPlay loop muted playsInline className="hero-video" />
               <div className="hero-overlay" />
               <div className="hero-overlay-color" />
 
               <div className="hero-text">
                 <div className="hero-badge">
-                  <Sparkles size={14} className="text-amber-300 animate-spin" style={{ animationDuration: "6s" }} />
                   <span>{badge}</span>
                 </div>
 
@@ -146,47 +131,35 @@ export function Hero() {
 
                 <div className="hero-actions">
                   <button
-                    className="btn-primary hero-cta-btn"
+                    className="btn-primary"
                     onClick={() => navigateTo("category", ctaCategory)}
                   >
-                    <span>Explorer la collection</span>
-                    <ChevronRight size={18} />
+                    Découvrir maintenant
+                    <ChevronRight size={16} />
                   </button>
-                  <a
-                    href="https://wa.me/+21658982121"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn-whatsapp hero-wa-btn"
+                  <button
+                    className="btn-whatsapp"
+                    onClick={() => navigateTo("contact")}
                   >
                     {WA_SVG}
-                    <span>Commander via WhatsApp</span>
-                  </a>
+                    Contact
+                  </button>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Value Benefit Strip */}
+          {/* Feature strip */}
           <div className="feature-strip">
-            {feats.map((f: any, idx: number) => {
-              const iconNode = typeof f.icon === "string" ? (
-                <span className="feature-icon-text">{f.icon}</span>
-              ) : (
-                f.icon || <Award size={22} className="text-amber-400" />
-              );
-
-              return (
-                <div key={f.title || idx} className="feature-card">
-                  <div className="feature-icon-box">
-                    {iconNode}
-                  </div>
-                  <div className="feature-text-group">
-                    <p className="feature-title">{f.title}</p>
-                    <p className="feature-desc">{f.desc}</p>
-                  </div>
+            {feats.map((f: { icon: string; title: string; desc: string }) => (
+              <div key={f.title} className="feature-card">
+                <span className="feature-icon">{f.icon}</span>
+                <div>
+                  <p className="feature-title">{f.title}</p>
+                  <p className="feature-desc">{f.desc}</p>
                 </div>
-              );
-            })}
+              </div>
+            ))}
           </div>
         </div>
 
@@ -194,4 +167,3 @@ export function Hero() {
     </section>
   );
 }
-

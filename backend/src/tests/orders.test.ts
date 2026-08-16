@@ -85,7 +85,7 @@ describe('POST /api/orders — Successful order creation', () => {
 
     expect(res.status).toBe(201);
     expect(res.body.orderId).toBeDefined();
-    expect(res.body.total).toBe(23); // 5 * 3 = 15 DT + 8 DT shipping = 23 DT
+    expect(res.body.total).toBe(22); // 5 * 3 = 15 DT + 7 DT shipping = 22 DT
 
     // Verify item snapshot
     expect(res.body.items).toHaveLength(1);
@@ -142,8 +142,8 @@ describe('POST /api/orders — Item snapshot completeness', () => {
     expect(sac.quantity).toBe(1);
     expect(sac.subtotal).toBe(35);
 
-    // Total: 16 + 35 = 51 + 8 DT shipping = 59
-    expect(res.body.total).toBe(59);
+    // Total: 16 + 35 = 51 + 7 DT shipping = 58
+    expect(res.body.total).toBe(58);
   });
 });
 

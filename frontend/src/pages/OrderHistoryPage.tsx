@@ -2,8 +2,7 @@ import { useState, useEffect, useMemo } from "react";
 import { useNavigation } from "../context/AppContext";
 import { getOrdersForUser } from "../services/api";
 import { Order } from "../types";
-import { ArrowLeft, Clock, ShoppingBag, MapPin, Phone, CreditCard, Mail, Package, Search, AlertCircle, Printer, MessageCircle } from "lucide-react";
-import Seo from "../components/common/Seo";
+import { ArrowLeft, Clock, ShoppingBag, MapPin, Phone, CreditCard, Mail, Package, Search, AlertCircle } from "lucide-react";
 
 export function OrderHistoryPage() {
   const { navigateTo, user } = useNavigation();
@@ -66,12 +65,13 @@ export function OrderHistoryPage() {
     };
     const s = map[status.toLowerCase()] || map.pending;
     return (
-      <span className="order-badge" style={{ color: s.color, background: s.bg, border: `1px solid ${s.color}20` }}>
+      <span style={{ padding: "0.3rem 0.8rem", borderRadius: "8px", fontSize: "0.78rem", fontWeight: 700, color: s.color, background: s.bg, border: `1px solid ${s.color}20` }}>
         {s.label}
       </span>
     );
   };
 
+  // Clean, realistic step-by-step progress indicator
   const renderStatusTracker = (status = 'pending') => {
     const current = status.toLowerCase();
     const steps = [
@@ -83,7 +83,7 @@ export function OrderHistoryPage() {
 
     if (current === "cancelled" || current === "expired") {
       return (
-        <div className="bg-rose-50 border border-rose-200 rounded-xl p-3 text-rose-800 text-xs font-semibold flex items-center gap-2 mb-4">
+        <div style={{ background: "#fef2f2", border: "1px solid #fecaca", borderRadius: "10px", padding: "0.75rem 1rem", color: "#991b1b", fontSize: "0.85rem", fontWeight: 600, display: "flex", alignItems: "center", gap: "0.5rem", marginBottom: "1.5rem" }}>
           <AlertCircle size={16} /> Cette commande a été annulée.
         </div>
       );
@@ -95,35 +95,36 @@ export function OrderHistoryPage() {
     else if (current === "delivered") activeStepIndex = 3;
 
     return (
-      <div className="order-status-tracker-card mb-6">
-        <div className="order-status-tracker-title font-bold text-slate-800 text-sm mb-3">
-          Suivi de l'acheminement
+      <div style={{ background: "#f8fafc", borderRadius: "14px", border: "1px solid #e2e8f0", padding: "1.2rem 1.4rem", marginBottom: "1.5rem" }}>
+        <div style={{ fontSize: "0.8rem", fontWeight: 800, color: "#0f172a", textTransform: "uppercase", letterSpacing: "0.04em", marginBottom: "1rem" }}>
+          État de l'acheminement
         </div>
 
-        <div className="order-tracker-steps">
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "0.5rem" }}>
           {steps.map((step, idx) => {
             const isCompleted = idx <= activeStepIndex;
             const isCurrent = idx === activeStepIndex;
 
             return (
-              <div key={step.key} className="order-tracker-step-node">
-                <div 
-                  className="order-tracker-step-dot"
-                  style={{
-                    background: isCompleted ? (isCurrent ? "#0d2b6b" : "#16a34a") : "#ffffff",
-                    color: isCompleted ? "#ffffff" : "#94a3b8",
-                    border: isCompleted ? "none" : "1px solid #cbd5e1",
-                  }}
-                >
+              <div key={step.key} style={{ textAlign: "center" }}>
+                <div style={{
+                  width: "32px",
+                  height: "32px",
+                  borderRadius: "50%",
+                  margin: "0 auto 0.4rem auto",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  background: isCompleted ? (isCurrent ? "#0d2b6b" : "#16a34a") : "#ffffff",
+                  color: isCompleted ? "#ffffff" : "#94a3b8",
+                  border: isCompleted ? "none" : "1px solid #cbd5e1",
+                  fontWeight: 800,
+                  fontSize: "0.8rem",
+                  transition: "all 0.15s ease"
+                }}>
                   {isCompleted ? "✓" : idx + 1}
                 </div>
-                <div 
-                  className="order-tracker-step-lbl"
-                  style={{ 
-                    fontWeight: isCurrent ? 800 : 600, 
-                    color: isCompleted ? "#0f172a" : "#64748b" 
-                  }}
-                >
+                <div style={{ fontSize: "0.8rem", fontWeight: isCurrent ? 800 : 600, color: isCompleted ? "#0f172a" : "#64748b" }}>
                   {step.label}
                 </div>
               </div>
@@ -136,69 +137,58 @@ export function OrderHistoryPage() {
 
   if (loading) {
     return (
-      <div className="page-section min-h-[60vh] flex items-center justify-center">
-        <div className="animate-spin rounded-full h-10 w-10 border-t-2 border-b-2 border-primary"></div>
+      <div className="page-section" style={{ minHeight: "60vh", display: "flex", alignItems: "center", justifyContent: "center" }}>
+        <p style={{ color: "#64748b", fontWeight: 600 }}>Chargement de vos commandes...</p>
       </div>
     );
   }
 
   if (!user) {
     return (
-      <div className="page-section text-center py-16 min-h-[60vh]">
-        <div className="w-16 h-16 rounded-full bg-slate-100 flex items-center justify-center mx-auto mb-4">
-          <ShoppingBag size={32} className="text-slate-400" />
-        </div>
-        <h2 className="text-xl font-extrabold text-slate-800 mb-2">Espace réservé aux clients</h2>
-        <p className="text-slate-500 text-sm max-w-sm mx-auto mb-6">
-          Veuillez vous connecter pour accéder à l'historique et au suivi de vos commandes.
-        </p>
-        <button onClick={() => navigateTo("auth")} className="btn-primary">
-          Se connecter à mon compte
+      <div className="page-section" style={{ textAlign: "center", padding: "4rem 1rem", minHeight: "60vh" }}>
+        <ShoppingBag size={48} style={{ color: "#94a3b8", marginBottom: "1rem" }} />
+        <h2 style={{ color: "#0f172a", fontWeight: 800 }}>Connexion requise</h2>
+        <p style={{ color: "#64748b" }}>Veuillez vous connecter à votre compte pour consulter vos commandes.</p>
+        <button onClick={() => navigateTo("auth")} className="btn-primary" style={{ marginTop: "1rem", padding: "0.75rem 1.75rem", borderRadius: "9999px", fontWeight: 700 }}>
+          Se connecter
         </button>
       </div>
     );
   }
 
-  const orderIdShort = selectedOrder ? (selectedOrder.id || '').toString().slice(-8).toUpperCase() : '';
-  const supportWaUrl = `https://wa.me/+21658982121?text=${encodeURIComponent(`Bonjour, j'ai une question concernant ma commande #${orderIdShort}.`)}`;
-
   return (
     <div className="page-section" style={{ minHeight: "75vh", paddingBottom: "4rem" }}>
-      <Seo title="Mes Commandes – Librairie l'Écolier" />
       
       {/* Top Header */}
       <button 
         onClick={() => navigateTo("home")} 
-        className="btn-back mb-4"
+        style={{ display: "inline-flex", alignItems: "center", gap: "0.4rem", color: "#0d2b6b", fontWeight: 700, fontSize: "0.88rem", border: "none", background: "none", cursor: "pointer", marginBottom: "1.25rem" }}
       >
-        <ArrowLeft size={16} />
-        <span>Retour à l'accueil</span>
+        <ArrowLeft size={16} /> Retour à l'accueil
       </button>
 
       {/* Page Title */}
-      <div className="mb-6">
-        <h1 className="text-2xl sm:text-3xl font-extrabold text-primary m-0">Historique de Mes Commandes</h1>
-        <p className="text-slate-500 text-xs sm:text-sm mt-1">
-          Suivez l'acheminement de vos colis et consultez vos reçus d'achat.
+      <div style={{ marginBottom: "1.75rem" }}>
+        <h1 style={{ fontSize: "1.75rem", fontWeight: 900, color: "#0d2b6b", margin: 0 }}>Mes Commandes</h1>
+        <p style={{ color: "#64748b", fontSize: "0.88rem", marginTop: "0.25rem" }}>
+          Retrouvez l'historique et le détail de vos achats en toute simplicité.
         </p>
       </div>
 
       {orders.length === 0 ? (
-        <div className="bg-white rounded-3xl p-10 border border-slate-200 text-center max-w-lg mx-auto">
-          <div className="w-16 h-16 rounded-full bg-slate-100 flex items-center justify-center mx-auto mb-4">
-            <ShoppingBag size={32} className="text-slate-400" />
-          </div>
-          <h3 className="text-lg font-bold text-slate-800 mb-1">Aucune commande enregistrée</h3>
-          <p className="text-slate-500 text-xs sm:text-sm mb-6">Vous n'avez pas encore passé de commande avec ce compte.</p>
-          <button onClick={() => navigateTo("category", "")} className="btn-primary">
-            Découvrir la boutique
+        <div style={{ textAlign: "center", padding: "3.5rem 1.5rem", background: "#ffffff", borderRadius: "16px", border: "1px solid #e2e8f0" }}>
+          <ShoppingBag size={44} style={{ color: "#94a3b8", marginBottom: "0.75rem" }} />
+          <h3 style={{ color: "#0f172a", fontWeight: 800, margin: "0 0 0.35rem 0" }}>Aucune commande</h3>
+          <p style={{ color: "#64748b", fontSize: "0.88rem", marginBottom: "1.25rem" }}>Vous n'avez pas encore passé de commande sur notre boutique.</p>
+          <button onClick={() => navigateTo("category", "")} className="btn-primary" style={{ padding: "0.65rem 1.5rem", borderRadius: "9999px", fontWeight: 700, fontSize: "0.88rem" }}>
+            Parcourir le catalogue
           </button>
         </div>
       ) : (
         <>
           {/* Status Filter Tabs & Search Bar */}
-          <div className="flex flex-wrap items-center justify-between gap-3 mb-6">
-            <div className="flex gap-1 bg-white p-1 rounded-xl border border-slate-200">
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: "1rem", marginBottom: "1.5rem", flexWrap: "wrap" }}>
+            <div style={{ display: "flex", gap: "0.4rem", background: "#ffffff", padding: "4px", borderRadius: "10px", border: "1px solid #e2e8f0" }}>
               {[
                 { id: "all", label: "Toutes" },
                 { id: "in_progress", label: "En cours" },
@@ -208,35 +198,51 @@ export function OrderHistoryPage() {
                 <button
                   key={tab.id}
                   onClick={() => setStatusFilter(tab.id)}
-                  className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all border-none cursor-pointer ${
-                    statusFilter === tab.id ? "bg-primary text-white" : "bg-transparent text-slate-600 hover:bg-slate-50"
-                  }`}
+                  style={{
+                    padding: "0.4rem 0.9rem",
+                    borderRadius: "6px",
+                    border: "none",
+                    background: statusFilter === tab.id ? "#0d2b6b" : "transparent",
+                    color: statusFilter === tab.id ? "#ffffff" : "#475569",
+                    fontWeight: 700,
+                    fontSize: "0.82rem",
+                    cursor: "pointer",
+                    transition: "all 0.15s ease"
+                  }}
                 >
                   {tab.label}
                 </button>
               ))}
             </div>
 
-            <div className="relative min-w-[240px]">
-              <Search size={15} className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
+            <div style={{ position: "relative", minWidth: 220 }}>
+              <Search size={15} style={{ position: "absolute", left: 10, top: "50%", transform: "translateY(-50%)", color: "#94a3b8" }} />
               <input
                 type="text"
                 placeholder="N° de commande ou article..."
                 value={searchQuery}
                 onChange={e => setSearchQuery(e.target.value)}
-                className="w-full pl-9 pr-3 py-2 text-xs rounded-xl border border-slate-200 focus:outline-none focus:border-primary bg-white"
+                style={{
+                  width: "100%",
+                  padding: "0.5rem 0.85rem 0.5rem 2rem",
+                  borderRadius: "8px",
+                  border: "1px solid #cbd5e1",
+                  fontSize: "0.84rem",
+                  outline: "none",
+                  background: "#ffffff"
+                }}
               />
             </div>
           </div>
 
           {/* Master Detail Grid */}
-          <div className="order-history-layout">
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "1.5rem", alignItems: "start" }}>
             
             {/* Left Column: Order Selector List */}
-            <div className="flex flex-col gap-3">
+            <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
               {filteredOrders.length === 0 ? (
-                <div className="p-6 bg-white rounded-2xl border border-slate-200 text-center text-slate-500 text-xs">
-                  Aucune commande ne correspond aux filtres.
+                <div style={{ padding: "1.5rem", background: "#ffffff", borderRadius: "12px", border: "1px solid #e2e8f0", textAlign: "center", color: "#64748b", fontSize: "0.85rem" }}>
+                  Aucune commande trouvée.
                 </div>
               ) : (
                 filteredOrders.map((order) => {
@@ -247,31 +253,27 @@ export function OrderHistoryPage() {
                   return (
                     <div
                       key={order.id}
-                      onClick={() => {
-                        setSelectedOrder(order);
-                        if (window.innerWidth < 900) {
-                          setTimeout(() => {
-                            const detailsEl = document.getElementById("order-details-section");
-                            if (detailsEl) {
-                              detailsEl.scrollIntoView({ behavior: "smooth", block: "start" });
-                            }
-                          }, 100);
-                        }
+                      onClick={() => setSelectedOrder(order)}
+                      style={{
+                        background: "#ffffff",
+                        borderRadius: "14px",
+                        padding: "1rem 1.15rem",
+                        border: isSelected ? "2px solid #0d2b6b" : "1px solid #e2e8f0",
+                        cursor: "pointer",
+                        transition: "all 0.15s ease",
+                        boxShadow: isSelected ? "0 4px 14px rgba(13, 43, 107, 0.08)" : "none"
                       }}
-                      className={`bg-white rounded-2xl p-4 cursor-pointer transition-all border ${
-                        isSelected ? "border-primary shadow-md ring-2 ring-blue-100" : "border-slate-200 hover:border-slate-300"
-                      }`}
                     >
-                      <div className="flex items-center justify-between mb-2">
-                        <span className="font-mono font-extrabold text-sm text-slate-800">
+                      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "0.35rem" }}>
+                        <span style={{ fontWeight: 800, fontSize: "0.9rem", color: "#0f172a", fontFamily: "monospace" }}>
                           #{(order.id || '').toString().slice(-8).toUpperCase()}
                         </span>
                         {getStatusBadge(order.status)}
                       </div>
 
-                      <div className="flex items-center justify-between text-xs text-slate-500 mt-2">
+                      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", fontSize: "0.82rem", color: "#64748b", marginTop: "0.4rem" }}>
                         <span>{dateStr} • {totalItems} article(s)</span>
-                        <strong className="text-primary font-extrabold text-sm">{Number(order.total).toFixed(3)} DT</strong>
+                        <strong style={{ color: "#0d2b6b", fontSize: "0.95rem", fontWeight: 800 }}>{Number(order.total).toFixed(3)} DT</strong>
                       </div>
                     </div>
                   );
@@ -281,57 +283,41 @@ export function OrderHistoryPage() {
 
             {/* Right Column: Detailed View */}
             {selectedOrder && (
-              <div id="order-details-section" className="bg-white rounded-3xl border border-slate-200 p-6 shadow-sm">
+              <div style={{ background: "#ffffff", borderRadius: "18px", border: "1px solid #e2e8f0", padding: "1.5rem", boxShadow: "0 4px 20px rgba(0, 0, 0, 0.03)" }}>
                 
                 {/* Order Summary Line */}
-                <div className="flex items-center justify-between border-b border-slate-100 pb-4 mb-4 flex-wrap gap-2">
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", borderBottom: "1px solid #e2e8f0", paddingBottom: "1rem", marginBottom: "1.25rem", flexWrap: "wrap", gap: "0.75rem" }}>
                   <div>
-                    <span className="text-lg font-mono font-black text-primary">
-                      Commande #{orderIdShort}
+                    <span style={{ fontSize: "1.25rem", fontWeight: 900, color: "#0d2b6b", fontFamily: "monospace" }}>
+                      Commande #{(selectedOrder.id || '').toString().slice(-8).toUpperCase()}
                     </span>
-                    <div className="text-xs text-slate-500 mt-1 flex items-center gap-1">
+                    <div style={{ fontSize: "0.82rem", color: "#64748b", marginTop: "0.2rem", display: "flex", alignItems: "center", gap: "0.35rem" }}>
                       <Clock size={13} /> {new Date(selectedOrder.date).toLocaleDateString("fr-FR", { day: "numeric", month: "long", year: "numeric", hour: "2-digit", minute: "2-digit" })}
                     </div>
                   </div>
 
-                  <div className="flex items-center gap-2">
-                    <button
-                      onClick={() => window.print()}
-                      className="inline-flex items-center gap-1 text-xs font-bold text-slate-700 bg-slate-100 hover:bg-slate-200 px-3 py-1.5 rounded-lg border-none cursor-pointer transition-colors"
-                      title="Imprimer le bon de commande"
-                    >
-                      <Printer size={13} />
-                      <span>Imprimer</span>
-                    </button>
-                    <a
-                      href={supportWaUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1 text-xs font-bold text-emerald-700 bg-emerald-50 hover:bg-emerald-100 px-3 py-1.5 rounded-lg border-none cursor-pointer transition-colors no-underline"
-                    >
-                      <MessageCircle size={13} />
-                      <span>Aide WhatsApp</span>
-                    </a>
+                  <div>
+                    {getStatusBadge(selectedOrder.status)}
                   </div>
                 </div>
 
                 {/* Status Step Progress Bar */}
                 {renderStatusTracker(selectedOrder.status)}
 
-                {/* Delivery & Payment Info Cards */}
-                <div className="order-info-cards-grid">
+                {/* Delivery & Payment Info */}
+                <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: "1rem", marginBottom: "1.25rem" }}>
                   
                   {/* Shipping Address */}
-                  <div className="order-info-card">
-                    <div className="order-info-card-header">
-                      <MapPin size={14} /> Destinataire & Livraison
+                  <div style={{ background: "#f8fafc", padding: "1rem", borderRadius: "12px", border: "1px solid #e2e8f0" }}>
+                    <div style={{ fontSize: "0.75rem", fontWeight: 800, color: "#0d2b6b", textTransform: "uppercase", letterSpacing: "0.04em", marginBottom: "0.5rem", display: "flex", alignItems: "center", gap: "0.35rem" }}>
+                      <MapPin size={14} /> Adresse de livraison
                     </div>
-                    <div className="order-info-card-body">
-                      <div className="order-info-card-name font-bold text-slate-900">{selectedOrder.customerName || user.name}</div>
-                      <div className="text-slate-700 text-xs">{selectedOrder.customerAddress || "Adresse non spécifiée"}</div>
-                      <div className="order-info-card-gov text-xs font-semibold text-primary">{selectedOrder.customerGovernorate}</div>
+                    <div style={{ fontSize: "0.85rem", display: "flex", flexDirection: "column", gap: "0.25rem", color: "#1e293b" }}>
+                      <div style={{ fontWeight: 800, color: "#0f172a" }}>{selectedOrder.customerName || user.name}</div>
+                      <div style={{ color: "#334155" }}>{selectedOrder.customerAddress || "Adresse non spécifiée"}</div>
+                      <div style={{ fontWeight: 700, color: "#0d2b6b" }}>{selectedOrder.customerGovernorate}</div>
                       {selectedOrder.customerPhone && (
-                        <div className="order-info-card-meta">
+                        <div style={{ fontSize: "0.8rem", color: "#64748b", display: "flex", alignItems: "center", gap: "0.3rem", marginTop: "0.15rem" }}>
                           <Phone size={12} /> {selectedOrder.customerPhone}
                         </div>
                       )}
@@ -339,22 +325,22 @@ export function OrderHistoryPage() {
                   </div>
 
                   {/* Payment Details */}
-                  <div className="order-info-card">
-                    <div className="order-info-card-header">
-                      <CreditCard size={14} /> Modalités de règlement
+                  <div style={{ background: "#f8fafc", padding: "1rem", borderRadius: "12px", border: "1px solid #e2e8f0" }}>
+                    <div style={{ fontSize: "0.75rem", fontWeight: 800, color: "#0d2b6b", textTransform: "uppercase", letterSpacing: "0.04em", marginBottom: "0.5rem", display: "flex", alignItems: "center", gap: "0.35rem" }}>
+                      <CreditCard size={14} /> Règlement & Contact
                     </div>
-                    <div className="order-info-card-body">
-                      <div className="order-info-card-row">
-                        <span className="text-slate-500 text-xs">Moyen :</span>
-                        <strong className="text-slate-900 text-xs">{selectedOrder.paymentMethod || "Paiement en espèces à la livraison"}</strong>
+                    <div style={{ fontSize: "0.85rem", display: "flex", flexDirection: "column", gap: "0.35rem", color: "#1e293b" }}>
+                      <div style={{ display: "flex", justifyContent: "space-between" }}>
+                        <span style={{ color: "#64748b", fontSize: "0.8rem" }}>Paiement:</span>
+                        <strong style={{ color: "#0f172a" }}>{selectedOrder.paymentMethod || "Paiement Cash à la livraison"}</strong>
                       </div>
-                      <div className="order-info-card-row">
-                        <span className="text-slate-500 text-xs">Statut :</span>
-                        <span className={`font-bold text-xs ${selectedOrder.paymentStatus === "paid" ? "text-emerald-600" : "text-amber-700"}`}>
-                          {selectedOrder.paymentStatus === "paid" ? "Payé" : "À régler lors de la livraison"}
+                      <div style={{ display: "flex", justifyContent: "space-between" }}>
+                        <span style={{ color: "#64748b", fontSize: "0.8rem" }}>Statut:</span>
+                        <span style={{ fontWeight: 700, fontSize: "0.75rem", color: selectedOrder.paymentStatus === "paid" ? "#15803d" : "#b45309" }}>
+                          {selectedOrder.paymentStatus === "paid" ? "Payé" : "À régler à la livraison"}
                         </span>
                       </div>
-                      <div className="order-info-card-meta">
+                      <div style={{ display: "flex", alignItems: "center", gap: "0.3rem", color: "#64748b", fontSize: "0.8rem", marginTop: "0.15rem" }}>
                         <Mail size={12} /> {selectedOrder.customerEmail || user.email}
                       </div>
                     </div>
@@ -363,20 +349,20 @@ export function OrderHistoryPage() {
                 </div>
 
                 {/* Items Table */}
-                <div className="mb-4">
-                  <div className="text-xs font-extrabold text-slate-800 mb-2 flex items-center gap-1.5">
-                    <Package size={15} className="text-primary" />
-                    <span>Détail des articles ({(selectedOrder.items || []).reduce((acc, i) => acc + (i.quantity || 1), 0)})</span>
+                <div style={{ marginBottom: "1.25rem" }}>
+                  <div style={{ fontSize: "0.88rem", fontWeight: 800, color: "#0f172a", marginBottom: "0.65rem", display: "flex", alignItems: "center", gap: "0.35rem" }}>
+                    <Package size={16} style={{ color: "#0d2b6b" }} />
+                    Détail des articles ({(selectedOrder.items || []).reduce((acc, i) => acc + (i.quantity || 1), 0)})
                   </div>
 
-                  <div className="order-table-wrap">
-                    <table className="order-table">
+                  <div style={{ border: "1px solid #e2e8f0", borderRadius: "12px", overflow: "hidden" }}>
+                    <table style={{ width: "100%", borderCollapse: "collapse", fontSize: "0.85rem", textAlign: "left" }}>
                       <thead>
-                        <tr>
-                          <th>Produit</th>
-                          <th style={{ textAlign: "center" }}>Prix</th>
-                          <th style={{ textAlign: "center" }}>Qté</th>
-                          <th style={{ textAlign: "right" }}>Total</th>
+                        <tr style={{ background: "#f8fafc", borderBottom: "1px solid #e2e8f0", color: "#475569", fontWeight: 700 }}>
+                          <th style={{ padding: "0.65rem 0.85rem" }}>Produit</th>
+                          <th style={{ padding: "0.65rem 0.85rem", textAlign: "center" }}>Prix</th>
+                          <th style={{ padding: "0.65rem 0.85rem", textAlign: "center" }}>Qté</th>
+                          <th style={{ padding: "0.65rem 0.85rem", textAlign: "right" }}>Total</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -387,29 +373,29 @@ export function OrderHistoryPage() {
                           const img = item.image || item.img || "https://via.placeholder.com/40";
 
                           return (
-                            <tr key={idx}>
-                              <td>
-                                <div className="order-item-flex">
-                                  <img src={img} alt={item.name} className="order-item-img" />
+                            <tr key={idx} style={{ borderBottom: idx < (selectedOrder.items || []).length - 1 ? "1px solid #f1f5f9" : "none" }}>
+                              <td style={{ padding: "0.75rem 0.85rem" }}>
+                                <div style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
+                                  <img src={img} alt={item.name} style={{ width: "38px", height: "38px", objectFit: "contain", borderRadius: "6px", background: "#ffffff", border: "1px solid #e2e8f0", padding: "2px" }} />
                                   <div>
-                                    <div className="order-item-name">{item.name}</div>
+                                    <div style={{ fontWeight: 700, color: "#0f172a", fontSize: "0.85rem" }}>{item.name}</div>
                                     {item.selectedOptions && Object.keys(item.selectedOptions).length > 0 && (
-                                      <div className="order-item-options">
+                                      <div style={{ fontSize: "0.75rem", color: "#64748b" }}>
                                         {Object.entries(item.selectedOptions).map(([k, v]) => `${k}: ${v}`).join(", ")}
                                       </div>
                                     )}
                                   </div>
                                 </div>
                               </td>
-                              <td style={{ textAlign: "center", fontWeight: "600", color: "#334155" }}>
+                              <td style={{ padding: "0.75rem 0.85rem", textAlign: "center", fontWeight: "600", color: "#334155" }}>
                                 {Number(price).toFixed(3)} DT
                               </td>
-                              <td style={{ textAlign: "center" }}>
-                                <span className="order-item-qty">
+                              <td style={{ padding: "0.75rem 0.85rem", textAlign: "center" }}>
+                                <span style={{ background: "#f1f5f9", padding: "0.15rem 0.5rem", borderRadius: "6px", fontWeight: 800, fontSize: "0.78rem", color: "#0d2b6b" }}>
                                   x{qty}
                                 </span>
                               </td>
-                              <td className="order-item-total" style={{ textAlign: "right" }}>
+                              <td style={{ padding: "0.75rem 0.85rem", textAlign: "right", fontWeight: 800, color: "#0d2b6b" }}>
                                 {Number(itemTotal).toFixed(3)} DT
                               </td>
                             </tr>
@@ -421,18 +407,18 @@ export function OrderHistoryPage() {
                 </div>
 
                 {/* Total Box */}
-                <div className="order-total-card">
-                  <div className="order-total-row">
-                    <span>Sous-total articles</span>
-                    <span className="font-bold text-slate-800">{Number(selectedOrder.total).toFixed(3)} DT</span>
+                <div style={{ background: "#f8fafc", borderRadius: "12px", border: "1px solid #e2e8f0", padding: "1rem 1.15rem" }}>
+                  <div style={{ display: "flex", justifyContent: "space-between", fontSize: "0.85rem", color: "#475569", marginBottom: "0.4rem" }}>
+                    <span>Sous-total</span>
+                    <span style={{ fontWeight: 700, color: "#0f172a" }}>{Number(selectedOrder.total).toFixed(3)} DT</span>
                   </div>
-                  <div className="order-total-row">
+                  <div style={{ display: "flex", justifyContent: "space-between", fontSize: "0.85rem", color: "#475569", marginBottom: "0.65rem" }}>
                     <span>Livraison</span>
-                    <span className="font-bold text-emerald-600">Offerte / Inclus</span>
+                    <span style={{ fontWeight: 700, color: "#16a34a" }}>Gratuite</span>
                   </div>
-                  <div className="order-total-row grand">
-                    <span className="text-sm font-extrabold text-slate-900">Total Net TTC</span>
-                    <span className="order-total-val-primary text-base font-black">
+                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", borderTop: "1.5px solid #e2e8f0", paddingTop: "0.65rem" }}>
+                    <span style={{ fontSize: "0.95rem", fontWeight: 800, color: "#0f172a" }}>Montant Total</span>
+                    <span style={{ fontSize: "1.4rem", fontWeight: 900, color: "#0d2b6b" }}>
                       {Number(selectedOrder.total).toFixed(3)} DT
                     </span>
                   </div>
@@ -447,4 +433,3 @@ export function OrderHistoryPage() {
     </div>
   );
 }
-

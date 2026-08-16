@@ -29,7 +29,6 @@ export async function insertCoupon(data: {
   minOrderAmount?: number;
   expiresAt: Date;
   isActive?: boolean;
-  applicableCategories?: string[];
 }) {
   const coupon = new CouponModel(data);
   await coupon.save();
@@ -43,20 +42,15 @@ export async function updateCoupon(id: string, updates: Partial<{
   minOrderAmount: number;
   expiresAt: Date;
   isActive: boolean;
-  applicableCategories: string[];
 }>) {
-  return CouponModel.findByIdAndUpdate(id, updates, { returnDocument: 'after', runValidators: true });
+  return CouponModel.findByIdAndUpdate(id, updates, { new: true, runValidators: true });
 }
 
 export async function deleteCoupon(id: string) {
   return CouponModel.findByIdAndDelete(id);
 }
 
-export async function validateCoupon(
-  code: string,
-  cartTotal: number,
-  items?: Array<{ category?: string; price?: number; priceNum?: number; quantity?: number; subtotal?: number }>
-) {
+export async function validateCoupon(code: string, cartTotal: number) {
   const coupon = await getCouponByCode(code);
   if (!coupon) {
     return { valid: false as const, error: "Code promo invalide ou expiré." };
@@ -70,29 +64,9 @@ export async function validateCoupon(
     return { valid: false as const, error: `Montant minimum de commande non atteint : ${coupon.minOrderAmount} DT requis.` };
   }
 
-  const appCats: string[] = (coupon as any).applicableCategories || [];
-  let eligibleTotal = cartTotal;
-
-  if (appCats.length > 0) {
-    if (items && items.length > 0) {
-      const eligibleItems = items.filter(item => item.category && appCats.includes(item.category));
-      if (eligibleItems.length === 0) {
-        return {
-          valid: false as const,
-          error: `Ce code promo ne s'applique qu'aux catégories suivantes : ${appCats.join(', ')}.`
-        };
-      }
-      eligibleTotal = eligibleItems.reduce((acc, item) => {
-        const itemPrice = Number(item.priceNum ?? item.price ?? 0);
-        const itemSubtotal = item.subtotal ?? (itemPrice * Number(item.quantity || 1));
-        return acc + itemSubtotal;
-      }, 0);
-    }
-  }
-
   const discountAmount = coupon.discountType === "percentage"
-    ? Math.round(eligibleTotal * (coupon.discountValue / 100) * 1000) / 1000
-    : Math.min(coupon.discountValue, eligibleTotal);
+    ? Math.round(cartTotal * (coupon.discountValue / 100) * 1000) / 1000
+    : Math.min(coupon.discountValue, cartTotal);
 
-  return { valid: true as const, coupon, discountAmount, applicableCategories: appCats };
+  return { valid: true as const, coupon, discountAmount };
 }

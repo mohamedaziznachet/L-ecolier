@@ -23,65 +23,6 @@ function makeFlexibleRegex(text: string): RegExp {
   return new RegExp(accentFlex, 'i');
 }
 
-const CATEGORY_SUBCATEGORIES_MAP: Record<string, string[]> = {
-  "Fournitures Scolaires": [
-    "Crayon Noir", "Crayon de Couleur", "Stylo à Bille", "Feutre & Marqueur",
-    "Gomme", "Taille-Crayon", "Mines", "Ciseaux", "Colle & Adhésif",
-    "Correcteur", "Instruments de Traçage", "Agrafage", "Bureautique", "Calculatrices", "Tableaux & Ardoises", "Compas"
-  ],
-  "Fournitures scolaire": [
-    "Crayon Noir", "Crayon de Couleur", "Stylo à Bille", "Feutre & Marqueur",
-    "Gomme", "Taille-Crayon", "Mines", "Ciseaux", "Colle & Adhésif",
-    "Correcteur", "Instruments de Traçage", "Agrafage", "Bureautique", "Calculatrices", "Tableaux & Ardoises", "Compas"
-  ],
-  "Bomi": [
-    "Cartable Lux", "Cartable Eco Lux", "Cartable super lux", "Cartable high lux",
-    "Trousse", "Lunch box", "paniers", "Chariots"
-  ],
-  "Sac A Dos": [
-    "Sac A Dos Informatique", "Take And Go", "Trousse", "Sacs à dos", "Sac à dos", "Cartable"
-  ],
-  "Sacs à dos": [
-    "Sac A Dos Informatique", "Take And Go", "Trousse", "Sac A Dos", "Sac à dos", "Cartable"
-  ],
-  "Bagagerie": [
-    "Valise WAMA", "Valise", "Bagages", "Sac de voyage"
-  ],
-  "Parascolaires": [
-    "Dictionnaires", "Atlas & Cartes", "Livres Éducatifs", "Cahiers d'Exercices", "Parascolaire"
-  ],
-  "Parascolaire": [
-    "Dictionnaires", "Atlas & Cartes", "Livres Éducatifs", "Cahiers d'Exercices", "Parascolaires"
-  ],
-  "Gourde & Thermos": [
-    "TupperWare", "Rotpunkt", "Uzspace", "Gourdes", "Thermos", "Gourde", "Boîte repas", "Lunch box"
-  ],
-  "Gourdes & Boîtes repas": [
-    "TupperWare", "Rotpunkt", "Uzspace", "Gourdes", "Thermos", "Lunch box", "Gourde", "Boîte repas"
-  ],
-  "Cahiers & Papeterie": [
-    "Cahiers", "Brochures & Blocs", "Carnets & Agendas", "Ramettes", "Papeterie", "Cahier"
-  ],
-  "Papeterie": [
-    "Cahiers", "Brochures & Blocs", "Carnets & Agendas", "Ramettes", "Cahiers & Papeterie", "Cahier"
-  ],
-  "Rangement & Classement": [
-    "Classeurs", "Chemises", "Porte-Documents", "Boîtes d'archives", "Pochettes"
-  ],
-  "Matériel Artistique & Dessin": [
-    "Peinture & Gouache", "Crayons de Dessin", "Pinceaux & Palettes", "Papier Dessin", "Matériel Artistique", "Dessin"
-  ],
-  "Matériel Artistique": [
-    "Peinture & Gouache", "Crayons de Dessin", "Pinceaux & Palettes", "Papier Dessin", "Matériel Artistique & Dessin", "Dessin"
-  ],
-  "Jeux Et Cadeaux": [
-    "Jeux Éducatifs", "Jouets", "Cadeaux Scolaires", "Jeux et Cadeaux", "Jeux et Jouets", "Jeux"
-  ],
-  "Jeux et Jouets": [
-    "Jeux Éducatifs", "Jouets", "Cadeaux Scolaires", "Jeux Et Cadeaux", "Jeux et Cadeaux", "Jeux"
-  ],
-};
-
 // Get filtered products (public storefront)
 router.get('/products', async (req: Request, res: Response) => {
   try {
@@ -93,7 +34,6 @@ router.get('/products', async (req: Request, res: Response) => {
     const limit = Math.max(1, parseInt(String(req.query.limit ?? '20'), 10) || 20);
     const search = String(req.query.search ?? '').trim();
     const category = String(req.query.category ?? '').trim();
-    const subcategory = String(req.query.subcategory ?? '').trim();
     const minPriceRaw = req.query.minPrice;
     const minPrice = minPriceRaw === undefined || minPriceRaw === '' ? undefined : Number(minPriceRaw);
     const maxPriceRaw = req.query.maxPrice;
@@ -108,51 +48,19 @@ router.get('/products', async (req: Request, res: Response) => {
     ];
 
     if (category) {
+      const parts = category.split('&').map(p => p.trim()).filter(Boolean);
       const catOrConditions: any[] = [];
-      const catRegex = makeFlexibleRegex(category);
-      catOrConditions.push(
-        { category: catRegex },
-        { subcategory: catRegex },
-        { brand: catRegex },
-        { name: catRegex },
-        { description: catRegex }
-      );
-
-      // Add all subcategories mapped to this parent category
-      const mappedSubs = CATEGORY_SUBCATEGORIES_MAP[category] || [];
-      for (const sub of mappedSubs) {
-        const subRegex = makeFlexibleRegex(sub);
+      for (const part of parts) {
+        const catRegex = makeFlexibleRegex(part);
         catOrConditions.push(
-          { category: subRegex },
-          { subcategory: subRegex }
+          { category: catRegex },
+          { brand: catRegex },
+          { name: catRegex },
+          { description: catRegex },
+          { schoolLevel: catRegex }
         );
       }
-
-      // Also handle multi-part (e.g. "Cahiers & Papeterie")
-      if (category.includes('&')) {
-        const parts = category.split('&').map(p => p.trim()).filter(Boolean);
-        for (const part of parts) {
-          const partRegex = makeFlexibleRegex(part);
-          catOrConditions.push(
-            { category: partRegex },
-            { subcategory: partRegex }
-          );
-        }
-      }
-
       conditions.push({ $or: catOrConditions });
-    }
-
-    if (subcategory) {
-      const subRegex = makeFlexibleRegex(subcategory);
-      conditions.push({
-        $or: [
-          { subcategory: subRegex },
-          { category: subRegex },
-          { name: subRegex },
-          { description: subRegex }
-        ]
-      });
     }
 
     if (brand) {
@@ -188,17 +96,6 @@ router.get('/products', async (req: Request, res: Response) => {
       });
     }
 
-    const baseConditions = [...conditions];
-    const baseFilter = baseConditions.length === 1 ? baseConditions[0] : { $and: baseConditions };
-
-    const highestPricedDoc = await ProductModel.findOne(baseFilter)
-      .sort({ priceNum: -1 })
-      .select('priceNum')
-      .lean();
-    const maxCategoryPrice = highestPricedDoc && typeof highestPricedDoc.priceNum === 'number' && highestPricedDoc.priceNum > 0
-      ? Math.ceil(highestPricedDoc.priceNum)
-      : 1000;
-
     if ((minPrice !== undefined && !Number.isNaN(minPrice)) || (maxPrice !== undefined && !Number.isNaN(maxPrice))) {
       const priceFilter: any = {};
       if (minPrice !== undefined && !Number.isNaN(minPrice)) priceFilter.$gte = minPrice;
@@ -212,7 +109,6 @@ router.get('/products', async (req: Request, res: Response) => {
     if (sortBy === 'price-asc') sort.priceNum = 1;
     else if (sortBy === 'price-desc') sort.priceNum = -1;
     else if (sortBy === 'rating') sort.rating = -1;
-    else if (sortBy === 'newest') sort._id = -1;
     else sort.name = 1;
 
     const total = await ProductModel.countDocuments(filter);
@@ -226,7 +122,6 @@ router.get('/products', async (req: Request, res: Response) => {
     return res.json({
       products,
       pagination: { page, limit, total, pages },
-      maxCategoryPrice,
     });
   } catch (err) {
     console.error(err);
@@ -245,9 +140,7 @@ router.get('/products/:id', async (req: Request, res: Response) => {
     if (!Number.isNaN(numericId)) {
       query.$or.push({ id: numericId });
       query.$or.push({ id: identifier });
-      query.$or.push({ barcode: numericId });
     }
-    query.$or.push({ barcode: identifier });
 
     if (mongoose.Types.ObjectId.isValid(identifier)) {
       query.$or.push({ _id: identifier });
@@ -258,7 +151,7 @@ router.get('/products/:id', async (req: Request, res: Response) => {
     }
 
     const product = await ProductModel.findOne(query.$or.length === 1 ? query.$or[0] : query).lean();
-    if (!product || (product.status && product.status === 'inactive')) return res.status(404).json({ error: 'Product not found' });
+    if (!product || product.status !== 'active') return res.status(404).json({ error: 'Product not found' });
     return res.json({ product });
   } catch (err) {
     console.error(err);
@@ -299,8 +192,8 @@ router.post('/coupons/validate', [
   }
 
   try {
-    const { code, cartTotal, items } = req.body;
-    const result = await validateCoupon(code, Number(cartTotal), Array.isArray(items) ? items : []);
+    const { code, cartTotal } = req.body;
+    const result = await validateCoupon(code, Number(cartTotal));
     if (!result.valid) {
       return res.status(400).json({ valid: false, error: result.error });
     }
@@ -311,7 +204,6 @@ router.post('/coupons/validate', [
         code: result.coupon.code,
         discountType: result.coupon.discountType,
         discountValue: result.coupon.discountValue,
-        applicableCategories: result.applicableCategories,
       },
     });
   } catch (err) {
@@ -352,11 +244,7 @@ router.put('/settings/:key', authenticateAdmin, async (req: Request, res: Respon
   const { key } = req.params;
   const content = req.body;
   try {
-    const updated = await PageSettingsModel.findOneAndUpdate(
-      { key },
-      { key, content },
-      { returnDocument: 'after', new: true, upsert: true }
-    );
+    const updated = await PageSettingsModel.findOneAndUpdate({ key }, { content }, { new: true, upsert: true });
     return res.json(updated);
   } catch (err) {
     console.error(`Error saving setting ${key}:`, err);
@@ -434,7 +322,7 @@ router.post('/orders', [
       const product = await ProductModel.findOneAndUpdate(
         { ...query, stock: { $gte: qty } },
         { $inc: { stock: -qty } },
-        { returnDocument: 'after' }
+        { new: true }
       );
 
       if (!product) {
@@ -478,8 +366,8 @@ router.post('/orders', [
     const productSubtotal = resolvedItems.reduce((sum, i) => sum + i.subtotal, 0);
     const productIds = successfullyReserved.map((r) => r.productId);
 
-    // Free shipping threshold: 0 DT if subtotal >= 200 DT, else 8 DT
-    const shippingFee = productSubtotal >= 200 ? 0 : 8;
+    // Free shipping threshold: 0 DT if subtotal >= 200 DT, else 7 DT
+    const shippingFee = productSubtotal >= 200 ? 0 : 7;
     let discountAmount = 0;
 
     if (couponCode) {

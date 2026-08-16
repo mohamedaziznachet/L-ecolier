@@ -9,7 +9,7 @@ import fs from 'fs';
 import mongoose from 'mongoose';
 import { UserModel, OrderModel, ProductModel, BrandModel, CouponModel, ReviewModel } from '../models/index.ts';
 import { getAllProducts, insertProduct, updateProduct, deleteProduct, buildProductLookupQuery } from '../repositories/productRepository.ts';
-import { getSavedCategories, addCategory, deleteCategory, resetCategories, getCategoriesWithSubcategories, addSubCategory, deleteSubCategory } from '../repositories/categoryRepository.ts';
+import { getSavedCategories, addCategory, deleteCategory, resetCategories } from '../repositories/categoryRepository.ts';
 import { appendAuditEntry } from '../repositories/auditRepository.ts';
 import { getAllCoupons, getCouponById, insertCoupon, updateCoupon, deleteCoupon } from '../repositories/couponRepository.ts';
 
@@ -404,46 +404,6 @@ router.post('/categories/reset', async (_req: Request, res: Response) => {
   }
 });
 
-router.get('/categories/full', async (_req: Request, res: Response) => {
-  try {
-    const categories = await getCategoriesWithSubcategories();
-    return res.json({ categories });
-  } catch (err: any) {
-    console.error(err);
-    return res.status(500).json({ error: err.message || 'Failed to fetch categories' });
-  }
-});
-
-router.post('/categories/subcategories', async (req: Request, res: Response) => {
-  try {
-    const { category, subcategory } = req.body;
-    if (!category || !subcategory) {
-      return res.status(400).json({ error: 'Catégorie et sous-catégorie requises' });
-    }
-    const categories = await addSubCategory(category, subcategory);
-    return res.status(201).json({ categories });
-  } catch (err: any) {
-    console.error(err);
-    return res.status(500).json({ error: err.message || 'Failed to add subcategory' });
-  }
-});
-
-router.delete('/categories/:category/subcategories/:subcategory', async (req: Request, res: Response) => {
-  try {
-    const { category, subcategory } = req.params;
-    if (!category || !subcategory) {
-      return res.status(400).json({ error: 'Catégorie et sous-catégorie requises' });
-    }
-    const categoryStr = Array.isArray(category) ? category[0] : category;
-    const subcategoryStr = Array.isArray(subcategory) ? subcategory[0] : subcategory;
-    const categories = await deleteSubCategory(categoryStr, subcategoryStr);
-    return res.json({ categories });
-  } catch (err: any) {
-    console.error(err);
-    return res.status(500).json({ error: err.message || 'Failed to delete subcategory' });
-  }
-});
-
 /* ------------------------------------------------------------------ */
 /*   Brands CRUD                                                       */
 /* ------------------------------------------------------------------ */
@@ -481,7 +441,7 @@ router.put('/brands/:id', async (req: Request, res: Response) => {
     const updates = { ...req.body };
     delete updates._id;
     delete updates.__v;
-    const brand = await BrandModel.findByIdAndUpdate(req.params.id, updates, { returnDocument: 'after', runValidators: true });
+    const brand = await BrandModel.findByIdAndUpdate(req.params.id, updates, { new: true, runValidators: true });
     if (!brand) return res.status(404).json({ error: 'Brand not found' });
     return res.json({ updated: true, brand });
   } catch (err: any) {
@@ -521,7 +481,7 @@ router.get('/coupons', async (_req: Request, res: Response) => {
 // POST /admin/coupons
 router.post('/coupons', async (req: Request, res: Response) => {
   try {
-    const { code, discountType, discountValue, minOrderAmount, expiresAt, isActive, applicableCategories } = req.body;
+    const { code, discountType, discountValue, minOrderAmount, expiresAt, isActive } = req.body;
     if (!code || !discountType || discountValue === undefined || !expiresAt) {
       return res.status(400).json({ error: 'code, discountType, discountValue, and expiresAt are required' });
     }
@@ -532,7 +492,6 @@ router.post('/coupons', async (req: Request, res: Response) => {
       minOrderAmount: Number(minOrderAmount) || 0,
       expiresAt: new Date(expiresAt),
       isActive: isActive !== false,
-      applicableCategories: Array.isArray(applicableCategories) ? applicableCategories : [],
     });
     const coupon = await getCouponById(insertedId);
     return res.status(201).json({ insertedId, coupon });
@@ -682,7 +641,7 @@ router.put('/users/:id', async (req: Request, res: Response) => {
     delete updates.__v;
     if (isBlocked !== undefined) updates.isBlocked = isBlocked;
 
-    const user = await UserModel.findByIdAndUpdate((req.params.id as string), updates, { returnDocument: 'after', select: '-password' });
+    const user = await UserModel.findByIdAndUpdate((req.params.id as string), updates, { new: true, select: '-password' });
     if (!user) return res.status(404).json({ error: 'User not found' });
     return res.json({ updated: true, user });
   } catch (err) {
@@ -851,7 +810,7 @@ router.put('/orders/:id/payment', async (req: Request, res: Response) => {
     const order = await OrderModel.findByIdAndUpdate(
       (req.params.id as string),
       { paymentStatus },
-      { returnDocument: 'after' }
+      { new: true }
     );
     if (!order) return res.status(404).json({ error: 'Order not found' });
     return res.json({ updated: true, paymentStatus: order.paymentStatus });

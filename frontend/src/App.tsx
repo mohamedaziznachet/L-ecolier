@@ -12,7 +12,6 @@ import { AdminProvider, useAdmin } from "./context/AdminContext";
 import { Hero } from "./components/Hero";
 import { Categories } from "./components/Categories";
 import { BestSellers } from "./components/BestSellers";
-import { NewCollection } from "./components/NewCollection";
 import { Stats } from "./components/Stats";
 import { Testimonials } from "./components/Testimonials";
 
@@ -106,7 +105,6 @@ function MainAppContent() {
             <Hero />
             <Categories />
             <BestSellers />
-            <NewCollection />
             <Stats />
             <Testimonials />
           </>

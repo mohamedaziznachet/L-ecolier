@@ -5,8 +5,8 @@
     "name": "SB01-XL-BIKER",
     "price": "119,000 DT",
     "priceNum": 119,
-    "priceBeforeDiscount": 219,
-    "discount": 46,
+    "priceBeforeDiscount": null,
+    "discount": 0,
     "oldPrice": "219,000 DT",
     "schoolLevel": "",
     "badge": "-46%",
@@ -19,13 +19,13 @@
     ],
     "category": "Cartable Eco Lux",
     "brand": "Bomi",
-    "description": "BX26118-SB01-XL-BIKER",
-    "stock": 1000,
+    "description": "",
+    "stock": 1,
     "featured": true,
     "status": "active",
     "specifications": [],
     "__v": 0,
-    "availability": "En stock"
+    "availability": "Epuisé"
   },
   {
     "_id": "6a638265713aec5deeec234a",
@@ -33,8 +33,8 @@
     "name": "SB01-XL-CHERRY",
     "price": "119,000 DT",
     "priceNum": 119,
-    "priceBeforeDiscount": 219,
-    "discount": 46,
+    "priceBeforeDiscount": null,
+    "discount": 0,
     "oldPrice": "219,000 DT",
     "schoolLevel": "",
     "badge": "-46%",
@@ -47,13 +47,12 @@
     ],
     "category": "Cartable Eco Lux",
     "brand": "Bomi",
-    "description": "BX26123-SB01-XL-CHERRY",
-    "stock": 20,
+    "description": "",
+    "stock": 18,
     "featured": false,
     "status": "active",
     "specifications": [],
-    "__v": 0,
-    "availability": "En stock"
+    "__v": 0
   },
   {
     "_id": "6a6382a0713aec5deeec234e",
@@ -75,13 +74,12 @@
     ],
     "category": "Cartable Eco Lux",
     "brand": "Bomi",
-    "description": "SB01-XL-EVERYTHING",
+    "description": "",
     "stock": 20,
     "featured": false,
     "status": "active",
     "specifications": [],
-    "__v": 0,
-    "availability": "En stock"
+    "__v": 0
   },
   {
     "_id": "6a638328713aec5deeec2355",
@@ -103,13 +101,12 @@
     ],
     "category": "Cartable Eco Lux",
     "brand": "Bomi",
-    "description": "SB01-XL-FLOWER",
-    "stock": 20,
+    "description": "",
+    "stock": 19,
     "featured": true,
     "status": "active",
     "specifications": [],
-    "__v": 0,
-    "availability": "En stock"
+    "__v": 0
   },
   {
     "_id": "6a63c239713aec5deeec2360",
@@ -131,13 +128,12 @@
     ],
     "category": "Cartable Eco Lux",
     "brand": "Bomi",
-    "description": "SB01XL-FOOTBALL",
+    "description": "",
     "stock": 20,
     "featured": true,
     "status": "active",
     "specifications": [],
-    "__v": 0,
-    "availability": "En stock"
+    "__v": 0
   },
   {
     "_id": "6a63c263713aec5deeec2363",
@@ -145,8 +141,8 @@
     "name": "SB01-XL-GAMER",
     "price": "119,000 DT",
     "priceNum": 119,
-    "priceBeforeDiscount": 219,
-    "discount": 46,
+    "priceBeforeDiscount": null,
+    "discount": 0,
     "oldPrice": "219,000 DT",
     "schoolLevel": "",
     "badge": "-46%",
@@ -159,13 +155,12 @@
     ],
     "category": "Cartable Eco Lux",
     "brand": "Bomi",
-    "description": "BX26119-SB01-XL-GAMER",
-    "stock": 1000,
+    "description": "",
+    "stock": 20,
     "featured": false,
     "status": "active",
     "specifications": [],
-    "__v": 0,
-    "availability": "En stock"
+    "__v": 0
   },
   {
     "_id": "6a63c297713aec5deeec2366",
@@ -187,22 +182,21 @@
     ],
     "category": "Cartable Eco Lux",
     "brand": "Bomi",
-    "description": "SB01XL-NATURE",
+    "description": "",
     "stock": 20,
     "featured": false,
     "status": "active",
     "specifications": [],
-    "__v": 0,
-    "availability": "En stock"
+    "__v": 0
   },
   {
     "_id": "6a63c309713aec5deeec2369",
     "id": 1784922889177,
-    "name": "SB01-XL-PEARL",
+    "name": "SB01-XL-pearl",
     "price": "119,000 DT",
     "priceNum": 119,
-    "priceBeforeDiscount": 219,
-    "discount": 46,
+    "priceBeforeDiscount": null,
+    "discount": 0,
     "oldPrice": "219,000 DT",
     "schoolLevel": "",
     "badge": "-46%",
@@ -215,13 +209,12 @@
     ],
     "category": "Cartable Eco Lux",
     "brand": "Bomi",
-    "description": "BX26121-SB01-XL-PEARL",
-    "stock": 1000,
+    "description": "",
+    "stock": 20,
     "featured": false,
     "status": "active",
     "specifications": [],
-    "__v": 0,
-    "availability": "En stock"
+    "__v": 0
   },
   {
     "_id": "6a63c332713aec5deeec236c",
@@ -243,13 +236,12 @@
     ],
     "category": "Cartable Eco Lux",
     "brand": "Bomi",
-    "description": "SB01-XL-RIDER",
+    "description": "",
     "stock": 20,
     "featured": false,
     "status": "active",
     "specifications": [],
-    "__v": 0,
-    "availability": "En stock"
+    "__v": 0
   },
   {
     "_id": "6a63c35c713aec5deeec236f",
@@ -271,13 +263,12 @@
     ],
     "category": "Cartable Eco Lux",
     "brand": "Bomi",
-    "description": "SB01XL-SPACE-WALK",
+    "description": "",
     "stock": 20,
     "featured": false,
     "status": "active",
     "specifications": [],
-    "__v": 0,
-    "availability": "En stock"
+    "__v": 0
   },
   {
     "_id": "6a63c380713aec5deeec2372",
@@ -285,8 +276,8 @@
     "name": "SB01-XL-SUMMER",
     "price": "119,000 DT",
     "priceNum": 119,
-    "priceBeforeDiscount": 219,
-    "discount": 46,
+    "priceBeforeDiscount": null,
+    "discount": 0,
     "oldPrice": "219,000 DT",
     "schoolLevel": "",
     "badge": "-46%",
@@ -299,13 +290,12 @@
     ],
     "category": "Cartable Eco Lux",
     "brand": "Bomi",
-    "description": "BX26122-SB01-XL-SUMMER",
+    "description": "",
     "stock": 20,
     "featured": false,
     "status": "active",
     "specifications": [],
-    "__v": 0,
-    "availability": "En stock"
+    "__v": 0
   },
   {
     "_id": "6a63c3ad713aec5deeec2376",
@@ -313,8 +303,8 @@
     "name": "SB02-XL-BIKER",
     "price": "149,000 DT",
     "priceNum": 149,
-    "priceBeforeDiscount": 259,
-    "discount": 42,
+    "priceBeforeDiscount": null,
+    "discount": 0,
     "oldPrice": "259,000 DT",
     "schoolLevel": "",
     "badge": "-42%",
@@ -327,27 +317,21 @@
     ],
     "category": "Cartable Eco Lux",
     "brand": "Bomi",
-    "description": "Étatique : 1ère ➔ 4ème",
-    "stock": 1500,
+    "description": "",
+    "stock": 20,
     "featured": false,
     "status": "active",
-    "specifications": [
-      {
-        "key": "Étatique",
-        "value": "1ère ➔ 4ème"
-      }
-    ],
-    "__v": 0,
-    "availability": "En stock"
+    "specifications": [],
+    "__v": 0
   },
   {
     "_id": "6a63c575713aec5deeec237d",
     "id": 1784923509742,
-    "name": "SB01-XL-DRAGON IMPACT",
+    "name": "SB01-XL-DRAGON-IMPACT",
     "price": "119,000 DT",
     "priceNum": 119,
-    "priceBeforeDiscount": 219,
-    "discount": 46,
+    "priceBeforeDiscount": null,
+    "discount": 0,
     "oldPrice": "219,000 DT",
     "schoolLevel": "",
     "badge": "-46%",
@@ -360,13 +344,12 @@
     ],
     "category": "Cartable Eco Lux",
     "brand": "Bomi",
-    "description": "BX26120-SB01-XL-DRAGON IMPACT",
+    "description": "",
     "stock": 20,
     "featured": false,
     "status": "active",
     "specifications": [],
-    "__v": 0,
-    "availability": "En stock"
+    "__v": 0
   },
   {
     "_id": "6a63c763713aec5deeec238b",
@@ -374,8 +357,8 @@
     "name": "SB02-XL-CHERRY",
     "price": "149,000 DT",
     "priceNum": 149,
-    "priceBeforeDiscount": 259,
-    "discount": 42,
+    "priceBeforeDiscount": null,
+    "discount": 0,
     "oldPrice": "259,000 DT",
     "schoolLevel": "",
     "badge": "-42%",
@@ -388,27 +371,21 @@
     ],
     "category": "Cartable Eco Lux",
     "brand": "Bomi",
-    "description": "Étatique : 1ère ➔ 4ème",
-    "stock": 20,
+    "description": "",
+    "stock": 19,
     "featured": false,
     "status": "active",
-    "specifications": [
-      {
-        "key": "Étatique",
-        "value": "1ère ➔ 4ème"
-      }
-    ],
-    "__v": 0,
-    "availability": "En stock"
+    "specifications": [],
+    "__v": 0
   },
   {
     "_id": "6a63cce6713aec5deeec23a1",
     "id": 1784925415625,
-    "name": "SB02-XL-DRAGON IMPACT",
+    "name": "SB02-XL-DRAGON-IMPACT",
     "price": "149,000 DT",
     "priceNum": 149,
-    "priceBeforeDiscount": 259,
-    "discount": 42,
+    "priceBeforeDiscount": null,
+    "discount": 0,
     "oldPrice": "259,000 DT",
     "schoolLevel": "",
     "badge": "-42%",
@@ -421,18 +398,12 @@
     ],
     "category": "Cartable Eco Lux",
     "brand": "Bomi",
-    "description": "Étatique : 1ère ➔ 4ème",
+    "description": "",
     "stock": 20,
     "featured": false,
     "status": "active",
-    "specifications": [
-      {
-        "key": "Étatique",
-        "value": "1ère ➔ 4ème"
-      }
-    ],
-    "__v": 0,
-    "availability": "En stock"
+    "specifications": [],
+    "__v": 0
   },
   {
     "_id": "6a63cd1e713aec5deeec23a4",
@@ -454,18 +425,12 @@
     ],
     "category": "Cartable Eco Lux",
     "brand": "Bomi",
-    "description": "Étatique : 1ère ➔ 4ème",
+    "description": "",
     "stock": 20,
     "featured": false,
     "status": "active",
-    "specifications": [
-      {
-        "key": "Étatique",
-        "value": "1ère ➔ 4ème"
-      }
-    ],
-    "__v": 0,
-    "availability": "En stock"
+    "specifications": [],
+    "__v": 0
   },
   {
     "_id": "6a63cd8a713aec5deeec23a7",
@@ -487,18 +452,12 @@
     ],
     "category": "Cartable Eco Lux",
     "brand": "Bomi",
-    "description": "Étatique : 1ère ➔ 4ème",
+    "description": "",
     "stock": 20,
     "featured": false,
     "status": "active",
-    "specifications": [
-      {
-        "key": "Étatique",
-        "value": "1ère ➔ 4ème"
-      }
-    ],
-    "__v": 0,
-    "availability": "En stock"
+    "specifications": [],
+    "__v": 0
   },
   {
     "_id": "6a64b947734763a857dc0ff7",
@@ -506,8 +465,8 @@
     "name": "SB02-XL-SUMMER",
     "price": "149,000 DT",
     "priceNum": 149,
-    "priceBeforeDiscount": 259,
-    "discount": 42,
+    "priceBeforeDiscount": null,
+    "discount": 0,
     "oldPrice": "259,000 DT",
     "schoolLevel": "",
     "badge": "-42%",
@@ -520,18 +479,12 @@
     ],
     "category": "Cartable Eco Lux",
     "brand": "Bomi",
-    "description": "Étatique : 1ère ➔ 4ème",
-    "stock": 1250,
+    "description": "",
+    "stock": 20,
     "featured": false,
     "status": "active",
-    "specifications": [
-      {
-        "key": "Étatique",
-        "value": "1ère ➔ 4ème"
-      }
-    ],
-    "__v": 0,
-    "availability": "En stock"
+    "specifications": [],
+    "__v": 0
   },
   {
     "_id": "6a64bd70a318fa5d6c8b4b05",
@@ -539,8 +492,8 @@
     "name": "SB02-XL-GAMER",
     "price": "149,000 DT",
     "priceNum": 149,
-    "priceBeforeDiscount": 259,
-    "discount": 42,
+    "priceBeforeDiscount": null,
+    "discount": 0,
     "oldPrice": "259,000 DT",
     "schoolLevel": "",
     "badge": "-42%",
@@ -553,18 +506,12 @@
     ],
     "category": "Cartable Eco Lux",
     "brand": "Bomi",
-    "description": "Étatique : 1ère ➔ 4ème",
-    "stock": 1500,
+    "description": "",
+    "stock": 20,
     "featured": false,
     "status": "active",
-    "specifications": [
-      {
-        "key": "Étatique",
-        "value": "1ère ➔ 4ème"
-      }
-    ],
-    "__v": 0,
-    "availability": "En stock"
+    "specifications": [],
+    "__v": 0
   },
   {
     "_id": "6a64bda7a318fa5d6c8b4b08",
@@ -572,8 +519,8 @@
     "name": "SB02-XL-PEARL",
     "price": "149,000 DT",
     "priceNum": 149,
-    "priceBeforeDiscount": 259,
-    "discount": 42,
+    "priceBeforeDiscount": null,
+    "discount": 0,
     "oldPrice": "259,000 DT",
     "schoolLevel": "",
     "badge": "-42%",
@@ -586,18 +533,12 @@
     ],
     "category": "Cartable Eco Lux",
     "brand": "Bomi",
-    "description": "Étatique : 1ère ➔ 4ème",
-    "stock": 1500,
+    "description": "",
+    "stock": 20,
     "featured": false,
     "status": "active",
-    "specifications": [
-      {
-        "key": "Étatique",
-        "value": "1ère ➔ 4ème"
-      }
-    ],
-    "__v": 0,
-    "availability": "En stock"
+    "specifications": [],
+    "__v": 0
   },
   {
     "_id": "6a64be00a318fa5d6c8b4b0b",
@@ -619,18 +560,12 @@
     ],
     "category": "Cartable Eco Lux",
     "brand": "Bomi",
-    "description": "Étatique : 1ère ➔ 4ème",
+    "description": "",
     "stock": 20,
     "featured": false,
     "status": "active",
-    "specifications": [
-      {
-        "key": "Étatique",
-        "value": "1ère ➔ 4ème"
-      }
-    ],
-    "__v": 0,
-    "availability": "En stock"
+    "specifications": [],
+    "__v": 0
   },
   {
     "_id": "6a64be4ea318fa5d6c8b4b0e",
@@ -652,18 +587,12 @@
     ],
     "category": "Cartable Eco Lux",
     "brand": "Bomi",
-    "description": "Étatique : 1ère ➔ 4ème",
+    "description": "",
     "stock": 20,
     "featured": false,
     "status": "active",
-    "specifications": [
-      {
-        "key": "Étatique",
-        "value": "1ère ➔ 4ème"
-      }
-    ],
-    "__v": 0,
-    "availability": "En stock"
+    "specifications": [],
+    "__v": 0
   },
   {
     "_id": "6a64be90a318fa5d6c8b4b11",
@@ -685,18 +614,12 @@
     ],
     "category": "Cartable Eco Lux",
     "brand": "Bomi",
-    "description": "Étatique : 1ère ➔ 4ème",
+    "description": "",
     "stock": 20,
     "featured": false,
     "status": "active",
-    "specifications": [
-      {
-        "key": "Étatique",
-        "value": "1ère ➔ 4ème"
-      }
-    ],
-    "__v": 0,
-    "availability": "En stock"
+    "specifications": [],
+    "__v": 0
   },
   {
     "_id": "6a64becfa318fa5d6c8b4b14",
@@ -718,18 +641,12 @@
     ],
     "category": "Cartable Eco Lux",
     "brand": "Bomi",
-    "description": "Étatique : 1ère ➔ 4ème",
+    "description": "",
     "stock": 20,
     "featured": false,
     "status": "active",
-    "specifications": [
-      {
-        "key": "Étatique",
-        "value": "1ère ➔ 4ème"
-      }
-    ],
-    "__v": 0,
-    "availability": "En stock"
+    "specifications": [],
+    "__v": 0
   },
   {
     "_id": "6a64bf50a318fa5d6c8b4b1a",
@@ -751,18 +668,12 @@
     ],
     "category": "Cartable Eco Lux",
     "brand": "Bomi",
-    "description": "Étatique : 1ère ➔ 4ème",
+    "description": "",
     "stock": 20,
     "featured": false,
     "status": "active",
-    "specifications": [
-      {
-        "key": "Étatique",
-        "value": "1ère ➔ 4ème"
-      }
-    ],
-    "__v": 0,
-    "availability": "En stock"
+    "specifications": [],
+    "__v": 0
   },
   {
     "_id": "6a64c290a318fa5d6c8b4b23",
@@ -784,18 +695,12 @@
     ],
     "category": "Cartable Lux",
     "brand": "Bomi",
-    "description": "Étatique : 1ère ➔ 4ème",
+    "description": "",
     "stock": 20,
     "featured": false,
     "status": "active",
-    "specifications": [
-      {
-        "key": "Étatique",
-        "value": "1ère ➔ 4ème"
-      }
-    ],
-    "__v": 0,
-    "availability": "En stock"
+    "specifications": [],
+    "__v": 0
   },
   {
     "_id": "6a64c2c4a318fa5d6c8b4b26",
@@ -817,18 +722,12 @@
     ],
     "category": "Cartable Lux",
     "brand": "Bomi",
-    "description": "Étatique : 1ère ➔ 4ème",
+    "description": "",
     "stock": 20,
     "featured": false,
     "status": "active",
-    "specifications": [
-      {
-        "key": "Étatique",
-        "value": "1ère ➔ 4ème"
-      }
-    ],
-    "__v": 0,
-    "availability": "En stock"
+    "specifications": [],
+    "__v": 0
   },
   {
     "_id": "6a64c2fba318fa5d6c8b4b29",
@@ -850,18 +749,12 @@
     ],
     "category": "Cartable Lux",
     "brand": "Bomi",
-    "description": "Étatique : 1ère ➔ 4ème",
-    "stock": 20,
+    "description": "",
+    "stock": 19,
     "featured": false,
     "status": "active",
-    "specifications": [
-      {
-        "key": "Étatique",
-        "value": "1ère ➔ 4ème"
-      }
-    ],
-    "__v": 0,
-    "availability": "En stock"
+    "specifications": [],
+    "__v": 0
   },
   {
     "_id": "6a64c349a318fa5d6c8b4b2f",
@@ -883,18 +776,12 @@
     ],
     "category": "Cartable Lux",
     "brand": "Bomi",
-    "description": "Étatique : 1ère ➔ 4ème",
+    "description": "",
     "stock": 20,
     "featured": false,
     "status": "active",
-    "specifications": [
-      {
-        "key": "Étatique",
-        "value": "1ère ➔ 4ème"
-      }
-    ],
-    "__v": 0,
-    "availability": "En stock"
+    "specifications": [],
+    "__v": 0
   },
   {
     "_id": "6a64c373a318fa5d6c8b4b32",
@@ -916,18 +803,12 @@
     ],
     "category": "Cartable Lux",
     "brand": "Bomi",
-    "description": "Étatique : 1ère ➔ 4ème",
+    "description": "",
     "stock": 20,
     "featured": false,
     "status": "active",
-    "specifications": [
-      {
-        "key": "Étatique",
-        "value": "1ère ➔ 4ème"
-      }
-    ],
-    "__v": 0,
-    "availability": "En stock"
+    "specifications": [],
+    "__v": 0
   },
   {
     "_id": "6a64c3fca318fa5d6c8b4b35",
@@ -949,30 +830,24 @@
     ],
     "category": "Cartable Lux",
     "brand": "Bomi",
-    "description": "Étatique : 1ère ➔ 4ème",
+    "description": "",
     "stock": 20,
     "featured": false,
     "status": "active",
-    "specifications": [
-      {
-        "key": "Étatique",
-        "value": "1ère ➔ 4ème"
-      }
-    ],
-    "__v": 0,
-    "availability": "En stock"
+    "specifications": [],
+    "__v": 0
   },
   {
     "_id": "6a64c6baa318fa5d6c8b4b39",
     "id": 1784989371823,
     "name": "SB02-QUAD",
-    "price": "169,000 DT",
-    "priceNum": 169,
-    "priceBeforeDiscount": 289,
-    "discount": 42,
-    "oldPrice": "289,000 DT",
+    "price": "159,000 DT",
+    "priceNum": 159,
+    "priceBeforeDiscount": null,
+    "discount": 0,
+    "oldPrice": "269,000 DT",
     "schoolLevel": "",
-    "badge": "-42%",
+    "badge": "-41%",
     "badgeColor": "#e53935",
     "rating": 5,
     "reviews": 1,
@@ -982,30 +857,24 @@
     ],
     "category": "Cartable Lux",
     "brand": "Bomi",
-    "description": "Étatique : 1ère ➔ 4ème",
+    "description": "",
     "stock": 20,
     "featured": false,
     "status": "active",
-    "specifications": [
-      {
-        "key": "Étatique",
-        "value": "1ère ➔ 4ème"
-      }
-    ],
-    "__v": 0,
-    "availability": "En stock"
+    "specifications": [],
+    "__v": 0
   },
   {
     "_id": "6a64c6f7a318fa5d6c8b4b3c",
     "id": 1784989431569,
     "name": "SB02-PRETTYGIRL",
-    "price": "169,000 DT",
-    "priceNum": 169,
-    "priceBeforeDiscount": 289,
-    "discount": 42,
-    "oldPrice": "289,000 DT",
+    "price": "159,000 DT",
+    "priceNum": 159,
+    "priceBeforeDiscount": null,
+    "discount": 0,
+    "oldPrice": "269,000 DT",
     "schoolLevel": "",
-    "badge": "-42%",
+    "badge": "-41%",
     "badgeColor": "#e53935",
     "rating": 4.3,
     "reviews": 17,
@@ -1015,18 +884,12 @@
     ],
     "category": "Cartable Lux",
     "brand": "Bomi",
-    "description": "Étatique : 1ère ➔ 4ème",
-    "stock": 20,
+    "description": "",
+    "stock": 19,
     "featured": false,
     "status": "active",
-    "specifications": [
-      {
-        "key": "Étatique",
-        "value": "1ère ➔ 4ème"
-      }
-    ],
-    "__v": 0,
-    "availability": "En stock"
+    "specifications": [],
+    "__v": 0
   },
   {
     "_id": "6a64cc37d8d292f6aad388c7",
@@ -1048,22 +911,12 @@
     ],
     "category": "Cartable Lux",
     "brand": "Bomi",
-    "description": "Privé : 1ère ➔ 3ème | Étatique : 3ème ➔ 6ème",
+    "description": "",
     "stock": 20,
     "featured": false,
     "status": "active",
-    "specifications": [
-      {
-        "key": "Privé",
-        "value": "1ère ➔ 3ème"
-      },
-      {
-        "key": "Étatique",
-        "value": "3ème ➔ 6ème"
-      }
-    ],
-    "__v": 0,
-    "availability": "En stock"
+    "specifications": [],
+    "__v": 0
   },
   {
     "_id": "6a64cc6dd8d292f6aad388cc",
@@ -1085,22 +938,12 @@
     ],
     "category": "Cartable Lux",
     "brand": "Bomi",
-    "description": "Privé : 1ère ➔ 3ème | Étatique : 3ème ➔ 6ème",
+    "description": "",
     "stock": 20,
     "featured": false,
     "status": "active",
-    "specifications": [
-      {
-        "key": "Privé",
-        "value": "1ère ➔ 3ème"
-      },
-      {
-        "key": "Étatique",
-        "value": "3ème ➔ 6ème"
-      }
-    ],
-    "__v": 0,
-    "availability": "En stock"
+    "specifications": [],
+    "__v": 0
   },
   {
     "_id": "6a64cc9ed8d292f6aad388cf",
@@ -1122,22 +965,12 @@
     ],
     "category": "Cartable Lux",
     "brand": "Bomi",
-    "description": "Privé : 1ère ➔ 3ème | Étatique : 3ème ➔ 6ème",
+    "description": "",
     "stock": 20,
     "featured": false,
     "status": "active",
-    "specifications": [
-      {
-        "key": "Privé",
-        "value": "1ère ➔ 3ème"
-      },
-      {
-        "key": "Étatique",
-        "value": "3ème ➔ 6ème"
-      }
-    ],
-    "__v": 0,
-    "availability": "En stock"
+    "specifications": [],
+    "__v": 0
   },
   {
     "_id": "6a64ccc5d8d292f6aad388d2",
@@ -1159,22 +992,12 @@
     ],
     "category": "Cartable Lux",
     "brand": "Bomi",
-    "description": "Privé : 1ère ➔ 3ème | Étatique : 3ème ➔ 6ème",
+    "description": "",
     "stock": 20,
     "featured": false,
     "status": "active",
-    "specifications": [
-      {
-        "key": "Privé",
-        "value": "1ère ➔ 3ème"
-      },
-      {
-        "key": "Étatique",
-        "value": "3ème ➔ 6ème"
-      }
-    ],
-    "__v": 0,
-    "availability": "En stock"
+    "specifications": [],
+    "__v": 0
   },
   {
     "_id": "6a64ccf7d8d292f6aad388d5",
@@ -1196,22 +1019,12 @@
     ],
     "category": "Cartable Lux",
     "brand": "Bomi",
-    "description": "Privé : 1ère ➔ 3ème | Étatique : 3ème ➔ 6ème",
-    "stock": 20,
+    "description": "",
+    "stock": 19,
     "featured": false,
     "status": "active",
-    "specifications": [
-      {
-        "key": "Privé",
-        "value": "1ère ➔ 3ème"
-      },
-      {
-        "key": "Étatique",
-        "value": "3ème ➔ 6ème"
-      }
-    ],
-    "__v": 0,
-    "availability": "En stock"
+    "specifications": [],
+    "__v": 0
   },
   {
     "_id": "6a64cd1cd8d292f6aad388d8",
@@ -1233,34 +1046,24 @@
     ],
     "category": "Cartable Lux",
     "brand": "Bomi",
-    "description": "Privé : 1ère ➔ 3ème | Étatique : 3ème ➔ 6ème",
+    "description": "",
     "stock": 20,
     "featured": false,
     "status": "active",
-    "specifications": [
-      {
-        "key": "Privé",
-        "value": "1ère ➔ 3ème"
-      },
-      {
-        "key": "Étatique",
-        "value": "3ème ➔ 6ème"
-      }
-    ],
-    "__v": 0,
-    "availability": "En stock"
+    "specifications": [],
+    "__v": 0
   },
   {
     "_id": "6a64cd47d8d292f6aad388db",
     "id": 1784991047793,
     "name": "SB03-QUAD",
-    "price": "219,000 DT",
-    "priceNum": 219,
-    "priceBeforeDiscount": 319,
-    "discount": 31,
-    "oldPrice": "319,000 DT",
+    "price": "199,000 DT",
+    "priceNum": 199,
+    "priceBeforeDiscount": 0,
+    "discount": 0,
+    "oldPrice": "299,000 DT",
     "schoolLevel": "",
-    "badge": "-31%",
+    "badge": "-33%",
     "badgeColor": "#e53935",
     "rating": 4,
     "reviews": 14,
@@ -1270,34 +1073,24 @@
     ],
     "category": "Cartable Lux",
     "brand": "Bomi",
-    "description": "Privé : 1ère ➔ 3ème | Étatique : 3ème ➔ 6ème",
+    "description": "",
     "stock": 20,
     "featured": false,
     "status": "active",
-    "specifications": [
-      {
-        "key": "Privé",
-        "value": "1ère ➔ 3ème"
-      },
-      {
-        "key": "Étatique",
-        "value": "3ème ➔ 6ème"
-      }
-    ],
-    "__v": 0,
-    "availability": "En stock"
+    "specifications": [],
+    "__v": 0
   },
   {
     "_id": "6a64cd6ad8d292f6aad388de",
     "id": 1784991083142,
     "name": "SB03-PRETTYGIRL",
-    "price": "219,000 DT",
-    "priceNum": 219,
-    "priceBeforeDiscount": 319,
-    "discount": 31,
-    "oldPrice": "319,000 DT",
+    "price": "199,000 DT",
+    "priceNum": 199,
+    "priceBeforeDiscount": null,
+    "discount": 0,
+    "oldPrice": "299,000 DT",
     "schoolLevel": "",
-    "badge": "-31%",
+    "badge": "-33%",
     "badgeColor": "#e53935",
     "rating": 4,
     "reviews": 17,
@@ -1307,22 +1100,12 @@
     ],
     "category": "Cartable Lux",
     "brand": "Bomi",
-    "description": "Privé : 1ère ➔ 3ème | Étatique : 3ème ➔ 6ème",
+    "description": "",
     "stock": 20,
     "featured": false,
     "status": "active",
-    "specifications": [
-      {
-        "key": "Privé",
-        "value": "1ère ➔ 3ème"
-      },
-      {
-        "key": "Étatique",
-        "value": "3ème ➔ 6ème"
-      }
-    ],
-    "__v": 0,
-    "availability": "En stock"
+    "specifications": [],
+    "__v": 0
   },
   {
     "_id": "6a64d3e799c3b88e090cb7a3",
@@ -1344,18 +1127,12 @@
     ],
     "category": "Cartable super lux",
     "brand": "Bomi",
-    "description": "Étatique : 1ère ➔ 2ème",
+    "description": "",
     "stock": 20,
     "featured": false,
     "status": "active",
-    "specifications": [
-      {
-        "key": "Étatique",
-        "value": "1ère ➔ 2ème"
-      }
-    ],
-    "__v": 0,
-    "availability": "En stock"
+    "specifications": [],
+    "__v": 0
   },
   {
     "_id": "6a64d44899c3b88e090cb7a6",
@@ -1377,18 +1154,12 @@
     ],
     "category": "Cartable super lux",
     "brand": "Bomi",
-    "description": "Étatique : 1ère ➔ 2ème",
+    "description": "",
     "stock": 20,
     "featured": false,
     "status": "active",
-    "specifications": [
-      {
-        "key": "Étatique",
-        "value": "1ère ➔ 2ème"
-      }
-    ],
-    "__v": 0,
-    "availability": "En stock"
+    "specifications": [],
+    "__v": 0
   },
   {
     "_id": "6a64d47b99c3b88e090cb7aa",
@@ -1410,18 +1181,12 @@
     ],
     "category": "Cartable super lux",
     "brand": "Bomi",
-    "description": "Étatique : 1ère ➔ 2ème",
+    "description": "",
     "stock": 20,
     "featured": false,
     "status": "active",
-    "specifications": [
-      {
-        "key": "Étatique",
-        "value": "1ère ➔ 2ème"
-      }
-    ],
-    "__v": 0,
-    "availability": "En stock"
+    "specifications": [],
+    "__v": 0
   },
   {
     "_id": "6a64d4a699c3b88e090cb7ad",
@@ -1443,18 +1208,12 @@
     ],
     "category": "Cartable super lux",
     "brand": "Bomi",
-    "description": "Étatique : 1ère ➔ 2ème",
+    "description": "",
     "stock": 20,
     "featured": false,
     "status": "active",
-    "specifications": [
-      {
-        "key": "Étatique",
-        "value": "1ère ➔ 2ème"
-      }
-    ],
-    "__v": 0,
-    "availability": "En stock"
+    "specifications": [],
+    "__v": 0
   },
   {
     "_id": "6a64d4f399c3b88e090cb7b0",
@@ -1476,18 +1235,12 @@
     ],
     "category": "Cartable super lux",
     "brand": "Bomi",
-    "description": "Étatique : 1ère ➔ 2ème",
+    "description": "",
     "stock": 20,
     "featured": false,
     "status": "active",
-    "specifications": [
-      {
-        "key": "Étatique",
-        "value": "1ère ➔ 2ème"
-      }
-    ],
-    "__v": 0,
-    "availability": "En stock"
+    "specifications": [],
+    "__v": 0
   },
   {
     "_id": "6a64d52399c3b88e090cb7b3",
@@ -1509,18 +1262,12 @@
     ],
     "category": "Cartable super lux",
     "brand": "Bomi",
-    "description": "Étatique : 1ère ➔ 2ème",
+    "description": "",
     "stock": 20,
     "featured": false,
     "status": "active",
-    "specifications": [
-      {
-        "key": "Étatique",
-        "value": "1ère ➔ 2ème"
-      }
-    ],
-    "__v": 0,
-    "availability": "En stock"
+    "specifications": [],
+    "__v": 0
   },
   {
     "_id": "6a64dc9a99c3b88e090cb7b7",
@@ -1542,22 +1289,12 @@
     ],
     "category": "Cartable super lux",
     "brand": "Bomi",
-    "description": "Privé : 1ère ➔ 3ème | Étatique : 3ème ➔ 6ème",
+    "description": "",
     "stock": 20,
     "featured": false,
     "status": "active",
-    "specifications": [
-      {
-        "key": "Privé",
-        "value": "1ère ➔ 3ème"
-      },
-      {
-        "key": "Étatique",
-        "value": "3ème ➔ 6ème"
-      }
-    ],
-    "__v": 0,
-    "availability": "En stock"
+    "specifications": [],
+    "__v": 0
   },
   {
     "_id": "6a64dccd99c3b88e090cb7ba",
@@ -1579,22 +1316,12 @@
     ],
     "category": "Cartable super lux",
     "brand": "Bomi",
-    "description": "Privé : 1ère ➔ 3ème | Étatique : 3ème ➔ 6ème",
+    "description": "",
     "stock": 20,
     "featured": false,
     "status": "active",
-    "specifications": [
-      {
-        "key": "Privé",
-        "value": "1ère ➔ 3ème"
-      },
-      {
-        "key": "Étatique",
-        "value": "3ème ➔ 6ème"
-      }
-    ],
-    "__v": 0,
-    "availability": "En stock"
+    "specifications": [],
+    "__v": 0
   },
   {
     "_id": "6a64dcfc99c3b88e090cb7bd",
@@ -1616,22 +1343,12 @@
     ],
     "category": "Cartable super lux",
     "brand": "Bomi",
-    "description": "Privé : 1ère ➔ 3ème | Étatique : 3ème ➔ 6ème",
+    "description": "",
     "stock": 20,
     "featured": false,
     "status": "active",
-    "specifications": [
-      {
-        "key": "Privé",
-        "value": "1ère ➔ 3ème"
-      },
-      {
-        "key": "Étatique",
-        "value": "3ème ➔ 6ème"
-      }
-    ],
-    "__v": 0,
-    "availability": "En stock"
+    "specifications": [],
+    "__v": 0
   },
   {
     "_id": "6a64dd3b99c3b88e090cb7c0",
@@ -1653,22 +1370,12 @@
     ],
     "category": "Cartable super lux",
     "brand": "Bomi",
-    "description": "Privé : 1ère ➔ 3ème | Étatique : 3ème ➔ 6ème",
+    "description": "",
     "stock": 20,
     "featured": false,
     "status": "active",
-    "specifications": [
-      {
-        "key": "Privé",
-        "value": "1ère ➔ 3ème"
-      },
-      {
-        "key": "Étatique",
-        "value": "3ème ➔ 6ème"
-      }
-    ],
-    "__v": 0,
-    "availability": "En stock"
+    "specifications": [],
+    "__v": 0
   },
   {
     "_id": "6a64ddc599c3b88e090cb7c7",
@@ -1690,22 +1397,12 @@
     ],
     "category": "Cartable super lux",
     "brand": "Bomi",
-    "description": "Privé : 1ère ➔ 3ème | Étatique : 3ème ➔ 6ème",
+    "description": "",
     "stock": 20,
     "featured": false,
     "status": "active",
-    "specifications": [
-      {
-        "key": "Privé",
-        "value": "1ère ➔ 3ème"
-      },
-      {
-        "key": "Étatique",
-        "value": "3ème ➔ 6ème"
-      }
-    ],
-    "__v": 0,
-    "availability": "En stock"
+    "specifications": [],
+    "__v": 0
   },
   {
     "_id": "6a64de2a99c3b88e090cb7cb",
@@ -1727,22 +1424,12 @@
     ],
     "category": "Cartable super lux",
     "brand": "Bomi",
-    "description": "Privé : 1ère ➔ 3ème | Étatique : 3ème ➔ 6ème",
+    "description": "",
     "stock": 20,
     "featured": false,
     "status": "active",
-    "specifications": [
-      {
-        "key": "Privé",
-        "value": "1ère ➔ 3ème"
-      },
-      {
-        "key": "Étatique",
-        "value": "3ème ➔ 6ème"
-      }
-    ],
-    "__v": 0,
-    "availability": "En stock"
+    "specifications": [],
+    "__v": 0
   },
   {
     "_id": "6a64df1999c3b88e090cb7ce",
@@ -1764,22 +1451,12 @@
     ],
     "category": "Cartable super lux",
     "brand": "Bomi",
-    "description": "Privé : 1ère ➔ 6ème | Étatique : 4ème ➔ 6ème",
+    "description": "",
     "stock": 20,
     "featured": false,
     "status": "active",
-    "specifications": [
-      {
-        "key": "Privé",
-        "value": "1ère ➔ 6ème"
-      },
-      {
-        "key": "Étatique",
-        "value": "4ème ➔ 6ème"
-      }
-    ],
-    "__v": 0,
-    "availability": "En stock"
+    "specifications": [],
+    "__v": 0
   },
   {
     "_id": "6a64df4b99c3b88e090cb7d1",
@@ -1801,22 +1478,12 @@
     ],
     "category": "Cartable super lux",
     "brand": "Bomi",
-    "description": "Privé : 1ère ➔ 6ème | Étatique : 4ème ➔ 6ème",
+    "description": "",
     "stock": 20,
     "featured": false,
     "status": "active",
-    "specifications": [
-      {
-        "key": "Privé",
-        "value": "1ère ➔ 6ème"
-      },
-      {
-        "key": "Étatique",
-        "value": "4ème ➔ 6ème"
-      }
-    ],
-    "__v": 0,
-    "availability": "En stock"
+    "specifications": [],
+    "__v": 0
   },
   {
     "_id": "6a64df9099c3b88e090cb7d4",
@@ -1838,22 +1505,12 @@
     ],
     "category": "Cartable super lux",
     "brand": "Bomi",
-    "description": "Privé : 1ère ➔ 6ème | Étatique : 4ème ➔ 6ème",
+    "description": "",
     "stock": 20,
     "featured": false,
     "status": "active",
-    "specifications": [
-      {
-        "key": "Privé",
-        "value": "1ère ➔ 6ème"
-      },
-      {
-        "key": "Étatique",
-        "value": "4ème ➔ 6ème"
-      }
-    ],
-    "__v": 0,
-    "availability": "En stock"
+    "specifications": [],
+    "__v": 0
   },
   {
     "_id": "6a64dfb699c3b88e090cb7d7",
@@ -1875,22 +1532,12 @@
     ],
     "category": "Cartable super lux",
     "brand": "Bomi",
-    "description": "Privé : 1ère ➔ 6ème | Étatique : 4ème ➔ 6ème",
+    "description": "",
     "stock": 20,
     "featured": false,
     "status": "active",
-    "specifications": [
-      {
-        "key": "Privé",
-        "value": "1ère ➔ 6ème"
-      },
-      {
-        "key": "Étatique",
-        "value": "4ème ➔ 6ème"
-      }
-    ],
-    "__v": 0,
-    "availability": "En stock"
+    "specifications": [],
+    "__v": 0
   },
   {
     "_id": "6a64dfe299c3b88e090cb7db",
@@ -1912,22 +1559,12 @@
     ],
     "category": "Cartable super lux",
     "brand": "Bomi",
-    "description": "Privé : 1ère ➔ 6ème | Étatique : 4ème ➔ 6ème",
+    "description": "",
     "stock": 20,
     "featured": false,
     "status": "active",
-    "specifications": [
-      {
-        "key": "Privé",
-        "value": "1ère ➔ 6ème"
-      },
-      {
-        "key": "Étatique",
-        "value": "4ème ➔ 6ème"
-      }
-    ],
-    "__v": 0,
-    "availability": "En stock"
+    "specifications": [],
+    "__v": 0
   },
   {
     "_id": "6a64e02999c3b88e090cb7de",
@@ -1949,22 +1586,12 @@
     ],
     "category": "Cartable super lux",
     "brand": "Bomi",
-    "description": "Privé : 1ère ➔ 6ème | Étatique : 4ème ➔ 6ème",
+    "description": "",
     "stock": 20,
     "featured": false,
     "status": "active",
-    "specifications": [
-      {
-        "key": "Privé",
-        "value": "1ère ➔ 6ème"
-      },
-      {
-        "key": "Étatique",
-        "value": "4ème ➔ 6ème"
-      }
-    ],
-    "__v": 0,
-    "availability": "En stock"
+    "specifications": [],
+    "__v": 0
   },
   {
     "_id": "6a64e17c99c3b88e090cb7e2",
@@ -1986,22 +1613,12 @@
     ],
     "category": "Cartable high lux",
     "brand": "Bomi",
-    "description": "Privé : 1ère ➔ 3ème | Étatique : 3ème ➔ 6ème",
+    "description": "",
     "stock": 20,
     "featured": false,
     "status": "active",
-    "specifications": [
-      {
-        "key": "Privé",
-        "value": "1ère ➔ 3ème"
-      },
-      {
-        "key": "Étatique",
-        "value": "3ème ➔ 6ème"
-      }
-    ],
-    "__v": 0,
-    "availability": "En stock"
+    "specifications": [],
+    "__v": 0
   },
   {
     "_id": "6a64e22799c3b88e090cb7e8",
@@ -2023,22 +1640,12 @@
     ],
     "category": "Cartable high lux",
     "brand": "Bomi",
-    "description": "Privé : 1ère ➔ 3ème | Étatique : 3ème ➔ 6ème",
+    "description": "",
     "stock": 20,
     "featured": false,
     "status": "active",
-    "specifications": [
-      {
-        "key": "Privé",
-        "value": "1ère ➔ 3ème"
-      },
-      {
-        "key": "Étatique",
-        "value": "3ème ➔ 6ème"
-      }
-    ],
-    "__v": 0,
-    "availability": "En stock"
+    "specifications": [],
+    "__v": 0
   },
   {
     "_id": "6a64e28599c3b88e090cb7eb",
@@ -2060,22 +1667,12 @@
     ],
     "category": "Cartable high lux",
     "brand": "Bomi",
-    "description": "Privé : 1ère ➔ 3ème | Étatique : 3ème ➔ 6ème",
+    "description": "",
     "stock": 20,
     "featured": false,
     "status": "active",
-    "specifications": [
-      {
-        "key": "Privé",
-        "value": "1ère ➔ 3ème"
-      },
-      {
-        "key": "Étatique",
-        "value": "3ème ➔ 6ème"
-      }
-    ],
-    "__v": 0,
-    "availability": "En stock"
+    "specifications": [],
+    "__v": 0
   },
   {
     "_id": "6a64e2ce99c3b88e090cb7ee",
@@ -2097,22 +1694,12 @@
     ],
     "category": "Cartable high lux",
     "brand": "Bomi",
-    "description": "Privé : 1ère ➔ 3ème | Étatique : 3ème ➔ 6ème",
+    "description": "",
     "stock": 20,
     "featured": false,
     "status": "active",
-    "specifications": [
-      {
-        "key": "Privé",
-        "value": "1ère ➔ 3ème"
-      },
-      {
-        "key": "Étatique",
-        "value": "3ème ➔ 6ème"
-      }
-    ],
-    "__v": 0,
-    "availability": "En stock"
+    "specifications": [],
+    "__v": 0
   },
   {
     "_id": "6a64e31899c3b88e090cb7f1",
@@ -2134,22 +1721,12 @@
     ],
     "category": "Cartable high lux",
     "brand": "Bomi",
-    "description": "Privé : 1ère ➔ 3ème | Étatique : 3ème ➔ 6ème",
+    "description": "",
     "stock": 20,
     "featured": false,
     "status": "active",
-    "specifications": [
-      {
-        "key": "Privé",
-        "value": "1ère ➔ 3ème"
-      },
-      {
-        "key": "Étatique",
-        "value": "3ème ➔ 6ème"
-      }
-    ],
-    "__v": 0,
-    "availability": "En stock"
+    "specifications": [],
+    "__v": 0
   },
   {
     "_id": "6a64e34599c3b88e090cb7f4",
@@ -2171,22 +1748,12 @@
     ],
     "category": "Cartable high lux",
     "brand": "Bomi",
-    "description": "Privé : 1ère ➔ 3ème | Étatique : 3ème ➔ 6ème",
+    "description": "",
     "stock": 20,
     "featured": false,
     "status": "active",
-    "specifications": [
-      {
-        "key": "Privé",
-        "value": "1ère ➔ 3ème"
-      },
-      {
-        "key": "Étatique",
-        "value": "3ème ➔ 6ème"
-      }
-    ],
-    "__v": 0,
-    "availability": "En stock"
+    "specifications": [],
+    "__v": 0
   },
   {
     "_id": "6a64e43799c3b88e090cb7fa",
@@ -2208,22 +1775,12 @@
     ],
     "category": "Cartable high lux",
     "brand": "Bomi",
-    "description": "Privé : 1ère ➔ 6ème | Étatique : 4ème ➔ 6ème",
+    "description": "",
     "stock": 20,
     "featured": false,
     "status": "active",
-    "specifications": [
-      {
-        "key": "Privé",
-        "value": "1ère ➔ 6ème"
-      },
-      {
-        "key": "Étatique",
-        "value": "4ème ➔ 6ème"
-      }
-    ],
-    "__v": 0,
-    "availability": "En stock"
+    "specifications": [],
+    "__v": 0
   },
   {
     "_id": "6a64e4fb99c3b88e090cb7fd",
@@ -2245,22 +1802,12 @@
     ],
     "category": "Cartable high lux",
     "brand": "Bomi",
-    "description": "Privé : 1ère ➔ 6ème | Étatique : 4ème ➔ 6ème",
+    "description": "",
     "stock": 20,
     "featured": false,
     "status": "active",
-    "specifications": [
-      {
-        "key": "Privé",
-        "value": "1ère ➔ 6ème"
-      },
-      {
-        "key": "Étatique",
-        "value": "4ème ➔ 6ème"
-      }
-    ],
-    "__v": 0,
-    "availability": "En stock"
+    "specifications": [],
+    "__v": 0
   },
   {
     "_id": "6a64e51e99c3b88e090cb800",
@@ -2282,22 +1829,12 @@
     ],
     "category": "Cartable high lux",
     "brand": "Bomi",
-    "description": "Privé : 1ère ➔ 6ème | Étatique : 4ème ➔ 6ème",
+    "description": "",
     "stock": 20,
     "featured": false,
     "status": "active",
-    "specifications": [
-      {
-        "key": "Privé",
-        "value": "1ère ➔ 6ème"
-      },
-      {
-        "key": "Étatique",
-        "value": "4ème ➔ 6ème"
-      }
-    ],
-    "__v": 0,
-    "availability": "En stock"
+    "specifications": [],
+    "__v": 0
   },
   {
     "_id": "6a64e5d199c3b88e090cb803",
@@ -2319,22 +1856,12 @@
     ],
     "category": "Cartable high lux",
     "brand": "Bomi",
-    "description": "Privé : 1ère ➔ 6ème | Étatique : 4ème ➔ 6ème",
+    "description": "",
     "stock": 20,
     "featured": false,
     "status": "active",
-    "specifications": [
-      {
-        "key": "Privé",
-        "value": "1ère ➔ 6ème"
-      },
-      {
-        "key": "Étatique",
-        "value": "4ème ➔ 6ème"
-      }
-    ],
-    "__v": 0,
-    "availability": "En stock"
+    "specifications": [],
+    "__v": 0
   },
   {
     "_id": "6a64e62099c3b88e090cb807",
@@ -2356,22 +1883,12 @@
     ],
     "category": "Cartable high lux",
     "brand": "Bomi",
-    "description": "Privé : 1ère ➔ 6ème | Étatique : 4ème ➔ 6ème",
+    "description": "",
     "stock": 20,
     "featured": false,
     "status": "active",
-    "specifications": [
-      {
-        "key": "Privé",
-        "value": "1ère ➔ 6ème"
-      },
-      {
-        "key": "Étatique",
-        "value": "4ème ➔ 6ème"
-      }
-    ],
-    "__v": 0,
-    "availability": "En stock"
+    "specifications": [],
+    "__v": 0
   },
   {
     "_id": "6a64ed0e99c3b88e090cb80c",
@@ -2393,13 +1910,12 @@
     ],
     "category": "Jardin d'enfant",
     "brand": "Bomi",
-    "description": "SBJ01-CASTLE",
+    "description": "",
     "stock": 20,
     "featured": false,
     "status": "active",
     "specifications": [],
-    "__v": 0,
-    "availability": "En stock"
+    "__v": 0
   },
   {
     "_id": "6a64ed7899c3b88e090cb810",
@@ -2421,13 +1937,12 @@
     ],
     "category": "Jardin d'enfant",
     "brand": "Bomi",
-    "description": "SBJ01-PLANE",
+    "description": "",
     "stock": 20,
     "featured": false,
     "status": "active",
     "specifications": [],
-    "__v": 0,
-    "availability": "En stock"
+    "__v": 0
   },
   {
     "_id": "6a64ee5b99c3b88e090cb813",
@@ -2449,13 +1964,12 @@
     ],
     "category": "Jardin d'enfant",
     "brand": "Bomi",
-    "description": "SBJ01-SHARK",
+    "description": "",
     "stock": 20,
     "featured": false,
     "status": "active",
     "specifications": [],
-    "__v": 0,
-    "availability": "En stock"
+    "__v": 0
   },
   {
     "_id": "6a64eece99c3b88e090cb816",
@@ -2477,13 +1991,12 @@
     ],
     "category": "Jardin d'enfant",
     "brand": "Bomi",
-    "description": "TLJ02-CASTLE",
+    "description": "",
     "stock": 20,
     "featured": false,
     "status": "active",
     "specifications": [],
-    "__v": 0,
-    "availability": "En stock"
+    "__v": 0
   },
   {
     "_id": "6a64ef1399c3b88e090cb81a",
@@ -2505,13 +2018,12 @@
     ],
     "category": "Jardin d'enfant",
     "brand": "Bomi",
-    "description": "TLJ02-PLANE",
-    "stock": 20,
+    "description": "",
+    "stock": 19,
     "featured": false,
     "status": "active",
     "specifications": [],
-    "__v": 0,
-    "availability": "En stock"
+    "__v": 0
   },
   {
     "_id": "6a650d671f3c8e764a2ed620",
@@ -2533,13 +2045,12 @@
     ],
     "category": "paniers",
     "brand": "Bomi",
-    "description": "CL01-SWAN",
-    "stock": 20,
+    "description": "",
+    "stock": 19,
     "featured": false,
     "status": "active",
     "specifications": [],
-    "__v": 0,
-    "availability": "En stock"
+    "__v": 0
   },
   {
     "_id": "6a650d9e1f3c8e764a2ed625",
@@ -2561,13 +2072,12 @@
     ],
     "category": "paniers",
     "brand": "Bomi",
-    "description": "CL01-SKATE",
-    "stock": 20,
+    "description": "",
+    "stock": 19,
     "featured": false,
     "status": "active",
     "specifications": [],
-    "__v": 0,
-    "availability": "En stock"
+    "__v": 0
   },
   {
     "_id": "6a650dc61f3c8e764a2ed628",
@@ -2589,13 +2099,12 @@
     ],
     "category": "paniers",
     "brand": "Bomi",
-    "description": "CL01-RACING",
+    "description": "",
     "stock": 20,
     "featured": false,
     "status": "active",
     "specifications": [],
-    "__v": 0,
-    "availability": "En stock"
+    "__v": 0
   },
   {
     "_id": "6a650de71f3c8e764a2ed62b",
@@ -2617,13 +2126,12 @@
     ],
     "category": "paniers",
     "brand": "Bomi",
-    "description": "CL01-FLORAL",
+    "description": "",
     "stock": 20,
     "featured": false,
     "status": "active",
     "specifications": [],
-    "__v": 0,
-    "availability": "En stock"
+    "__v": 0
   },
   {
     "_id": "6a650e111f3c8e764a2ed62f",
@@ -2645,13 +2153,12 @@
     ],
     "category": "paniers",
     "brand": "Bomi",
-    "description": "CL01-DINO",
+    "description": "",
     "stock": 20,
     "featured": false,
     "status": "active",
     "specifications": [],
-    "__v": 0,
-    "availability": "En stock"
+    "__v": 0
   },
   {
     "_id": "6a650e381f3c8e764a2ed632",
@@ -2673,13 +2180,12 @@
     ],
     "category": "paniers",
     "brand": "Bomi",
-    "description": "CL01-BUTTERFLY",
+    "description": "",
     "stock": 20,
     "featured": false,
     "status": "active",
     "specifications": [],
-    "__v": 0,
-    "availability": "En stock"
+    "__v": 0
   },
   {
     "_id": "6a65135f1f3c8e764a2ed639",
@@ -2701,13 +2207,12 @@
     ],
     "category": "paniers",
     "brand": "Bomi",
-    "description": "CL02-SWAN",
+    "description": "",
     "stock": 20,
     "featured": false,
     "status": "active",
     "specifications": [],
-    "__v": 0,
-    "availability": "En stock"
+    "__v": 0
   },
   {
     "_id": "6a6513811f3c8e764a2ed63c",
@@ -2729,13 +2234,12 @@
     ],
     "category": "paniers",
     "brand": "Bomi",
-    "description": "CL02-SKATE",
+    "description": "",
     "stock": 20,
     "featured": false,
     "status": "active",
     "specifications": [],
-    "__v": 0,
-    "availability": "En stock"
+    "__v": 0
   },
   {
     "_id": "6a6513f51f3c8e764a2ed63f",
@@ -2757,13 +2261,12 @@
     ],
     "category": "paniers",
     "brand": "Bomi",
-    "description": "CL02-RACING",
+    "description": "",
     "stock": 20,
     "featured": false,
     "status": "active",
     "specifications": [],
-    "__v": 0,
-    "availability": "En stock"
+    "__v": 0
   },
   {
     "_id": "6a6514221f3c8e764a2ed642",
@@ -2785,13 +2288,12 @@
     ],
     "category": "paniers",
     "brand": "Bomi",
-    "description": "CL02-FLORAL",
+    "description": "",
     "stock": 20,
     "featured": false,
     "status": "active",
     "specifications": [],
-    "__v": 0,
-    "availability": "En stock"
+    "__v": 0
   },
   {
     "_id": "6a6514601f3c8e764a2ed645",
@@ -2813,13 +2315,12 @@
     ],
     "category": "paniers",
     "brand": "Bomi",
-    "description": "CL02-DINO",
+    "description": "",
     "stock": 20,
     "featured": false,
     "status": "active",
     "specifications": [],
-    "__v": 0,
-    "availability": "En stock"
+    "__v": 0
   },
   {
     "_id": "6a6514861f3c8e764a2ed648",
@@ -2841,13 +2342,12 @@
     ],
     "category": "paniers",
     "brand": "Bomi",
-    "description": "CL02-BUTTERFLY",
+    "description": "",
     "stock": 20,
     "featured": false,
     "status": "active",
     "specifications": [],
-    "__v": 0,
-    "availability": "En stock"
+    "__v": 0
   },
   {
     "_id": "6a65174f1f3c8e764a2ed64d",
@@ -2869,13 +2369,12 @@
     ],
     "category": "paniers",
     "brand": "Bomi",
-    "description": "CL03-SWAN",
+    "description": "",
     "stock": 20,
     "featured": false,
     "status": "active",
     "specifications": [],
-    "__v": 0,
-    "availability": "En stock"
+    "__v": 0
   },
   {
     "_id": "6a651b461f3c8e764a2ed655",
@@ -2897,13 +2396,12 @@
     ],
     "category": "paniers",
     "brand": "Bomi",
-    "description": "CL03-SKATE",
+    "description": "",
     "stock": 20,
     "featured": false,
     "status": "active",
     "specifications": [],
-    "__v": 0,
-    "availability": "En stock"
+    "__v": 0
   },
   {
     "_id": "6a651b681f3c8e764a2ed658",
@@ -2925,13 +2423,12 @@
     ],
     "category": "paniers",
     "brand": "Bomi",
-    "description": "CL03-RACING",
+    "description": "",
     "stock": 20,
     "featured": false,
     "status": "active",
     "specifications": [],
-    "__v": 0,
-    "availability": "En stock"
+    "__v": 0
   },
   {
     "_id": "6a651b8e1f3c8e764a2ed65b",
@@ -2953,7 +2450,7 @@
     ],
     "category": "paniers",
     "brand": "Bomi",
-    "description": "CL03-FLORAL",
+    "description": "",
     "stock": 20,
     "featured": false,
     "status": "active",
@@ -2981,13 +2478,12 @@
     ],
     "category": "paniers",
     "brand": "Bomi",
-    "description": "CL03-DINO",
+    "description": "",
     "stock": 20,
     "featured": false,
     "status": "active",
     "specifications": [],
-    "__v": 0,
-    "availability": "En stock"
+    "__v": 0
   },
   {
     "_id": "6a651bea1f3c8e764a2ed661",
@@ -3009,13 +2505,12 @@
     ],
     "category": "paniers",
     "brand": "Bomi",
-    "description": "CL03-BUTTERFLY",
+    "description": "",
     "stock": 20,
     "featured": false,
     "status": "active",
     "specifications": [],
-    "__v": 0,
-    "availability": "En stock"
+    "__v": 0
   },
   {
     "_id": "6a651de01f3c8e764a2ed665",
@@ -3037,13 +2532,12 @@
     ],
     "category": "paniers",
     "brand": "Bomi",
-    "description": "CLH02-SWAN",
+    "description": "",
     "stock": 20,
     "featured": false,
     "status": "active",
     "specifications": [],
-    "__v": 0,
-    "availability": "En stock"
+    "__v": 0
   },
   {
     "_id": "6a651e0d1f3c8e764a2ed668",
@@ -3065,13 +2559,12 @@
     ],
     "category": "paniers",
     "brand": "Bomi",
-    "description": "CLH02-SKATE",
+    "description": "",
     "stock": 20,
     "featured": false,
     "status": "active",
     "specifications": [],
-    "__v": 0,
-    "availability": "En stock"
+    "__v": 0
   },
   {
     "_id": "6a651e5d1f3c8e764a2ed66e",
@@ -3093,13 +2586,12 @@
     ],
     "category": "paniers",
     "brand": "Bomi",
-    "description": "CLH02-FLORAL",
+    "description": "",
     "stock": 20,
     "featured": false,
     "status": "active",
     "specifications": [],
-    "__v": 0,
-    "availability": "En stock"
+    "__v": 0
   },
   {
     "_id": "6a651e8d1f3c8e764a2ed672",
@@ -3121,13 +2613,12 @@
     ],
     "category": "paniers",
     "brand": "Bomi",
-    "description": "CLH02-BUTTERFLY",
+    "description": "",
     "stock": 20,
     "featured": false,
     "status": "active",
     "specifications": [],
-    "__v": 0,
-    "availability": "En stock"
+    "__v": 0
   },
   {
     "_id": "6a651f311f3c8e764a2ed675",
@@ -3149,13 +2640,12 @@
     ],
     "category": "paniers",
     "brand": "Bomi",
-    "description": "CLH02-DINO",
+    "description": "",
     "stock": 20,
     "featured": false,
     "status": "active",
     "specifications": [],
-    "__v": 0,
-    "availability": "En stock"
+    "__v": 0
   },
   {
     "_id": "6a6520001f3c8e764a2ed678",
@@ -3177,13 +2667,12 @@
     ],
     "category": "paniers",
     "brand": "Bomi",
-    "description": "CLH02-RACING",
+    "description": "",
     "stock": 20,
     "featured": false,
     "status": "active",
     "specifications": [],
-    "__v": 0,
-    "availability": "En stock"
+    "__v": 0
   },
   {
     "_id": "6a662d38270910f42a87cb47",
@@ -3205,7 +2694,7 @@
     ],
     "category": "Trousse",
     "brand": "Bomi",
-    "description": "TS01-SWAN",
+    "description": "",
     "stock": 20,
     "availability": "En stock",
     "featured": false,
@@ -3233,7 +2722,7 @@
     ],
     "category": "Trousse",
     "brand": "Bomi",
-    "description": "TS01-SKATE",
+    "description": "",
     "stock": 20,
     "availability": "En stock",
     "featured": false,
@@ -3261,7 +2750,7 @@
     ],
     "category": "Trousse",
     "brand": "Bomi",
-    "description": "TS01-RACING",
+    "description": "",
     "stock": 20,
     "availability": "En stock",
     "featured": false,
@@ -3289,7 +2778,7 @@
     ],
     "category": "Trousse",
     "brand": "Bomi",
-    "description": "TS01-FLORAL",
+    "description": "",
     "stock": 20,
     "availability": "En stock",
     "featured": false,
@@ -3317,7 +2806,7 @@
     ],
     "category": "Trousse",
     "brand": "Bomi",
-    "description": "TS01-DINO",
+    "description": "",
     "stock": 20,
     "availability": "En stock",
     "featured": false,
@@ -3345,7 +2834,7 @@
     ],
     "category": "Trousse",
     "brand": "Bomi",
-    "description": "TS01-BUTTERFLY",
+    "description": "",
     "stock": 20,
     "availability": "En stock",
     "featured": false,
@@ -3373,7 +2862,7 @@
     ],
     "category": "Trousse",
     "brand": "Bomi",
-    "description": "TS02-SWAN",
+    "description": "",
     "stock": 20,
     "availability": "En stock",
     "featured": false,
@@ -3401,7 +2890,7 @@
     ],
     "category": "Trousse",
     "brand": "Bomi",
-    "description": "TS02-SKATE",
+    "description": "",
     "stock": 20,
     "availability": "En stock",
     "featured": false,
@@ -3429,7 +2918,7 @@
     ],
     "category": "Trousse",
     "brand": "Bomi",
-    "description": "TS02-RACING",
+    "description": "",
     "stock": 20,
     "availability": "En stock",
     "featured": false,
@@ -3457,7 +2946,7 @@
     ],
     "category": "Trousse",
     "brand": "Bomi",
-    "description": "TS02-FLORAL",
+    "description": "",
     "stock": 20,
     "availability": "En stock",
     "featured": false,
@@ -3485,7 +2974,7 @@
     ],
     "category": "Trousse",
     "brand": "Bomi",
-    "description": "TS02-DINO",
+    "description": "",
     "stock": 20,
     "availability": "En stock",
     "featured": false,
@@ -3513,7 +3002,7 @@
     ],
     "category": "Trousse",
     "brand": "Bomi",
-    "description": "TS02-BUTTERFLY",
+    "description": "",
     "stock": 20,
     "availability": "En stock",
     "featured": false,
@@ -3541,7 +3030,7 @@
     ],
     "category": "Trousse",
     "brand": "Bomi",
-    "description": "TS03-SWAN",
+    "description": "",
     "stock": 20,
     "availability": "En stock",
     "featured": false,
@@ -3569,7 +3058,7 @@
     ],
     "category": "Trousse",
     "brand": "Bomi",
-    "description": "TS03-SKATE",
+    "description": "",
     "stock": 20,
     "availability": "En stock",
     "featured": false,
@@ -3597,7 +3086,7 @@
     ],
     "category": "Trousse",
     "brand": "Bomi",
-    "description": "TS03-RACING",
+    "description": "",
     "stock": 20,
     "availability": "En stock",
     "featured": false,
@@ -3625,7 +3114,7 @@
     ],
     "category": "Trousse",
     "brand": "Bomi",
-    "description": "TS03-FLORAL",
+    "description": "",
     "stock": 20,
     "availability": "En stock",
     "featured": false,
@@ -3653,7 +3142,7 @@
     ],
     "category": "Trousse",
     "brand": "Bomi",
-    "description": "TS03-DINO",
+    "description": "",
     "stock": 20,
     "availability": "En stock",
     "featured": false,
@@ -3681,7 +3170,7 @@
     ],
     "category": "Trousse",
     "brand": "Bomi",
-    "description": "TS03-BUTTERFLY",
+    "description": "",
     "stock": 20,
     "availability": "En stock",
     "featured": false,
@@ -3709,7 +3198,7 @@
     ],
     "category": "Trousse",
     "brand": "Bomi",
-    "description": "TS04-SWAN",
+    "description": "",
     "stock": 20,
     "availability": "En stock",
     "featured": false,
@@ -3737,7 +3226,7 @@
     ],
     "category": "Trousse",
     "brand": "Bomi",
-    "description": "TS04-SKATE",
+    "description": "",
     "stock": 20,
     "availability": "En stock",
     "featured": false,
@@ -3765,7 +3254,7 @@
     ],
     "category": "Trousse",
     "brand": "Bomi",
-    "description": "TS04-RACING",
+    "description": "",
     "stock": 20,
     "availability": "En stock",
     "featured": false,
@@ -3793,7 +3282,7 @@
     ],
     "category": "Trousse",
     "brand": "Bomi",
-    "description": "TS04-FLORAL",
+    "description": "",
     "stock": 20,
     "availability": "En stock",
     "featured": false,
@@ -3821,7 +3310,7 @@
     ],
     "category": "Trousse",
     "brand": "Bomi",
-    "description": "TS04-DINO",
+    "description": "",
     "stock": 20,
     "availability": "En stock",
     "featured": false,
@@ -3849,7 +3338,7 @@
     ],
     "category": "Trousse",
     "brand": "Bomi",
-    "description": "TS04-BUTTERFLY",
+    "description": "",
     "stock": 20,
     "availability": "En stock",
     "featured": false,
@@ -3861,13 +3350,13 @@
     "_id": "6a666acc343dc1b3c7a3bb9d",
     "id": 1785096909079,
     "name": "TLUX01-BLACK",
-    "price": "95,000 DT",
-    "priceNum": 95,
-    "priceBeforeDiscount": 139,
-    "discount": 32,
-    "oldPrice": "139,000 DT",
+    "price": "89,000 DT",
+    "priceNum": 89,
+    "priceBeforeDiscount": null,
+    "discount": 0,
+    "oldPrice": "125,000 DT",
     "schoolLevel": "",
-    "badge": "-32%",
+    "badge": "-29%",
     "badgeColor": "#e53935",
     "rating": 4.6,
     "reviews": 170,
@@ -3877,8 +3366,8 @@
     ],
     "category": "Chariots",
     "brand": "Bomi",
-    "description": "BX26091-TLUX01-BLACK",
-    "stock": 14000,
+    "description": "",
+    "stock": 20,
     "availability": "En stock",
     "featured": false,
     "status": "active",
@@ -3889,13 +3378,13 @@
     "_id": "6a666b14343dc1b3c7a3bba0",
     "id": 1785096980626,
     "name": "TLUX01-PINK",
-    "price": "95,000 DT",
-    "priceNum": 95,
-    "priceBeforeDiscount": 139,
-    "discount": 32,
-    "oldPrice": "139,000 DT",
+    "price": "89,000 DT",
+    "priceNum": 89,
+    "priceBeforeDiscount": null,
+    "discount": 0,
+    "oldPrice": "125,000 DT",
     "schoolLevel": "",
-    "badge": "-32%",
+    "badge": "-29%",
     "badgeColor": "#e53935",
     "rating": 4.6,
     "reviews": 175,
@@ -3905,3533 +3394,12 @@
     ],
     "category": "Chariots",
     "brand": "Bomi",
-    "description": "BX26092-TLUX01-PINK",
-    "stock": 9000,
+    "description": "",
+    "stock": 20,
     "availability": "En stock",
     "featured": false,
     "status": "active",
     "specifications": [],
     "__v": 0
-  },
-  {
-    "_id": "6a74ed925758191051448e0c",
-    "id": 1786047890196,
-    "name": "SB02-NINJA",
-    "price": "169,000 DT",
-    "priceNum": 169,
-    "priceBeforeDiscount": 289,
-    "oldPrice": "289,000 DT",
-    "discount": 42,
-    "badge": "-42%",
-    "badgeColor": "#e53935",
-    "schoolLevel": "",
-    "rating": 5,
-    "reviews": 0,
-    "img": "/uploads/image-1784923026101-633558139.jpg",
-    "images": [
-      "/uploads/image-1784923026101-633558139.jpg"
-    ],
-    "category": "Cartable Lux",
-    "brand": "Bomi",
-    "description": "Étatique : 1ère ➔ 4ème",
-    "stock": 910,
-    "availability": "En stock",
-    "featured": false,
-    "status": "active",
-    "specifications": [
-      {
-        "key": "Étatique",
-        "value": "1ère ➔ 4ème"
-      }
-    ],
-    "createdAt": "2026-08-06T20:24:50.195Z",
-    "updatedAt": "2026-08-06T20:24:50.195Z"
-  },
-  {
-    "_id": "6a74ed925758191051448e0d",
-    "id": 1786047890229,
-    "name": "SB02-FOOTBALL",
-    "price": "169,000 DT",
-    "priceNum": 169,
-    "priceBeforeDiscount": 289,
-    "oldPrice": "289,000 DT",
-    "discount": 42,
-    "badge": "-42%",
-    "badgeColor": "#e53935",
-    "schoolLevel": "",
-    "rating": 5,
-    "reviews": 0,
-    "img": "/uploads/image-1784923026101-633558139.jpg",
-    "images": [
-      "/uploads/image-1784923026101-633558139.jpg"
-    ],
-    "category": "Cartable Lux",
-    "brand": "Bomi",
-    "description": "Étatique : 1ère ➔ 4ème",
-    "stock": 910,
-    "availability": "En stock",
-    "featured": false,
-    "status": "active",
-    "specifications": [
-      {
-        "key": "Étatique",
-        "value": "1ère ➔ 4ème"
-      }
-    ],
-    "createdAt": "2026-08-06T20:24:50.227Z",
-    "updatedAt": "2026-08-06T20:24:50.227Z"
-  },
-  {
-    "_id": "6a74ed925758191051448e0e",
-    "id": 1786047890233,
-    "name": "SB02-HOOTIE",
-    "price": "169,000 DT",
-    "priceNum": 169,
-    "priceBeforeDiscount": 289,
-    "oldPrice": "289,000 DT",
-    "discount": 42,
-    "badge": "-42%",
-    "badgeColor": "#e53935",
-    "schoolLevel": "",
-    "rating": 5,
-    "reviews": 0,
-    "img": "/uploads/image-1784923026101-633558139.jpg",
-    "images": [
-      "/uploads/image-1784923026101-633558139.jpg"
-    ],
-    "category": "Cartable Lux",
-    "brand": "Bomi",
-    "description": "Étatique : 1ère ➔ 4ème",
-    "stock": 920,
-    "availability": "En stock",
-    "featured": false,
-    "status": "active",
-    "specifications": [
-      {
-        "key": "Étatique",
-        "value": "1ère ➔ 4ème"
-      }
-    ],
-    "createdAt": "2026-08-06T20:24:50.229Z",
-    "updatedAt": "2026-08-06T20:24:50.229Z"
-  },
-  {
-    "_id": "6a74ed925758191051448e0f",
-    "id": 1786047890235,
-    "name": "SB02-BESTFRIEND",
-    "price": "169,000 DT",
-    "priceNum": 169,
-    "priceBeforeDiscount": 289,
-    "oldPrice": "289,000 DT",
-    "discount": 42,
-    "badge": "-42%",
-    "badgeColor": "#e53935",
-    "schoolLevel": "",
-    "rating": 5,
-    "reviews": 0,
-    "img": "/uploads/image-1784923026101-633558139.jpg",
-    "images": [
-      "/uploads/image-1784923026101-633558139.jpg"
-    ],
-    "category": "Cartable Lux",
-    "brand": "Bomi",
-    "description": "Étatique : 1ère ➔ 4ème",
-    "stock": 920,
-    "availability": "En stock",
-    "featured": false,
-    "status": "active",
-    "specifications": [
-      {
-        "key": "Étatique",
-        "value": "1ère ➔ 4ème"
-      }
-    ],
-    "createdAt": "2026-08-06T20:24:50.230Z",
-    "updatedAt": "2026-08-06T20:24:50.230Z"
-  },
-  {
-    "_id": "6a74ed925758191051448e10",
-    "id": 1786047890240,
-    "name": "SB03-NINJA",
-    "price": "219,000 DT",
-    "priceNum": 219,
-    "priceBeforeDiscount": 319,
-    "oldPrice": "319,000 DT",
-    "discount": 31,
-    "badge": "-31%",
-    "badgeColor": "#e53935",
-    "schoolLevel": "",
-    "rating": 5,
-    "reviews": 0,
-    "img": "/uploads/image-1784990721464-616797799.jpg",
-    "images": [
-      "/uploads/image-1784990721464-616797799.jpg"
-    ],
-    "category": "Cartable Lux",
-    "brand": "Bomi",
-    "description": "Privé : 1ère ➔ 3ème | Étatique : 3ème ➔ 6ème",
-    "stock": 460,
-    "availability": "En stock",
-    "featured": false,
-    "status": "active",
-    "specifications": [
-      {
-        "key": "Privé",
-        "value": "1ère ➔ 3ème"
-      },
-      {
-        "key": "Étatique",
-        "value": "3ème ➔ 6ème"
-      }
-    ],
-    "createdAt": "2026-08-06T20:24:50.233Z",
-    "updatedAt": "2026-08-06T20:24:50.233Z"
-  },
-  {
-    "_id": "6a74ed925758191051448e11",
-    "id": 1786047890242,
-    "name": "SB03-FOOTBALL",
-    "price": "219,000 DT",
-    "priceNum": 219,
-    "priceBeforeDiscount": 319,
-    "oldPrice": "319,000 DT",
-    "discount": 31,
-    "badge": "-31%",
-    "badgeColor": "#e53935",
-    "schoolLevel": "",
-    "rating": 5,
-    "reviews": 0,
-    "img": "/uploads/image-1784990721464-616797799.jpg",
-    "images": [
-      "/uploads/image-1784990721464-616797799.jpg"
-    ],
-    "category": "Cartable Lux",
-    "brand": "Bomi",
-    "description": "Privé : 1ère ➔ 3ème | Étatique : 3ème ➔ 6ème",
-    "stock": 460,
-    "availability": "En stock",
-    "featured": false,
-    "status": "active",
-    "specifications": [
-      {
-        "key": "Privé",
-        "value": "1ère ➔ 3ème"
-      },
-      {
-        "key": "Étatique",
-        "value": "3ème ➔ 6ème"
-      }
-    ],
-    "createdAt": "2026-08-06T20:24:50.234Z",
-    "updatedAt": "2026-08-06T20:24:50.234Z"
-  },
-  {
-    "_id": "6a74ed925758191051448e12",
-    "id": 1786047890245,
-    "name": "SB03-HOOTIE",
-    "price": "219,000 DT",
-    "priceNum": 219,
-    "priceBeforeDiscount": 319,
-    "oldPrice": "319,000 DT",
-    "discount": 31,
-    "badge": "-31%",
-    "badgeColor": "#e53935",
-    "schoolLevel": "",
-    "rating": 5,
-    "reviews": 0,
-    "img": "/uploads/image-1784990721464-616797799.jpg",
-    "images": [
-      "/uploads/image-1784990721464-616797799.jpg"
-    ],
-    "category": "Cartable Lux",
-    "brand": "Bomi",
-    "description": "Privé : 1ère ➔ 3ème | Étatique : 3ème ➔ 6ème",
-    "stock": 470,
-    "availability": "En stock",
-    "featured": false,
-    "status": "active",
-    "specifications": [
-      {
-        "key": "Privé",
-        "value": "1ère ➔ 3ème"
-      },
-      {
-        "key": "Étatique",
-        "value": "3ème ➔ 6ème"
-      }
-    ],
-    "createdAt": "2026-08-06T20:24:50.235Z",
-    "updatedAt": "2026-08-06T20:24:50.235Z"
-  },
-  {
-    "_id": "6a74ed925758191051448e13",
-    "id": 1786047890247,
-    "name": "SB03-BESTFRIEND",
-    "price": "219,000 DT",
-    "priceNum": 219,
-    "priceBeforeDiscount": 319,
-    "oldPrice": "319,000 DT",
-    "discount": 31,
-    "badge": "-31%",
-    "badgeColor": "#e53935",
-    "schoolLevel": "",
-    "rating": 5,
-    "reviews": 0,
-    "img": "/uploads/image-1784990721464-616797799.jpg",
-    "images": [
-      "/uploads/image-1784990721464-616797799.jpg"
-    ],
-    "category": "Cartable Lux",
-    "brand": "Bomi",
-    "description": "Privé : 1ère ➔ 3ème | Étatique : 3ème ➔ 6ème",
-    "stock": 470,
-    "availability": "En stock",
-    "featured": false,
-    "status": "active",
-    "specifications": [
-      {
-        "key": "Privé",
-        "value": "1ère ➔ 3ème"
-      },
-      {
-        "key": "Étatique",
-        "value": "3ème ➔ 6ème"
-      }
-    ],
-    "createdAt": "2026-08-06T20:24:50.236Z",
-    "updatedAt": "2026-08-06T20:24:50.236Z"
-  },
-  {
-    "_id": "6a74ed925758191051448e14",
-    "id": 1786047890248,
-    "name": "SBL01-QUAD",
-    "price": "179,000 DT",
-    "priceNum": 179,
-    "priceBeforeDiscount": 299,
-    "oldPrice": "299,000 DT",
-    "discount": 40,
-    "badge": "-40%",
-    "badgeColor": "#e53935",
-    "schoolLevel": "",
-    "rating": 5,
-    "reviews": 0,
-    "img": "/uploads/image-1784992633627-737862601.jpg",
-    "images": [
-      "/uploads/image-1784992633627-737862601.jpg"
-    ],
-    "category": "Cartable super lux",
-    "brand": "Bomi",
-    "description": "Étatique : 1ère ➔ 2ème",
-    "stock": 920,
-    "availability": "En stock",
-    "featured": false,
-    "status": "active",
-    "specifications": [
-      {
-        "key": "Étatique",
-        "value": "1ère ➔ 2ème"
-      }
-    ],
-    "createdAt": "2026-08-06T20:24:50.236Z",
-    "updatedAt": "2026-08-06T20:24:50.236Z"
-  },
-  {
-    "_id": "6a74ed925758191051448e15",
-    "id": 1786047890250,
-    "name": "SBL01-NINJA",
-    "price": "179,000 DT",
-    "priceNum": 179,
-    "priceBeforeDiscount": 299,
-    "oldPrice": "299,000 DT",
-    "discount": 40,
-    "badge": "-40%",
-    "badgeColor": "#e53935",
-    "schoolLevel": "",
-    "rating": 5,
-    "reviews": 0,
-    "img": "/uploads/image-1784992633627-737862601.jpg",
-    "images": [
-      "/uploads/image-1784992633627-737862601.jpg"
-    ],
-    "category": "Cartable super lux",
-    "brand": "Bomi",
-    "description": "Étatique : 1ère ➔ 2ème",
-    "stock": 920,
-    "availability": "En stock",
-    "featured": false,
-    "status": "active",
-    "specifications": [
-      {
-        "key": "Étatique",
-        "value": "1ère ➔ 2ème"
-      }
-    ],
-    "createdAt": "2026-08-06T20:24:50.237Z",
-    "updatedAt": "2026-08-06T20:24:50.237Z"
-  },
-  {
-    "_id": "6a74ed925758191051448e16",
-    "id": 1786047890251,
-    "name": "SBL01-FOOTBALL",
-    "price": "179,000 DT",
-    "priceNum": 179,
-    "priceBeforeDiscount": 299,
-    "oldPrice": "299,000 DT",
-    "discount": 40,
-    "badge": "-40%",
-    "badgeColor": "#e53935",
-    "schoolLevel": "",
-    "rating": 5,
-    "reviews": 0,
-    "img": "/uploads/image-1784992633627-737862601.jpg",
-    "images": [
-      "/uploads/image-1784992633627-737862601.jpg"
-    ],
-    "category": "Cartable super lux",
-    "brand": "Bomi",
-    "description": "Étatique : 1ère ➔ 2ème",
-    "stock": 920,
-    "availability": "En stock",
-    "featured": false,
-    "status": "active",
-    "specifications": [
-      {
-        "key": "Étatique",
-        "value": "1ère ➔ 2ème"
-      }
-    ],
-    "createdAt": "2026-08-06T20:24:50.237Z",
-    "updatedAt": "2026-08-06T20:24:50.237Z"
-  },
-  {
-    "_id": "6a74ed925758191051448e17",
-    "id": 1786047890253,
-    "name": "SBL01-PRETTYGIRL",
-    "price": "179,000 DT",
-    "priceNum": 179,
-    "priceBeforeDiscount": 299,
-    "oldPrice": "299,000 DT",
-    "discount": 40,
-    "badge": "-40%",
-    "badgeColor": "#e53935",
-    "schoolLevel": "",
-    "rating": 5,
-    "reviews": 0,
-    "img": "/uploads/image-1784992633627-737862601.jpg",
-    "images": [
-      "/uploads/image-1784992633627-737862601.jpg"
-    ],
-    "category": "Cartable super lux",
-    "brand": "Bomi",
-    "description": "Étatique : 1ère ➔ 2ème",
-    "stock": 910,
-    "availability": "En stock",
-    "featured": false,
-    "status": "active",
-    "specifications": [
-      {
-        "key": "Étatique",
-        "value": "1ère ➔ 2ème"
-      }
-    ],
-    "createdAt": "2026-08-06T20:24:50.238Z",
-    "updatedAt": "2026-08-06T20:24:50.238Z"
-  },
-  {
-    "_id": "6a74ed925758191051448e18",
-    "id": 1786047890254,
-    "name": "SBL01-HOOTIE",
-    "price": "179,000 DT",
-    "priceNum": 179,
-    "priceBeforeDiscount": 299,
-    "oldPrice": "299,000 DT",
-    "discount": 40,
-    "badge": "-40%",
-    "badgeColor": "#e53935",
-    "schoolLevel": "",
-    "rating": 5,
-    "reviews": 0,
-    "img": "/uploads/image-1784992633627-737862601.jpg",
-    "images": [
-      "/uploads/image-1784992633627-737862601.jpg"
-    ],
-    "category": "Cartable super lux",
-    "brand": "Bomi",
-    "description": "Étatique : 1ère ➔ 2ème",
-    "stock": 910,
-    "availability": "En stock",
-    "featured": false,
-    "status": "active",
-    "specifications": [
-      {
-        "key": "Étatique",
-        "value": "1ère ➔ 2ème"
-      }
-    ],
-    "createdAt": "2026-08-06T20:24:50.238Z",
-    "updatedAt": "2026-08-06T20:24:50.238Z"
-  },
-  {
-    "_id": "6a74ed925758191051448e19",
-    "id": 1786047890256,
-    "name": "SBL01-BESTFRIEND",
-    "price": "179,000 DT",
-    "priceNum": 179,
-    "priceBeforeDiscount": 299,
-    "oldPrice": "299,000 DT",
-    "discount": 40,
-    "badge": "-40%",
-    "badgeColor": "#e53935",
-    "schoolLevel": "",
-    "rating": 5,
-    "reviews": 0,
-    "img": "/uploads/image-1784992633627-737862601.jpg",
-    "images": [
-      "/uploads/image-1784992633627-737862601.jpg"
-    ],
-    "category": "Cartable super lux",
-    "brand": "Bomi",
-    "description": "Étatique : 1ère ➔ 2ème",
-    "stock": 910,
-    "availability": "En stock",
-    "featured": false,
-    "status": "active",
-    "specifications": [
-      {
-        "key": "Étatique",
-        "value": "1ère ➔ 2ème"
-      }
-    ],
-    "createdAt": "2026-08-06T20:24:50.239Z",
-    "updatedAt": "2026-08-06T20:24:50.239Z"
-  },
-  {
-    "_id": "6a74ed925758191051448e1a",
-    "id": 1786047890258,
-    "name": "SBL02-QUAD",
-    "price": "209,000 DT",
-    "priceNum": 209,
-    "priceBeforeDiscount": 339,
-    "oldPrice": "339,000 DT",
-    "discount": 38,
-    "badge": "-38%",
-    "badgeColor": "#e53935",
-    "schoolLevel": "",
-    "rating": 5,
-    "reviews": 0,
-    "img": "/uploads/image-1784994908488-754272625.jpg",
-    "images": [
-      "/uploads/image-1784994908488-754272625.jpg"
-    ],
-    "category": "Cartable super lux",
-    "brand": "Bomi",
-    "description": "Privé : 1ère ➔ 3ème | Étatique : 3ème ➔ 6ème",
-    "stock": 640,
-    "availability": "En stock",
-    "featured": false,
-    "status": "active",
-    "specifications": [
-      {
-        "key": "Privé",
-        "value": "1ère ➔ 3ème"
-      },
-      {
-        "key": "Étatique",
-        "value": "3ème ➔ 6ème"
-      }
-    ],
-    "createdAt": "2026-08-06T20:24:50.240Z",
-    "updatedAt": "2026-08-06T20:24:50.240Z"
-  },
-  {
-    "_id": "6a74ed925758191051448e1b",
-    "id": 1786047890259,
-    "name": "SBL02-NINJA",
-    "price": "209,000 DT",
-    "priceNum": 209,
-    "priceBeforeDiscount": 339,
-    "oldPrice": "339,000 DT",
-    "discount": 38,
-    "badge": "-38%",
-    "badgeColor": "#e53935",
-    "schoolLevel": "",
-    "rating": 5,
-    "reviews": 0,
-    "img": "/uploads/image-1784994908488-754272625.jpg",
-    "images": [
-      "/uploads/image-1784994908488-754272625.jpg"
-    ],
-    "category": "Cartable super lux",
-    "brand": "Bomi",
-    "description": "Privé : 1ère ➔ 3ème | Étatique : 3ème ➔ 6ème",
-    "stock": 640,
-    "availability": "En stock",
-    "featured": false,
-    "status": "active",
-    "specifications": [
-      {
-        "key": "Privé",
-        "value": "1ère ➔ 3ème"
-      },
-      {
-        "key": "Étatique",
-        "value": "3ème ➔ 6ème"
-      }
-    ],
-    "createdAt": "2026-08-06T20:24:50.240Z",
-    "updatedAt": "2026-08-06T20:24:50.240Z"
-  },
-  {
-    "_id": "6a74ed925758191051448e1c",
-    "id": 1786047890262,
-    "name": "SBL02-FOOTBALL",
-    "price": "209,000 DT",
-    "priceNum": 209,
-    "priceBeforeDiscount": 339,
-    "oldPrice": "339,000 DT",
-    "discount": 38,
-    "badge": "-38%",
-    "badgeColor": "#e53935",
-    "schoolLevel": "",
-    "rating": 5,
-    "reviews": 0,
-    "img": "/uploads/image-1784994908488-754272625.jpg",
-    "images": [
-      "/uploads/image-1784994908488-754272625.jpg"
-    ],
-    "category": "Cartable super lux",
-    "brand": "Bomi",
-    "description": "Privé : 1ère ➔ 3ème | Étatique : 3ème ➔ 6ème",
-    "stock": 640,
-    "availability": "En stock",
-    "featured": false,
-    "status": "active",
-    "specifications": [
-      {
-        "key": "Privé",
-        "value": "1ère ➔ 3ème"
-      },
-      {
-        "key": "Étatique",
-        "value": "3ème ➔ 6ème"
-      }
-    ],
-    "createdAt": "2026-08-06T20:24:50.242Z",
-    "updatedAt": "2026-08-06T20:24:50.242Z"
-  },
-  {
-    "_id": "6a74ed925758191051448e1d",
-    "id": 1786047890264,
-    "name": "SBL02-PRETTYGIRL",
-    "price": "209,000 DT",
-    "priceNum": 209,
-    "priceBeforeDiscount": 339,
-    "oldPrice": "339,000 DT",
-    "discount": 38,
-    "badge": "-38%",
-    "badgeColor": "#e53935",
-    "schoolLevel": "",
-    "rating": 5,
-    "reviews": 0,
-    "img": "/uploads/image-1784994908488-754272625.jpg",
-    "images": [
-      "/uploads/image-1784994908488-754272625.jpg"
-    ],
-    "category": "Cartable super lux",
-    "brand": "Bomi",
-    "description": "Privé : 1ère ➔ 3ème | Étatique : 3ème ➔ 6ème",
-    "stock": 640,
-    "availability": "En stock",
-    "featured": false,
-    "status": "active",
-    "specifications": [
-      {
-        "key": "Privé",
-        "value": "1ère ➔ 3ème"
-      },
-      {
-        "key": "Étatique",
-        "value": "3ème ➔ 6ème"
-      }
-    ],
-    "createdAt": "2026-08-06T20:24:50.243Z",
-    "updatedAt": "2026-08-06T20:24:50.243Z"
-  },
-  {
-    "_id": "6a74ed925758191051448e1e",
-    "id": 1786047890265,
-    "name": "SBL02-HOOTIE",
-    "price": "209,000 DT",
-    "priceNum": 209,
-    "priceBeforeDiscount": 339,
-    "oldPrice": "339,000 DT",
-    "discount": 38,
-    "badge": "-38%",
-    "badgeColor": "#e53935",
-    "schoolLevel": "",
-    "rating": 5,
-    "reviews": 0,
-    "img": "/uploads/image-1784994908488-754272625.jpg",
-    "images": [
-      "/uploads/image-1784994908488-754272625.jpg"
-    ],
-    "category": "Cartable super lux",
-    "brand": "Bomi",
-    "description": "Privé : 1ère ➔ 3ème | Étatique : 3ème ➔ 6ème",
-    "stock": 640,
-    "availability": "En stock",
-    "featured": false,
-    "status": "active",
-    "specifications": [
-      {
-        "key": "Privé",
-        "value": "1ère ➔ 3ème"
-      },
-      {
-        "key": "Étatique",
-        "value": "3ème ➔ 6ème"
-      }
-    ],
-    "createdAt": "2026-08-06T20:24:50.243Z",
-    "updatedAt": "2026-08-06T20:24:50.243Z"
-  },
-  {
-    "_id": "6a74ed925758191051448e1f",
-    "id": 1786047890267,
-    "name": "SBL02-BESTFRIEND",
-    "price": "209,000 DT",
-    "priceNum": 209,
-    "priceBeforeDiscount": 339,
-    "oldPrice": "339,000 DT",
-    "discount": 38,
-    "badge": "-38%",
-    "badgeColor": "#e53935",
-    "schoolLevel": "",
-    "rating": 5,
-    "reviews": 0,
-    "img": "/uploads/image-1784994908488-754272625.jpg",
-    "images": [
-      "/uploads/image-1784994908488-754272625.jpg"
-    ],
-    "category": "Cartable super lux",
-    "brand": "Bomi",
-    "description": "Privé : 1ère ➔ 3ème | Étatique : 3ème ➔ 6ème",
-    "stock": 640,
-    "availability": "En stock",
-    "featured": false,
-    "status": "active",
-    "specifications": [
-      {
-        "key": "Privé",
-        "value": "1ère ➔ 3ème"
-      },
-      {
-        "key": "Étatique",
-        "value": "3ème ➔ 6ème"
-      }
-    ],
-    "createdAt": "2026-08-06T20:24:50.244Z",
-    "updatedAt": "2026-08-06T20:24:50.244Z"
-  },
-  {
-    "_id": "6a74ed925758191051448e20",
-    "id": 1786047890268,
-    "name": "SBL03-QUAD",
-    "price": "239,000 DT",
-    "priceNum": 239,
-    "priceBeforeDiscount": 359,
-    "oldPrice": "359,000 DT",
-    "discount": 33,
-    "badge": "-33%",
-    "badgeColor": "#e53935",
-    "schoolLevel": "",
-    "rating": 5,
-    "reviews": 0,
-    "img": "/uploads/image-1784995548222-601235453.jpg",
-    "images": [
-      "/uploads/image-1784995548222-601235453.jpg"
-    ],
-    "category": "Cartable super lux",
-    "brand": "Bomi",
-    "description": "Privé : 1ère ➔ 6ème | Étatique : 4ème ➔ 6ème",
-    "stock": 650,
-    "availability": "En stock",
-    "featured": false,
-    "status": "active",
-    "specifications": [
-      {
-        "key": "Privé",
-        "value": "1ère ➔ 6ème"
-      },
-      {
-        "key": "Étatique",
-        "value": "4ème ➔ 6ème"
-      }
-    ],
-    "createdAt": "2026-08-06T20:24:50.244Z",
-    "updatedAt": "2026-08-06T20:24:50.244Z"
-  },
-  {
-    "_id": "6a74ed925758191051448e21",
-    "id": 1786047890270,
-    "name": "SBL03-NINJA",
-    "price": "239,000 DT",
-    "priceNum": 239,
-    "priceBeforeDiscount": 359,
-    "oldPrice": "359,000 DT",
-    "discount": 33,
-    "badge": "-33%",
-    "badgeColor": "#e53935",
-    "schoolLevel": "",
-    "rating": 5,
-    "reviews": 0,
-    "img": "/uploads/image-1784995548222-601235453.jpg",
-    "images": [
-      "/uploads/image-1784995548222-601235453.jpg"
-    ],
-    "category": "Cartable super lux",
-    "brand": "Bomi",
-    "description": "Privé : 1ère ➔ 6ème | Étatique : 4ème ➔ 6ème",
-    "stock": 650,
-    "availability": "En stock",
-    "featured": false,
-    "status": "active",
-    "specifications": [
-      {
-        "key": "Privé",
-        "value": "1ère ➔ 6ème"
-      },
-      {
-        "key": "Étatique",
-        "value": "4ème ➔ 6ème"
-      }
-    ],
-    "createdAt": "2026-08-06T20:24:50.245Z",
-    "updatedAt": "2026-08-06T20:24:50.245Z"
-  },
-  {
-    "_id": "6a74ed925758191051448e22",
-    "id": 1786047890271,
-    "name": "SBL03-FOOTBALL",
-    "price": "239,000 DT",
-    "priceNum": 239,
-    "priceBeforeDiscount": 359,
-    "oldPrice": "359,000 DT",
-    "discount": 33,
-    "badge": "-33%",
-    "badgeColor": "#e53935",
-    "schoolLevel": "",
-    "rating": 5,
-    "reviews": 0,
-    "img": "/uploads/image-1784995548222-601235453.jpg",
-    "images": [
-      "/uploads/image-1784995548222-601235453.jpg"
-    ],
-    "category": "Cartable super lux",
-    "brand": "Bomi",
-    "description": "Privé : 1ère ➔ 6ème | Étatique : 4ème ➔ 6ème",
-    "stock": 650,
-    "availability": "En stock",
-    "featured": false,
-    "status": "active",
-    "specifications": [
-      {
-        "key": "Privé",
-        "value": "1ère ➔ 6ème"
-      },
-      {
-        "key": "Étatique",
-        "value": "4ème ➔ 6ème"
-      }
-    ],
-    "createdAt": "2026-08-06T20:24:50.245Z",
-    "updatedAt": "2026-08-06T20:24:50.245Z"
-  },
-  {
-    "_id": "6a74ed925758191051448e23",
-    "id": 1786047890273,
-    "name": "SBL03-PRETTYGIRL",
-    "price": "239,000 DT",
-    "priceNum": 239,
-    "priceBeforeDiscount": 359,
-    "oldPrice": "359,000 DT",
-    "discount": 33,
-    "badge": "-33%",
-    "badgeColor": "#e53935",
-    "schoolLevel": "",
-    "rating": 5,
-    "reviews": 0,
-    "img": "/uploads/image-1784995548222-601235453.jpg",
-    "images": [
-      "/uploads/image-1784995548222-601235453.jpg"
-    ],
-    "category": "Cartable super lux",
-    "brand": "Bomi",
-    "description": "Privé : 1ère ➔ 6ème | Étatique : 4ème ➔ 6ème",
-    "stock": 650,
-    "availability": "En stock",
-    "featured": false,
-    "status": "active",
-    "specifications": [
-      {
-        "key": "Privé",
-        "value": "1ère ➔ 6ème"
-      },
-      {
-        "key": "Étatique",
-        "value": "4ème ➔ 6ème"
-      }
-    ],
-    "createdAt": "2026-08-06T20:24:50.246Z",
-    "updatedAt": "2026-08-06T20:24:50.246Z"
-  },
-  {
-    "_id": "6a74ed925758191051448e24",
-    "id": 1786047890274,
-    "name": "SBL03-HOOTIE",
-    "price": "239,000 DT",
-    "priceNum": 239,
-    "priceBeforeDiscount": 359,
-    "oldPrice": "359,000 DT",
-    "discount": 33,
-    "badge": "-33%",
-    "badgeColor": "#e53935",
-    "schoolLevel": "",
-    "rating": 5,
-    "reviews": 0,
-    "img": "/uploads/image-1784995548222-601235453.jpg",
-    "images": [
-      "/uploads/image-1784995548222-601235453.jpg"
-    ],
-    "category": "Cartable super lux",
-    "brand": "Bomi",
-    "description": "Privé : 1ère ➔ 6ème | Étatique : 4ème ➔ 6ème",
-    "stock": 650,
-    "availability": "En stock",
-    "featured": false,
-    "status": "active",
-    "specifications": [
-      {
-        "key": "Privé",
-        "value": "1ère ➔ 6ème"
-      },
-      {
-        "key": "Étatique",
-        "value": "4ème ➔ 6ème"
-      }
-    ],
-    "createdAt": "2026-08-06T20:24:50.246Z",
-    "updatedAt": "2026-08-06T20:24:50.246Z"
-  },
-  {
-    "_id": "6a74ed925758191051448e25",
-    "id": 1786047890276,
-    "name": "SBL03-BESTFRIEND",
-    "price": "239,000 DT",
-    "priceNum": 239,
-    "priceBeforeDiscount": 359,
-    "oldPrice": "359,000 DT",
-    "discount": 33,
-    "badge": "-33%",
-    "badgeColor": "#e53935",
-    "schoolLevel": "",
-    "rating": 5,
-    "reviews": 0,
-    "img": "/uploads/image-1784995548222-601235453.jpg",
-    "images": [
-      "/uploads/image-1784995548222-601235453.jpg"
-    ],
-    "category": "Cartable super lux",
-    "brand": "Bomi",
-    "description": "Privé : 1ère ➔ 6ème | Étatique : 4ème ➔ 6ème",
-    "stock": 650,
-    "availability": "En stock",
-    "featured": false,
-    "status": "active",
-    "specifications": [
-      {
-        "key": "Privé",
-        "value": "1ère ➔ 6ème"
-      },
-      {
-        "key": "Étatique",
-        "value": "4ème ➔ 6ème"
-      }
-    ],
-    "createdAt": "2026-08-06T20:24:50.247Z",
-    "updatedAt": "2026-08-06T20:24:50.247Z"
-  },
-  {
-    "_id": "6a74ed925758191051448e26",
-    "id": 1786047890277,
-    "name": "SBH02-QUAD",
-    "price": "309,000 DT",
-    "priceNum": 309,
-    "priceBeforeDiscount": 419,
-    "oldPrice": "419,000 DT",
-    "discount": 26,
-    "badge": "-26%",
-    "badgeColor": "#e53935",
-    "schoolLevel": "",
-    "rating": 5,
-    "reviews": 0,
-    "img": "/uploads/image-1784996300683-378488334.jpg",
-    "images": [
-      "/uploads/image-1784996300683-378488334.jpg"
-    ],
-    "category": "Cartable high lux",
-    "brand": "Bomi",
-    "description": "Privé : 1ère ➔ 3ème | Étatique : 3ème ➔ 6ème",
-    "stock": 470,
-    "availability": "En stock",
-    "featured": false,
-    "status": "active",
-    "specifications": [
-      {
-        "key": "Privé",
-        "value": "1ère ➔ 3ème"
-      },
-      {
-        "key": "Étatique",
-        "value": "3ème ➔ 6ème"
-      }
-    ],
-    "createdAt": "2026-08-06T20:24:50.247Z",
-    "updatedAt": "2026-08-06T20:24:50.247Z"
-  },
-  {
-    "_id": "6a74ed925758191051448e27",
-    "id": 1786047890278,
-    "name": "SBH02-NINJA",
-    "price": "309,000 DT",
-    "priceNum": 309,
-    "priceBeforeDiscount": 419,
-    "oldPrice": "419,000 DT",
-    "discount": 26,
-    "badge": "-26%",
-    "badgeColor": "#e53935",
-    "schoolLevel": "",
-    "rating": 5,
-    "reviews": 0,
-    "img": "/uploads/image-1784996300683-378488334.jpg",
-    "images": [
-      "/uploads/image-1784996300683-378488334.jpg"
-    ],
-    "category": "Cartable high lux",
-    "brand": "Bomi",
-    "description": "Privé : 1ère ➔ 3ème | Étatique : 3ème ➔ 6ème",
-    "stock": 470,
-    "availability": "En stock",
-    "featured": false,
-    "status": "active",
-    "specifications": [
-      {
-        "key": "Privé",
-        "value": "1ère ➔ 3ème"
-      },
-      {
-        "key": "Étatique",
-        "value": "3ème ➔ 6ème"
-      }
-    ],
-    "createdAt": "2026-08-06T20:24:50.247Z",
-    "updatedAt": "2026-08-06T20:24:50.247Z"
-  },
-  {
-    "_id": "6a74ed925758191051448e28",
-    "id": 1786047890280,
-    "name": "SBH02-FOOTBALL",
-    "price": "309,000 DT",
-    "priceNum": 309,
-    "priceBeforeDiscount": 419,
-    "oldPrice": "419,000 DT",
-    "discount": 26,
-    "badge": "-26%",
-    "badgeColor": "#e53935",
-    "schoolLevel": "",
-    "rating": 5,
-    "reviews": 0,
-    "img": "/uploads/image-1784996300683-378488334.jpg",
-    "images": [
-      "/uploads/image-1784996300683-378488334.jpg"
-    ],
-    "category": "Cartable high lux",
-    "brand": "Bomi",
-    "description": "Privé : 1ère ➔ 3ème | Étatique : 3ème ➔ 6ème",
-    "stock": 470,
-    "availability": "En stock",
-    "featured": false,
-    "status": "active",
-    "specifications": [
-      {
-        "key": "Privé",
-        "value": "1ère ➔ 3ème"
-      },
-      {
-        "key": "Étatique",
-        "value": "3ème ➔ 6ème"
-      }
-    ],
-    "createdAt": "2026-08-06T20:24:50.248Z",
-    "updatedAt": "2026-08-06T20:24:50.248Z"
-  },
-  {
-    "_id": "6a74ed925758191051448e29",
-    "id": 1786047890281,
-    "name": "SBH02-PRETTYGIRL",
-    "price": "309,000 DT",
-    "priceNum": 309,
-    "priceBeforeDiscount": 419,
-    "oldPrice": "419,000 DT",
-    "discount": 26,
-    "badge": "-26%",
-    "badgeColor": "#e53935",
-    "schoolLevel": "",
-    "rating": 5,
-    "reviews": 0,
-    "img": "/uploads/image-1784996300683-378488334.jpg",
-    "images": [
-      "/uploads/image-1784996300683-378488334.jpg"
-    ],
-    "category": "Cartable high lux",
-    "brand": "Bomi",
-    "description": "Privé : 1ère ➔ 3ème | Étatique : 3ème ➔ 6ème",
-    "stock": 470,
-    "availability": "En stock",
-    "featured": false,
-    "status": "active",
-    "specifications": [
-      {
-        "key": "Privé",
-        "value": "1ère ➔ 3ème"
-      },
-      {
-        "key": "Étatique",
-        "value": "3ème ➔ 6ème"
-      }
-    ],
-    "createdAt": "2026-08-06T20:24:50.248Z",
-    "updatedAt": "2026-08-06T20:24:50.248Z"
-  },
-  {
-    "_id": "6a74ed925758191051448e2a",
-    "id": 1786047890283,
-    "name": "SBH02-HOOTIE",
-    "price": "309,000 DT",
-    "priceNum": 309,
-    "priceBeforeDiscount": 419,
-    "oldPrice": "419,000 DT",
-    "discount": 26,
-    "badge": "-26%",
-    "badgeColor": "#e53935",
-    "schoolLevel": "",
-    "rating": 5,
-    "reviews": 0,
-    "img": "/uploads/image-1784996300683-378488334.jpg",
-    "images": [
-      "/uploads/image-1784996300683-378488334.jpg"
-    ],
-    "category": "Cartable high lux",
-    "brand": "Bomi",
-    "description": "Privé : 1ère ➔ 3ème | Étatique : 3ème ➔ 6ème",
-    "stock": 470,
-    "availability": "En stock",
-    "featured": false,
-    "status": "active",
-    "specifications": [
-      {
-        "key": "Privé",
-        "value": "1ère ➔ 3ème"
-      },
-      {
-        "key": "Étatique",
-        "value": "3ème ➔ 6ème"
-      }
-    ],
-    "createdAt": "2026-08-06T20:24:50.249Z",
-    "updatedAt": "2026-08-06T20:24:50.249Z"
-  },
-  {
-    "_id": "6a74ed925758191051448e2b",
-    "id": 1786047890284,
-    "name": "SBH02-BESTFRIEND",
-    "price": "309,000 DT",
-    "priceNum": 309,
-    "priceBeforeDiscount": 419,
-    "oldPrice": "419,000 DT",
-    "discount": 26,
-    "badge": "-26%",
-    "badgeColor": "#e53935",
-    "schoolLevel": "",
-    "rating": 5,
-    "reviews": 0,
-    "img": "/uploads/image-1784996300683-378488334.jpg",
-    "images": [
-      "/uploads/image-1784996300683-378488334.jpg"
-    ],
-    "category": "Cartable high lux",
-    "brand": "Bomi",
-    "description": "Privé : 1ère ➔ 3ème | Étatique : 3ème ➔ 6ème",
-    "stock": 470,
-    "availability": "En stock",
-    "featured": false,
-    "status": "active",
-    "specifications": [
-      {
-        "key": "Privé",
-        "value": "1ère ➔ 3ème"
-      },
-      {
-        "key": "Étatique",
-        "value": "3ème ➔ 6ème"
-      }
-    ],
-    "createdAt": "2026-08-06T20:24:50.249Z",
-    "updatedAt": "2026-08-06T20:24:50.249Z"
-  },
-  {
-    "_id": "6a74ed925758191051448e2c",
-    "id": 1786047890285,
-    "name": "SBH03-QUAD",
-    "price": "339,000 DT",
-    "priceNum": 339,
-    "priceBeforeDiscount": 449,
-    "oldPrice": "449,000 DT",
-    "discount": 24,
-    "badge": "-24%",
-    "badgeColor": "#e53935",
-    "schoolLevel": "",
-    "rating": 5,
-    "reviews": 0,
-    "img": "/uploads/image-1784996839416-974113157.jpg",
-    "images": [
-      "/uploads/image-1784996839416-974113157.jpg"
-    ],
-    "category": "Cartable high lux",
-    "brand": "Bomi",
-    "description": "Privé : 1ère ➔ 6ème | Étatique : 4ème ➔ 6ème",
-    "stock": 670,
-    "availability": "En stock",
-    "featured": false,
-    "status": "active",
-    "specifications": [
-      {
-        "key": "Privé",
-        "value": "1ère ➔ 6ème"
-      },
-      {
-        "key": "Étatique",
-        "value": "4ème ➔ 6ème"
-      }
-    ],
-    "createdAt": "2026-08-06T20:24:50.249Z",
-    "updatedAt": "2026-08-06T20:24:50.249Z"
-  },
-  {
-    "_id": "6a74ed925758191051448e2d",
-    "id": 1786047890287,
-    "name": "SBH03-NINJA",
-    "price": "339,000 DT",
-    "priceNum": 339,
-    "priceBeforeDiscount": 449,
-    "oldPrice": "449,000 DT",
-    "discount": 24,
-    "badge": "-24%",
-    "badgeColor": "#e53935",
-    "schoolLevel": "",
-    "rating": 5,
-    "reviews": 0,
-    "img": "/uploads/image-1784996839416-974113157.jpg",
-    "images": [
-      "/uploads/image-1784996839416-974113157.jpg"
-    ],
-    "category": "Cartable high lux",
-    "brand": "Bomi",
-    "description": "Privé : 1ère ➔ 6ème | Étatique : 4ème ➔ 6ème",
-    "stock": 670,
-    "availability": "En stock",
-    "featured": false,
-    "status": "active",
-    "specifications": [
-      {
-        "key": "Privé",
-        "value": "1ère ➔ 6ème"
-      },
-      {
-        "key": "Étatique",
-        "value": "4ème ➔ 6ème"
-      }
-    ],
-    "createdAt": "2026-08-06T20:24:50.250Z",
-    "updatedAt": "2026-08-06T20:24:50.250Z"
-  },
-  {
-    "_id": "6a74ed925758191051448e2e",
-    "id": 1786047890288,
-    "name": "SBH03-FOOTBALL",
-    "price": "339,000 DT",
-    "priceNum": 339,
-    "priceBeforeDiscount": 449,
-    "oldPrice": "449,000 DT",
-    "discount": 24,
-    "badge": "-24%",
-    "badgeColor": "#e53935",
-    "schoolLevel": "",
-    "rating": 5,
-    "reviews": 0,
-    "img": "/uploads/image-1784996839416-974113157.jpg",
-    "images": [
-      "/uploads/image-1784996839416-974113157.jpg"
-    ],
-    "category": "Cartable high lux",
-    "brand": "Bomi",
-    "description": "Privé : 1ère ➔ 6ème | Étatique : 4ème ➔ 6ème",
-    "stock": 670,
-    "availability": "En stock",
-    "featured": false,
-    "status": "active",
-    "specifications": [
-      {
-        "key": "Privé",
-        "value": "1ère ➔ 6ème"
-      },
-      {
-        "key": "Étatique",
-        "value": "4ème ➔ 6ème"
-      }
-    ],
-    "createdAt": "2026-08-06T20:24:50.250Z",
-    "updatedAt": "2026-08-06T20:24:50.250Z"
-  },
-  {
-    "_id": "6a74ed925758191051448e2f",
-    "id": 1786047890290,
-    "name": "SBH03-PRETTYGIRL",
-    "price": "339,000 DT",
-    "priceNum": 339,
-    "priceBeforeDiscount": 449,
-    "oldPrice": "449,000 DT",
-    "discount": 24,
-    "badge": "-24%",
-    "badgeColor": "#e53935",
-    "schoolLevel": "",
-    "rating": 5,
-    "reviews": 0,
-    "img": "/uploads/image-1784996839416-974113157.jpg",
-    "images": [
-      "/uploads/image-1784996839416-974113157.jpg"
-    ],
-    "category": "Cartable high lux",
-    "brand": "Bomi",
-    "description": "Privé : 1ère ➔ 6ème | Étatique : 4ème ➔ 6ème",
-    "stock": 670,
-    "availability": "En stock",
-    "featured": false,
-    "status": "active",
-    "specifications": [
-      {
-        "key": "Privé",
-        "value": "1ère ➔ 6ème"
-      },
-      {
-        "key": "Étatique",
-        "value": "4ème ➔ 6ème"
-      }
-    ],
-    "createdAt": "2026-08-06T20:24:50.251Z",
-    "updatedAt": "2026-08-06T20:24:50.251Z"
-  },
-  {
-    "_id": "6a74ed925758191051448e30",
-    "id": 1786047890291,
-    "name": "SBH03-HOOTIE",
-    "price": "339,000 DT",
-    "priceNum": 339,
-    "priceBeforeDiscount": 449,
-    "oldPrice": "449,000 DT",
-    "discount": 24,
-    "badge": "-24%",
-    "badgeColor": "#e53935",
-    "schoolLevel": "",
-    "rating": 5,
-    "reviews": 0,
-    "img": "/uploads/image-1784996839416-974113157.jpg",
-    "images": [
-      "/uploads/image-1784996839416-974113157.jpg"
-    ],
-    "category": "Cartable high lux",
-    "brand": "Bomi",
-    "description": "Privé : 1ère ➔ 6ème | Étatique : 4ème ➔ 6ème",
-    "stock": 670,
-    "availability": "En stock",
-    "featured": false,
-    "status": "active",
-    "specifications": [
-      {
-        "key": "Privé",
-        "value": "1ère ➔ 6ème"
-      },
-      {
-        "key": "Étatique",
-        "value": "4ème ➔ 6ème"
-      }
-    ],
-    "createdAt": "2026-08-06T20:24:50.251Z",
-    "updatedAt": "2026-08-06T20:24:50.251Z"
-  },
-  {
-    "_id": "6a74ed925758191051448e31",
-    "id": 1786047890293,
-    "name": "SBH03-BESTFRIEND",
-    "price": "339,000 DT",
-    "priceNum": 339,
-    "priceBeforeDiscount": 449,
-    "oldPrice": "449,000 DT",
-    "discount": 24,
-    "badge": "-24%",
-    "badgeColor": "#e53935",
-    "schoolLevel": "",
-    "rating": 5,
-    "reviews": 0,
-    "img": "/uploads/image-1784996839416-974113157.jpg",
-    "images": [
-      "/uploads/image-1784996839416-974113157.jpg"
-    ],
-    "category": "Cartable high lux",
-    "brand": "Bomi",
-    "description": "Privé : 1ère ➔ 6ème | Étatique : 4ème ➔ 6ème",
-    "stock": 670,
-    "availability": "En stock",
-    "featured": false,
-    "status": "active",
-    "specifications": [
-      {
-        "key": "Privé",
-        "value": "1ère ➔ 6ème"
-      },
-      {
-        "key": "Étatique",
-        "value": "4ème ➔ 6ème"
-      }
-    ],
-    "createdAt": "2026-08-06T20:24:50.252Z",
-    "updatedAt": "2026-08-06T20:24:50.252Z"
-  },
-  {
-    "_id": "6a74ed925758191051448e32",
-    "id": 1786047890294,
-    "name": "CL01-QUAD",
-    "price": "59,000 DT",
-    "priceNum": 59,
-    "priceBeforeDiscount": 85,
-    "oldPrice": "85,000 DT",
-    "discount": 31,
-    "badge": "-31%",
-    "badgeColor": "#e53935",
-    "schoolLevel": "",
-    "rating": 5,
-    "reviews": 0,
-    "img": "/uploads/image-1785007405351-590014737.png",
-    "images": [
-      "/uploads/image-1785007405351-590014737.png"
-    ],
-    "category": "paniers",
-    "brand": "Bomi",
-    "description": "BX26043-CL01-QUAD",
-    "stock": 470,
-    "availability": "En stock",
-    "featured": false,
-    "status": "active",
-    "specifications": [],
-    "createdAt": "2026-08-06T20:24:50.252Z",
-    "updatedAt": "2026-08-06T20:24:50.252Z"
-  },
-  {
-    "_id": "6a74ed925758191051448e33",
-    "id": 1786047890297,
-    "name": "CL01-NINJA",
-    "price": "59,000 DT",
-    "priceNum": 59,
-    "priceBeforeDiscount": 85,
-    "oldPrice": "85,000 DT",
-    "discount": 31,
-    "badge": "-31%",
-    "badgeColor": "#e53935",
-    "schoolLevel": "",
-    "rating": 5,
-    "reviews": 0,
-    "img": "/uploads/image-1785007405351-590014737.png",
-    "images": [
-      "/uploads/image-1785007405351-590014737.png"
-    ],
-    "category": "paniers",
-    "brand": "Bomi",
-    "description": "BX26044-CL01-NINJA",
-    "stock": 470,
-    "availability": "En stock",
-    "featured": false,
-    "status": "active",
-    "specifications": [],
-    "createdAt": "2026-08-06T20:24:50.254Z",
-    "updatedAt": "2026-08-06T20:24:50.254Z"
-  },
-  {
-    "_id": "6a74ed925758191051448e34",
-    "id": 1786047890298,
-    "name": "CL01-FOOTBALL",
-    "price": "59,000 DT",
-    "priceNum": 59,
-    "priceBeforeDiscount": 85,
-    "oldPrice": "85,000 DT",
-    "discount": 31,
-    "badge": "-31%",
-    "badgeColor": "#e53935",
-    "schoolLevel": "",
-    "rating": 5,
-    "reviews": 0,
-    "img": "/uploads/image-1785007405351-590014737.png",
-    "images": [
-      "/uploads/image-1785007405351-590014737.png"
-    ],
-    "category": "paniers",
-    "brand": "Bomi",
-    "description": "BX26045-CL01-FOOTBALL",
-    "stock": 470,
-    "availability": "En stock",
-    "featured": false,
-    "status": "active",
-    "specifications": [],
-    "createdAt": "2026-08-06T20:24:50.254Z",
-    "updatedAt": "2026-08-06T20:24:50.254Z"
-  },
-  {
-    "_id": "6a74ed925758191051448e35",
-    "id": 1786047890300,
-    "name": "CL01-PRETTYGIRL",
-    "price": "59,000 DT",
-    "priceNum": 59,
-    "priceBeforeDiscount": 85,
-    "oldPrice": "85,000 DT",
-    "discount": 31,
-    "badge": "-31%",
-    "badgeColor": "#e53935",
-    "schoolLevel": "",
-    "rating": 5,
-    "reviews": 0,
-    "img": "/uploads/image-1785007405351-590014737.png",
-    "images": [
-      "/uploads/image-1785007405351-590014737.png"
-    ],
-    "category": "paniers",
-    "brand": "Bomi",
-    "description": "BX26046-CL01-PRETTYGIRL",
-    "stock": 470,
-    "availability": "En stock",
-    "featured": false,
-    "status": "active",
-    "specifications": [],
-    "createdAt": "2026-08-06T20:24:50.255Z",
-    "updatedAt": "2026-08-06T20:24:50.255Z"
-  },
-  {
-    "_id": "6a74ed925758191051448e36",
-    "id": 1786047890302,
-    "name": "CL01-HOOTIE",
-    "price": "59,000 DT",
-    "priceNum": 59,
-    "priceBeforeDiscount": 85,
-    "oldPrice": "85,000 DT",
-    "discount": 31,
-    "badge": "-31%",
-    "badgeColor": "#e53935",
-    "schoolLevel": "",
-    "rating": 5,
-    "reviews": 0,
-    "img": "/uploads/image-1785007405351-590014737.png",
-    "images": [
-      "/uploads/image-1785007405351-590014737.png"
-    ],
-    "category": "paniers",
-    "brand": "Bomi",
-    "description": "BX26047-CL01-HOOTIE",
-    "stock": 470,
-    "availability": "En stock",
-    "featured": false,
-    "status": "active",
-    "specifications": [],
-    "createdAt": "2026-08-06T20:24:50.256Z",
-    "updatedAt": "2026-08-06T20:24:50.256Z"
-  },
-  {
-    "_id": "6a74ed925758191051448e37",
-    "id": 1786047890303,
-    "name": "CL01-BESTFRIEND",
-    "price": "59,000 DT",
-    "priceNum": 59,
-    "priceBeforeDiscount": 85,
-    "oldPrice": "85,000 DT",
-    "discount": 31,
-    "badge": "-31%",
-    "badgeColor": "#e53935",
-    "schoolLevel": "",
-    "rating": 5,
-    "reviews": 0,
-    "img": "/uploads/image-1785007405351-590014737.png",
-    "images": [
-      "/uploads/image-1785007405351-590014737.png"
-    ],
-    "category": "paniers",
-    "brand": "Bomi",
-    "description": "BX26048-CL01-BESTFRIEND",
-    "stock": 470,
-    "availability": "En stock",
-    "featured": false,
-    "status": "active",
-    "specifications": [],
-    "createdAt": "2026-08-06T20:24:50.256Z",
-    "updatedAt": "2026-08-06T20:24:50.256Z"
-  },
-  {
-    "_id": "6a74ed925758191051448e38",
-    "id": 1786047890305,
-    "name": "CL02-QUAD",
-    "price": "69,000 DT",
-    "priceNum": 69,
-    "priceBeforeDiscount": 109,
-    "oldPrice": "109,000 DT",
-    "discount": 37,
-    "badge": "-37%",
-    "badgeColor": "#e53935",
-    "schoolLevel": "",
-    "rating": 5,
-    "reviews": 0,
-    "img": "/uploads/image-1785008937972-944703246.png",
-    "images": [
-      "/uploads/image-1785008937972-944703246.png"
-    ],
-    "category": "paniers",
-    "brand": "Bomi",
-    "description": "BX26049-CL02-QUAD",
-    "stock": 830,
-    "availability": "En stock",
-    "featured": false,
-    "status": "active",
-    "specifications": [],
-    "createdAt": "2026-08-06T20:24:50.257Z",
-    "updatedAt": "2026-08-06T20:24:50.257Z"
-  },
-  {
-    "_id": "6a74ed925758191051448e39",
-    "id": 1786047890307,
-    "name": "CL02-NINJA",
-    "price": "69,000 DT",
-    "priceNum": 69,
-    "priceBeforeDiscount": 109,
-    "oldPrice": "109,000 DT",
-    "discount": 37,
-    "badge": "-37%",
-    "badgeColor": "#e53935",
-    "schoolLevel": "",
-    "rating": 5,
-    "reviews": 0,
-    "img": "/uploads/image-1785008937972-944703246.png",
-    "images": [
-      "/uploads/image-1785008937972-944703246.png"
-    ],
-    "category": "paniers",
-    "brand": "Bomi",
-    "description": "BX26050-CL02-NINJA",
-    "stock": 830,
-    "availability": "En stock",
-    "featured": false,
-    "status": "active",
-    "specifications": [],
-    "createdAt": "2026-08-06T20:24:50.258Z",
-    "updatedAt": "2026-08-06T20:24:50.258Z"
-  },
-  {
-    "_id": "6a74ed925758191051448e3a",
-    "id": 1786047890308,
-    "name": "CL02-FOOTBALL",
-    "price": "69,000 DT",
-    "priceNum": 69,
-    "priceBeforeDiscount": 109,
-    "oldPrice": "109,000 DT",
-    "discount": 37,
-    "badge": "-37%",
-    "badgeColor": "#e53935",
-    "schoolLevel": "",
-    "rating": 5,
-    "reviews": 0,
-    "img": "/uploads/image-1785008937972-944703246.png",
-    "images": [
-      "/uploads/image-1785008937972-944703246.png"
-    ],
-    "category": "paniers",
-    "brand": "Bomi",
-    "description": "BX26051-CL02-FOOTBALL",
-    "stock": 830,
-    "availability": "En stock",
-    "featured": false,
-    "status": "active",
-    "specifications": [],
-    "createdAt": "2026-08-06T20:24:50.258Z",
-    "updatedAt": "2026-08-06T20:24:50.258Z"
-  },
-  {
-    "_id": "6a74ed925758191051448e3b",
-    "id": 1786047890310,
-    "name": "CL02-PRETTYGIRL",
-    "price": "69,000 DT",
-    "priceNum": 69,
-    "priceBeforeDiscount": 109,
-    "oldPrice": "109,000 DT",
-    "discount": 37,
-    "badge": "-37%",
-    "badgeColor": "#e53935",
-    "schoolLevel": "",
-    "rating": 5,
-    "reviews": 0,
-    "img": "/uploads/image-1785008937972-944703246.png",
-    "images": [
-      "/uploads/image-1785008937972-944703246.png"
-    ],
-    "category": "paniers",
-    "brand": "Bomi",
-    "description": "BX26052-CL02-PRETTYGIRL",
-    "stock": 880,
-    "availability": "En stock",
-    "featured": false,
-    "status": "active",
-    "specifications": [],
-    "createdAt": "2026-08-06T20:24:50.259Z",
-    "updatedAt": "2026-08-06T20:24:50.259Z"
-  },
-  {
-    "_id": "6a74ed925758191051448e3c",
-    "id": 1786047890312,
-    "name": "CL02-HOOTIE",
-    "price": "69,000 DT",
-    "priceNum": 69,
-    "priceBeforeDiscount": 109,
-    "oldPrice": "109,000 DT",
-    "discount": 37,
-    "badge": "-37%",
-    "badgeColor": "#e53935",
-    "schoolLevel": "",
-    "rating": 5,
-    "reviews": 0,
-    "img": "/uploads/image-1785008937972-944703246.png",
-    "images": [
-      "/uploads/image-1785008937972-944703246.png"
-    ],
-    "category": "paniers",
-    "brand": "Bomi",
-    "description": "BX26053-CL02-HOOTIE",
-    "stock": 880,
-    "availability": "En stock",
-    "featured": false,
-    "status": "active",
-    "specifications": [],
-    "createdAt": "2026-08-06T20:24:50.260Z",
-    "updatedAt": "2026-08-06T20:24:50.260Z"
-  },
-  {
-    "_id": "6a74ed925758191051448e3d",
-    "id": 1786047890314,
-    "name": "CL02-BESTFRIEND",
-    "price": "69,000 DT",
-    "priceNum": 69,
-    "priceBeforeDiscount": 109,
-    "oldPrice": "109,000 DT",
-    "discount": 37,
-    "badge": "-37%",
-    "badgeColor": "#e53935",
-    "schoolLevel": "",
-    "rating": 5,
-    "reviews": 0,
-    "img": "/uploads/image-1785008937972-944703246.png",
-    "images": [
-      "/uploads/image-1785008937972-944703246.png"
-    ],
-    "category": "paniers",
-    "brand": "Bomi",
-    "description": "BX26054-CL02-BESTFRIEND",
-    "stock": 880,
-    "availability": "En stock",
-    "featured": false,
-    "status": "active",
-    "specifications": [],
-    "createdAt": "2026-08-06T20:24:50.261Z",
-    "updatedAt": "2026-08-06T20:24:50.261Z"
-  },
-  {
-    "_id": "6a74ed925758191051448e3e",
-    "id": 1786047890316,
-    "name": "CL03-QUAD",
-    "price": "69,000 DT",
-    "priceNum": 69,
-    "priceBeforeDiscount": 109,
-    "oldPrice": "109,000 DT",
-    "discount": 37,
-    "badge": "-37%",
-    "badgeColor": "#e53935",
-    "schoolLevel": "",
-    "rating": 5,
-    "reviews": 0,
-    "img": "/uploads/image-1785009939818-502498169.png",
-    "images": [
-      "/uploads/image-1785009939818-502498169.png"
-    ],
-    "category": "paniers",
-    "brand": "Bomi",
-    "description": "BX26055-CL03-QUAD",
-    "stock": 690,
-    "availability": "En stock",
-    "featured": false,
-    "status": "active",
-    "specifications": [],
-    "createdAt": "2026-08-06T20:24:50.262Z",
-    "updatedAt": "2026-08-06T20:24:50.262Z"
-  },
-  {
-    "_id": "6a74ed925758191051448e3f",
-    "id": 1786047890318,
-    "name": "CL03-NINJA",
-    "price": "69,000 DT",
-    "priceNum": 69,
-    "priceBeforeDiscount": 109,
-    "oldPrice": "109,000 DT",
-    "discount": 37,
-    "badge": "-37%",
-    "badgeColor": "#e53935",
-    "schoolLevel": "",
-    "rating": 5,
-    "reviews": 0,
-    "img": "/uploads/image-1785009939818-502498169.png",
-    "images": [
-      "/uploads/image-1785009939818-502498169.png"
-    ],
-    "category": "paniers",
-    "brand": "Bomi",
-    "description": "BX26056-CL03-NINJA",
-    "stock": 690,
-    "availability": "En stock",
-    "featured": false,
-    "status": "active",
-    "specifications": [],
-    "createdAt": "2026-08-06T20:24:50.263Z",
-    "updatedAt": "2026-08-06T20:24:50.263Z"
-  },
-  {
-    "_id": "6a74ed925758191051448e40",
-    "id": 1786047890321,
-    "name": "CL03-FOOTBALL",
-    "price": "69,000 DT",
-    "priceNum": 69,
-    "priceBeforeDiscount": 109,
-    "oldPrice": "109,000 DT",
-    "discount": 37,
-    "badge": "-37%",
-    "badgeColor": "#e53935",
-    "schoolLevel": "",
-    "rating": 5,
-    "reviews": 0,
-    "img": "/uploads/image-1785009939818-502498169.png",
-    "images": [
-      "/uploads/image-1785009939818-502498169.png"
-    ],
-    "category": "paniers",
-    "brand": "Bomi",
-    "description": "BX26057-CL03-FOOTBALL",
-    "stock": 690,
-    "availability": "En stock",
-    "featured": false,
-    "status": "active",
-    "specifications": [],
-    "createdAt": "2026-08-06T20:24:50.265Z",
-    "updatedAt": "2026-08-06T20:24:50.265Z"
-  },
-  {
-    "_id": "6a74ed925758191051448e41",
-    "id": 1786047890323,
-    "name": "CL03-PRETTYGIRL",
-    "price": "69,000 DT",
-    "priceNum": 69,
-    "priceBeforeDiscount": 109,
-    "oldPrice": "109,000 DT",
-    "discount": 37,
-    "badge": "-37%",
-    "badgeColor": "#e53935",
-    "schoolLevel": "",
-    "rating": 5,
-    "reviews": 0,
-    "img": "/uploads/image-1785009939818-502498169.png",
-    "images": [
-      "/uploads/image-1785009939818-502498169.png"
-    ],
-    "category": "paniers",
-    "brand": "Bomi",
-    "description": "BX26058-CL03-PRETTYGIRL",
-    "stock": 670,
-    "availability": "En stock",
-    "featured": false,
-    "status": "active",
-    "specifications": [],
-    "createdAt": "2026-08-06T20:24:50.266Z",
-    "updatedAt": "2026-08-06T20:24:50.266Z"
-  },
-  {
-    "_id": "6a74ed925758191051448e42",
-    "id": 1786047890324,
-    "name": "CL03-HOOTIE",
-    "price": "69,000 DT",
-    "priceNum": 69,
-    "priceBeforeDiscount": 109,
-    "oldPrice": "109,000 DT",
-    "discount": 37,
-    "badge": "-37%",
-    "badgeColor": "#e53935",
-    "schoolLevel": "",
-    "rating": 5,
-    "reviews": 0,
-    "img": "/uploads/image-1785009939818-502498169.png",
-    "images": [
-      "/uploads/image-1785009939818-502498169.png"
-    ],
-    "category": "paniers",
-    "brand": "Bomi",
-    "description": "BX26059-CL03-HOOTIE",
-    "stock": 670,
-    "availability": "En stock",
-    "featured": false,
-    "status": "active",
-    "specifications": [],
-    "createdAt": "2026-08-06T20:24:50.266Z",
-    "updatedAt": "2026-08-06T20:24:50.266Z"
-  },
-  {
-    "_id": "6a74ed925758191051448e43",
-    "id": 1786047890326,
-    "name": "CL03-BESTFRIEND",
-    "price": "69,000 DT",
-    "priceNum": 69,
-    "priceBeforeDiscount": 109,
-    "oldPrice": "109,000 DT",
-    "discount": 37,
-    "badge": "-37%",
-    "badgeColor": "#e53935",
-    "schoolLevel": "",
-    "rating": 5,
-    "reviews": 0,
-    "img": "/uploads/image-1785009939818-502498169.png",
-    "images": [
-      "/uploads/image-1785009939818-502498169.png"
-    ],
-    "category": "paniers",
-    "brand": "Bomi",
-    "description": "BX26060-CL03-BESTFRIEND",
-    "stock": 670,
-    "availability": "En stock",
-    "featured": false,
-    "status": "active",
-    "specifications": [],
-    "createdAt": "2026-08-06T20:24:50.267Z",
-    "updatedAt": "2026-08-06T20:24:50.267Z"
-  },
-  {
-    "_id": "6a74ed925758191051448e44",
-    "id": 1786047890327,
-    "name": "CLH02-QUAD",
-    "price": "79,000 DT",
-    "priceNum": 79,
-    "priceBeforeDiscount": 119,
-    "oldPrice": "119,000 DT",
-    "discount": 34,
-    "badge": "-34%",
-    "badgeColor": "#e53935",
-    "schoolLevel": "",
-    "rating": 5,
-    "reviews": 0,
-    "img": "/uploads/image-1785011639845-142447700.png",
-    "images": [
-      "/uploads/image-1785011639845-142447700.png"
-    ],
-    "category": "paniers",
-    "brand": "Bomi",
-    "description": "BX26061-CLH02-QUAD",
-    "stock": 650,
-    "availability": "En stock",
-    "featured": false,
-    "status": "active",
-    "specifications": [],
-    "createdAt": "2026-08-06T20:24:50.267Z",
-    "updatedAt": "2026-08-06T20:24:50.267Z"
-  },
-  {
-    "_id": "6a74ed925758191051448e45",
-    "id": 1786047890329,
-    "name": "CLH02-NINJA",
-    "price": "79,000 DT",
-    "priceNum": 79,
-    "priceBeforeDiscount": 119,
-    "oldPrice": "119,000 DT",
-    "discount": 34,
-    "badge": "-34%",
-    "badgeColor": "#e53935",
-    "schoolLevel": "",
-    "rating": 5,
-    "reviews": 0,
-    "img": "/uploads/image-1785011639845-142447700.png",
-    "images": [
-      "/uploads/image-1785011639845-142447700.png"
-    ],
-    "category": "paniers",
-    "brand": "Bomi",
-    "description": "BX26062-CLH02-NINJA",
-    "stock": 650,
-    "availability": "En stock",
-    "featured": false,
-    "status": "active",
-    "specifications": [],
-    "createdAt": "2026-08-06T20:24:50.268Z",
-    "updatedAt": "2026-08-06T20:24:50.268Z"
-  },
-  {
-    "_id": "6a74ed925758191051448e46",
-    "id": 1786047890330,
-    "name": "CLH02-FOOTBALL",
-    "price": "79,000 DT",
-    "priceNum": 79,
-    "priceBeforeDiscount": 119,
-    "oldPrice": "119,000 DT",
-    "discount": 34,
-    "badge": "-34%",
-    "badgeColor": "#e53935",
-    "schoolLevel": "",
-    "rating": 5,
-    "reviews": 0,
-    "img": "/uploads/image-1785011639845-142447700.png",
-    "images": [
-      "/uploads/image-1785011639845-142447700.png"
-    ],
-    "category": "paniers",
-    "brand": "Bomi",
-    "description": "BX26063-CLH02-FOOTBALL",
-    "stock": 650,
-    "availability": "En stock",
-    "featured": false,
-    "status": "active",
-    "specifications": [],
-    "createdAt": "2026-08-06T20:24:50.268Z",
-    "updatedAt": "2026-08-06T20:24:50.268Z"
-  },
-  {
-    "_id": "6a74ed925758191051448e47",
-    "id": 1786047890332,
-    "name": "CLH02-PRETTYGIRL",
-    "price": "79,000 DT",
-    "priceNum": 79,
-    "priceBeforeDiscount": 119,
-    "oldPrice": "119,000 DT",
-    "discount": 34,
-    "badge": "-34%",
-    "badgeColor": "#e53935",
-    "schoolLevel": "",
-    "rating": 5,
-    "reviews": 0,
-    "img": "/uploads/image-1785011639845-142447700.png",
-    "images": [
-      "/uploads/image-1785011639845-142447700.png"
-    ],
-    "category": "paniers",
-    "brand": "Bomi",
-    "description": "BX26064-CLH02-PRETTYGIRL",
-    "stock": 650,
-    "availability": "En stock",
-    "featured": false,
-    "status": "active",
-    "specifications": [],
-    "createdAt": "2026-08-06T20:24:50.269Z",
-    "updatedAt": "2026-08-06T20:24:50.269Z"
-  },
-  {
-    "_id": "6a74ed925758191051448e48",
-    "id": 1786047890333,
-    "name": "CLH02-HOOTIE",
-    "price": "79,000 DT",
-    "priceNum": 79,
-    "priceBeforeDiscount": 119,
-    "oldPrice": "119,000 DT",
-    "discount": 34,
-    "badge": "-34%",
-    "badgeColor": "#e53935",
-    "schoolLevel": "",
-    "rating": 5,
-    "reviews": 0,
-    "img": "/uploads/image-1785011639845-142447700.png",
-    "images": [
-      "/uploads/image-1785011639845-142447700.png"
-    ],
-    "category": "paniers",
-    "brand": "Bomi",
-    "description": "BX26065-CLH02-HOOTIE",
-    "stock": 650,
-    "availability": "En stock",
-    "featured": false,
-    "status": "active",
-    "specifications": [],
-    "createdAt": "2026-08-06T20:24:50.269Z",
-    "updatedAt": "2026-08-06T20:24:50.269Z"
-  },
-  {
-    "_id": "6a74ed925758191051448e49",
-    "id": 1786047890334,
-    "name": "CLH02-BESTFRIEND",
-    "price": "79,000 DT",
-    "priceNum": 79,
-    "priceBeforeDiscount": 119,
-    "oldPrice": "119,000 DT",
-    "discount": 34,
-    "badge": "-34%",
-    "badgeColor": "#e53935",
-    "schoolLevel": "",
-    "rating": 5,
-    "reviews": 0,
-    "img": "/uploads/image-1785011639845-142447700.png",
-    "images": [
-      "/uploads/image-1785011639845-142447700.png"
-    ],
-    "category": "paniers",
-    "brand": "Bomi",
-    "description": "BX26066-CLH02-BESTFRIEND",
-    "stock": 650,
-    "availability": "En stock",
-    "featured": false,
-    "status": "active",
-    "specifications": [],
-    "createdAt": "2026-08-06T20:24:50.269Z",
-    "updatedAt": "2026-08-06T20:24:50.269Z"
-  },
-  {
-    "_id": "6a74ed925758191051448e4a",
-    "id": 1786047890336,
-    "name": "TS01-QUAD",
-    "price": "27,000 DT",
-    "priceNum": 27,
-    "priceBeforeDiscount": 43,
-    "oldPrice": "43,000 DT",
-    "discount": 37,
-    "badge": "-37%",
-    "badgeColor": "#e53935",
-    "schoolLevel": "",
-    "rating": 5,
-    "reviews": 0,
-    "img": "/uploads/image-1785080909643-380673505.png",
-    "images": [
-      "/uploads/image-1785080909643-380673505.png"
-    ],
-    "category": "Trousse",
-    "brand": "Bomi",
-    "description": "BX26067-TS01-QUAD",
-    "stock": 1200,
-    "availability": "En stock",
-    "featured": false,
-    "status": "active",
-    "specifications": [],
-    "createdAt": "2026-08-06T20:24:50.270Z",
-    "updatedAt": "2026-08-06T20:24:50.270Z"
-  },
-  {
-    "_id": "6a74ed925758191051448e4b",
-    "id": 1786047890337,
-    "name": "TS01-NINJA",
-    "price": "27,000 DT",
-    "priceNum": 27,
-    "priceBeforeDiscount": 43,
-    "oldPrice": "43,000 DT",
-    "discount": 37,
-    "badge": "-37%",
-    "badgeColor": "#e53935",
-    "schoolLevel": "",
-    "rating": 5,
-    "reviews": 0,
-    "img": "/uploads/image-1785080909643-380673505.png",
-    "images": [
-      "/uploads/image-1785080909643-380673505.png"
-    ],
-    "category": "Trousse",
-    "brand": "Bomi",
-    "description": "BX26068-TS01-NINJA",
-    "stock": 1200,
-    "availability": "En stock",
-    "featured": false,
-    "status": "active",
-    "specifications": [],
-    "createdAt": "2026-08-06T20:24:50.270Z",
-    "updatedAt": "2026-08-06T20:24:50.270Z"
-  },
-  {
-    "_id": "6a74ed925758191051448e4c",
-    "id": 1786047890338,
-    "name": "TS01-FOOTBALL",
-    "price": "27,000 DT",
-    "priceNum": 27,
-    "priceBeforeDiscount": 43,
-    "oldPrice": "43,000 DT",
-    "discount": 37,
-    "badge": "-37%",
-    "badgeColor": "#e53935",
-    "schoolLevel": "",
-    "rating": 5,
-    "reviews": 0,
-    "img": "/uploads/image-1785080909643-380673505.png",
-    "images": [
-      "/uploads/image-1785080909643-380673505.png"
-    ],
-    "category": "Trousse",
-    "brand": "Bomi",
-    "description": "BX26069-TS01-FOOTBALL",
-    "stock": 1200,
-    "availability": "En stock",
-    "featured": false,
-    "status": "active",
-    "specifications": [],
-    "createdAt": "2026-08-06T20:24:50.270Z",
-    "updatedAt": "2026-08-06T20:24:50.270Z"
-  },
-  {
-    "_id": "6a74ed925758191051448e4d",
-    "id": 1786047890340,
-    "name": "TS01-PRETTYGIRL",
-    "price": "27,000 DT",
-    "priceNum": 27,
-    "priceBeforeDiscount": 43,
-    "oldPrice": "43,000 DT",
-    "discount": 37,
-    "badge": "-37%",
-    "badgeColor": "#e53935",
-    "schoolLevel": "",
-    "rating": 5,
-    "reviews": 0,
-    "img": "/uploads/image-1785080909643-380673505.png",
-    "images": [
-      "/uploads/image-1785080909643-380673505.png"
-    ],
-    "category": "Trousse",
-    "brand": "Bomi",
-    "description": "BX26070-TS01-PRETTYGIRL",
-    "stock": 1200,
-    "availability": "En stock",
-    "featured": false,
-    "status": "active",
-    "specifications": [],
-    "createdAt": "2026-08-06T20:24:50.271Z",
-    "updatedAt": "2026-08-06T20:24:50.271Z"
-  },
-  {
-    "_id": "6a74ed925758191051448e4e",
-    "id": 1786047890341,
-    "name": "TS01-HOOTIE",
-    "price": "27,000 DT",
-    "priceNum": 27,
-    "priceBeforeDiscount": 43,
-    "oldPrice": "43,000 DT",
-    "discount": 37,
-    "badge": "-37%",
-    "badgeColor": "#e53935",
-    "schoolLevel": "",
-    "rating": 5,
-    "reviews": 0,
-    "img": "/uploads/image-1785080909643-380673505.png",
-    "images": [
-      "/uploads/image-1785080909643-380673505.png"
-    ],
-    "category": "Trousse",
-    "brand": "Bomi",
-    "description": "BX26071-TS01-HOOTIE",
-    "stock": 1200,
-    "availability": "En stock",
-    "featured": false,
-    "status": "active",
-    "specifications": [],
-    "createdAt": "2026-08-06T20:24:50.271Z",
-    "updatedAt": "2026-08-06T20:24:50.271Z"
-  },
-  {
-    "_id": "6a74ed925758191051448e4f",
-    "id": 1786047890343,
-    "name": "TS01-BESTFRIEND",
-    "price": "27,000 DT",
-    "priceNum": 27,
-    "priceBeforeDiscount": 43,
-    "oldPrice": "43,000 DT",
-    "discount": 37,
-    "badge": "-37%",
-    "badgeColor": "#e53935",
-    "schoolLevel": "",
-    "rating": 5,
-    "reviews": 0,
-    "img": "/uploads/image-1785080909643-380673505.png",
-    "images": [
-      "/uploads/image-1785080909643-380673505.png"
-    ],
-    "category": "Trousse",
-    "brand": "Bomi",
-    "description": "BX26072-TS01-BESTFRIEND",
-    "stock": 1200,
-    "availability": "En stock",
-    "featured": false,
-    "status": "active",
-    "specifications": [],
-    "createdAt": "2026-08-06T20:24:50.272Z",
-    "updatedAt": "2026-08-06T20:24:50.272Z"
-  },
-  {
-    "_id": "6a74ed925758191051448e50",
-    "id": 1786047890345,
-    "name": "TS02-QUAD",
-    "price": "27,000 DT",
-    "priceNum": 27,
-    "priceBeforeDiscount": 43,
-    "oldPrice": "43,000 DT",
-    "discount": 37,
-    "badge": "-37%",
-    "badgeColor": "#e53935",
-    "schoolLevel": "",
-    "rating": 5,
-    "reviews": 0,
-    "img": "/uploads/image-1785082738606-712112436.png",
-    "images": [
-      "/uploads/image-1785082738606-712112436.png"
-    ],
-    "category": "Trousse",
-    "brand": "Bomi",
-    "description": "BX26073-TS02-QUAD",
-    "stock": 910,
-    "availability": "En stock",
-    "featured": false,
-    "status": "active",
-    "specifications": [],
-    "createdAt": "2026-08-06T20:24:50.273Z",
-    "updatedAt": "2026-08-06T20:24:50.273Z"
-  },
-  {
-    "_id": "6a74ed925758191051448e51",
-    "id": 1786047890348,
-    "name": "TS02-NINJA",
-    "price": "27,000 DT",
-    "priceNum": 27,
-    "priceBeforeDiscount": 43,
-    "oldPrice": "43,000 DT",
-    "discount": 37,
-    "badge": "-37%",
-    "badgeColor": "#e53935",
-    "schoolLevel": "",
-    "rating": 5,
-    "reviews": 0,
-    "img": "/uploads/image-1785082738606-712112436.png",
-    "images": [
-      "/uploads/image-1785082738606-712112436.png"
-    ],
-    "category": "Trousse",
-    "brand": "Bomi",
-    "description": "BX26074-TS02-NINJA",
-    "stock": 910,
-    "availability": "En stock",
-    "featured": false,
-    "status": "active",
-    "specifications": [],
-    "createdAt": "2026-08-06T20:24:50.275Z",
-    "updatedAt": "2026-08-06T20:24:50.275Z"
-  },
-  {
-    "_id": "6a74ed925758191051448e52",
-    "id": 1786047890350,
-    "name": "TS02-FOOTBALL",
-    "price": "27,000 DT",
-    "priceNum": 27,
-    "priceBeforeDiscount": 43,
-    "oldPrice": "43,000 DT",
-    "discount": 37,
-    "badge": "-37%",
-    "badgeColor": "#e53935",
-    "schoolLevel": "",
-    "rating": 5,
-    "reviews": 0,
-    "img": "/uploads/image-1785082738606-712112436.png",
-    "images": [
-      "/uploads/image-1785082738606-712112436.png"
-    ],
-    "category": "Trousse",
-    "brand": "Bomi",
-    "description": "BX26075-TS02-FOOTBALL",
-    "stock": 910,
-    "availability": "En stock",
-    "featured": false,
-    "status": "active",
-    "specifications": [],
-    "createdAt": "2026-08-06T20:24:50.276Z",
-    "updatedAt": "2026-08-06T20:24:50.276Z"
-  },
-  {
-    "_id": "6a74ed925758191051448e53",
-    "id": 1786047890352,
-    "name": "TS02-PRETTYGIRL",
-    "price": "27,000 DT",
-    "priceNum": 27,
-    "priceBeforeDiscount": 43,
-    "oldPrice": "43,000 DT",
-    "discount": 37,
-    "badge": "-37%",
-    "badgeColor": "#e53935",
-    "schoolLevel": "",
-    "rating": 5,
-    "reviews": 0,
-    "img": "/uploads/image-1785082738606-712112436.png",
-    "images": [
-      "/uploads/image-1785082738606-712112436.png"
-    ],
-    "category": "Trousse",
-    "brand": "Bomi",
-    "description": "BX26076-TS02-PRETTYGIRL",
-    "stock": 900,
-    "availability": "En stock",
-    "featured": false,
-    "status": "active",
-    "specifications": [],
-    "createdAt": "2026-08-06T20:24:50.277Z",
-    "updatedAt": "2026-08-06T20:24:50.277Z"
-  },
-  {
-    "_id": "6a74ed925758191051448e54",
-    "id": 1786047890354,
-    "name": "TS02-HOOTIE",
-    "price": "27,000 DT",
-    "priceNum": 27,
-    "priceBeforeDiscount": 43,
-    "oldPrice": "43,000 DT",
-    "discount": 37,
-    "badge": "-37%",
-    "badgeColor": "#e53935",
-    "schoolLevel": "",
-    "rating": 5,
-    "reviews": 0,
-    "img": "/uploads/image-1785082738606-712112436.png",
-    "images": [
-      "/uploads/image-1785082738606-712112436.png"
-    ],
-    "category": "Trousse",
-    "brand": "Bomi",
-    "description": "BX26077-TS02-HOOTIE",
-    "stock": 900,
-    "availability": "En stock",
-    "featured": false,
-    "status": "active",
-    "specifications": [],
-    "createdAt": "2026-08-06T20:24:50.278Z",
-    "updatedAt": "2026-08-06T20:24:50.278Z"
-  },
-  {
-    "_id": "6a74ed925758191051448e55",
-    "id": 1786047890357,
-    "name": "TS02-BESTFRIEND",
-    "price": "27,000 DT",
-    "priceNum": 27,
-    "priceBeforeDiscount": 43,
-    "oldPrice": "43,000 DT",
-    "discount": 37,
-    "badge": "-37%",
-    "badgeColor": "#e53935",
-    "schoolLevel": "",
-    "rating": 5,
-    "reviews": 0,
-    "img": "/uploads/image-1785082738606-712112436.png",
-    "images": [
-      "/uploads/image-1785082738606-712112436.png"
-    ],
-    "category": "Trousse",
-    "brand": "Bomi",
-    "description": "BX26078-TS02-BESTFRIEND",
-    "stock": 900,
-    "availability": "En stock",
-    "featured": false,
-    "status": "active",
-    "specifications": [],
-    "createdAt": "2026-08-06T20:24:50.280Z",
-    "updatedAt": "2026-08-06T20:24:50.280Z"
-  },
-  {
-    "_id": "6a74ed925758191051448e56",
-    "id": 1786047890359,
-    "name": "TS03-QUAD",
-    "price": "27,000 DT",
-    "priceNum": 27,
-    "priceBeforeDiscount": 43,
-    "oldPrice": "43,000 DT",
-    "discount": 37,
-    "badge": "-37%",
-    "badgeColor": "#e53935",
-    "schoolLevel": "",
-    "rating": 5,
-    "reviews": 0,
-    "img": "/uploads/image-1785084462709-396165519.png",
-    "images": [
-      "/uploads/image-1785084462709-396165519.png"
-    ],
-    "category": "Trousse",
-    "brand": "Bomi",
-    "description": "BX26079-TS03-QUAD",
-    "stock": 1300,
-    "availability": "En stock",
-    "featured": false,
-    "status": "active",
-    "specifications": [],
-    "createdAt": "2026-08-06T20:24:50.281Z",
-    "updatedAt": "2026-08-06T20:24:50.281Z"
-  },
-  {
-    "_id": "6a74ed925758191051448e57",
-    "id": 1786047890361,
-    "name": "TS03-NINJA",
-    "price": "27,000 DT",
-    "priceNum": 27,
-    "priceBeforeDiscount": 43,
-    "oldPrice": "43,000 DT",
-    "discount": 37,
-    "badge": "-37%",
-    "badgeColor": "#e53935",
-    "schoolLevel": "",
-    "rating": 5,
-    "reviews": 0,
-    "img": "/uploads/image-1785084462709-396165519.png",
-    "images": [
-      "/uploads/image-1785084462709-396165519.png"
-    ],
-    "category": "Trousse",
-    "brand": "Bomi",
-    "description": "BX26080-TS03-NINJA",
-    "stock": 1300,
-    "availability": "En stock",
-    "featured": false,
-    "status": "active",
-    "specifications": [],
-    "createdAt": "2026-08-06T20:24:50.282Z",
-    "updatedAt": "2026-08-06T20:24:50.282Z"
-  },
-  {
-    "_id": "6a74ed925758191051448e58",
-    "id": 1786047890363,
-    "name": "TS03-FOOTBALL",
-    "price": "27,000 DT",
-    "priceNum": 27,
-    "priceBeforeDiscount": 43,
-    "oldPrice": "43,000 DT",
-    "discount": 37,
-    "badge": "-37%",
-    "badgeColor": "#e53935",
-    "schoolLevel": "",
-    "rating": 5,
-    "reviews": 0,
-    "img": "/uploads/image-1785084462709-396165519.png",
-    "images": [
-      "/uploads/image-1785084462709-396165519.png"
-    ],
-    "category": "Trousse",
-    "brand": "Bomi",
-    "description": "BX26081-TS03-FOOTBALL",
-    "stock": 1300,
-    "availability": "En stock",
-    "featured": false,
-    "status": "active",
-    "specifications": [],
-    "createdAt": "2026-08-06T20:24:50.283Z",
-    "updatedAt": "2026-08-06T20:24:50.283Z"
-  },
-  {
-    "_id": "6a74ed925758191051448e59",
-    "id": 1786047890364,
-    "name": "TS03-PRETTYGIRL",
-    "price": "27,000 DT",
-    "priceNum": 27,
-    "priceBeforeDiscount": 43,
-    "oldPrice": "43,000 DT",
-    "discount": 37,
-    "badge": "-37%",
-    "badgeColor": "#e53935",
-    "schoolLevel": "",
-    "rating": 5,
-    "reviews": 0,
-    "img": "/uploads/image-1785084462709-396165519.png",
-    "images": [
-      "/uploads/image-1785084462709-396165519.png"
-    ],
-    "category": "Trousse",
-    "brand": "Bomi",
-    "description": "BX26082-TS03-PRETTYGIRL",
-    "stock": 1300,
-    "availability": "En stock",
-    "featured": false,
-    "status": "active",
-    "specifications": [],
-    "createdAt": "2026-08-06T20:24:50.283Z",
-    "updatedAt": "2026-08-06T20:24:50.283Z"
-  },
-  {
-    "_id": "6a74ed925758191051448e5a",
-    "id": 1786047890366,
-    "name": "TS03-HOOTIE",
-    "price": "27,000 DT",
-    "priceNum": 27,
-    "priceBeforeDiscount": 43,
-    "oldPrice": "43,000 DT",
-    "discount": 37,
-    "badge": "-37%",
-    "badgeColor": "#e53935",
-    "schoolLevel": "",
-    "rating": 5,
-    "reviews": 0,
-    "img": "/uploads/image-1785084462709-396165519.png",
-    "images": [
-      "/uploads/image-1785084462709-396165519.png"
-    ],
-    "category": "Trousse",
-    "brand": "Bomi",
-    "description": "BX26083-TS03-HOOTIE",
-    "stock": 1300,
-    "availability": "En stock",
-    "featured": false,
-    "status": "active",
-    "specifications": [],
-    "createdAt": "2026-08-06T20:24:50.284Z",
-    "updatedAt": "2026-08-06T20:24:50.284Z"
-  },
-  {
-    "_id": "6a74ed925758191051448e5b",
-    "id": 1786047890367,
-    "name": "TS03-BESTFRIEND",
-    "price": "27,000 DT",
-    "priceNum": 27,
-    "priceBeforeDiscount": 43,
-    "oldPrice": "43,000 DT",
-    "discount": 37,
-    "badge": "-37%",
-    "badgeColor": "#e53935",
-    "schoolLevel": "",
-    "rating": 5,
-    "reviews": 0,
-    "img": "/uploads/image-1785084462709-396165519.png",
-    "images": [
-      "/uploads/image-1785084462709-396165519.png"
-    ],
-    "category": "Trousse",
-    "brand": "Bomi",
-    "description": "BX26084-TS03-BESTFRIEND",
-    "stock": 1300,
-    "availability": "En stock",
-    "featured": false,
-    "status": "active",
-    "specifications": [],
-    "createdAt": "2026-08-06T20:24:50.284Z",
-    "updatedAt": "2026-08-06T20:24:50.284Z"
-  },
-  {
-    "_id": "6a74ed925758191051448e5c",
-    "id": 1786047890370,
-    "name": "TS04-QUAD",
-    "price": "59,000 DT",
-    "priceNum": 59,
-    "priceBeforeDiscount": 85,
-    "oldPrice": "85,000 DT",
-    "discount": 31,
-    "badge": "-31%",
-    "badgeColor": "#e53935",
-    "schoolLevel": "",
-    "rating": 5,
-    "reviews": 0,
-    "img": "/uploads/image-1785096062528-182889900.png",
-    "images": [
-      "/uploads/image-1785096062528-182889900.png"
-    ],
-    "category": "Trousse",
-    "brand": "Bomi",
-    "description": "BX26085-TS04-QUAD",
-    "stock": 650,
-    "availability": "En stock",
-    "featured": false,
-    "status": "active",
-    "specifications": [],
-    "createdAt": "2026-08-06T20:24:50.286Z",
-    "updatedAt": "2026-08-06T20:24:50.286Z"
-  },
-  {
-    "_id": "6a74ed925758191051448e5d",
-    "id": 1786047890371,
-    "name": "TS04-NINJA",
-    "price": "59,000 DT",
-    "priceNum": 59,
-    "priceBeforeDiscount": 85,
-    "oldPrice": "85,000 DT",
-    "discount": 31,
-    "badge": "-31%",
-    "badgeColor": "#e53935",
-    "schoolLevel": "",
-    "rating": 5,
-    "reviews": 0,
-    "img": "/uploads/image-1785096062528-182889900.png",
-    "images": [
-      "/uploads/image-1785096062528-182889900.png"
-    ],
-    "category": "Trousse",
-    "brand": "Bomi",
-    "description": "BX26086-TS04-NINJA",
-    "stock": 650,
-    "availability": "En stock",
-    "featured": false,
-    "status": "active",
-    "specifications": [],
-    "createdAt": "2026-08-06T20:24:50.286Z",
-    "updatedAt": "2026-08-06T20:24:50.286Z"
-  },
-  {
-    "_id": "6a74ed925758191051448e5e",
-    "id": 1786047890373,
-    "name": "TS04-FOOTBALL",
-    "price": "59,000 DT",
-    "priceNum": 59,
-    "priceBeforeDiscount": 85,
-    "oldPrice": "85,000 DT",
-    "discount": 31,
-    "badge": "-31%",
-    "badgeColor": "#e53935",
-    "schoolLevel": "",
-    "rating": 5,
-    "reviews": 0,
-    "img": "/uploads/image-1785096062528-182889900.png",
-    "images": [
-      "/uploads/image-1785096062528-182889900.png"
-    ],
-    "category": "Trousse",
-    "brand": "Bomi",
-    "description": "BX26087-TS04-FOOTBALL",
-    "stock": 650,
-    "availability": "En stock",
-    "featured": false,
-    "status": "active",
-    "specifications": [],
-    "createdAt": "2026-08-06T20:24:50.287Z",
-    "updatedAt": "2026-08-06T20:24:50.287Z"
-  },
-  {
-    "_id": "6a74ed925758191051448e5f",
-    "id": 1786047890374,
-    "name": "TS04-PRETTYGIRL",
-    "price": "59,000 DT",
-    "priceNum": 59,
-    "priceBeforeDiscount": 85,
-    "oldPrice": "85,000 DT",
-    "discount": 31,
-    "badge": "-31%",
-    "badgeColor": "#e53935",
-    "schoolLevel": "",
-    "rating": 5,
-    "reviews": 0,
-    "img": "/uploads/image-1785096062528-182889900.png",
-    "images": [
-      "/uploads/image-1785096062528-182889900.png"
-    ],
-    "category": "Trousse",
-    "brand": "Bomi",
-    "description": "BX26088-TS04-PRETTYGIRL",
-    "stock": 620,
-    "availability": "En stock",
-    "featured": false,
-    "status": "active",
-    "specifications": [],
-    "createdAt": "2026-08-06T20:24:50.287Z",
-    "updatedAt": "2026-08-06T20:24:50.287Z"
-  },
-  {
-    "_id": "6a74ed925758191051448e60",
-    "id": 1786047890376,
-    "name": "TS04-HOOTIE",
-    "price": "59,000 DT",
-    "priceNum": 59,
-    "priceBeforeDiscount": 85,
-    "oldPrice": "85,000 DT",
-    "discount": 31,
-    "badge": "-31%",
-    "badgeColor": "#e53935",
-    "schoolLevel": "",
-    "rating": 5,
-    "reviews": 0,
-    "img": "/uploads/image-1785096062528-182889900.png",
-    "images": [
-      "/uploads/image-1785096062528-182889900.png"
-    ],
-    "category": "Trousse",
-    "brand": "Bomi",
-    "description": "BX26089-TS04-HOOTIE",
-    "stock": 620,
-    "availability": "En stock",
-    "featured": false,
-    "status": "active",
-    "specifications": [],
-    "createdAt": "2026-08-06T20:24:50.288Z",
-    "updatedAt": "2026-08-06T20:24:50.288Z"
-  },
-  {
-    "_id": "6a74ed925758191051448e61",
-    "id": 1786047890378,
-    "name": "TS04-BESTFRIEND",
-    "price": "59,000 DT",
-    "priceNum": 59,
-    "priceBeforeDiscount": 85,
-    "oldPrice": "85,000 DT",
-    "discount": 31,
-    "badge": "-31%",
-    "badgeColor": "#e53935",
-    "schoolLevel": "",
-    "rating": 5,
-    "reviews": 0,
-    "img": "/uploads/image-1785096062528-182889900.png",
-    "images": [
-      "/uploads/image-1785096062528-182889900.png"
-    ],
-    "category": "Trousse",
-    "brand": "Bomi",
-    "description": "BX26090-TS04-BESTFRIEND",
-    "stock": 620,
-    "availability": "En stock",
-    "featured": false,
-    "status": "active",
-    "specifications": [],
-    "createdAt": "2026-08-06T20:24:50.289Z",
-    "updatedAt": "2026-08-06T20:24:50.289Z"
-  },
-  {
-    "_id": "6a74ed925758191051448e62",
-    "id": 1786047890388,
-    "name": "SD01-BLACK",
-    "price": "109,000 DT",
-    "priceNum": 109,
-    "priceBeforeDiscount": 179,
-    "oldPrice": "179,000 DT",
-    "discount": 39,
-    "badge": "-39%",
-    "badgeColor": "#e53935",
-    "schoolLevel": "",
-    "rating": 5,
-    "reviews": 0,
-    "img": "/uploads/image-1784923026101-633558139.jpg",
-    "images": [
-      "/uploads/image-1784923026101-633558139.jpg"
-    ],
-    "category": "Cartable Lux",
-    "brand": "Bomi",
-    "description": "BX26093-SD01-BLACK",
-    "stock": 930,
-    "availability": "En stock",
-    "featured": false,
-    "status": "active",
-    "specifications": [],
-    "createdAt": "2026-08-06T20:24:50.296Z",
-    "updatedAt": "2026-08-06T20:24:50.296Z"
-  },
-  {
-    "_id": "6a74ed925758191051448e63",
-    "id": 1786047890390,
-    "name": "SD01-BLUE",
-    "price": "109,000 DT",
-    "priceNum": 109,
-    "priceBeforeDiscount": 179,
-    "oldPrice": "179,000 DT",
-    "discount": 39,
-    "badge": "-39%",
-    "badgeColor": "#e53935",
-    "schoolLevel": "",
-    "rating": 5,
-    "reviews": 0,
-    "img": "/uploads/image-1784923026101-633558139.jpg",
-    "images": [
-      "/uploads/image-1784923026101-633558139.jpg"
-    ],
-    "category": "Cartable Lux",
-    "brand": "Bomi",
-    "description": "BX26094-SD01-BLUE",
-    "stock": 430,
-    "availability": "En stock",
-    "featured": false,
-    "status": "active",
-    "specifications": [],
-    "createdAt": "2026-08-06T20:24:50.297Z",
-    "updatedAt": "2026-08-06T20:24:50.297Z"
-  },
-  {
-    "_id": "6a74ed925758191051448e64",
-    "id": 1786047890391,
-    "name": "SD01-PINK",
-    "price": "109,000 DT",
-    "priceNum": 109,
-    "priceBeforeDiscount": 179,
-    "oldPrice": "179,000 DT",
-    "discount": 39,
-    "badge": "-39%",
-    "badgeColor": "#e53935",
-    "schoolLevel": "",
-    "rating": 5,
-    "reviews": 0,
-    "img": "/uploads/image-1784923026101-633558139.jpg",
-    "images": [
-      "/uploads/image-1784923026101-633558139.jpg"
-    ],
-    "category": "Cartable Lux",
-    "brand": "Bomi",
-    "description": "BX26095-SD01-PINK",
-    "stock": 290,
-    "availability": "En stock",
-    "featured": false,
-    "status": "active",
-    "specifications": [],
-    "createdAt": "2026-08-06T20:24:50.297Z",
-    "updatedAt": "2026-08-06T20:24:50.297Z"
-  },
-  {
-    "_id": "6a74ed925758191051448e65",
-    "id": 1786047890393,
-    "name": "SD01-RED",
-    "price": "109,000 DT",
-    "priceNum": 109,
-    "priceBeforeDiscount": 179,
-    "oldPrice": "179,000 DT",
-    "discount": 39,
-    "badge": "-39%",
-    "badgeColor": "#e53935",
-    "schoolLevel": "",
-    "rating": 5,
-    "reviews": 0,
-    "img": "/uploads/image-1784923026101-633558139.jpg",
-    "images": [
-      "/uploads/image-1784923026101-633558139.jpg"
-    ],
-    "category": "Cartable Lux",
-    "brand": "Bomi",
-    "description": "BX26096-SD01-RED",
-    "stock": 260,
-    "availability": "En stock",
-    "featured": false,
-    "status": "active",
-    "specifications": [],
-    "createdAt": "2026-08-06T20:24:50.298Z",
-    "updatedAt": "2026-08-06T20:24:50.298Z"
-  },
-  {
-    "_id": "6a74ed925758191051448e66",
-    "id": 1786047890394,
-    "name": "SD01-PRINT-FOREST",
-    "price": "109,000 DT",
-    "priceNum": 109,
-    "priceBeforeDiscount": 179,
-    "oldPrice": "179,000 DT",
-    "discount": 39,
-    "badge": "-39%",
-    "badgeColor": "#e53935",
-    "schoolLevel": "",
-    "rating": 5,
-    "reviews": 0,
-    "img": "/uploads/image-1784923026101-633558139.jpg",
-    "images": [
-      "/uploads/image-1784923026101-633558139.jpg"
-    ],
-    "category": "Cartable Lux",
-    "brand": "Bomi",
-    "description": "BX26097-SD01-PRINT-FOREST",
-    "stock": 220,
-    "availability": "En stock",
-    "featured": false,
-    "status": "active",
-    "specifications": [],
-    "createdAt": "2026-08-06T20:24:50.298Z",
-    "updatedAt": "2026-08-06T20:24:50.298Z"
-  },
-  {
-    "_id": "6a74ed925758191051448e67",
-    "id": 1786047890396,
-    "name": "SD02-BLACK",
-    "price": "139,000 DT",
-    "priceNum": 139,
-    "priceBeforeDiscount": 219,
-    "oldPrice": "219,000 DT",
-    "discount": 37,
-    "badge": "-37%",
-    "badgeColor": "#e53935",
-    "schoolLevel": "",
-    "rating": 5,
-    "reviews": 0,
-    "img": "/uploads/image-1784923026101-633558139.jpg",
-    "images": [
-      "/uploads/image-1784923026101-633558139.jpg"
-    ],
-    "category": "Cartable Lux",
-    "brand": "Bomi",
-    "description": "BX26098-SD02-BLACK",
-    "stock": 880,
-    "availability": "En stock",
-    "featured": false,
-    "status": "active",
-    "specifications": [],
-    "createdAt": "2026-08-06T20:24:50.299Z",
-    "updatedAt": "2026-08-06T20:24:50.299Z"
-  },
-  {
-    "_id": "6a74ed925758191051448e68",
-    "id": 1786047890397,
-    "name": "SD02-BLUE",
-    "price": "139,000 DT",
-    "priceNum": 139,
-    "priceBeforeDiscount": 219,
-    "oldPrice": "219,000 DT",
-    "discount": 37,
-    "badge": "-37%",
-    "badgeColor": "#e53935",
-    "schoolLevel": "",
-    "rating": 5,
-    "reviews": 0,
-    "img": "/uploads/image-1784923026101-633558139.jpg",
-    "images": [
-      "/uploads/image-1784923026101-633558139.jpg"
-    ],
-    "category": "Cartable Lux",
-    "brand": "Bomi",
-    "description": "BX26099-SD02-BLUE",
-    "stock": 540,
-    "availability": "En stock",
-    "featured": false,
-    "status": "active",
-    "specifications": [],
-    "createdAt": "2026-08-06T20:24:50.299Z",
-    "updatedAt": "2026-08-06T20:24:50.299Z"
-  },
-  {
-    "_id": "6a74ed925758191051448e69",
-    "id": 1786047890399,
-    "name": "SD02-PINK",
-    "price": "139,000 DT",
-    "priceNum": 139,
-    "priceBeforeDiscount": 219,
-    "oldPrice": "219,000 DT",
-    "discount": 37,
-    "badge": "-37%",
-    "badgeColor": "#e53935",
-    "schoolLevel": "",
-    "rating": 5,
-    "reviews": 0,
-    "img": "/uploads/image-1784923026101-633558139.jpg",
-    "images": [
-      "/uploads/image-1784923026101-633558139.jpg"
-    ],
-    "category": "Cartable Lux",
-    "brand": "Bomi",
-    "description": "BX26100-SD02-PINK",
-    "stock": 390,
-    "availability": "En stock",
-    "featured": false,
-    "status": "active",
-    "specifications": [],
-    "createdAt": "2026-08-06T20:24:50.300Z",
-    "updatedAt": "2026-08-06T20:24:50.300Z"
-  },
-  {
-    "_id": "6a74ed925758191051448e6a",
-    "id": 1786047890400,
-    "name": "SD02-RED",
-    "price": "139,000 DT",
-    "priceNum": 139,
-    "priceBeforeDiscount": 219,
-    "oldPrice": "219,000 DT",
-    "discount": 37,
-    "badge": "-37%",
-    "badgeColor": "#e53935",
-    "schoolLevel": "",
-    "rating": 5,
-    "reviews": 0,
-    "img": "/uploads/image-1784923026101-633558139.jpg",
-    "images": [
-      "/uploads/image-1784923026101-633558139.jpg"
-    ],
-    "category": "Cartable Lux",
-    "brand": "Bomi",
-    "description": "BX26101-SD02-RED",
-    "stock": 310,
-    "availability": "En stock",
-    "featured": false,
-    "status": "active",
-    "specifications": [],
-    "createdAt": "2026-08-06T20:24:50.300Z",
-    "updatedAt": "2026-08-06T20:24:50.300Z"
-  },
-  {
-    "_id": "6a74ed925758191051448e6b",
-    "id": 1786047890402,
-    "name": "SD02-PRINT-FOREST",
-    "price": "139,000 DT",
-    "priceNum": 139,
-    "priceBeforeDiscount": 219,
-    "oldPrice": "219,000 DT",
-    "discount": 37,
-    "badge": "-37%",
-    "badgeColor": "#e53935",
-    "schoolLevel": "",
-    "rating": 5,
-    "reviews": 0,
-    "img": "/uploads/image-1784923026101-633558139.jpg",
-    "images": [
-      "/uploads/image-1784923026101-633558139.jpg"
-    ],
-    "category": "Cartable Lux",
-    "brand": "Bomi",
-    "description": "BX26102-SD02-PRINT-FOREST",
-    "stock": 230,
-    "availability": "En stock",
-    "featured": false,
-    "status": "active",
-    "specifications": [],
-    "createdAt": "2026-08-06T20:24:50.301Z",
-    "updatedAt": "2026-08-06T20:24:50.301Z"
-  },
-  {
-    "_id": "6a74ed925758191051448e6c",
-    "id": 1786047890404,
-    "name": "TS06-BLACK",
-    "price": "19,000 DT",
-    "priceNum": 19,
-    "priceBeforeDiscount": 29,
-    "oldPrice": "29,000 DT",
-    "discount": 34,
-    "badge": "-34%",
-    "badgeColor": "#e53935",
-    "schoolLevel": "",
-    "rating": 5,
-    "reviews": 0,
-    "img": "/uploads/image-1785080909643-380673505.png",
-    "images": [
-      "/uploads/image-1785080909643-380673505.png"
-    ],
-    "category": "Trousse",
-    "brand": "Bomi",
-    "description": "BX26103-TS06-BLACK",
-    "stock": 1130,
-    "availability": "En stock",
-    "featured": false,
-    "status": "active",
-    "specifications": [],
-    "createdAt": "2026-08-06T20:24:50.302Z",
-    "updatedAt": "2026-08-06T20:24:50.302Z"
-  },
-  {
-    "_id": "6a74ed925758191051448e6d",
-    "id": 1786047890405,
-    "name": "TS06-BLUE",
-    "price": "19,000 DT",
-    "priceNum": 19,
-    "priceBeforeDiscount": 29,
-    "oldPrice": "29,000 DT",
-    "discount": 34,
-    "badge": "-34%",
-    "badgeColor": "#e53935",
-    "schoolLevel": "",
-    "rating": 5,
-    "reviews": 0,
-    "img": "/uploads/image-1785080909643-380673505.png",
-    "images": [
-      "/uploads/image-1785080909643-380673505.png"
-    ],
-    "category": "Trousse",
-    "brand": "Bomi",
-    "description": "BX26104-TS06-BLUE",
-    "stock": 590,
-    "availability": "En stock",
-    "featured": false,
-    "status": "active",
-    "specifications": [],
-    "createdAt": "2026-08-06T20:24:50.302Z",
-    "updatedAt": "2026-08-06T20:24:50.302Z"
-  },
-  {
-    "_id": "6a74ed925758191051448e6e",
-    "id": 1786047890407,
-    "name": "TS06-PINK",
-    "price": "19,000 DT",
-    "priceNum": 19,
-    "priceBeforeDiscount": 29,
-    "oldPrice": "29,000 DT",
-    "discount": 34,
-    "badge": "-34%",
-    "badgeColor": "#e53935",
-    "schoolLevel": "",
-    "rating": 5,
-    "reviews": 0,
-    "img": "/uploads/image-1785080909643-380673505.png",
-    "images": [
-      "/uploads/image-1785080909643-380673505.png"
-    ],
-    "category": "Trousse",
-    "brand": "Bomi",
-    "description": "BX26105-TS06-PINK",
-    "stock": 400,
-    "availability": "En stock",
-    "featured": false,
-    "status": "active",
-    "specifications": [],
-    "createdAt": "2026-08-06T20:24:50.303Z",
-    "updatedAt": "2026-08-06T20:24:50.303Z"
-  },
-  {
-    "_id": "6a74ed925758191051448e6f",
-    "id": 1786047890408,
-    "name": "TS06-RED",
-    "price": "19,000 DT",
-    "priceNum": 19,
-    "priceBeforeDiscount": 29,
-    "oldPrice": "29,000 DT",
-    "discount": 34,
-    "badge": "-34%",
-    "badgeColor": "#e53935",
-    "schoolLevel": "",
-    "rating": 5,
-    "reviews": 0,
-    "img": "/uploads/image-1785080909643-380673505.png",
-    "images": [
-      "/uploads/image-1785080909643-380673505.png"
-    ],
-    "category": "Trousse",
-    "brand": "Bomi",
-    "description": "BX26106-TS06-RED",
-    "stock": 420,
-    "availability": "En stock",
-    "featured": false,
-    "status": "active",
-    "specifications": [],
-    "createdAt": "2026-08-06T20:24:50.303Z",
-    "updatedAt": "2026-08-06T20:24:50.303Z"
-  },
-  {
-    "_id": "6a74ed925758191051448e70",
-    "id": 1786047890410,
-    "name": "TS06-PRINT-FOREST",
-    "price": "19,000 DT",
-    "priceNum": 19,
-    "priceBeforeDiscount": 29,
-    "oldPrice": "29,000 DT",
-    "discount": 34,
-    "badge": "-34%",
-    "badgeColor": "#e53935",
-    "schoolLevel": "",
-    "rating": 5,
-    "reviews": 0,
-    "img": "/uploads/image-1785080909643-380673505.png",
-    "images": [
-      "/uploads/image-1785080909643-380673505.png"
-    ],
-    "category": "Trousse",
-    "brand": "Bomi",
-    "description": "BX26107-TS06-PRINT-FOREST",
-    "stock": 100,
-    "availability": "En stock",
-    "featured": false,
-    "status": "active",
-    "specifications": [],
-    "createdAt": "2026-08-06T20:24:50.304Z",
-    "updatedAt": "2026-08-06T20:24:50.304Z"
-  },
-  {
-    "_id": "6a74ed925758191051448e71",
-    "id": 1786047890412,
-    "name": "SDi01-BK-ORANGE",
-    "price": "199,000 DT",
-    "priceNum": 199,
-    "priceBeforeDiscount": 299,
-    "oldPrice": "299,000 DT",
-    "discount": 33,
-    "badge": "-33%",
-    "badgeColor": "#e53935",
-    "schoolLevel": "",
-    "rating": 5,
-    "reviews": 0,
-    "img": "/uploads/image-1784923026101-633558139.jpg",
-    "images": [
-      "/uploads/image-1784923026101-633558139.jpg"
-    ],
-    "category": "Cartable Lux",
-    "brand": "Bomi",
-    "description": "BX26108-SDi01-BK-ORANGE",
-    "stock": 520,
-    "availability": "En stock",
-    "featured": false,
-    "status": "active",
-    "specifications": [],
-    "createdAt": "2026-08-06T20:24:50.305Z",
-    "updatedAt": "2026-08-06T20:24:50.305Z"
-  },
-  {
-    "_id": "6a74ed925758191051448e72",
-    "id": 1786047890413,
-    "name": "SDi01-BK-BLUE",
-    "price": "199,000 DT",
-    "priceNum": 199,
-    "priceBeforeDiscount": 299,
-    "oldPrice": "299,000 DT",
-    "discount": 33,
-    "badge": "-33%",
-    "badgeColor": "#e53935",
-    "schoolLevel": "",
-    "rating": 5,
-    "reviews": 0,
-    "img": "/uploads/image-1784923026101-633558139.jpg",
-    "images": [
-      "/uploads/image-1784923026101-633558139.jpg"
-    ],
-    "category": "Cartable Lux",
-    "brand": "Bomi",
-    "description": "BX26109-SDi01-BK-BLUE",
-    "stock": 670,
-    "availability": "En stock",
-    "featured": false,
-    "status": "active",
-    "specifications": [],
-    "createdAt": "2026-08-06T20:24:50.305Z",
-    "updatedAt": "2026-08-06T20:24:50.305Z"
-  },
-  {
-    "_id": "6a74ed925758191051448e73",
-    "id": 1786047890416,
-    "name": "SDi01-BK-GREEN",
-    "price": "199,000 DT",
-    "priceNum": 199,
-    "priceBeforeDiscount": 299,
-    "oldPrice": "299,000 DT",
-    "discount": 33,
-    "badge": "-33%",
-    "badgeColor": "#e53935",
-    "schoolLevel": "",
-    "rating": 5,
-    "reviews": 0,
-    "img": "/uploads/image-1784923026101-633558139.jpg",
-    "images": [
-      "/uploads/image-1784923026101-633558139.jpg"
-    ],
-    "category": "Cartable Lux",
-    "brand": "Bomi",
-    "description": "BX26110-SDi01-BK-GREEN",
-    "stock": 660,
-    "availability": "En stock",
-    "featured": false,
-    "status": "active",
-    "specifications": [],
-    "createdAt": "2026-08-06T20:24:50.307Z",
-    "updatedAt": "2026-08-06T20:24:50.307Z"
-  },
-  {
-    "_id": "6a74ed925758191051448e74",
-    "id": 1786047890418,
-    "name": "SDi02-BLACK",
-    "price": "199,000 DT",
-    "priceNum": 199,
-    "priceBeforeDiscount": 299,
-    "oldPrice": "299,000 DT",
-    "discount": 33,
-    "badge": "-33%",
-    "badgeColor": "#e53935",
-    "schoolLevel": "",
-    "rating": 5,
-    "reviews": 0,
-    "img": "/uploads/image-1784923026101-633558139.jpg",
-    "images": [
-      "/uploads/image-1784923026101-633558139.jpg"
-    ],
-    "category": "Cartable Lux",
-    "brand": "Bomi",
-    "description": "BX26111-SDi02-BLACK",
-    "stock": 1020,
-    "availability": "En stock",
-    "featured": false,
-    "status": "active",
-    "specifications": [],
-    "createdAt": "2026-08-06T20:24:50.308Z",
-    "updatedAt": "2026-08-06T20:24:50.308Z"
-  },
-  {
-    "_id": "6a74ed925758191051448e75",
-    "id": 1786047890421,
-    "name": "SDi02-GREY",
-    "price": "199,000 DT",
-    "priceNum": 199,
-    "priceBeforeDiscount": 299,
-    "oldPrice": "299,000 DT",
-    "discount": 33,
-    "badge": "-33%",
-    "badgeColor": "#e53935",
-    "schoolLevel": "",
-    "rating": 5,
-    "reviews": 0,
-    "img": "/uploads/image-1784923026101-633558139.jpg",
-    "images": [
-      "/uploads/image-1784923026101-633558139.jpg"
-    ],
-    "category": "Cartable Lux",
-    "brand": "Bomi",
-    "description": "BX26112-SDi02-GREY",
-    "stock": 700,
-    "availability": "En stock",
-    "featured": false,
-    "status": "active",
-    "specifications": [],
-    "createdAt": "2026-08-06T20:24:50.310Z",
-    "updatedAt": "2026-08-06T20:24:50.310Z"
-  },
-  {
-    "_id": "6a74ed925758191051448e76",
-    "id": 1786047890423,
-    "name": "SDi02-BLUE",
-    "price": "199,000 DT",
-    "priceNum": 199,
-    "priceBeforeDiscount": 299,
-    "oldPrice": "299,000 DT",
-    "discount": 33,
-    "badge": "-33%",
-    "badgeColor": "#e53935",
-    "schoolLevel": "",
-    "rating": 5,
-    "reviews": 0,
-    "img": "/uploads/image-1784923026101-633558139.jpg",
-    "images": [
-      "/uploads/image-1784923026101-633558139.jpg"
-    ],
-    "category": "Cartable Lux",
-    "brand": "Bomi",
-    "description": "BX26113-SDi02-BLUE",
-    "stock": 680,
-    "availability": "En stock",
-    "featured": false,
-    "status": "active",
-    "specifications": [],
-    "createdAt": "2026-08-06T20:24:50.311Z",
-    "updatedAt": "2026-08-06T20:24:50.311Z"
-  },
-  {
-    "_id": "6a74ed925758191051448e77",
-    "id": 1786047890424,
-    "name": "SDi02-RED",
-    "price": "199,000 DT",
-    "priceNum": 199,
-    "priceBeforeDiscount": 299,
-    "oldPrice": "299,000 DT",
-    "discount": 33,
-    "badge": "-33%",
-    "badgeColor": "#e53935",
-    "schoolLevel": "",
-    "rating": 5,
-    "reviews": 0,
-    "img": "/uploads/image-1784923026101-633558139.jpg",
-    "images": [
-      "/uploads/image-1784923026101-633558139.jpg"
-    ],
-    "category": "Cartable Lux",
-    "brand": "Bomi",
-    "description": "BX26114-SDi02-RED",
-    "stock": 440,
-    "availability": "En stock",
-    "featured": false,
-    "status": "active",
-    "specifications": [],
-    "createdAt": "2026-08-06T20:24:50.311Z",
-    "updatedAt": "2026-08-06T20:24:50.311Z"
-  },
-  {
-    "_id": "6a74ed925758191051448e78",
-    "id": 1786047890426,
-    "name": "SDi02-PINK",
-    "price": "199,000 DT",
-    "priceNum": 199,
-    "priceBeforeDiscount": 299,
-    "oldPrice": "299,000 DT",
-    "discount": 33,
-    "badge": "-33%",
-    "badgeColor": "#e53935",
-    "schoolLevel": "",
-    "rating": 5,
-    "reviews": 0,
-    "img": "/uploads/image-1784923026101-633558139.jpg",
-    "images": [
-      "/uploads/image-1784923026101-633558139.jpg"
-    ],
-    "category": "Cartable Lux",
-    "brand": "Bomi",
-    "description": "BX26115-SDi02-PINK",
-    "stock": 430,
-    "availability": "En stock",
-    "featured": false,
-    "status": "active",
-    "specifications": [],
-    "createdAt": "2026-08-06T20:24:50.312Z",
-    "updatedAt": "2026-08-06T20:24:50.312Z"
-  },
-  {
-    "_id": "6a74ed925758191051448e79",
-    "id": 1786047890428,
-    "name": "SD03-GREY",
-    "price": "159,000 DT",
-    "priceNum": 159,
-    "priceBeforeDiscount": 229,
-    "oldPrice": "229,000 DT",
-    "discount": 31,
-    "badge": "-31%",
-    "badgeColor": "#e53935",
-    "schoolLevel": "",
-    "rating": 5,
-    "reviews": 0,
-    "img": "/uploads/image-1784923026101-633558139.jpg",
-    "images": [
-      "/uploads/image-1784923026101-633558139.jpg"
-    ],
-    "category": "Cartable Lux",
-    "brand": "Bomi",
-    "description": "BX26116-SD03-GREY",
-    "stock": 450,
-    "availability": "En stock",
-    "featured": false,
-    "status": "active",
-    "specifications": [],
-    "createdAt": "2026-08-06T20:24:50.313Z",
-    "updatedAt": "2026-08-06T20:24:50.313Z"
-  },
-  {
-    "_id": "6a74ed925758191051448e7a",
-    "id": 1786047890430,
-    "name": "SD03-BLUE",
-    "price": "159,000 DT",
-    "priceNum": 159,
-    "priceBeforeDiscount": 229,
-    "oldPrice": "229,000 DT",
-    "discount": 31,
-    "badge": "-31%",
-    "badgeColor": "#e53935",
-    "schoolLevel": "",
-    "rating": 5,
-    "reviews": 0,
-    "img": "/uploads/image-1784923026101-633558139.jpg",
-    "images": [
-      "/uploads/image-1784923026101-633558139.jpg"
-    ],
-    "category": "Cartable Lux",
-    "brand": "Bomi",
-    "description": "BX26117-SD03-BLUE",
-    "stock": 500,
-    "availability": "En stock",
-    "featured": false,
-    "status": "active",
-    "specifications": [],
-    "createdAt": "2026-08-06T20:24:50.314Z",
-    "updatedAt": "2026-08-06T20:24:50.314Z"
   }
 ]

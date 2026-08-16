@@ -15,10 +15,8 @@ export type ViewType = "home" | "category" | "cart" | "product" | "auth" | "admi
 interface NavigationContextType {
   currentView: ViewType;
   activeCategory: string;
-  activeSubCategory: string;
   selectedProductId: number | string | null;
-  navigateTo: (view: ViewType, category?: string, page?: number, subcategory?: string) => void;
-  navigateToSubCategory: (category: string, subcategory: string) => void;
+  navigateTo: (view: ViewType, category?: string, page?: number) => void;
   pageNumber?: number;
   navigateToPage?: (page: number) => void;
   navigateToProduct: (productId: number | string) => void;
@@ -59,7 +57,6 @@ export function AppProviders({ children }: { children: React.ReactNode }) {
   const [currentView, setCurrentView] = useState<ViewType>("home");
   const [pageNumber, setPageNumber] = useState<number>(1);
   const [activeCategory, setActiveCategory] = useState<string>("");
-  const [activeSubCategory, setActiveSubCategory] = useState<string>("");
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
   const [selectedProductId, setSelectedProductId] = useState<number | string | null>(null);
   const [user, setUser] = useState<User | null>(null);
@@ -296,18 +293,16 @@ export function AppProviders({ children }: { children: React.ReactNode }) {
     api.saveCart(cartItems);
   }, [cartItems]);
 
-  const navigateTo = (view: ViewType | 'catalog' | 'shop', category = "", page = 1, subcategory = "") => {
+  const navigateTo = (view: ViewType | 'catalog' | 'shop', category = "", page = 1) => {
     // Navigate via React Router; state will sync in useEffect
     try {
       if (view === 'category' || (view as string) === 'catalog' || (view as string) === 'shop') {
         setCurrentView('category');
-        setActiveSubCategory(subcategory);
         const base = category ? `/category/${encodeURIComponent(category)}` : '/catalog';
         const url = page && page > 1 ? `${base}/page/${page}` : base;
         navigate(url);
       } else if (view === 'home') {
         setCurrentView('home');
-        setActiveSubCategory('');
         navigate('/');
       } else if (view === 'product') {
         const savedId = selectedProductId || localStorage.getItem('ecolier_last_product_id');
@@ -318,7 +313,6 @@ export function AppProviders({ children }: { children: React.ReactNode }) {
         }
       } else {
         setCurrentView(view as ViewType);
-        setActiveSubCategory('');
         navigate(`/${view}`);
       }
     } catch (e) {
@@ -327,14 +321,9 @@ export function AppProviders({ children }: { children: React.ReactNode }) {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  const navigateToSubCategory = (category: string, subcategory: string) => {
-    setActiveCategory(category);
-    setActiveSubCategory(subcategory);
-    navigateTo('category', category, 1, subcategory);
-  };
 
   const navigateToPage = (page: number) => {
-    navigateTo("category", activeCategory, page, activeSubCategory);
+    navigateTo("category", activeCategory, page);
   };
 
   const navigateToProduct = (productId: number | string) => {
@@ -385,7 +374,7 @@ export function AppProviders({ children }: { children: React.ReactNode }) {
   const wishlistCount = wishlistIds.length;
 
   return (
-    <NavigationContext.Provider value={{ currentView, activeCategory, activeSubCategory, navigateTo, navigateToSubCategory, selectedProductId, navigateToProduct, user, loginUser, logoutUser, searchQuery, setSearchQuery, darkMode, toggleDarkMode, pageNumber, navigateToPage }}>
+    <NavigationContext.Provider value={{ currentView, activeCategory, navigateTo, selectedProductId, navigateToProduct, user, loginUser, logoutUser, searchQuery, setSearchQuery, darkMode, toggleDarkMode, pageNumber, navigateToPage }}>
       <CartContext.Provider
         value={{
           cartItems,

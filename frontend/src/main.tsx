@@ -1,6 +1,4 @@
 // src/main.tsx
-(window as any).API_URL = (window as any).API_URL || '';
-
 import { createRoot } from "react-dom/client";
 import { BrowserRouter } from "react-router";
 import { HelmetProvider } from "react-helmet-async";

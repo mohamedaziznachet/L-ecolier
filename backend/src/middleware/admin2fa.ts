@@ -88,7 +88,7 @@ export async function enable2FA(email: string): Promise<{
   await Admin2FAModel.findOneAndUpdate(
     { email },
     { secret, backupCodes, enabled: true, verified: false },
-    { upsert: true, returnDocument: 'after' }
+    { upsert: true, new: true }
   );
 
   // Generate otpauth URL for QR code

@@ -22,7 +22,6 @@ export interface Product {
   img: string;
   images?: string[];
   category?: string;
-  subcategory?: string;
   brand?: string;
   // Admin-only fields (optional so storefront catalog entries stay valid)
   description?: string;
@@ -101,7 +100,6 @@ export interface Coupon {
   minOrderAmount?: number;
   expiresAt: string; // ISO string
   isActive: boolean;
-  applicableCategories?: string[];
   createdAt?: string;
 }
 
